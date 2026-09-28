@@ -1,0 +1,89 @@
+{
+  "format": "MAMBA2_SQ_FIRST_RESURFACE_TRAIN_V1",
+  "complete": true,
+  "mode": "smoke",
+  "started_unix": 1790638646.1116796,
+  "source_sha256": "547e5b64904a273cd96a7d77624e5225a67edb9fa683950a43efc2d4171392a6",
+  "code_sha256": {
+    "mamba2_recall/__init__.py": "79b32606ac476c3248911c55571bf97f96689770067856ce8347837478ef33fd",
+    "mamba2_recall/calibration.py": "54e178521abfe2513fb7bac2aed2ef178fc01b63135222ecc212001ee3ce0a04",
+    "mamba2_recall/evaluation.py": "95cba0b201e37f92e6cbfadb9b3e9d79ba7b0cdc9efda6a58a6216b0d84d35e0",
+    "mamba2_recall/resurface_data.py": "1a547fe3cedca406d6e3db85f65c3ce554558691e3b29b9c92d8fd6bd1c1ba35",
+    "mamba2_recall/resurface_loss.py": "ec045368583b6e49f484341b2d718658bb59e8d11050710377742752c1c67294",
+    "mamba2_recall/resurface_native.py": "2dd08c7ee8958c832f0ae9da7cf5f261dceeff3e528e493c905c7c52df7166d7",
+    "mamba2_recall/runtime.py": "73a405b4286dda403f252cf0b73d367adcfead96298a1e6f440b65f5b309530c",
+    "mamba2_recall/state_codec.py": "56bd56d2fcb96382a4c6139824245f7608e903bbf1e3d07c9ea6d61ac8ce371a",
+    "mamba2_recall/state_quant.py": "d57ccba302c81808456ef8ccd9bc36bcb22ee976b2e4cad5efe43f99e4e17efd",
+    "mamba2_recall/state_training.py": "2d7babbf5d402e3dafaa69681ebd3028452a688b31cb1b6c4fc18d1d73dbb894",
+    "mamba2_recall/state_training_scan.py": "cc33e0b88e2b5d6649fdfc85570ba484363eea34b14b536de669fd4c7d0b54ba",
+    "scripts/train_quant_first.py": "547e5b64904a273cd96a7d77624e5225a67edb9fa683950a43efc2d4171392a6"
+  },
+  "history": [
+    {
+      "attempt": 1,
+      "successful_updates": 0,
+      "case_id": "resurface-train-n16-t0-s159",
+      "schedule_entry": 159,
+      "prose_window": 324,
+      "prose_start": 0,
+      "answer_targets": 7,
+      "seconds": 9.105695529957302,
+      "mk_ce": 0.7786147253853934,
+      "prose_ce": 2.249449966938295,
+      "prose_kl": 0.09457614977065831,
+      "prose_closure": 0.13801202178001404,
+      "overflow": true,
+      "gradient_norm_before_clip": null,
+      "loss_scale": 512.0
+    },
+    {
+      "attempt": 2,
+      "successful_updates": 1,
+      "case_id": "resurface-train-n16-t0-s159",
+      "schedule_entry": 159,
+      "prose_window": 324,
+      "prose_start": 0,
+      "answer_targets": 7,
+      "seconds": 1.0564225260168314,
+      "mk_ce": 0.7786147253853934,
+      "prose_ce": 2.249449966938295,
+      "prose_kl": 0.09457614977065831,
+      "prose_closure": 0.13801202178001404,
+      "overflow": false,
+      "gradient_norm_before_clip": 10.959962844848633,
+      "loss_scale": 512.0
+    }
+  ],
+  "checkpoints": [],
+  "binding": {
+    "calibration_sha256": "c366cd577967e64635f1dd960237dc1c0024d7413685ce0b4c4e40da869a7023",
+    "calibration_format": "MAMBA2_QUANT_FIRST_CALIBRATION_V1",
+    "initial_adapter": "fresh V=0,g=1,w=0,b=-4; no pretrained adapter",
+    "state_mode": "sq3p25; exact packed forward; live-mask STE backward",
+    "teacher": "separate unadapted source, S16 per-token carry",
+    "source_checkpoint_sha256": "47c2766f6aad89d73beafbeaecb334aab902d7370906d081764a90bb7a8bbbcb",
+    "tokenizer_sha256": "5862e2f71caf762bc9845662be5fec2867deb58d874568235a02a36c5111cd09",
+    "protocol_sha256": "24466642ce87c75fc2136a42ed14e69733c462b507a0be82c062b4da7f836bcb",
+    "train_manifest_sha256": "451b8703c21120667ef0ea272c21a10d4cd4561779a7b9663773ae47981600c0",
+    "prose_manifest_sha256": "facb2ca461615a4199781bd21784d642d6674f5b862641b3b9edac3fb499b89d",
+    "prose_tokens_sha256": "e54b02e5162e042a9cdd504f4eb1b1652724fb240bbc2c97608967aa26297233",
+    "prose_tokens_int64le_sha256": "049dfb6847d778897fd19b67653c3189f29fbc19a36022e8a4801306d08228bc",
+    "prose_file_exact_historical": true,
+    "adapter": "MAMBA2_POST_D_RESURFACE_FP16_V1",
+    "successful_updates": 1536
+  },
+  "initialization_check": {
+    "fresh_identity_matches_packed_bitwise": true,
+    "probe_tokens": 32,
+    "probe_token_sha256": "cf4623f1e67c9c5d7e680da0591fdb655f372a826e54821284a310af83c8b409"
+  },
+  "successful_updates": 1,
+  "attempts": 2,
+  "gpu_memory": {
+    "peak_allocated_bytes": 34218807808,
+    "peak_reserved_bytes": 34500247552,
+    "current_allocated_bytes": 33223568384,
+    "note": "Original BF16 source cast to native FP16 runtime"
+  },
+  "finished_unix": 1790638688.3815007
+}
