@@ -1,0 +1,21 @@
+{
+  "format": "MAMBA2_QUANT_FIRST_NUMERIC_TRAIN_V1",
+  "complete": true,
+  "protocol_sha256": "24466642ce87c75fc2136a42ed14e69733c462b507a0be82c062b4da7f836bcb",
+  "tokenizer_sha256": "5862e2f71caf762bc9845662be5fec2867deb58d874568235a02a36c5111cd09",
+  "train_manifest_sha256": "451b8703c21120667ef0ea272c21a10d4cd4561779a7b9663773ae47981600c0",
+  "row_count": 1536,
+  "split": "train",
+  "files": {
+    "raw.jsonl": {
+      "bytes": 2913921,
+      "sha256": "a5f5619921f3a0537376421b04d8dcb9c4728574c4eb4564009ee982a1c5c43d"
+    },
+    "tokens.jsonl": {
+      "bytes": 14865516,
+      "sha256": "489ac4fcda627e2da74ef27faf895041ad6a59c3488262cf96ca084f0a85f932"
+    }
+  },
+  "heldout_used": false,
+  "source_helper_sha256": "1a547fe3cedca406d6e3db85f65c3ce554558691e3b29b9c92d8fd6bd1c1ba35"
+}

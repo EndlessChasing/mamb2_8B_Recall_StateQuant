@@ -1,5 +1,17 @@
 # Mamb2_8B_Recall + StateQuant
 
+## Current experiment: quantize first, then train a new adapter
+
+The new requested order is **original Mamba2-8B -> SQ3.25 state -> fresh
+Resurface training**. Calibration is repeated on the unadapted source model;
+the old adapter is not used for initialization. A differentiable training path
+uses the exact packed inference forward and a declared masked STE backward.
+The fixed 1536-update recipe and three-arm evaluation are specified in
+[QUANT_FIRST_PROTOCOL.md](docs/QUANT_FIRST_PROTOCOL.md). Work is in progress;
+the measurements below belong to the earlier order and are not new-model results.
+
+## Historical experiment: old Recall adapter, then quantize state
+
 Experimental **pure Mamba2-8B + frozen Resurface + packed recurrent state**.
 The base is the original FP16 Recall model, not the W4 weight release.
 

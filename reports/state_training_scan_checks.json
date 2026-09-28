@@ -1,0 +1,173 @@
+{
+  "format": "STATEQUANT_TRAINING_SCAN_CHECKS_V1",
+  "passed": true,
+  "complete": true,
+  "checks": [
+    {
+      "name": "exact_recomputed_carries_B2_L19_H4_P7_G2",
+      "passed": true
+    },
+    {
+      "name": "exact_forward_B2_L19_H4_P7_G2",
+      "passed": true
+    },
+    {
+      "name": "oracle_gradient_x_B2_L19_H4_P7_G2",
+      "passed": true,
+      "max_absolute_error": 0.0,
+      "relative_rms_error": 0.0,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "oracle_gradient_dt_B2_L19_H4_P7_G2",
+      "passed": true,
+      "max_absolute_error": 0.0,
+      "relative_rms_error": 0.0,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "oracle_gradient_B_B2_L19_H4_P7_G2",
+      "passed": true,
+      "max_absolute_error": 9.5367431640625e-07,
+      "relative_rms_error": 1.9377239368623123e-06,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "oracle_gradient_C_B2_L19_H4_P7_G2",
+      "passed": true,
+      "max_absolute_error": 2.384185791015625e-07,
+      "relative_rms_error": 6.773775567125995e-07,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "chunk_size_invariant_B2_L19_H4_P7_G2",
+      "passed": true
+    },
+    {
+      "name": "exact_recomputed_carries_B1_L1_H8_P17_G2",
+      "passed": true
+    },
+    {
+      "name": "exact_forward_B1_L1_H8_P17_G2",
+      "passed": true
+    },
+    {
+      "name": "oracle_gradient_x_B1_L1_H8_P17_G2",
+      "passed": true,
+      "max_absolute_error": 0.0,
+      "relative_rms_error": 0.0,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "oracle_gradient_dt_B1_L1_H8_P17_G2",
+      "passed": true,
+      "max_absolute_error": 0.0,
+      "relative_rms_error": 0.0,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "oracle_gradient_B_B1_L1_H8_P17_G2",
+      "passed": true,
+      "max_absolute_error": 0.0,
+      "relative_rms_error": 0.0,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "oracle_gradient_C_B1_L1_H8_P17_G2",
+      "passed": true,
+      "max_absolute_error": 0.0,
+      "relative_rms_error": 0.0,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "chunk_size_invariant_B1_L1_H8_P17_G2",
+      "passed": true
+    },
+    {
+      "name": "exact_recomputed_carries_B1_L65_H8_P17_G2",
+      "passed": true
+    },
+    {
+      "name": "exact_forward_B1_L65_H8_P17_G2",
+      "passed": true
+    },
+    {
+      "name": "oracle_gradient_x_B1_L65_H8_P17_G2",
+      "passed": true,
+      "max_absolute_error": 3.814697265625e-06,
+      "relative_rms_error": 1.4223899142962182e-06,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "oracle_gradient_dt_B1_L65_H8_P17_G2",
+      "passed": true,
+      "max_absolute_error": 0.0,
+      "relative_rms_error": 0.0,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "oracle_gradient_B_B1_L65_H8_P17_G2",
+      "passed": true,
+      "max_absolute_error": 1.52587890625e-05,
+      "relative_rms_error": 1.171195981441997e-05,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "oracle_gradient_C_B1_L65_H8_P17_G2",
+      "passed": true,
+      "max_absolute_error": 3.814697265625e-06,
+      "relative_rms_error": 3.364708391018212e-06,
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    {
+      "name": "chunk_size_invariant_B1_L65_H8_P17_G2",
+      "passed": true
+    },
+    {
+      "name": "dead_coordinates_have_no_future_carry",
+      "passed": true
+    },
+    {
+      "name": "dead_coordinates_have_current_gradients",
+      "passed": true
+    },
+    {
+      "name": "zero_inputs_finite",
+      "passed": true
+    },
+    {
+      "name": "production_geometry_forward_backward_finite",
+      "passed": true,
+      "seconds": 0.0038115809438750148,
+      "length": 256,
+      "peak_allocated_increment_bytes": 131793408,
+      "explicit_workspace": {
+        "carry_scratch_bytes": 107479040,
+        "gradient_scratch_bytes": 10616832,
+        "total_scratch_bytes": 118095872
+      }
+    }
+  ],
+  "limitations": [
+    "Backward is a masked straight-through approximation, not the derivative of discontinuous quantization.",
+    "A, D, and dt_bias are frozen; base-parameter training is deliberately unsupported.",
+    "Synthetic forward/gradient tests do not establish PPL or MK recovery.",
+    "B/C/group and dt gradients use FP32 atomic accumulation; bitwise backward determinism is not promised."
+  ],
+  "source_sha256": {
+    "scripts/check_state_training_scan.py": "54e747ac92917ce09f94ee0528a4072bce8a374b3b7be974598f1add247c324f",
+    "mamba2_recall/state_training_scan.py": "cc33e0b88e2b5d6649fdfc85570ba484363eea34b14b536de669fd4c7d0b54ba"
+  }
+}

@@ -15,3 +15,17 @@ Full validation is intentionally not advanced because the pilot failed both
 screening thresholds. Q8 remains excluded. See docs/RESULTS.md.
 
 No adaptation training or Hugging Face release is included in this experiment.
+
+## New experiment v2: SQ3.25 first, fresh Resurface second
+
+- [x] Freeze a distinct protocol and preserve v1 evidence.
+- [x] Recalibrate on the original unadapted S16 base using TRAIN only.
+- [x] Implement exact quantized forward and masked STE backward.
+- [x] Validate packed-forward parity, surrogate gradients and stateless replay design.
+- [ ] Pass full 8B identity and one-step training smoke.
+- [ ] Train a fresh adapter for 1536 successful updates under SQ3.25.
+- [ ] Export FP16 and verify actual packed inference parity.
+- [ ] Evaluate original S16, unadapted SQ3.25, trained SQ3.25 and restored SQ baseline.
+- [ ] Independently audit and document PPL/MK/cache results.
+
+See docs/QUANT_FIRST_PROTOCOL.md. No Q8 or old-adapter initialization; no public release.
