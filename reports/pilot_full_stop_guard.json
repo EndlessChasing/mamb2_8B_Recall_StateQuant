@@ -1,0 +1,9 @@
+{
+  "check": "full_evaluation_rejected_after_failed_pilot",
+  "passed": true,
+  "exit_code": 1,
+  "cuda_visible_devices": "",
+  "observed_error": "Full validation requires a surviving frozen pilot",
+  "model_or_gpu_work_started": false,
+  "runner_sha256": "0f56215a494395c6e1ab68c38fd80aee4faf70b8d1b3bfd714d09fd5d7ff6d8d"
+}

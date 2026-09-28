@@ -1,0 +1,108 @@
+{
+  "complete": true,
+  "device": "cpu",
+  "cuda_visible_devices": "",
+  "python": "3.10.12",
+  "torch": "2.11.0+cu128",
+  "native_conv_functions_initially_absent": {
+    "prefill": true,
+    "decode": true
+  },
+  "source_sha256": {
+    "mamba2_recall/state_quant.py": "d57ccba302c81808456ef8ccd9bc36bcb22ee976b2e4cad5efe43f99e4e17efd",
+    "scripts/check_state_runtime_conv.py": "6f1ea6e33d392ee935625b6b8d0827b7617f5c3215274723a8022117dbe91af8"
+  },
+  "geometries": [
+    {
+      "batch": 2,
+      "channels": 7,
+      "conv_width": 4,
+      "rows": [
+        {
+          "check": "native_prefill",
+          "tokens": 1,
+          "output_exact": true,
+          "cache_exact": true
+        },
+        {
+          "check": "native_prefill",
+          "tokens": 2,
+          "output_exact": true,
+          "cache_exact": true
+        },
+        {
+          "check": "native_prefill",
+          "tokens": 13,
+          "output_exact": true,
+          "cache_exact": true
+        },
+        {
+          "check": "native_decode",
+          "output_exact": true,
+          "cache_exact": true
+        },
+        {
+          "check": "chunk_continuation",
+          "split": [
+            5,
+            8
+          ],
+          "max_abs_error": 0.0,
+          "max_abs_limit": 0.003,
+          "cache_exact": true
+        },
+        {
+          "check": "future_token_causality",
+          "unchanged_prefix_tokens": 8,
+          "prefix_exact": true
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "channels": 10240,
+      "conv_width": 4,
+      "rows": [
+        {
+          "check": "native_prefill",
+          "tokens": 1,
+          "output_exact": true,
+          "cache_exact": true
+        },
+        {
+          "check": "native_prefill",
+          "tokens": 2,
+          "output_exact": true,
+          "cache_exact": true
+        },
+        {
+          "check": "native_prefill",
+          "tokens": 13,
+          "output_exact": true,
+          "cache_exact": true
+        },
+        {
+          "check": "native_decode",
+          "output_exact": true,
+          "cache_exact": true
+        },
+        {
+          "check": "chunk_continuation",
+          "split": [
+            5,
+            8
+          ],
+          "max_abs_error": 0.0,
+          "max_abs_limit": 0.003,
+          "cache_exact": true
+        },
+        {
+          "check": "future_token_causality",
+          "unchanged_prefix_tokens": 8,
+          "prefix_exact": true
+        }
+      ]
+    }
+  ],
+  "scope": "Actual AST-extracted runtime helper, native CPU fallback arithmetic and cache updates; no state codec, model weights, GPU allocation, compiled causal-conv kernel or whole-model parity test"
+}

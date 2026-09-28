@@ -227,12 +227,23 @@ def main():
         pilot = json.loads((args.out/'pilot_comparison.json').read_text())
         if pilot['pilot_stop'] or pilot['stage'] != 'pilot':
             raise RuntimeError('Full validation requires a surviving frozen pilot')
+        pilot_reports = {}
         for mode, digest in pilot['report_sha256'].items():
             if runtime.sha256_file(args.out/f'pilot_{mode}.json') != digest:
                 raise RuntimeError('Pilot report changed')
+            pilot_reports[mode] = json.loads((args.out/f'pilot_{mode}.json').read_text())
+        if set(pilot_reports) != {'s16', 'sq3p25'}:
+            raise RuntimeError('Both completed pilot arms are required')
         full_calibration = json.loads((args.out/'calibration.json').read_text())
         if runtime.sha256_file(args.out/'calibration.pt') != full_calibration['sha256']:
             raise RuntimeError('Frozen calibration file changed')
+        current_hashes = code_hashes()
+        for report in pilot_reports.values():
+            if not report['complete'] or report['calibration'] != full_calibration:
+                raise RuntimeError('Calibration no longer matches the scored pilot candidate')
+            for relative, digest in report['code_hashes'].items():
+                if relative.startswith('mamba2_recall/') and current_hashes.get(relative) != digest:
+                    raise RuntimeError(f'Core execution changed after pilot: {relative}')
     torch.set_num_threads(8)
     torch.manual_seed(20260928)
     torch.backends.cuda.matmul.allow_tf32 = False

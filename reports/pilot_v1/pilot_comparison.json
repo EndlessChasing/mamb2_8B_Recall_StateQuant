@@ -1,0 +1,24 @@
+{
+  "ppl_s16": 6.040463735397312,
+  "ppl_sq3p25": 6.8833874139786255,
+  "ppl_relative_change": 0.13954618643627548,
+  "mk_s16": {
+    "correct": 47,
+    "count": 48,
+    "accuracy": 0.9791666666666666
+  },
+  "mk_sq3p25": {
+    "correct": 19,
+    "count": 48,
+    "accuracy": 0.3958333333333333
+  },
+  "mk_accuracy_delta": -0.5833333333333333,
+  "pilot_stop": true,
+  "stage": "pilot",
+  "status": "STOP: fixed candidate failed pilot",
+  "protocol_sha256": "4dde46c89f18a5c68ca29e38a284f47ec9531e1e7f7d3f46f114ecbba2a4af17",
+  "report_sha256": {
+    "s16": "1bd47ef0b4176d02ecdc78b7f5fbb187624b2943c04303cf0b5a0006068b1629",
+    "sq3p25": "f0c0cfd80ebf8c691d106abb6bf8e2b25e998235b55304901cf5a0417340fc0d"
+  }
+}

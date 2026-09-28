@@ -1,0 +1,223 @@
+{
+  "format": "STATEQUANT_INDEPENDENT_PILOT_AUDIT_V1",
+  "passed": true,
+  "meaning_of_passed": "Receipt consistency and independently recomputed pilot rejection; the SQ3.25 candidate did not pass quality.",
+  "tested_code_commit": "3bf088fd4b25b333ba30ee7f7bbac55c8432282e",
+  "protocol_sha256": "4dde46c89f18a5c68ca29e38a284f47ec9531e1e7f7d3f46f114ecbba2a4af17",
+  "report_bindings": {
+    "s16": {
+      "code_file_hashes_verified_against_commit": 14,
+      "report_sha256": "1bd47ef0b4176d02ecdc78b7f5fbb187624b2943c04303cf0b5a0006068b1629"
+    },
+    "sq3p25": {
+      "code_file_hashes_verified_against_commit": 14,
+      "report_sha256": "f0c0cfd80ebf8c691d106abb6bf8e2b25e998235b55304901cf5a0417340fc0d"
+    }
+  },
+  "file_sha256": {
+    "calibration.json": "292f3ba8932e13575230ff0e13b7ea9d9413ace011731d3de01671b59a134a2d",
+    "calibration.pt": "0029156e5a03d82b8b9945fb29dca1e749780746d7c07beb45ddbf4f76e343c0",
+    "pilot_comparison.json": "ce0ee474c6030c50fa5e0a6f57c723b8da9270a995d1b09d96c4334be627819b",
+    "pilot_native_control.json": "64e7a50a047374c7358146fe7a16e08cf4b886e9b1a8335cdea93a4dd82e2406",
+    "pilot_s16.json": "1bd47ef0b4176d02ecdc78b7f5fbb187624b2943c04303cf0b5a0006068b1629",
+    "pilot_sq3p25.json": "f0c0cfd80ebf8c691d106abb6bf8e2b25e998235b55304901cf5a0417340fc0d"
+  },
+  "metrics_recomputed_from_window_nll_and_generated_outputs": {
+    "s16": {
+      "nll": 14733.154602050781,
+      "target_tokens": 8192,
+      "ppl": 6.040463735397312,
+      "mk": {
+        "normal": {
+          "correct": 47,
+          "count": 48,
+          "accuracy": 0.9791666666666666
+        },
+        "target_removed": {
+          "correct": 0,
+          "count": 48,
+          "accuracy": 0.0
+        }
+      },
+      "cache_total_bytes": 122028032,
+      "peak_allocated_bytes": 16984986624
+    },
+    "sq3p25": {
+      "nll": 15803.276390075684,
+      "target_tokens": 8192,
+      "ppl": 6.8833874139786255,
+      "mk": {
+        "normal": {
+          "correct": 19,
+          "count": 48,
+          "accuracy": 0.3958333333333333
+        },
+        "target_removed": {
+          "correct": 0,
+          "count": 48,
+          "accuracy": 0.0
+        }
+      },
+      "cache_total_bytes": 28499968,
+      "peak_allocated_bytes": 16891458560
+    }
+  },
+  "mk_cells_correct_count": {
+    "s16": {
+      "N16_template0_normal": [
+        8,
+        8
+      ],
+      "N16_template0_target_removed": [
+        0,
+        8
+      ],
+      "N16_template1_normal": [
+        8,
+        8
+      ],
+      "N16_template1_target_removed": [
+        0,
+        8
+      ],
+      "N16_template2_normal": [
+        8,
+        8
+      ],
+      "N16_template2_target_removed": [
+        0,
+        8
+      ],
+      "N64_template0_normal": [
+        7,
+        8
+      ],
+      "N64_template0_target_removed": [
+        0,
+        8
+      ],
+      "N64_template1_normal": [
+        8,
+        8
+      ],
+      "N64_template1_target_removed": [
+        0,
+        8
+      ],
+      "N64_template2_normal": [
+        8,
+        8
+      ],
+      "N64_template2_target_removed": [
+        0,
+        8
+      ]
+    },
+    "sq3p25": {
+      "N16_template0_normal": [
+        3,
+        8
+      ],
+      "N16_template0_target_removed": [
+        0,
+        8
+      ],
+      "N16_template1_normal": [
+        7,
+        8
+      ],
+      "N16_template1_target_removed": [
+        0,
+        8
+      ],
+      "N16_template2_normal": [
+        7,
+        8
+      ],
+      "N16_template2_target_removed": [
+        0,
+        8
+      ],
+      "N64_template0_normal": [
+        1,
+        8
+      ],
+      "N64_template0_target_removed": [
+        0,
+        8
+      ],
+      "N64_template1_normal": [
+        0,
+        8
+      ],
+      "N64_template1_target_removed": [
+        0,
+        8
+      ],
+      "N64_template2_normal": [
+        1,
+        8
+      ],
+      "N64_template2_target_removed": [
+        0,
+        8
+      ]
+    }
+  },
+  "normal_pair_outcomes": {
+    "s16_0_sq3p25_0": 1,
+    "s16_1_sq3p25_0": 28,
+    "s16_1_sq3p25_1": 19
+  },
+  "ppl_relative_change": 0.13954618643627548,
+  "normal_mk_accuracy_delta": -0.5833333333333333,
+  "cache_reduction_fraction": 0.7664473684210527,
+  "pilot_stop_recomputed": true,
+  "full_validation_required": false,
+  "full_validation_performed": false,
+  "cpu_verification_with_pinned_remote_data": {
+    "cpu_only": true,
+    "calibration_sha256": "0029156e5a03d82b8b9945fb29dca1e749780746d7c07beb45ddbf4f76e343c0",
+    "permutation_shape": [
+      56,
+      8,
+      128
+    ],
+    "permutation_dtype": "torch.uint8",
+    "permutation_storage_bytes": 57344,
+    "permutation_bijection": true,
+    "stable_descending_statistic_order": true,
+    "mean_from_sum_count_exact": true,
+    "train_source_sha256_verified": true,
+    "calibration_train_token_digests_verified": 8,
+    "dead_coordinate_abs_mass_fraction": 0.1425889356803629,
+    "prompt_retokenization_and_digests_verified": 192,
+    "generated_ids_decode_and_eos_protocol_verified": 192,
+    "validation_stream_digest_verified": true,
+    "ppl_window_token_digests_verified": 8,
+    "eos_id": 3,
+    "remote_report_sha256": {
+      "pilot_s16.json": "1bd47ef0b4176d02ecdc78b7f5fbb187624b2943c04303cf0b5a0006068b1629",
+      "pilot_sq3p25.json": "f0c0cfd80ebf8c691d106abb6bf8e2b25e998235b55304901cf5a0417340fc0d"
+    }
+  },
+  "checks": [
+    "All recorded code hashes match the tested commit, including the original runner before later hardening.",
+    "PPL uses paired fixed windows 0,32,64,96 with 8192 total targets.",
+    "All 96 MK cases per mode exactly regenerate from frozen DEV seed and sample selection.",
+    "Normal/removed case pairing, answer presence/absence, prompt/row hashes and standalone six-digit scoring verified.",
+    "Calibration uint8 permutations are bijective stable descending rank of TRAIN mean absolute stored state.",
+    "Actual calibration tensor storage is 57344 bytes; declared cache fields match component geometry.",
+    "Both independent pilot stop thresholds are exceeded."
+  ],
+  "limitations": [
+    "CPU audit recomputes aggregate PPL from saved per-window NLL; it does not rerun model logits or independently reproduce losses.",
+    "Prompt token IDs were reconstructed with the pinned tokenizer from saved prompt text, and their digests were verified; generated token IDs were decoded independently.",
+    "Calibration tensor statistics are checked for ordering, sum/count arithmetic and source binding, not recomputed from model activations.",
+    "Cache allocation byte receipts were checked against tensor format geometry; GPU allocator peaks were not independently remeasured.",
+    "Base weights were verified by the execution receipt identity/version/gradient checks, not full post-run tensor content hashes; the adapter content was hashed.",
+    "Native whole-model control is approximate: relative RMS 0.0014921078691259027 and 8/8 final argmax agreement on 32 TRAIN tokens.",
+    "Archived SQ kernel comparison is bounded rather than bitwise exact; 33-token full-geometry output relative L2 0.0006646, state relative L2 0.0016427 and 28/393216 code-byte differences were reported separately.",
+    "Pilot results do not establish full-corpus PPL or full-CONFIRM MK accuracy."
+  ]
+}
