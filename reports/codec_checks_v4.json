@@ -1,0 +1,239 @@
+{
+  "format": "STATEQUANT_PACKED_CODEC_CHECKS_V1",
+  "complete": true,
+  "passed": true,
+  "checks": [
+    {
+      "name": "independent_numpy_bytes_cpu",
+      "passed": true
+    },
+    {
+      "name": "independent_numpy_decode_cpu",
+      "passed": true
+    },
+    {
+      "name": "compact_bytes_cpu",
+      "passed": true,
+      "actual": 1040,
+      "expected": 1040
+    },
+    {
+      "name": "underflow_preserved_cpu",
+      "passed": true,
+      "scale": 0.0
+    },
+    {
+      "name": "independent_numpy_bytes_cuda",
+      "passed": true
+    },
+    {
+      "name": "independent_numpy_decode_cuda",
+      "passed": true
+    },
+    {
+      "name": "compact_bytes_cuda",
+      "passed": true,
+      "actual": 1040,
+      "expected": 1040
+    },
+    {
+      "name": "underflow_preserved_cuda",
+      "passed": true,
+      "scale": 0.0
+    },
+    {
+      "name": "reject_nonfinite_nan",
+      "passed": true
+    },
+    {
+      "name": "reject_nonfinite_inf",
+      "passed": true
+    },
+    {
+      "name": "reject_nonbijective_permutation",
+      "passed": true
+    },
+    {
+      "name": "segmented_exact_s16_B2_H8_P17_G2_L19",
+      "passed": true
+    },
+    {
+      "name": "every_step_exact_s16_B2_H8_P17_G2_L19",
+      "passed": true
+    },
+    {
+      "name": "causal_prefix_exact_s16_B2_H8_P17_G2_L19",
+      "passed": true
+    },
+    {
+      "name": "independent_numpy_recurrence_s16_B2_H8_P17_G2_L19",
+      "passed": true,
+      "output_relative_l2": 1.8320040167766046e-05,
+      "state_relative_l2": 1.9632613877064183e-05,
+      "output_max_abs": 3.0517578125e-05,
+      "state_max_abs": 3.0517578125e-05,
+      "tolerance_relative_l2": 0.002
+    },
+    {
+      "name": "native_step_exact_B2_H8_P17_G2_L19",
+      "passed": true,
+      "output_max_abs": 0.0,
+      "state_max_abs": 0.0
+    },
+    {
+      "name": "calibration_native_stats_B2_H8_P17_G2_L19",
+      "passed": true,
+      "max_abs": 4.76837158203125e-07,
+      "shape": [
+        2,
+        8,
+        2,
+        128
+      ]
+    },
+    {
+      "name": "segmented_exact_sq3p25_B2_H8_P17_G2_L19",
+      "passed": true
+    },
+    {
+      "name": "every_step_exact_sq3p25_B2_H8_P17_G2_L19",
+      "passed": true
+    },
+    {
+      "name": "causal_prefix_exact_sq3p25_B2_H8_P17_G2_L19",
+      "passed": true
+    },
+    {
+      "name": "independent_numpy_recurrence_sq3p25_B2_H8_P17_G2_L19",
+      "passed": true,
+      "output_relative_l2": 3.727335471222859e-05,
+      "state_relative_l2": 0.00017429282295182893,
+      "output_max_abs": 6.103515625e-05,
+      "state_max_abs": 0.00033593177795410156,
+      "tolerance_relative_l2": 0.005
+    },
+    {
+      "name": "upstream_packed_step_bounded_B2_H8_P17_G2_L19",
+      "passed": true,
+      "output_max_abs": 3.0517578125e-05,
+      "output_relative_l2": 1.4309432117443066e-05,
+      "state_relative_l2": 4.390055619296618e-05,
+      "packed_mismatch_counts": {
+        "lo": 0,
+        "hi": 0,
+        "q4": 0,
+        "s8": 0,
+        "s4": 1
+      },
+      "packed_code_mismatch_fraction": 0.0,
+      "bitwise_equal": false,
+      "tolerances": {
+        "output_relative_l2": 0.002,
+        "state_relative_l2": 0.005,
+        "packed_code_mismatch_fraction": 0.001
+      }
+    },
+    {
+      "name": "segmented_exact_s16_B1_H128_P64_G8_L33",
+      "passed": true
+    },
+    {
+      "name": "every_step_exact_s16_B1_H128_P64_G8_L33",
+      "passed": true
+    },
+    {
+      "name": "causal_prefix_exact_s16_B1_H128_P64_G8_L33",
+      "passed": true
+    },
+    {
+      "name": "independent_numpy_recurrence_s16_B1_H128_P64_G8_L33",
+      "passed": true,
+      "output_relative_l2": 2.7309922765074166e-05,
+      "state_relative_l2": 1.781773351951204e-05,
+      "output_max_abs": 0.0001220703125,
+      "state_max_abs": 3.0517578125e-05,
+      "tolerance_relative_l2": 0.002
+    },
+    {
+      "name": "native_step_exact_B1_H128_P64_G8_L33",
+      "passed": true,
+      "output_max_abs": 0.0,
+      "state_max_abs": 0.0
+    },
+    {
+      "name": "calibration_native_stats_B1_H128_P64_G8_L33",
+      "passed": true,
+      "max_abs": 9.5367431640625e-07,
+      "shape": [
+        1,
+        128,
+        4,
+        128
+      ]
+    },
+    {
+      "name": "segmented_exact_sq3p25_B1_H128_P64_G8_L33",
+      "passed": true
+    },
+    {
+      "name": "every_step_exact_sq3p25_B1_H128_P64_G8_L33",
+      "passed": true
+    },
+    {
+      "name": "causal_prefix_exact_sq3p25_B1_H128_P64_G8_L33",
+      "passed": true
+    },
+    {
+      "name": "independent_numpy_recurrence_sq3p25_B1_H128_P64_G8_L33",
+      "passed": true,
+      "output_relative_l2": 0.001028521925229681,
+      "state_relative_l2": 0.003243070945235923,
+      "output_max_abs": 0.004150390625,
+      "state_max_abs": 0.01151275634765625,
+      "tolerance_relative_l2": 0.005
+    },
+    {
+      "name": "upstream_packed_step_bounded_B1_H128_P64_G8_L33",
+      "passed": true,
+      "output_max_abs": 0.00567626953125,
+      "output_relative_l2": 0.0006646443507634103,
+      "state_relative_l2": 0.001642683520913124,
+      "packed_mismatch_counts": {
+        "lo": 9,
+        "hi": 1,
+        "q4": 18,
+        "s8": 1,
+        "s4": 2
+      },
+      "packed_code_mismatch_fraction": 7.120768229166667e-05,
+      "bitwise_equal": false,
+      "tolerances": {
+        "output_relative_l2": 0.002,
+        "state_relative_l2": 0.005,
+        "packed_code_mismatch_fraction": 0.001
+      }
+    },
+    {
+      "name": "gpu_half_away_ties_and_dead_readout_exact",
+      "passed": true
+    },
+    {
+      "name": "zero_update_exact",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Synthetic kernel checks, not full-model PPL or MK.",
+    "CPU exp/log/reductions compared with declared tolerance; exact native and segmented gates separate.",
+    "Real model input and full integration checks remain separate."
+  ],
+  "upstream_kernel_sha256": "5e00835ebc0c111c1f4dce5c90c29157f9db98b8907ca60407020d53a161bfcc",
+  "elapsed_seconds": 7.370899833040312,
+  "torch": "2.11.0+cu128",
+  "triton": "3.6.0",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "source_sha256": {
+    "scripts/check_state_codec.py": "c0cb480e05d6abb76c779ef28b1ccd5fe5bddebc7d9c426b54d8bc9c3a8b6062",
+    "mamba2_recall/state_codec.py": "56bd56d2fcb96382a4c6139824245f7608e903bbf1e3d07c9ea6d61ac8ce371a"
+  }
+}
