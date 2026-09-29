@@ -46,10 +46,19 @@ See docs/QUANT_FIRST_PROTOCOL.md. No Q8 or old-adapter initialization; no public
 - [x] Pass one discarded resumed smoke update and packed-forward parity (1/1, no overflow).
 - [x] Complete 3072 additional successful updates (4608 cumulative), final candidate only.
 - [x] Export FP16; verify final checkpoint casts and packed inference equality.
-- [ ] Run full parent / continued / restored-parent PPL and MK comparisons.
-- [ ] Independently audit training, scores, calibration, memory and full replay.
-- [ ] Document results and push artifacts to the private repository.
+- [x] Run full parent / continued / restored-parent PPL and MK comparisons.
+- [x] Independently audit training, scores, calibration, memory and full replay.
+- [x] Document results and push artifacts to the private repository.
 
 State format, adapter capacity, frozen source, calibration and loss stay fixed.
 The parent is the v2 239/384 adapter; this experiment tests additional training
 against that parent. See docs/RESURFACE_MORE_PROTOCOL.md. No Q8 or public release.
+
+Full v3 result: PPL **8.388906 → 8.351329** (−0.45%); MK **239 → 237/384**.
+There are 34 gains and 36 regressions; paired 95% interval is −4.69 to +3.91
+percentage points. The continuation improvement gate **fails**. v3 PPL is
+still 13.87% above original S16.
+Persistent cache remains **27.1797 MiB/sequence**. Both full parent replays and
+the independent CPU audit passed. RMSNorm autotuning drift was diagnosed and
+evaluation pinned to the 16-warp configuration that reproduces the archive.
+Keep v2 as the recall reference; see docs/RESURFACE_MORE_RESULTS.md.

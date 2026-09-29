@@ -1,19 +1,34 @@
 # Mamb2_8B_Recall + StateQuant
 
-## In progress: full validation of more Resurface training
+## v3: more training gives lower PPL without a recall improvement
 
-The v3 continuation restores the verified v2 FP32 masters, AdamW state and
-complete GradScaler state, then adds **3072 successful updates (4608 total)**.
-Source weights, SQ3.25 calibration, adapter capacity and loss remain fixed.
-The discarded resumed smoke passed exact 128-token parent-forward parity and
-one update without overflow. Formal continuation completed 3072 successful
-updates in 3073 attempts; checkpoint/export and independent training audit passed.
-Full PPL/MK validation is pending. A baseline replay discrepancy was traced to
-RMSNorm autotune configuration; evaluation is being pinned to the historical
-16-warps configuration before repeating the complete comparison.
-See the [frozen continuation protocol](docs/RESURFACE_MORE_PROTOCOL.md) and
+Exact continuation of the v2 FP32 masters, AdamW and GradScaler added
+**3072 successful updates (4608 total)**. Source weights, SQ3.25 calibration,
+adapter capacity and loss stayed fixed. All three full evaluation arms,
+both exact replay checks and the independent full evidence audit are complete.
+
+| SQ3.25 configuration | Full PPL | Normal MK | Cache/sequence |
+| --- | ---: | ---: | ---: |
+| v2 parent, 1536 updates | 8.388906 | 239/384 (62.24%) | 27.1797 MiB |
+| v3 continuation, 4608 total updates | 8.351329 | 237/384 (61.72%) | 27.1797 MiB |
+
+PPL improves **0.45%**, but recall has **34 gains and 36 regressions**.
+MK changes by **−0.52 percentage points** (paired 95% interval: −4.69 to +3.91).
+**The continuation improvement gate fails.** This does not establish a real
+recall decline; it does not demonstrate a positive gain. Keep v2 as the recall
+reference. v3 PPL remains **13.87% above original S16**.
+
+RMSNorm autotuning caused an initial baseline replay discrepancy. Pinning the
+16-warp configuration that reproduces archived results restored all 130 window
+NLLs and 768 generated sequences exactly; reinstalling the parent repeated them
+exactly again. The candidate was unchanged. See
+[v3 results and limitations](docs/RESURFACE_MORE_RESULTS.md),
+[backend diagnosis](docs/RESURFACE_MORE_BACKEND_REPLAY.md),
+[frozen continuation protocol](docs/RESURFACE_MORE_PROTOCOL.md), and
 [reproduction commands](docs/RESURFACE_MORE_REPRODUCTION.md).
-The completed measurements below are the v2 parent, not v3 results.
+The [full comparison](reports/resurface_more_v3/evaluation/full_comparison.json)
+and [audit receipt](reports/resurface_more_v3_full_audit.json) preserve the
+negative improvement-gate outcome.
 
 ## Completed v2: quantize first, then train a new adapter
 
@@ -31,7 +46,7 @@ complete. The new artifact is
 see [current results and evidence](docs/QUANT_FIRST_RESULTS.md) and
 [exact reproduction commands](docs/QUANT_FIRST_REPRODUCTION.md).
 
-| Current configuration | Full PPL | Normal MK | Cache/sequence |
+| v2 configuration | Full PPL | Normal MK | Cache/sequence |
 | --- | ---: | ---: | ---: |
 | Original S16, no adapter | 7.33432 | 146/384 (38.02%) | 116.3750 MiB |
 | SQ3.25, no adapter | 8.69155 | 50/384 (13.02%) | 27.1797 MiB |

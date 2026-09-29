@@ -4,9 +4,9 @@ Experiment date: 2026-09-28. See the pre-training
 [frozen continuation protocol](RESURFACE_MORE_PROTOCOL.md) and the
 [parent v2 results](QUANT_FIRST_RESULTS.md).
 
-**Status: formal continuation training and export checks are complete. Full
-PPL/MK evaluation and the independent result audit are pending.** Training
-losses and implementation checks do not establish a quality improvement.
+**Status: training, all three full evaluation arms, both exact replays and the
+independent full evidence audit are complete. PPL improves slightly, but the
+continuation does not pass the recall improvement gate.**
 
 ## What was trained
 
@@ -83,7 +83,7 @@ The calibration and numeric TRAIN manifests retain their v2 protocol binding.
 The continuation adds its own `continuation_protocol_sha256`; no recalibration
 or relabeling of the old inputs occurred. Q8 and weight quantization are excluded.
 
-## Full validation — pending
+## Full PPL and recall comparison
 
 The frozen comparison evaluates the parent v2 adapter, continued v3 adapter,
 and a complete repeat after restoring the parent, all with the same SQ3.25
@@ -92,18 +92,86 @@ with 264,764 predicted tokens, 384 normal CONFIRM MK prompts and 384
 target-removed controls. Generation is full-vocabulary greedy decoding with
 at most 12 tokens and the same six-digit scoring rule.
 
-The first parent arm must reproduce the archived v2 result for every per-window
-NLL and generated token sequence. The restored parent arm must reproduce that
-first arm exactly. The improvement gate compares **v3 against v2**: PPL no more
+The first parent arm exactly reproduced the archived v2 result for every
+per-window NLL and all 768 generated token sequences. The final restored parent
+also reproduced that first arm exactly. The improvement gate compares **v3 against v2**: PPL no more
 than 1% worse, observed MK improvement, and a strictly positive lower bound of
 the paired MK 95% bootstrap interval (10,000 draws, seed 20260928). Whether PPL
 itself improves is reported separately. Restoring original S16 PPL still
 requires no more than a 1% increase over the original model.
 
-The hash-verified v2 original S16 and unadapted SQ full results provide archived
-context. They are not fresh runs in this continuation experiment. No full
-v3 quality result or improvement-gate decision is available in this document
-yet.
+| Configuration | PPL | Normal MK | Target removed | Cache/sequence |
+| --- | ---: | ---: | ---: | ---: |
+| Original S16, no adapter (archived v2 context) | 7.334322 | 146/384 (38.02%) | 0/384 | 116.3750 MiB |
+| SQ3.25, no adapter (archived v2 context) | 8.691553 | 50/384 (13.02%) | 0/384 | 27.1797 MiB |
+| v2 parent, 1,536 updates (fresh full run) | 8.388906 | 239/384 (62.24%) | 0/384 | 27.1797 MiB |
+| v3 continuation, 4,608 total updates (fresh full run) | 8.351329 | 237/384 (61.72%) | 0/384 | 27.1797 MiB |
+
+The S16 and unadapted SQ results are hash-verified archived context, not fresh
+full runs in this experiment. The primary comparison is the last two rows.
+
+- **PPL improves 0.44794% versus the parent.** Of the 130 matched windows,
+  90 improve and 40 worsen.
+- **Observed MK decreases by 2/384, or 0.52083 percentage points.** There are
+  34 previously wrong answers now correct and 36 previously correct answers
+  now wrong; 203 remain correct and 111 remain wrong.
+- Paired bootstrap 95% interval for MK change: **−4.69401 to +3.90625 percentage
+  points**. It crosses zero, so a true recall decline is not established, and
+  the required positive recall gain is not demonstrated.
+- **The continuation quality gate fails.** PPL passes, but observed MK does
+  not improve and its confidence interval is not strictly positive.
+- PPL remains **13.86640% above original S16**. It is not restored to the
+  original model's perplexity. Against unadapted SQ, v3 PPL improves 3.91442%
+  and MK improves 48.69792 percentage points.
+
+### Where recall changed
+
+Each template cell has 64 normal prompts. N denotes the number of records in
+the prompt, not state coordinates. These breakdowns are descriptive and were
+not used to choose a checkpoint or change training.
+
+| Records / template | Parent correct | Continued correct | Gains | Regressions |
+| --- | ---: | ---: | ---: | ---: |
+| N16 / T0 | 50 | 48 | 1 | 3 |
+| N16 / T1 | 61 | 60 | 1 | 2 |
+| N16 / T2 | 58 | 59 | 3 | 2 |
+| N64 / T0 | 12 | 18 | 11 | 5 |
+| N64 / T1 | 32 | 25 | 6 | 13 |
+| N64 / T2 | 26 | 27 | 12 | 11 |
+
+N16 totals change from **169 to 167/192**; N64 stays **70/192**. Longer training
+on the same cases and loss redistributes successes between templates without
+improving total recall in this run. Keep the v2 adapter as the recall reference;
+retain v3 as a measured lower-PPL alternative. This single fixed recipe does
+not prove that all longer training, different data, or different losses fail.
+
+## Replay diagnosis and validation status
+
+An initial unpinned run was interrupted after its full parent PPL differed from
+the archive: 8.392864 instead of 8.388906. It completed 130 PPL windows and only
+72 MK prompts; it is preserved as incomplete evidence. No v3 candidate score
+was used in this diagnosis.
+
+RMSNorm process-local autotuning was the cause: forcing 8 warps reproduces the
+first-window drift; forcing 16 warps reproduces the archive. The evaluator now
+pins the existing 16-warp configuration and records external source hashes,
+precision settings and per-arm configuration checks. See the
+[backend replay clarification](RESURFACE_MORE_BACKEND_REPLAY.md) and
+[diagnostic measurements](../reports/resurface_more_v3/diagnostics/resurface_more_v3_norm_diagnostic.json).
+The frozen training protocol, actual candidate export and quality gates are unchanged.
+
+With this pin, the first parent arm exactly matches all 130 archived window
+NLLs and all 768 generated sequences. The final restored parent also matches
+all 130 windows and 768 sequences from the first arm exactly. All three arms
+retain 28,499,968 bytes of persistent cache and unchanged adapter contents.
+The complete three-arm evaluation took 25.15 minutes; this is an execution
+receipt, not a controlled throughput benchmark. The independent full evidence
+audit passed with CUDA uninitialized. It reconstructed training schedules,
+checkpoint/export identities, score arithmetic, paired bootstrap, backend
+receipts, cache accounting and both replays from the saved evidence. It did not
+rerun GPU logits or recompute the optimizer's gradient updates. Passing the
+audit confirms the measured negative quality outcome; it does not turn the
+failed improvement gate into a pass.
 
 ## Memory accounting
 
@@ -132,10 +200,18 @@ base weight size.
 - [Actual FP16 adapter](../reports/resurface_more_v3/training/adapter_fp16.pt).
 - [Continuation trainer](../scripts/train_resurface_more.py).
 - [Frozen continuation protocol](RESURFACE_MORE_PROTOCOL.md).
+- [Independent training audit](../reports/resurface_more_v3_training_audit.json).
+- [Fresh parent evaluation](../reports/resurface_more_v3/evaluation/full_parent_resurface_sq3p25.json).
+- [Continued adapter evaluation](../reports/resurface_more_v3/evaluation/full_continued_resurface_sq3p25.json).
+- [Exact archive replay receipt](../reports/resurface_more_v3/evaluation/full_parent_replay.json).
+- [Final comparison and quality gate](../reports/resurface_more_v3/evaluation/full_comparison.json).
+- [Complete restored-parent replay](../reports/resurface_more_v3/evaluation/full_restoration.json).
+- [Independent full evidence audit](../reports/resurface_more_v3_full_audit.json).
+- [Preserved interrupted unpinned run](../reports/resurface_more_v3/interrupted_unpinned/full_parent_resurface_sq3p25.json).
 
 The local training receipt and adapter file were checked against the hashes
-below. Recovery checkpoint identities are recorded by the trainer; independent
-checkpoint and full-result auditing are reported separately when complete.
+below. Independent training and full-result audits passed, including parent
+and continued checkpoint identities.
 
 | Artifact | SHA256 |
 | --- | --- |
@@ -149,6 +225,8 @@ checkpoint and full-result auditing are reported separately when complete.
 | Continuation completed training report | `ff6325677b8da8b3c4eb094b664558688a06ced311466d606df16c28361bbf4b` |
 | Final 4,608-update checkpoint | `e18ce6803d039c73cc1d03217bf944a38f2f899cef3efebe02430a9f42a600c9` |
 | Final continued FP16 adapter | `4dbc2ad1e21065a399d9e1189696648105b405c2387da2406f1da8310725bbbd` |
+| Complete full comparison | `224e95074d818713b3c238adb597fdcd1676b1c083fb1f486faad0ba7701bab9` |
+| Independent full audit | `f1bb3e926f6807adda353e70de68f6ff5f536965f51d128de1cfd49738b02bcc` |
 
 ## Scope and limitations
 
@@ -163,6 +241,10 @@ carry coordinates, zero through 48 discarded carry coordinates, with
 current-token readout gradients retained. It ignores derivatives of scale
 selection, rounding and clipping. FP32 atomic backward reductions prevent a
 promise of bit-identical retraining.
+Training did not record or pin its process-local RMSNorm autotune configuration;
+the later evaluation pin does not retroactively establish that training used
+the same configuration. The recorded 128-token parity checks apply to their
+actual training processes.
 
 All 507 original parameter identities, versions and frozen-gradient states
 were checked; a full post-training byte hash of all base GPU weights was not
