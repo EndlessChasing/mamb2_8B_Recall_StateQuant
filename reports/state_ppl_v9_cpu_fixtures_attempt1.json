@@ -1,0 +1,84 @@
+{
+  "format": "MAMBA2_STATE_PPL_V9_CPU_FIXTURES_V1",
+  "complete": true,
+  "passed": true,
+  "checks": [
+    {
+      "name": "parent bytes skipped and alternative bytes deduplicated",
+      "passed": true
+    },
+    {
+      "name": "actual unique intervention order",
+      "passed": true
+    },
+    {
+      "name": "strict equality yields baseline only",
+      "passed": true
+    },
+    {
+      "name": "raw NLL before collapsed delta",
+      "passed": true
+    },
+    {
+      "name": "exact raw NLL table-order tie",
+      "passed": true
+    },
+    {
+      "name": "global delta numeric layer/group ordering",
+      "passed": true
+    },
+    {
+      "name": "fixed topK cap and whole-table dedup",
+      "passed": true
+    },
+    {
+      "name": "group mixing changes only selected coordinates",
+      "passed": true
+    },
+    {
+      "name": "excluded alternative does not win",
+      "passed": true
+    },
+    {
+      "name": "screen ties prefer baseline",
+      "passed": true
+    },
+    {
+      "name": "screen candidate tie uses export order",
+      "passed": true
+    },
+    {
+      "name": "fixed storage and unchanged v6 codec",
+      "passed": true
+    },
+    {
+      "name": "exact actual v8 archive replay",
+      "passed": true
+    },
+    {
+      "name": "CPU only",
+      "passed": true
+    },
+    {
+      "name": "selected export and raw reconstruction",
+      "passed": true
+    },
+    {
+      "name": "archive cache mutation rejected",
+      "passed": true
+    },
+    {
+      "name": "selected raw-report tamper rejected",
+      "passed": true
+    }
+  ],
+  "command": "CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=8 /home/horde/.venvs/lodram/bin/python -",
+  "source_mode": "Inline stdin fixture; stdout preserved from the executed attempt before prospective auditor hash binding",
+  "replay_fixture": "reports/state_ppl_v9_cpu_fixtures.py",
+  "replay_scope": "Standalone reconstruction of the same seventeen fixture cases; not the original stdin bytes",
+  "preparer_sha256": "4de716dcbe847a074f0d6ec37e71b039c899366c9b353d2f6105485907140cd4",
+  "runner_sha256": "4a8555649281fe328e03f2c9a66cbb30493659dd9b0b4baaf173bc8bb8d69c86",
+  "protocol_sha256": "9e01c03ee6870a8ecbcd9a0ba9157b1651d2830ea65d2951664ebcb81b4a09b3",
+  "cuda_initialized": false,
+  "quality_measured": false
+}
