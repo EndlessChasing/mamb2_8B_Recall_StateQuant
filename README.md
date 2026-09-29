@@ -7,7 +7,11 @@ Resurface training**. Calibration is repeated on the unadapted source model;
 the old adapter is not used for initialization. A differentiable training path
 uses the exact packed inference forward and a declared masked STE backward.
 The fixed 1536-update recipe and three-arm evaluation are specified in
-[QUANT_FIRST_PROTOCOL.md](docs/QUANT_FIRST_PROTOCOL.md). Work is in progress;
+[QUANT_FIRST_PROTOCOL.md](docs/QUANT_FIRST_PROTOCOL.md). Training completed with
+1536 successful updates in 1542 attempts; the 2,374,591-byte FP16 adapter passed
+the 128-token packed training/inference equality check. Independent PPL/MK
+evaluation is in progress. The new artifact is
+[`reports/quant_first_v2/training/adapter_fp16.pt`](reports/quant_first_v2/training/adapter_fp16.pt);
 the measurements below belong to the earlier order and are not new-model results.
 
 ## Historical experiment: old Recall adapter, then quantize state

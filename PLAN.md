@@ -22,9 +22,9 @@ No adaptation training or Hugging Face release is included in this experiment.
 - [x] Recalibrate on the original unadapted S16 base using TRAIN only.
 - [x] Implement exact quantized forward and masked STE backward.
 - [x] Validate packed-forward parity, surrogate gradients and stateless replay design.
-- [ ] Pass full 8B identity and one-step training smoke.
-- [ ] Train a fresh adapter for 1536 successful updates under SQ3.25.
-- [ ] Export FP16 and verify actual packed inference parity.
+- [x] Pass full 8B identity and one-step training smoke.
+- [x] Train a fresh adapter for 1536 successful updates under SQ3.25 (1542 attempts).
+- [x] Export FP16 and verify actual packed inference parity on 128 tokens.
 - [ ] Evaluate original S16, unadapted SQ3.25, trained SQ3.25 and restored SQ baseline.
 - [ ] Independently audit and document PPL/MK/cache results.
 
