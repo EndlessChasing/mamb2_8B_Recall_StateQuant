@@ -138,10 +138,24 @@ This confirms the finite target miss required to start v9.
 ## Route v9: refine individual groups in the selected eight layers
 
 - [x] Freeze the protocol before viewing the v8 full result.
-- [ ] Implement and independently audit group interventions and provenance.
-- [ ] Calibrate up to 192 individual group replacements on TRAIN rows144..151.
+- [x] Implement and independently audit group interventions and provenance.
+- [x] Calibrate up to 192 individual group replacements on TRAIN rows144..151.
 - [ ] Reconstruct proposals and screen on disjoint TRAIN rows152..183.
 - [ ] Fully validate the frozen TRAIN winner and independently audit evidence.
+
+The 19 implementation fixtures and 20 independent audit fixtures pass. The
+actual input audit confirms 192 retained alternatives, 64 parent-equal labels
+and no duplicate alternatives. Sources and evidence were committed before the
+first v9 GPU run. [Input audit](../reports/state_ppl_v9_inputs_audit.json) SHA256:
+439ecf2531226a2ccb16f87ec9825feb19159af6a918eb94dbf0b6365e4e49a9.
+Calibration completes all 194 arms in 589.71 seconds. Among 64 groups,
+58 have a strictly better individual alternative, producing eight distinct
+combined tables: baseline, top1, top2, top4, top8, top16, top32 and allnegative.
+The original and restored baseline repeat exactly. The
+[independent calibration audit](../reports/state_ppl_v9_calibration_audit.json)
+passes, SHA256 997b60902fcf17fbbcefd2574a6a260974d3fef2a53253dbd9039d101930313b.
+All 194 arm tables, raw scores and combined exports are independently rebuilt.
+Disjoint TRAIN screening is running; no v9 full quality result exists yet.
 
 The v8 TRAIN winner remains the parent. Refine its eight selected layers,
 all eight groups per layer, using only existing v5 group tables; the codec

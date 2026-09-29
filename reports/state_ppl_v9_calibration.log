@@ -1,0 +1,597 @@
+[group-calibration-v9 arm] baseline
+[baseline PPL] 1/8 ppl=9.655182
+[baseline PPL] 8/8 ppl=8.446214
+[group-calibration-v9 arm] layer00_group0_magnitude
+[layer00_group0_magnitude PPL] 1/8 ppl=9.784781
+[layer00_group0_magnitude PPL] 8/8 ppl=8.439162
+[group-calibration-v9 arm] layer00_group0_full_readout
+[layer00_group0_full_readout PPL] 1/8 ppl=9.604470
+[layer00_group0_full_readout PPL] 8/8 ppl=8.415496
+[group-calibration-v9 arm] layer00_group0_preserve_int8
+[layer00_group0_preserve_int8 PPL] 1/8 ppl=9.608673
+[layer00_group0_preserve_int8 PPL] 8/8 ppl=8.450717
+[group-calibration-v9 arm] layer00_group1_magnitude
+[layer00_group1_magnitude PPL] 1/8 ppl=9.581888
+[layer00_group1_magnitude PPL] 8/8 ppl=8.405825
+[group-calibration-v9 arm] layer00_group1_full_readout
+[layer00_group1_full_readout PPL] 1/8 ppl=9.816176
+[layer00_group1_full_readout PPL] 8/8 ppl=8.468796
+[group-calibration-v9 arm] layer00_group1_preserve_int8
+[layer00_group1_preserve_int8 PPL] 1/8 ppl=9.787750
+[layer00_group1_preserve_int8 PPL] 8/8 ppl=8.437197
+[group-calibration-v9 arm] layer00_group2_magnitude
+[layer00_group2_magnitude PPL] 1/8 ppl=9.803584
+[layer00_group2_magnitude PPL] 8/8 ppl=8.464650
+[group-calibration-v9 arm] layer00_group2_full_readout
+[layer00_group2_full_readout PPL] 1/8 ppl=9.917568
+[layer00_group2_full_readout PPL] 8/8 ppl=8.450772
+[group-calibration-v9 arm] layer00_group2_preserve_int8
+[layer00_group2_preserve_int8 PPL] 1/8 ppl=9.832463
+[layer00_group2_preserve_int8 PPL] 8/8 ppl=8.453482
+[group-calibration-v9 arm] layer00_group3_magnitude
+[layer00_group3_magnitude PPL] 1/8 ppl=9.758553
+[layer00_group3_magnitude PPL] 8/8 ppl=8.424990
+[group-calibration-v9 arm] layer00_group3_full_readout
+[layer00_group3_full_readout PPL] 1/8 ppl=9.730722
+[layer00_group3_full_readout PPL] 8/8 ppl=8.442716
+[group-calibration-v9 arm] layer00_group3_preserve_int8
+[layer00_group3_preserve_int8 PPL] 1/8 ppl=9.671281
+[layer00_group3_preserve_int8 PPL] 8/8 ppl=8.427876
+[group-calibration-v9 arm] layer00_group4_magnitude
+[layer00_group4_magnitude PPL] 1/8 ppl=9.611175
+[layer00_group4_magnitude PPL] 8/8 ppl=8.442492
+[group-calibration-v9 arm] layer00_group4_full_readout
+[layer00_group4_full_readout PPL] 1/8 ppl=9.736027
+[layer00_group4_full_readout PPL] 8/8 ppl=8.420757
+[group-calibration-v9 arm] layer00_group4_preserve_int8
+[layer00_group4_preserve_int8 PPL] 1/8 ppl=9.742383
+[layer00_group4_preserve_int8 PPL] 8/8 ppl=8.503435
+[group-calibration-v9 arm] layer00_group5_magnitude
+[layer00_group5_magnitude PPL] 1/8 ppl=9.720425
+[layer00_group5_magnitude PPL] 8/8 ppl=8.443026
+[group-calibration-v9 arm] layer00_group5_full_readout
+[layer00_group5_full_readout PPL] 1/8 ppl=9.687845
+[layer00_group5_full_readout PPL] 8/8 ppl=8.418495
+[group-calibration-v9 arm] layer00_group5_preserve_int8
+[layer00_group5_preserve_int8 PPL] 1/8 ppl=9.826972
+[layer00_group5_preserve_int8 PPL] 8/8 ppl=8.472360
+[group-calibration-v9 arm] layer00_group6_magnitude
+[layer00_group6_magnitude PPL] 1/8 ppl=9.795356
+[layer00_group6_magnitude PPL] 8/8 ppl=8.473910
+[group-calibration-v9 arm] layer00_group6_full_readout
+[layer00_group6_full_readout PPL] 1/8 ppl=9.773075
+[layer00_group6_full_readout PPL] 8/8 ppl=8.458799
+[group-calibration-v9 arm] layer00_group6_preserve_int8
+[layer00_group6_preserve_int8 PPL] 1/8 ppl=9.850201
+[layer00_group6_preserve_int8 PPL] 8/8 ppl=8.480297
+[group-calibration-v9 arm] layer00_group7_magnitude
+[layer00_group7_magnitude PPL] 1/8 ppl=9.654279
+[layer00_group7_magnitude PPL] 8/8 ppl=8.443304
+[group-calibration-v9 arm] layer00_group7_full_readout
+[layer00_group7_full_readout PPL] 1/8 ppl=9.681411
+[layer00_group7_full_readout PPL] 8/8 ppl=8.460808
+[group-calibration-v9 arm] layer00_group7_preserve_int8
+[layer00_group7_preserve_int8 PPL] 1/8 ppl=9.730324
+[layer00_group7_preserve_int8 PPL] 8/8 ppl=8.444128
+[group-calibration-v9 arm] layer03_group0_full_readout
+[layer03_group0_full_readout PPL] 1/8 ppl=9.710157
+[layer03_group0_full_readout PPL] 8/8 ppl=8.451160
+[group-calibration-v9 arm] layer03_group0_preserve_int8
+[layer03_group0_preserve_int8 PPL] 1/8 ppl=9.721487
+[layer03_group0_preserve_int8 PPL] 8/8 ppl=8.425365
+[group-calibration-v9 arm] layer03_group0_preserve_retained80
+[layer03_group0_preserve_retained80 PPL] 1/8 ppl=9.698102
+[layer03_group0_preserve_retained80 PPL] 8/8 ppl=8.421596
+[group-calibration-v9 arm] layer03_group1_full_readout
+[layer03_group1_full_readout PPL] 1/8 ppl=9.602760
+[layer03_group1_full_readout PPL] 8/8 ppl=8.451010
+[group-calibration-v9 arm] layer03_group1_preserve_int8
+[layer03_group1_preserve_int8 PPL] 1/8 ppl=9.812309
+[layer03_group1_preserve_int8 PPL] 8/8 ppl=8.461803
+[group-calibration-v9 arm] layer03_group1_preserve_retained80
+[layer03_group1_preserve_retained80 PPL] 1/8 ppl=9.745120
+[layer03_group1_preserve_retained80 PPL] 8/8 ppl=8.437106
+[group-calibration-v9 arm] layer03_group2_full_readout
+[layer03_group2_full_readout PPL] 1/8 ppl=9.649097
+[layer03_group2_full_readout PPL] 8/8 ppl=8.414383
+[group-calibration-v9 arm] layer03_group2_preserve_int8
+[layer03_group2_preserve_int8 PPL] 1/8 ppl=9.740343
+[layer03_group2_preserve_int8 PPL] 8/8 ppl=8.404685
+[group-calibration-v9 arm] layer03_group2_preserve_retained80
+[layer03_group2_preserve_retained80 PPL] 1/8 ppl=9.720072
+[layer03_group2_preserve_retained80 PPL] 8/8 ppl=8.433224
+[group-calibration-v9 arm] layer03_group3_full_readout
+[layer03_group3_full_readout PPL] 1/8 ppl=9.775556
+[layer03_group3_full_readout PPL] 8/8 ppl=8.473391
+[group-calibration-v9 arm] layer03_group3_preserve_int8
+[layer03_group3_preserve_int8 PPL] 1/8 ppl=9.697946
+[layer03_group3_preserve_int8 PPL] 8/8 ppl=8.466364
+[group-calibration-v9 arm] layer03_group3_preserve_retained80
+[layer03_group3_preserve_retained80 PPL] 1/8 ppl=9.762717
+[layer03_group3_preserve_retained80 PPL] 8/8 ppl=8.421146
+[group-calibration-v9 arm] layer03_group4_full_readout
+[layer03_group4_full_readout PPL] 1/8 ppl=9.848193
+[layer03_group4_full_readout PPL] 8/8 ppl=8.452831
+[group-calibration-v9 arm] layer03_group4_preserve_int8
+[layer03_group4_preserve_int8 PPL] 1/8 ppl=9.819064
+[layer03_group4_preserve_int8 PPL] 8/8 ppl=8.439566
+[group-calibration-v9 arm] layer03_group4_preserve_retained80
+[layer03_group4_preserve_retained80 PPL] 1/8 ppl=9.733320
+[layer03_group4_preserve_retained80 PPL] 8/8 ppl=8.441794
+[group-calibration-v9 arm] layer03_group5_full_readout
+[layer03_group5_full_readout PPL] 1/8 ppl=9.665978
+[layer03_group5_full_readout PPL] 8/8 ppl=8.445835
+[group-calibration-v9 arm] layer03_group5_preserve_int8
+[layer03_group5_preserve_int8 PPL] 1/8 ppl=9.631054
+[layer03_group5_preserve_int8 PPL] 8/8 ppl=8.431509
+[group-calibration-v9 arm] layer03_group5_preserve_retained80
+[layer03_group5_preserve_retained80 PPL] 1/8 ppl=9.780024
+[layer03_group5_preserve_retained80 PPL] 8/8 ppl=8.464111
+[group-calibration-v9 arm] layer03_group6_full_readout
+[layer03_group6_full_readout PPL] 1/8 ppl=9.803958
+[layer03_group6_full_readout PPL] 8/8 ppl=8.449651
+[group-calibration-v9 arm] layer03_group6_preserve_int8
+[layer03_group6_preserve_int8 PPL] 1/8 ppl=9.790821
+[layer03_group6_preserve_int8 PPL] 8/8 ppl=8.464890
+[group-calibration-v9 arm] layer03_group6_preserve_retained80
+[layer03_group6_preserve_retained80 PPL] 1/8 ppl=9.780726
+[layer03_group6_preserve_retained80 PPL] 8/8 ppl=8.470594
+[group-calibration-v9 arm] layer03_group7_full_readout
+[layer03_group7_full_readout PPL] 1/8 ppl=9.764309
+[layer03_group7_full_readout PPL] 8/8 ppl=8.464911
+[group-calibration-v9 arm] layer03_group7_preserve_int8
+[layer03_group7_preserve_int8 PPL] 1/8 ppl=9.830173
+[layer03_group7_preserve_int8 PPL] 8/8 ppl=8.468987
+[group-calibration-v9 arm] layer03_group7_preserve_retained80
+[layer03_group7_preserve_retained80 PPL] 1/8 ppl=9.779673
+[layer03_group7_preserve_retained80 PPL] 8/8 ppl=8.416049
+[group-calibration-v9 arm] layer06_group0_magnitude
+[layer06_group0_magnitude PPL] 1/8 ppl=9.702076
+[layer06_group0_magnitude PPL] 8/8 ppl=8.446203
+[group-calibration-v9 arm] layer06_group0_preserve_int8
+[layer06_group0_preserve_int8 PPL] 1/8 ppl=9.795183
+[layer06_group0_preserve_int8 PPL] 8/8 ppl=8.422399
+[group-calibration-v9 arm] layer06_group0_preserve_retained80
+[layer06_group0_preserve_retained80 PPL] 1/8 ppl=9.705788
+[layer06_group0_preserve_retained80 PPL] 8/8 ppl=8.420199
+[group-calibration-v9 arm] layer06_group1_magnitude
+[layer06_group1_magnitude PPL] 1/8 ppl=9.762488
+[layer06_group1_magnitude PPL] 8/8 ppl=8.458726
+[group-calibration-v9 arm] layer06_group1_preserve_int8
+[layer06_group1_preserve_int8 PPL] 1/8 ppl=9.679266
+[layer06_group1_preserve_int8 PPL] 8/8 ppl=8.418971
+[group-calibration-v9 arm] layer06_group1_preserve_retained80
+[layer06_group1_preserve_retained80 PPL] 1/8 ppl=9.661774
+[layer06_group1_preserve_retained80 PPL] 8/8 ppl=8.424550
+[group-calibration-v9 arm] layer06_group2_magnitude
+[layer06_group2_magnitude PPL] 1/8 ppl=9.808341
+[layer06_group2_magnitude PPL] 8/8 ppl=8.436960
+[group-calibration-v9 arm] layer06_group2_preserve_int8
+[layer06_group2_preserve_int8 PPL] 1/8 ppl=9.766757
+[layer06_group2_preserve_int8 PPL] 8/8 ppl=8.453570
+[group-calibration-v9 arm] layer06_group2_preserve_retained80
+[layer06_group2_preserve_retained80 PPL] 1/8 ppl=9.749001
+[layer06_group2_preserve_retained80 PPL] 8/8 ppl=8.445202
+[group-calibration-v9 arm] layer06_group3_magnitude
+[layer06_group3_magnitude PPL] 1/8 ppl=9.786165
+[layer06_group3_magnitude PPL] 8/8 ppl=8.468351
+[group-calibration-v9 arm] layer06_group3_preserve_int8
+[layer06_group3_preserve_int8 PPL] 1/8 ppl=9.746246
+[layer06_group3_preserve_int8 PPL] 8/8 ppl=8.426190
+[group-calibration-v9 arm] layer06_group3_preserve_retained80
+[layer06_group3_preserve_retained80 PPL] 1/8 ppl=9.758946
+[layer06_group3_preserve_retained80 PPL] 8/8 ppl=8.452764
+[group-calibration-v9 arm] layer06_group4_magnitude
+[layer06_group4_magnitude PPL] 1/8 ppl=9.715365
+[layer06_group4_magnitude PPL] 8/8 ppl=8.428232
+[group-calibration-v9 arm] layer06_group4_preserve_int8
+[layer06_group4_preserve_int8 PPL] 1/8 ppl=9.749575
+[layer06_group4_preserve_int8 PPL] 8/8 ppl=8.425189
+[group-calibration-v9 arm] layer06_group4_preserve_retained80
+[layer06_group4_preserve_retained80 PPL] 1/8 ppl=9.740058
+[layer06_group4_preserve_retained80 PPL] 8/8 ppl=8.439766
+[group-calibration-v9 arm] layer06_group5_magnitude
+[layer06_group5_magnitude PPL] 1/8 ppl=9.845965
+[layer06_group5_magnitude PPL] 8/8 ppl=8.447870
+[group-calibration-v9 arm] layer06_group5_preserve_int8
+[layer06_group5_preserve_int8 PPL] 1/8 ppl=9.644894
+[layer06_group5_preserve_int8 PPL] 8/8 ppl=8.453804
+[group-calibration-v9 arm] layer06_group5_preserve_retained80
+[layer06_group5_preserve_retained80 PPL] 1/8 ppl=9.736811
+[layer06_group5_preserve_retained80 PPL] 8/8 ppl=8.444370
+[group-calibration-v9 arm] layer06_group6_magnitude
+[layer06_group6_magnitude PPL] 1/8 ppl=9.759962
+[layer06_group6_magnitude PPL] 8/8 ppl=8.454114
+[group-calibration-v9 arm] layer06_group6_preserve_int8
+[layer06_group6_preserve_int8 PPL] 1/8 ppl=9.739654
+[layer06_group6_preserve_int8 PPL] 8/8 ppl=8.472251
+[group-calibration-v9 arm] layer06_group6_preserve_retained80
+[layer06_group6_preserve_retained80 PPL] 1/8 ppl=9.685809
+[layer06_group6_preserve_retained80 PPL] 8/8 ppl=8.405613
+[group-calibration-v9 arm] layer06_group7_magnitude
+[layer06_group7_magnitude PPL] 1/8 ppl=9.768289
+[layer06_group7_magnitude PPL] 8/8 ppl=8.433885
+[group-calibration-v9 arm] layer06_group7_preserve_int8
+[layer06_group7_preserve_int8 PPL] 1/8 ppl=9.816819
+[layer06_group7_preserve_int8 PPL] 8/8 ppl=8.459221
+[group-calibration-v9 arm] layer06_group7_preserve_retained80
+[layer06_group7_preserve_retained80 PPL] 1/8 ppl=9.672938
+[layer06_group7_preserve_retained80 PPL] 8/8 ppl=8.453119
+[group-calibration-v9 arm] layer01_group0_magnitude
+[layer01_group0_magnitude PPL] 1/8 ppl=9.759939
+[layer01_group0_magnitude PPL] 8/8 ppl=8.484671
+[group-calibration-v9 arm] layer01_group0_full_readout
+[layer01_group0_full_readout PPL] 1/8 ppl=9.696074
+[layer01_group0_full_readout PPL] 8/8 ppl=8.421200
+[group-calibration-v9 arm] layer01_group0_preserve_int8
+[layer01_group0_preserve_int8 PPL] 1/8 ppl=9.693703
+[layer01_group0_preserve_int8 PPL] 8/8 ppl=8.455056
+[group-calibration-v9 arm] layer01_group1_magnitude
+[layer01_group1_magnitude PPL] 1/8 ppl=9.628979
+[layer01_group1_magnitude PPL] 8/8 ppl=8.447066
+[group-calibration-v9 arm] layer01_group1_full_readout
+[layer01_group1_full_readout PPL] 1/8 ppl=9.727648
+[layer01_group1_full_readout PPL] 8/8 ppl=8.481672
+[group-calibration-v9 arm] layer01_group1_preserve_int8
+[layer01_group1_preserve_int8 PPL] 1/8 ppl=9.710593
+[layer01_group1_preserve_int8 PPL] 8/8 ppl=8.438338
+[group-calibration-v9 arm] layer01_group2_magnitude
+[layer01_group2_magnitude PPL] 1/8 ppl=9.742505
+[layer01_group2_magnitude PPL] 8/8 ppl=8.433349
+[group-calibration-v9 arm] layer01_group2_full_readout
+[layer01_group2_full_readout PPL] 1/8 ppl=9.731979
+[layer01_group2_full_readout PPL] 8/8 ppl=8.457380
+[group-calibration-v9 arm] layer01_group2_preserve_int8
+[layer01_group2_preserve_int8 PPL] 1/8 ppl=9.889016
+[layer01_group2_preserve_int8 PPL] 8/8 ppl=8.481479
+[group-calibration-v9 arm] layer01_group3_magnitude
+[layer01_group3_magnitude PPL] 1/8 ppl=9.615430
+[layer01_group3_magnitude PPL] 8/8 ppl=8.430877
+[group-calibration-v9 arm] layer01_group3_full_readout
+[layer01_group3_full_readout PPL] 1/8 ppl=9.743039
+[layer01_group3_full_readout PPL] 8/8 ppl=8.422225
+[group-calibration-v9 arm] layer01_group3_preserve_int8
+[layer01_group3_preserve_int8 PPL] 1/8 ppl=9.753519
+[layer01_group3_preserve_int8 PPL] 8/8 ppl=8.441070
+[group-calibration-v9 arm] layer01_group4_magnitude
+[layer01_group4_magnitude PPL] 1/8 ppl=9.780720
+[layer01_group4_magnitude PPL] 8/8 ppl=8.457186
+[group-calibration-v9 arm] layer01_group4_full_readout
+[layer01_group4_full_readout PPL] 1/8 ppl=9.760554
+[layer01_group4_full_readout PPL] 8/8 ppl=8.436651
+[group-calibration-v9 arm] layer01_group4_preserve_int8
+[layer01_group4_preserve_int8 PPL] 1/8 ppl=9.704149
+[layer01_group4_preserve_int8 PPL] 8/8 ppl=8.424430
+[group-calibration-v9 arm] layer01_group5_magnitude
+[layer01_group5_magnitude PPL] 1/8 ppl=9.690436
+[layer01_group5_magnitude PPL] 8/8 ppl=8.429697
+[group-calibration-v9 arm] layer01_group5_full_readout
+[layer01_group5_full_readout PPL] 1/8 ppl=9.718316
+[layer01_group5_full_readout PPL] 8/8 ppl=8.436075
+[group-calibration-v9 arm] layer01_group5_preserve_int8
+[layer01_group5_preserve_int8 PPL] 1/8 ppl=9.878932
+[layer01_group5_preserve_int8 PPL] 8/8 ppl=8.474708
+[group-calibration-v9 arm] layer01_group6_magnitude
+[layer01_group6_magnitude PPL] 1/8 ppl=9.668743
+[layer01_group6_magnitude PPL] 8/8 ppl=8.462188
+[group-calibration-v9 arm] layer01_group6_full_readout
+[layer01_group6_full_readout PPL] 1/8 ppl=9.684098
+[layer01_group6_full_readout PPL] 8/8 ppl=8.455266
+[group-calibration-v9 arm] layer01_group6_preserve_int8
+[layer01_group6_preserve_int8 PPL] 1/8 ppl=9.616731
+[layer01_group6_preserve_int8 PPL] 8/8 ppl=8.462680
+[group-calibration-v9 arm] layer01_group7_magnitude
+[layer01_group7_magnitude PPL] 1/8 ppl=9.792479
+[layer01_group7_magnitude PPL] 8/8 ppl=8.453810
+[group-calibration-v9 arm] layer01_group7_full_readout
+[layer01_group7_full_readout PPL] 1/8 ppl=9.584150
+[layer01_group7_full_readout PPL] 8/8 ppl=8.425250
+[group-calibration-v9 arm] layer01_group7_preserve_int8
+[layer01_group7_preserve_int8 PPL] 1/8 ppl=9.578033
+[layer01_group7_preserve_int8 PPL] 8/8 ppl=8.433796
+[group-calibration-v9 arm] layer04_group0_magnitude
+[layer04_group0_magnitude PPL] 1/8 ppl=9.617807
+[layer04_group0_magnitude PPL] 8/8 ppl=8.437900
+[group-calibration-v9 arm] layer04_group0_preserve_int8
+[layer04_group0_preserve_int8 PPL] 1/8 ppl=9.674873
+[layer04_group0_preserve_int8 PPL] 8/8 ppl=8.447179
+[group-calibration-v9 arm] layer04_group0_preserve_retained80
+[layer04_group0_preserve_retained80 PPL] 1/8 ppl=9.745313
+[layer04_group0_preserve_retained80 PPL] 8/8 ppl=8.445669
+[group-calibration-v9 arm] layer04_group1_magnitude
+[layer04_group1_magnitude PPL] 1/8 ppl=9.780318
+[layer04_group1_magnitude PPL] 8/8 ppl=8.426058
+[group-calibration-v9 arm] layer04_group1_preserve_int8
+[layer04_group1_preserve_int8 PPL] 1/8 ppl=9.814727
+[layer04_group1_preserve_int8 PPL] 8/8 ppl=8.461931
+[group-calibration-v9 arm] layer04_group1_preserve_retained80
+[layer04_group1_preserve_retained80 PPL] 1/8 ppl=9.785210
+[layer04_group1_preserve_retained80 PPL] 8/8 ppl=8.440558
+[group-calibration-v9 arm] layer04_group2_magnitude
+[layer04_group2_magnitude PPL] 1/8 ppl=9.756732
+[layer04_group2_magnitude PPL] 8/8 ppl=8.430974
+[group-calibration-v9 arm] layer04_group2_preserve_int8
+[layer04_group2_preserve_int8 PPL] 1/8 ppl=9.709497
+[layer04_group2_preserve_int8 PPL] 8/8 ppl=8.431116
+[group-calibration-v9 arm] layer04_group2_preserve_retained80
+[layer04_group2_preserve_retained80 PPL] 1/8 ppl=9.722642
+[layer04_group2_preserve_retained80 PPL] 8/8 ppl=8.488324
+[group-calibration-v9 arm] layer04_group3_magnitude
+[layer04_group3_magnitude PPL] 1/8 ppl=9.732969
+[layer04_group3_magnitude PPL] 8/8 ppl=8.448438
+[group-calibration-v9 arm] layer04_group3_preserve_int8
+[layer04_group3_preserve_int8 PPL] 1/8 ppl=9.739754
+[layer04_group3_preserve_int8 PPL] 8/8 ppl=8.411495
+[group-calibration-v9 arm] layer04_group3_preserve_retained80
+[layer04_group3_preserve_retained80 PPL] 1/8 ppl=9.815166
+[layer04_group3_preserve_retained80 PPL] 8/8 ppl=8.462352
+[group-calibration-v9 arm] layer04_group4_magnitude
+[layer04_group4_magnitude PPL] 1/8 ppl=9.710864
+[layer04_group4_magnitude PPL] 8/8 ppl=8.449131
+[group-calibration-v9 arm] layer04_group4_preserve_int8
+[layer04_group4_preserve_int8 PPL] 1/8 ppl=9.787862
+[layer04_group4_preserve_int8 PPL] 8/8 ppl=8.423295
+[group-calibration-v9 arm] layer04_group4_preserve_retained80
+[layer04_group4_preserve_retained80 PPL] 1/8 ppl=9.749134
+[layer04_group4_preserve_retained80 PPL] 8/8 ppl=8.443093
+[group-calibration-v9 arm] layer04_group5_magnitude
+[layer04_group5_magnitude PPL] 1/8 ppl=9.813721
+[layer04_group5_magnitude PPL] 8/8 ppl=8.446474
+[group-calibration-v9 arm] layer04_group5_preserve_int8
+[layer04_group5_preserve_int8 PPL] 1/8 ppl=9.673923
+[layer04_group5_preserve_int8 PPL] 8/8 ppl=8.425484
+[group-calibration-v9 arm] layer04_group5_preserve_retained80
+[layer04_group5_preserve_retained80 PPL] 1/8 ppl=9.722988
+[layer04_group5_preserve_retained80 PPL] 8/8 ppl=8.425804
+[group-calibration-v9 arm] layer04_group6_magnitude
+[layer04_group6_magnitude PPL] 1/8 ppl=9.719653
+[layer04_group6_magnitude PPL] 8/8 ppl=8.427881
+[group-calibration-v9 arm] layer04_group6_preserve_int8
+[layer04_group6_preserve_int8 PPL] 1/8 ppl=9.577478
+[layer04_group6_preserve_int8 PPL] 8/8 ppl=8.418835
+[group-calibration-v9 arm] layer04_group6_preserve_retained80
+[layer04_group6_preserve_retained80 PPL] 1/8 ppl=9.581659
+[layer04_group6_preserve_retained80 PPL] 8/8 ppl=8.429822
+[group-calibration-v9 arm] layer04_group7_magnitude
+[layer04_group7_magnitude PPL] 1/8 ppl=9.900126
+[layer04_group7_magnitude PPL] 8/8 ppl=8.421813
+[group-calibration-v9 arm] layer04_group7_preserve_int8
+[layer04_group7_preserve_int8 PPL] 1/8 ppl=9.754740
+[layer04_group7_preserve_int8 PPL] 8/8 ppl=8.452370
+[group-calibration-v9 arm] layer04_group7_preserve_retained80
+[layer04_group7_preserve_retained80 PPL] 1/8 ppl=9.782418
+[layer04_group7_preserve_retained80 PPL] 8/8 ppl=8.426738
+[group-calibration-v9 arm] layer02_group0_magnitude
+[layer02_group0_magnitude PPL] 1/8 ppl=9.734700
+[layer02_group0_magnitude PPL] 8/8 ppl=8.434159
+[group-calibration-v9 arm] layer02_group0_full_readout
+[layer02_group0_full_readout PPL] 1/8 ppl=9.715651
+[layer02_group0_full_readout PPL] 8/8 ppl=8.434626
+[group-calibration-v9 arm] layer02_group0_preserve_int8
+[layer02_group0_preserve_int8 PPL] 1/8 ppl=9.675067
+[layer02_group0_preserve_int8 PPL] 8/8 ppl=8.421239
+[group-calibration-v9 arm] layer02_group1_magnitude
+[layer02_group1_magnitude PPL] 1/8 ppl=9.684860
+[layer02_group1_magnitude PPL] 8/8 ppl=8.425056
+[group-calibration-v9 arm] layer02_group1_full_readout
+[layer02_group1_full_readout PPL] 1/8 ppl=9.711167
+[layer02_group1_full_readout PPL] 8/8 ppl=8.462241
+[group-calibration-v9 arm] layer02_group1_preserve_int8
+[layer02_group1_preserve_int8 PPL] 1/8 ppl=9.668190
+[layer02_group1_preserve_int8 PPL] 8/8 ppl=8.413024
+[group-calibration-v9 arm] layer02_group2_magnitude
+[layer02_group2_magnitude PPL] 1/8 ppl=9.788825
+[layer02_group2_magnitude PPL] 8/8 ppl=8.437902
+[group-calibration-v9 arm] layer02_group2_full_readout
+[layer02_group2_full_readout PPL] 1/8 ppl=9.699945
+[layer02_group2_full_readout PPL] 8/8 ppl=8.433323
+[group-calibration-v9 arm] layer02_group2_preserve_int8
+[layer02_group2_preserve_int8 PPL] 1/8 ppl=9.780552
+[layer02_group2_preserve_int8 PPL] 8/8 ppl=8.462929
+[group-calibration-v9 arm] layer02_group3_magnitude
+[layer02_group3_magnitude PPL] 1/8 ppl=9.714639
+[layer02_group3_magnitude PPL] 8/8 ppl=8.428652
+[group-calibration-v9 arm] layer02_group3_full_readout
+[layer02_group3_full_readout PPL] 1/8 ppl=9.650266
+[layer02_group3_full_readout PPL] 8/8 ppl=8.439070
+[group-calibration-v9 arm] layer02_group3_preserve_int8
+[layer02_group3_preserve_int8 PPL] 1/8 ppl=9.722155
+[layer02_group3_preserve_int8 PPL] 8/8 ppl=8.447491
+[group-calibration-v9 arm] layer02_group4_magnitude
+[layer02_group4_magnitude PPL] 1/8 ppl=9.675154
+[layer02_group4_magnitude PPL] 8/8 ppl=8.451099
+[group-calibration-v9 arm] layer02_group4_full_readout
+[layer02_group4_full_readout PPL] 1/8 ppl=9.813579
+[layer02_group4_full_readout PPL] 8/8 ppl=8.472700
+[group-calibration-v9 arm] layer02_group4_preserve_int8
+[layer02_group4_preserve_int8 PPL] 1/8 ppl=9.667152
+[layer02_group4_preserve_int8 PPL] 8/8 ppl=8.440673
+[group-calibration-v9 arm] layer02_group5_magnitude
+[layer02_group5_magnitude PPL] 1/8 ppl=9.830668
+[layer02_group5_magnitude PPL] 8/8 ppl=8.439185
+[group-calibration-v9 arm] layer02_group5_full_readout
+[layer02_group5_full_readout PPL] 1/8 ppl=9.697679
+[layer02_group5_full_readout PPL] 8/8 ppl=8.419076
+[group-calibration-v9 arm] layer02_group5_preserve_int8
+[layer02_group5_preserve_int8 PPL] 1/8 ppl=9.864224
+[layer02_group5_preserve_int8 PPL] 8/8 ppl=8.487667
+[group-calibration-v9 arm] layer02_group6_magnitude
+[layer02_group6_magnitude PPL] 1/8 ppl=9.783040
+[layer02_group6_magnitude PPL] 8/8 ppl=8.450785
+[group-calibration-v9 arm] layer02_group6_full_readout
+[layer02_group6_full_readout PPL] 1/8 ppl=9.723790
+[layer02_group6_full_readout PPL] 8/8 ppl=8.475332
+[group-calibration-v9 arm] layer02_group6_preserve_int8
+[layer02_group6_preserve_int8 PPL] 1/8 ppl=9.831036
+[layer02_group6_preserve_int8 PPL] 8/8 ppl=8.455639
+[group-calibration-v9 arm] layer02_group7_magnitude
+[layer02_group7_magnitude PPL] 1/8 ppl=9.689246
+[layer02_group7_magnitude PPL] 8/8 ppl=8.424195
+[group-calibration-v9 arm] layer02_group7_full_readout
+[layer02_group7_full_readout PPL] 1/8 ppl=9.756820
+[layer02_group7_full_readout PPL] 8/8 ppl=8.467407
+[group-calibration-v9 arm] layer02_group7_preserve_int8
+[layer02_group7_preserve_int8 PPL] 1/8 ppl=9.746706
+[layer02_group7_preserve_int8 PPL] 8/8 ppl=8.469452
+[group-calibration-v9 arm] layer07_group0_magnitude
+[layer07_group0_magnitude PPL] 1/8 ppl=9.764542
+[layer07_group0_magnitude PPL] 8/8 ppl=8.440651
+[group-calibration-v9 arm] layer07_group0_full_readout
+[layer07_group0_full_readout PPL] 1/8 ppl=9.684031
+[layer07_group0_full_readout PPL] 8/8 ppl=8.419967
+[group-calibration-v9 arm] layer07_group0_preserve_int8
+[layer07_group0_preserve_int8 PPL] 1/8 ppl=9.688162
+[layer07_group0_preserve_int8 PPL] 8/8 ppl=8.414639
+[group-calibration-v9 arm] layer07_group1_magnitude
+[layer07_group1_magnitude PPL] 1/8 ppl=9.748625
+[layer07_group1_magnitude PPL] 8/8 ppl=8.450075
+[group-calibration-v9 arm] layer07_group1_full_readout
+[layer07_group1_full_readout PPL] 1/8 ppl=9.785859
+[layer07_group1_full_readout PPL] 8/8 ppl=8.473692
+[group-calibration-v9 arm] layer07_group1_preserve_int8
+[layer07_group1_preserve_int8 PPL] 1/8 ppl=9.768664
+[layer07_group1_preserve_int8 PPL] 8/8 ppl=8.448854
+[group-calibration-v9 arm] layer07_group2_magnitude
+[layer07_group2_magnitude PPL] 1/8 ppl=9.858182
+[layer07_group2_magnitude PPL] 8/8 ppl=8.448695
+[group-calibration-v9 arm] layer07_group2_full_readout
+[layer07_group2_full_readout PPL] 1/8 ppl=9.663886
+[layer07_group2_full_readout PPL] 8/8 ppl=8.414354
+[group-calibration-v9 arm] layer07_group2_preserve_int8
+[layer07_group2_preserve_int8 PPL] 1/8 ppl=9.738368
+[layer07_group2_preserve_int8 PPL] 8/8 ppl=8.443219
+[group-calibration-v9 arm] layer07_group3_magnitude
+[layer07_group3_magnitude PPL] 1/8 ppl=9.908240
+[layer07_group3_magnitude PPL] 8/8 ppl=8.484037
+[group-calibration-v9 arm] layer07_group3_full_readout
+[layer07_group3_full_readout PPL] 1/8 ppl=9.794074
+[layer07_group3_full_readout PPL] 8/8 ppl=8.448442
+[group-calibration-v9 arm] layer07_group3_preserve_int8
+[layer07_group3_preserve_int8 PPL] 1/8 ppl=9.700660
+[layer07_group3_preserve_int8 PPL] 8/8 ppl=8.435124
+[group-calibration-v9 arm] layer07_group4_magnitude
+[layer07_group4_magnitude PPL] 1/8 ppl=9.643404
+[layer07_group4_magnitude PPL] 8/8 ppl=8.408939
+[group-calibration-v9 arm] layer07_group4_full_readout
+[layer07_group4_full_readout PPL] 1/8 ppl=9.771706
+[layer07_group4_full_readout PPL] 8/8 ppl=8.434406
+[group-calibration-v9 arm] layer07_group4_preserve_int8
+[layer07_group4_preserve_int8 PPL] 1/8 ppl=9.665079
+[layer07_group4_preserve_int8 PPL] 8/8 ppl=8.434749
+[group-calibration-v9 arm] layer07_group5_magnitude
+[layer07_group5_magnitude PPL] 1/8 ppl=9.777894
+[layer07_group5_magnitude PPL] 8/8 ppl=8.419170
+[group-calibration-v9 arm] layer07_group5_full_readout
+[layer07_group5_full_readout PPL] 1/8 ppl=9.727964
+[layer07_group5_full_readout PPL] 8/8 ppl=8.433544
+[group-calibration-v9 arm] layer07_group5_preserve_int8
+[layer07_group5_preserve_int8 PPL] 1/8 ppl=9.774773
+[layer07_group5_preserve_int8 PPL] 8/8 ppl=8.424562
+[group-calibration-v9 arm] layer07_group6_magnitude
+[layer07_group6_magnitude PPL] 1/8 ppl=9.744154
+[layer07_group6_magnitude PPL] 8/8 ppl=8.443362
+[group-calibration-v9 arm] layer07_group6_full_readout
+[layer07_group6_full_readout PPL] 1/8 ppl=9.755949
+[layer07_group6_full_readout PPL] 8/8 ppl=8.437893
+[group-calibration-v9 arm] layer07_group6_preserve_int8
+[layer07_group6_preserve_int8 PPL] 1/8 ppl=9.818790
+[layer07_group6_preserve_int8 PPL] 8/8 ppl=8.470275
+[group-calibration-v9 arm] layer07_group7_magnitude
+[layer07_group7_magnitude PPL] 1/8 ppl=9.764387
+[layer07_group7_magnitude PPL] 8/8 ppl=8.446420
+[group-calibration-v9 arm] layer07_group7_full_readout
+[layer07_group7_full_readout PPL] 1/8 ppl=9.630336
+[layer07_group7_full_readout PPL] 8/8 ppl=8.418078
+[group-calibration-v9 arm] layer07_group7_preserve_int8
+[layer07_group7_preserve_int8 PPL] 1/8 ppl=9.733746
+[layer07_group7_preserve_int8 PPL] 8/8 ppl=8.447714
+[group-calibration-v9 arm] layer10_group0_magnitude
+[layer10_group0_magnitude PPL] 1/8 ppl=9.722078
+[layer10_group0_magnitude PPL] 8/8 ppl=8.432055
+[group-calibration-v9 arm] layer10_group0_preserve_int8
+[layer10_group0_preserve_int8 PPL] 1/8 ppl=9.704310
+[layer10_group0_preserve_int8 PPL] 8/8 ppl=8.413611
+[group-calibration-v9 arm] layer10_group0_preserve_retained80
+[layer10_group0_preserve_retained80 PPL] 1/8 ppl=9.689009
+[layer10_group0_preserve_retained80 PPL] 8/8 ppl=8.428769
+[group-calibration-v9 arm] layer10_group1_magnitude
+[layer10_group1_magnitude PPL] 1/8 ppl=9.726886
+[layer10_group1_magnitude PPL] 8/8 ppl=8.402355
+[group-calibration-v9 arm] layer10_group1_preserve_int8
+[layer10_group1_preserve_int8 PPL] 1/8 ppl=9.756953
+[layer10_group1_preserve_int8 PPL] 8/8 ppl=8.417724
+[group-calibration-v9 arm] layer10_group1_preserve_retained80
+[layer10_group1_preserve_retained80 PPL] 1/8 ppl=9.635860
+[layer10_group1_preserve_retained80 PPL] 8/8 ppl=8.412687
+[group-calibration-v9 arm] layer10_group2_magnitude
+[layer10_group2_magnitude PPL] 1/8 ppl=9.791663
+[layer10_group2_magnitude PPL] 8/8 ppl=8.436432
+[group-calibration-v9 arm] layer10_group2_preserve_int8
+[layer10_group2_preserve_int8 PPL] 1/8 ppl=9.631426
+[layer10_group2_preserve_int8 PPL] 8/8 ppl=8.413390
+[group-calibration-v9 arm] layer10_group2_preserve_retained80
+[layer10_group2_preserve_retained80 PPL] 1/8 ppl=9.733701
+[layer10_group2_preserve_retained80 PPL] 8/8 ppl=8.447439
+[group-calibration-v9 arm] layer10_group3_magnitude
+[layer10_group3_magnitude PPL] 1/8 ppl=9.743676
+[layer10_group3_magnitude PPL] 8/8 ppl=8.426467
+[group-calibration-v9 arm] layer10_group3_preserve_int8
+[layer10_group3_preserve_int8 PPL] 1/8 ppl=9.728622
+[layer10_group3_preserve_int8 PPL] 8/8 ppl=8.438664
+[group-calibration-v9 arm] layer10_group3_preserve_retained80
+[layer10_group3_preserve_retained80 PPL] 1/8 ppl=9.761750
+[layer10_group3_preserve_retained80 PPL] 8/8 ppl=8.443917
+[group-calibration-v9 arm] layer10_group4_magnitude
+[layer10_group4_magnitude PPL] 1/8 ppl=9.761814
+[layer10_group4_magnitude PPL] 8/8 ppl=8.434101
+[group-calibration-v9 arm] layer10_group4_preserve_int8
+[layer10_group4_preserve_int8 PPL] 1/8 ppl=9.734051
+[layer10_group4_preserve_int8 PPL] 8/8 ppl=8.437063
+[group-calibration-v9 arm] layer10_group4_preserve_retained80
+[layer10_group4_preserve_retained80 PPL] 1/8 ppl=9.690817
+[layer10_group4_preserve_retained80 PPL] 8/8 ppl=8.400982
+[group-calibration-v9 arm] layer10_group5_magnitude
+[layer10_group5_magnitude PPL] 1/8 ppl=9.703790
+[layer10_group5_magnitude PPL] 8/8 ppl=8.447040
+[group-calibration-v9 arm] layer10_group5_preserve_int8
+[layer10_group5_preserve_int8 PPL] 1/8 ppl=9.761086
+[layer10_group5_preserve_int8 PPL] 8/8 ppl=8.441222
+[group-calibration-v9 arm] layer10_group5_preserve_retained80
+[layer10_group5_preserve_retained80 PPL] 1/8 ppl=9.740677
+[layer10_group5_preserve_retained80 PPL] 8/8 ppl=8.461073
+[group-calibration-v9 arm] layer10_group6_magnitude
+[layer10_group6_magnitude PPL] 1/8 ppl=9.725298
+[layer10_group6_magnitude PPL] 8/8 ppl=8.426193
+[group-calibration-v9 arm] layer10_group6_preserve_int8
+[layer10_group6_preserve_int8 PPL] 1/8 ppl=9.745844
+[layer10_group6_preserve_int8 PPL] 8/8 ppl=8.433520
+[group-calibration-v9 arm] layer10_group6_preserve_retained80
+[layer10_group6_preserve_retained80 PPL] 1/8 ppl=9.677240
+[layer10_group6_preserve_retained80 PPL] 8/8 ppl=8.429190
+[group-calibration-v9 arm] layer10_group7_magnitude
+[layer10_group7_magnitude PPL] 1/8 ppl=9.727996
+[layer10_group7_magnitude PPL] 8/8 ppl=8.417555
+[group-calibration-v9 arm] layer10_group7_preserve_int8
+[layer10_group7_preserve_int8 PPL] 1/8 ppl=9.827141
+[layer10_group7_preserve_int8 PPL] 8/8 ppl=8.433869
+[group-calibration-v9 arm] layer10_group7_preserve_retained80
+[layer10_group7_preserve_retained80 PPL] 1/8 ppl=9.664384
+[layer10_group7_preserve_retained80 PPL] 8/8 ppl=8.425916
+[group-calibration-v9 arm] restored_baseline
+[restored_baseline PPL] 1/8 ppl=9.655182
+[restored_baseline PPL] 8/8 ppl=8.446214
+{
+  "complete": true,
+  "improving_groups": 58,
+  "candidate_order": [
+    "baseline",
+    "top1",
+    "top2",
+    "top4",
+    "top8",
+    "top16",
+    "top32",
+    "allnegative"
+  ],
+  "candidates_sha256": "b301efc22d7473f9e5710dda4e0fc641cf105097917d0605307529becf927447"
+}
