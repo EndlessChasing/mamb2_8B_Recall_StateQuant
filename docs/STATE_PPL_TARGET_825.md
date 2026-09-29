@@ -7,8 +7,8 @@ static table). Source weights remain FP16. MK is not a selection objective.
 
 ## Status
 
-V7 screening is complete: the unchanged baseline wins. V8 measurements are
-next. Prior full unadapted references:
+V7 screening is complete: the unchanged baseline wins. V8 calibration and
+TRAIN screening pass their independent audits; full validation is running. Prior full unadapted references:
 
 | Configuration | Full PPL | Persistent cache |
 | --- | ---: | ---: |
@@ -61,15 +61,62 @@ This audited baseline-win outcome satisfies the predeclared v8 start condition.
 
 - [x] Freeze calibration, disjoint TRAIN selection and full target rule.
 - [x] Implement calibration/export; pass 11 CPU boundary/provenance checks.
-- [ ] Compare 168 single-layer replacements on eight full TRAIN windows.
-- [ ] Independently reconstruct ranking and proposed combined tables.
-- [ ] Screen combined top-k candidates on 32 other TRAIN windows.
+- [x] Compare 168 single-layer replacements on eight full TRAIN windows.
+- [x] Independently reconstruct ranking and proposed combined tables.
+- [x] Screen combined top-k candidates on 32 other TRAIN windows.
 - [ ] Fully validate the one selected table with exact baseline replays.
 
 This route changes only the existing uint8 permutation table and retains the
 v6 codec. It calibrates on rows72..79 and screens on112..143. Individual layer
 gains are not assumed additive; combinations must earn their own screen score.
 See [v8 protocol](STATE_PPL_V8_PROTOCOL.md).
+
+### V8 calibration
+
+All 170 arms (baseline, 168 single-layer replacements, restored baseline)
+complete, each eight TRAIN windows / 16,376 targets. Baseline calibration PPL
+is 8.277007. Of 56 layers, 46 have at least one strictly better alternative.
+This produces seven distinct tables: baseline, top1, top2, top4, top8, top16,
+and allnegative (46 replacements). Combined results are still pending.
+Baseline per-window NLLs, repeated-reset hidden/cache hashes and allocation
+restore exactly. Calibration took 516.21 seconds.
+
+The [independent CPU calibration audit](../reports/state_ppl_v8_calibration_audit.json)
+reconstructs all raw scores, ranking, deduplication and actual table entries,
+and verifies the audited v7 miss preceding v8. It passes; SHA256
+c2606a7768b55da22ccb0510048e029c2ec5277e936321bb234eb968614953ce.
+See [raw calibration](../reports/state_ppl_v8_calibration/calibration_comparison.json).
+
+
+### V8 disjoint TRAIN screen
+
+All seven candidates are valid. The frozen winner is **top8**; the baseline
+and restored baseline agree exactly. Each arm uses 32 other TRAIN windows /
+65,504 targets. The evaluation loop took 94.05 seconds.
+
+| Combined table | TRAIN PPL |
+| --- | ---: |
+| Baseline | 8.227528 |
+| top1 | 8.174200 |
+| top2 | 8.163930 |
+| top4 | 8.167044 |
+| **top8** | **8.159226** |
+| top16 | 8.169884 |
+| allnegative (46 layers) | 8.232327 |
+
+The selected eight replacements are layers 0, 3, 6, 1, 4, 2, 7 and 10
+(zero-based calibration rank order). The combined screen improves 23/32 windows
+and PPL by 0.830168%. Replacing all individually beneficial layers does not
+improve the combined result, confirming the need for separate screening.
+This is a TRAIN result and does not establish the full target.
+
+The [independent screen audit](../reports/state_ppl_v8_screen_audit.json) passes;
+SHA256 90fbed838e0c97f5543b6687b20d6a3740fc4fa0ebade2920d73d08df40526e2.
+[Selected artifact](../reports/state_ppl_v8_screen/selected_calibration.pt) SHA256
+9b7c04814085abbb67d7a10e0b70d1a6e9b34e97299fc0dc26e4373ea8f8ea39;
+its actual table SHA256 is
+281f7c9fbfdabd6bfa04964ed44b19761708a08447989436b978fae37dc27298.
+Only this frozen TRAIN winner advances to full validation.
 
 ## Completion and scope
 

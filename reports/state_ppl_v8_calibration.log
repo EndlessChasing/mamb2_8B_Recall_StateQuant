@@ -1,0 +1,1051 @@
+[layer-calibration-v8 arm] baseline
+[baseline PPL] 1/8 ppl=7.750752
+[baseline PPL] 8/8 ppl=8.277007
+[layer-calibration-v8 arm] layer00_magnitude
+[layer00_magnitude PPL] 1/8 ppl=7.740217
+[layer00_magnitude PPL] 8/8 ppl=8.253864
+[layer-calibration-v8 arm] layer00_full_readout
+[layer00_full_readout PPL] 1/8 ppl=7.779349
+[layer00_full_readout PPL] 8/8 ppl=8.225860
+[layer-calibration-v8 arm] layer00_preserve_retained80
+[layer00_preserve_retained80 PPL] 1/8 ppl=7.781476
+[layer00_preserve_retained80 PPL] 8/8 ppl=8.207566
+[layer-calibration-v8 arm] layer01_magnitude
+[layer01_magnitude PPL] 1/8 ppl=7.712228
+[layer01_magnitude PPL] 8/8 ppl=8.235681
+[layer-calibration-v8 arm] layer01_full_readout
+[layer01_full_readout PPL] 1/8 ppl=7.704259
+[layer01_full_readout PPL] 8/8 ppl=8.253749
+[layer-calibration-v8 arm] layer01_preserve_retained80
+[layer01_preserve_retained80 PPL] 1/8 ppl=7.722037
+[layer01_preserve_retained80 PPL] 8/8 ppl=8.235202
+[layer-calibration-v8 arm] layer02_magnitude
+[layer02_magnitude PPL] 1/8 ppl=7.714277
+[layer02_magnitude PPL] 8/8 ppl=8.278880
+[layer-calibration-v8 arm] layer02_full_readout
+[layer02_full_readout PPL] 1/8 ppl=7.757363
+[layer02_full_readout PPL] 8/8 ppl=8.248700
+[layer-calibration-v8 arm] layer02_preserve_retained80
+[layer02_preserve_retained80 PPL] 1/8 ppl=7.761905
+[layer02_preserve_retained80 PPL] 8/8 ppl=8.237295
+[layer-calibration-v8 arm] layer03_magnitude
+[layer03_magnitude PPL] 1/8 ppl=7.766665
+[layer03_magnitude PPL] 8/8 ppl=8.228965
+[layer-calibration-v8 arm] layer03_full_readout
+[layer03_full_readout PPL] 1/8 ppl=7.742923
+[layer03_full_readout PPL] 8/8 ppl=8.235777
+[layer-calibration-v8 arm] layer03_preserve_retained80
+[layer03_preserve_retained80 PPL] 1/8 ppl=7.700540
+[layer03_preserve_retained80 PPL] 8/8 ppl=8.272783
+[layer-calibration-v8 arm] layer04_magnitude
+[layer04_magnitude PPL] 1/8 ppl=7.783430
+[layer04_magnitude PPL] 8/8 ppl=8.242171
+[layer-calibration-v8 arm] layer04_full_readout
+[layer04_full_readout PPL] 1/8 ppl=7.755435
+[layer04_full_readout PPL] 8/8 ppl=8.236334
+[layer-calibration-v8 arm] layer04_preserve_retained80
+[layer04_preserve_retained80 PPL] 1/8 ppl=7.806577
+[layer04_preserve_retained80 PPL] 8/8 ppl=8.286102
+[layer-calibration-v8 arm] layer05_magnitude
+[layer05_magnitude PPL] 1/8 ppl=7.764397
+[layer05_magnitude PPL] 8/8 ppl=8.263156
+[layer-calibration-v8 arm] layer05_full_readout
+[layer05_full_readout PPL] 1/8 ppl=7.708412
+[layer05_full_readout PPL] 8/8 ppl=8.266527
+[layer-calibration-v8 arm] layer05_preserve_retained80
+[layer05_preserve_retained80 PPL] 1/8 ppl=7.761751
+[layer05_preserve_retained80 PPL] 8/8 ppl=8.255534
+[layer-calibration-v8 arm] layer06_magnitude
+[layer06_magnitude PPL] 1/8 ppl=7.779483
+[layer06_magnitude PPL] 8/8 ppl=8.260758
+[layer-calibration-v8 arm] layer06_full_readout
+[layer06_full_readout PPL] 1/8 ppl=7.708894
+[layer06_full_readout PPL] 8/8 ppl=8.232594
+[layer-calibration-v8 arm] layer06_preserve_retained80
+[layer06_preserve_retained80 PPL] 1/8 ppl=7.761475
+[layer06_preserve_retained80 PPL] 8/8 ppl=8.300426
+[layer-calibration-v8 arm] layer07_magnitude
+[layer07_magnitude PPL] 1/8 ppl=7.750776
+[layer07_magnitude PPL] 8/8 ppl=8.281625
+[layer-calibration-v8 arm] layer07_full_readout
+[layer07_full_readout PPL] 1/8 ppl=7.749141
+[layer07_full_readout PPL] 8/8 ppl=8.273711
+[layer-calibration-v8 arm] layer07_preserve_retained80
+[layer07_preserve_retained80 PPL] 1/8 ppl=7.740236
+[layer07_preserve_retained80 PPL] 8/8 ppl=8.248056
+[layer-calibration-v8 arm] layer08_magnitude
+[layer08_magnitude PPL] 1/8 ppl=7.722900
+[layer08_magnitude PPL] 8/8 ppl=8.269606
+[layer-calibration-v8 arm] layer08_full_readout
+[layer08_full_readout PPL] 1/8 ppl=7.770355
+[layer08_full_readout PPL] 8/8 ppl=8.283053
+[layer-calibration-v8 arm] layer08_preserve_retained80
+[layer08_preserve_retained80 PPL] 1/8 ppl=7.759422
+[layer08_preserve_retained80 PPL] 8/8 ppl=8.259388
+[layer-calibration-v8 arm] layer09_magnitude
+[layer09_magnitude PPL] 1/8 ppl=7.727206
+[layer09_magnitude PPL] 8/8 ppl=8.251678
+[layer-calibration-v8 arm] layer09_full_readout
+[layer09_full_readout PPL] 1/8 ppl=7.755404
+[layer09_full_readout PPL] 8/8 ppl=8.272653
+[layer-calibration-v8 arm] layer09_preserve_retained80
+[layer09_preserve_retained80 PPL] 1/8 ppl=7.781264
+[layer09_preserve_retained80 PPL] 8/8 ppl=8.280600
+[layer-calibration-v8 arm] layer10_magnitude
+[layer10_magnitude PPL] 1/8 ppl=7.790747
+[layer10_magnitude PPL] 8/8 ppl=8.262985
+[layer-calibration-v8 arm] layer10_full_readout
+[layer10_full_readout PPL] 1/8 ppl=7.765148
+[layer10_full_readout PPL] 8/8 ppl=8.250861
+[layer-calibration-v8 arm] layer10_preserve_retained80
+[layer10_preserve_retained80 PPL] 1/8 ppl=7.762534
+[layer10_preserve_retained80 PPL] 8/8 ppl=8.272138
+[layer-calibration-v8 arm] layer11_magnitude
+[layer11_magnitude PPL] 1/8 ppl=7.734399
+[layer11_magnitude PPL] 8/8 ppl=8.264317
+[layer-calibration-v8 arm] layer11_full_readout
+[layer11_full_readout PPL] 1/8 ppl=7.740127
+[layer11_full_readout PPL] 8/8 ppl=8.319105
+[layer-calibration-v8 arm] layer11_preserve_retained80
+[layer11_preserve_retained80 PPL] 1/8 ppl=7.782952
+[layer11_preserve_retained80 PPL] 8/8 ppl=8.321553
+[layer-calibration-v8 arm] layer12_magnitude
+[layer12_magnitude PPL] 1/8 ppl=7.760452
+[layer12_magnitude PPL] 8/8 ppl=8.286309
+[layer-calibration-v8 arm] layer12_full_readout
+[layer12_full_readout PPL] 1/8 ppl=7.718351
+[layer12_full_readout PPL] 8/8 ppl=8.253668
+[layer-calibration-v8 arm] layer12_preserve_retained80
+[layer12_preserve_retained80 PPL] 1/8 ppl=7.751377
+[layer12_preserve_retained80 PPL] 8/8 ppl=8.252851
+[layer-calibration-v8 arm] layer13_magnitude
+[layer13_magnitude PPL] 1/8 ppl=7.718302
+[layer13_magnitude PPL] 8/8 ppl=8.285132
+[layer-calibration-v8 arm] layer13_full_readout
+[layer13_full_readout PPL] 1/8 ppl=7.768808
+[layer13_full_readout PPL] 8/8 ppl=8.290303
+[layer-calibration-v8 arm] layer13_preserve_retained80
+[layer13_preserve_retained80 PPL] 1/8 ppl=7.725220
+[layer13_preserve_retained80 PPL] 8/8 ppl=8.251448
+[layer-calibration-v8 arm] layer14_magnitude
+[layer14_magnitude PPL] 1/8 ppl=7.710978
+[layer14_magnitude PPL] 8/8 ppl=8.258742
+[layer-calibration-v8 arm] layer14_full_readout
+[layer14_full_readout PPL] 1/8 ppl=7.756309
+[layer14_full_readout PPL] 8/8 ppl=8.289185
+[layer-calibration-v8 arm] layer14_preserve_retained80
+[layer14_preserve_retained80 PPL] 1/8 ppl=7.787728
+[layer14_preserve_retained80 PPL] 8/8 ppl=8.267792
+[layer-calibration-v8 arm] layer15_magnitude
+[layer15_magnitude PPL] 1/8 ppl=7.734325
+[layer15_magnitude PPL] 8/8 ppl=8.284531
+[layer-calibration-v8 arm] layer15_full_readout
+[layer15_full_readout PPL] 1/8 ppl=7.779823
+[layer15_full_readout PPL] 8/8 ppl=8.285654
+[layer-calibration-v8 arm] layer15_preserve_retained80
+[layer15_preserve_retained80 PPL] 1/8 ppl=7.735878
+[layer15_preserve_retained80 PPL] 8/8 ppl=8.320923
+[layer-calibration-v8 arm] layer16_magnitude
+[layer16_magnitude PPL] 1/8 ppl=7.758703
+[layer16_magnitude PPL] 8/8 ppl=8.280879
+[layer-calibration-v8 arm] layer16_full_readout
+[layer16_full_readout PPL] 1/8 ppl=7.743062
+[layer16_full_readout PPL] 8/8 ppl=8.281538
+[layer-calibration-v8 arm] layer16_preserve_retained80
+[layer16_preserve_retained80 PPL] 1/8 ppl=7.757096
+[layer16_preserve_retained80 PPL] 8/8 ppl=8.264050
+[layer-calibration-v8 arm] layer17_magnitude
+[layer17_magnitude PPL] 1/8 ppl=7.773934
+[layer17_magnitude PPL] 8/8 ppl=8.290151
+[layer-calibration-v8 arm] layer17_full_readout
+[layer17_full_readout PPL] 1/8 ppl=7.789418
+[layer17_full_readout PPL] 8/8 ppl=8.305930
+[layer-calibration-v8 arm] layer17_preserve_retained80
+[layer17_preserve_retained80 PPL] 1/8 ppl=7.749901
+[layer17_preserve_retained80 PPL] 8/8 ppl=8.297960
+[layer-calibration-v8 arm] layer18_magnitude
+[layer18_magnitude PPL] 1/8 ppl=7.735999
+[layer18_magnitude PPL] 8/8 ppl=8.317135
+[layer-calibration-v8 arm] layer18_full_readout
+[layer18_full_readout PPL] 1/8 ppl=7.731267
+[layer18_full_readout PPL] 8/8 ppl=8.282833
+[layer-calibration-v8 arm] layer18_preserve_retained80
+[layer18_preserve_retained80 PPL] 1/8 ppl=7.785342
+[layer18_preserve_retained80 PPL] 8/8 ppl=8.335351
+[layer-calibration-v8 arm] layer19_magnitude
+[layer19_magnitude PPL] 1/8 ppl=7.776035
+[layer19_magnitude PPL] 8/8 ppl=8.307610
+[layer-calibration-v8 arm] layer19_full_readout
+[layer19_full_readout PPL] 1/8 ppl=7.735434
+[layer19_full_readout PPL] 8/8 ppl=8.271802
+[layer-calibration-v8 arm] layer19_preserve_retained80
+[layer19_preserve_retained80 PPL] 1/8 ppl=7.734061
+[layer19_preserve_retained80 PPL] 8/8 ppl=8.288701
+[layer-calibration-v8 arm] layer20_magnitude
+[layer20_magnitude PPL] 1/8 ppl=7.743242
+[layer20_magnitude PPL] 8/8 ppl=8.311202
+[layer-calibration-v8 arm] layer20_full_readout
+[layer20_full_readout PPL] 1/8 ppl=7.754852
+[layer20_full_readout PPL] 8/8 ppl=8.301647
+[layer-calibration-v8 arm] layer20_preserve_retained80
+[layer20_preserve_retained80 PPL] 1/8 ppl=7.747498
+[layer20_preserve_retained80 PPL] 8/8 ppl=8.309139
+[layer-calibration-v8 arm] layer21_magnitude
+[layer21_magnitude PPL] 1/8 ppl=7.768242
+[layer21_magnitude PPL] 8/8 ppl=8.279169
+[layer-calibration-v8 arm] layer21_full_readout
+[layer21_full_readout PPL] 1/8 ppl=7.751388
+[layer21_full_readout PPL] 8/8 ppl=8.303169
+[layer-calibration-v8 arm] layer21_preserve_retained80
+[layer21_preserve_retained80 PPL] 1/8 ppl=7.689698
+[layer21_preserve_retained80 PPL] 8/8 ppl=8.303332
+[layer-calibration-v8 arm] layer22_magnitude
+[layer22_magnitude PPL] 1/8 ppl=7.748403
+[layer22_magnitude PPL] 8/8 ppl=8.270954
+[layer-calibration-v8 arm] layer22_full_readout
+[layer22_full_readout PPL] 1/8 ppl=7.728973
+[layer22_full_readout PPL] 8/8 ppl=8.277644
+[layer-calibration-v8 arm] layer22_preserve_retained80
+[layer22_preserve_retained80 PPL] 1/8 ppl=7.747606
+[layer22_preserve_retained80 PPL] 8/8 ppl=8.277463
+[layer-calibration-v8 arm] layer23_magnitude
+[layer23_magnitude PPL] 1/8 ppl=7.793569
+[layer23_magnitude PPL] 8/8 ppl=8.302584
+[layer-calibration-v8 arm] layer23_full_readout
+[layer23_full_readout PPL] 1/8 ppl=7.755277
+[layer23_full_readout PPL] 8/8 ppl=8.266102
+[layer-calibration-v8 arm] layer23_preserve_retained80
+[layer23_preserve_retained80 PPL] 1/8 ppl=7.772280
+[layer23_preserve_retained80 PPL] 8/8 ppl=8.295954
+[layer-calibration-v8 arm] layer24_magnitude
+[layer24_magnitude PPL] 1/8 ppl=7.731232
+[layer24_magnitude PPL] 8/8 ppl=8.298958
+[layer-calibration-v8 arm] layer24_full_readout
+[layer24_full_readout PPL] 1/8 ppl=7.767355
+[layer24_full_readout PPL] 8/8 ppl=8.276443
+[layer-calibration-v8 arm] layer24_preserve_retained80
+[layer24_preserve_retained80 PPL] 1/8 ppl=7.742429
+[layer24_preserve_retained80 PPL] 8/8 ppl=8.287922
+[layer-calibration-v8 arm] layer25_magnitude
+[layer25_magnitude PPL] 1/8 ppl=7.735111
+[layer25_magnitude PPL] 8/8 ppl=8.276259
+[layer-calibration-v8 arm] layer25_full_readout
+[layer25_full_readout PPL] 1/8 ppl=7.762080
+[layer25_full_readout PPL] 8/8 ppl=8.281637
+[layer-calibration-v8 arm] layer25_preserve_retained80
+[layer25_preserve_retained80 PPL] 1/8 ppl=7.736275
+[layer25_preserve_retained80 PPL] 8/8 ppl=8.284956
+[layer-calibration-v8 arm] layer26_magnitude
+[layer26_magnitude PPL] 1/8 ppl=7.760690
+[layer26_magnitude PPL] 8/8 ppl=8.270953
+[layer-calibration-v8 arm] layer26_full_readout
+[layer26_full_readout PPL] 1/8 ppl=7.759395
+[layer26_full_readout PPL] 8/8 ppl=8.275805
+[layer-calibration-v8 arm] layer26_preserve_retained80
+[layer26_preserve_retained80 PPL] 1/8 ppl=7.747037
+[layer26_preserve_retained80 PPL] 8/8 ppl=8.265655
+[layer-calibration-v8 arm] layer27_magnitude
+[layer27_magnitude PPL] 1/8 ppl=7.732586
+[layer27_magnitude PPL] 8/8 ppl=8.285269
+[layer-calibration-v8 arm] layer27_full_readout
+[layer27_full_readout PPL] 1/8 ppl=7.768898
+[layer27_full_readout PPL] 8/8 ppl=8.276515
+[layer-calibration-v8 arm] layer27_preserve_retained80
+[layer27_preserve_retained80 PPL] 1/8 ppl=7.762828
+[layer27_preserve_retained80 PPL] 8/8 ppl=8.281738
+[layer-calibration-v8 arm] layer28_magnitude
+[layer28_magnitude PPL] 1/8 ppl=7.750994
+[layer28_magnitude PPL] 8/8 ppl=8.279117
+[layer-calibration-v8 arm] layer28_full_readout
+[layer28_full_readout PPL] 1/8 ppl=7.726934
+[layer28_full_readout PPL] 8/8 ppl=8.260681
+[layer-calibration-v8 arm] layer28_preserve_retained80
+[layer28_preserve_retained80 PPL] 1/8 ppl=7.733210
+[layer28_preserve_retained80 PPL] 8/8 ppl=8.275594
+[layer-calibration-v8 arm] layer29_magnitude
+[layer29_magnitude PPL] 1/8 ppl=7.752183
+[layer29_magnitude PPL] 8/8 ppl=8.310881
+[layer-calibration-v8 arm] layer29_full_readout
+[layer29_full_readout PPL] 1/8 ppl=7.744299
+[layer29_full_readout PPL] 8/8 ppl=8.271942
+[layer-calibration-v8 arm] layer29_preserve_retained80
+[layer29_preserve_retained80 PPL] 1/8 ppl=7.750994
+[layer29_preserve_retained80 PPL] 8/8 ppl=8.311682
+[layer-calibration-v8 arm] layer30_magnitude
+[layer30_magnitude PPL] 1/8 ppl=7.743208
+[layer30_magnitude PPL] 8/8 ppl=8.286690
+[layer-calibration-v8 arm] layer30_full_readout
+[layer30_full_readout PPL] 1/8 ppl=7.750511
+[layer30_full_readout PPL] 8/8 ppl=8.297187
+[layer-calibration-v8 arm] layer30_preserve_retained80
+[layer30_preserve_retained80 PPL] 1/8 ppl=7.745007
+[layer30_preserve_retained80 PPL] 8/8 ppl=8.284740
+[layer-calibration-v8 arm] layer31_magnitude
+[layer31_magnitude PPL] 1/8 ppl=7.752154
+[layer31_magnitude PPL] 8/8 ppl=8.271867
+[layer-calibration-v8 arm] layer31_full_readout
+[layer31_full_readout PPL] 1/8 ppl=7.764071
+[layer31_full_readout PPL] 8/8 ppl=8.284393
+[layer-calibration-v8 arm] layer31_preserve_retained80
+[layer31_preserve_retained80 PPL] 1/8 ppl=7.740523
+[layer31_preserve_retained80 PPL] 8/8 ppl=8.265210
+[layer-calibration-v8 arm] layer32_magnitude
+[layer32_magnitude PPL] 1/8 ppl=7.767494
+[layer32_magnitude PPL] 8/8 ppl=8.276530
+[layer-calibration-v8 arm] layer32_full_readout
+[layer32_full_readout PPL] 1/8 ppl=7.762558
+[layer32_full_readout PPL] 8/8 ppl=8.279060
+[layer-calibration-v8 arm] layer32_preserve_retained80
+[layer32_preserve_retained80 PPL] 1/8 ppl=7.785394
+[layer32_preserve_retained80 PPL] 8/8 ppl=8.288406
+[layer-calibration-v8 arm] layer33_magnitude
+[layer33_magnitude PPL] 1/8 ppl=7.745787
+[layer33_magnitude PPL] 8/8 ppl=8.278744
+[layer-calibration-v8 arm] layer33_full_readout
+[layer33_full_readout PPL] 1/8 ppl=7.777230
+[layer33_full_readout PPL] 8/8 ppl=8.286884
+[layer-calibration-v8 arm] layer33_preserve_retained80
+[layer33_preserve_retained80 PPL] 1/8 ppl=7.744844
+[layer33_preserve_retained80 PPL] 8/8 ppl=8.284735
+[layer-calibration-v8 arm] layer34_magnitude
+[layer34_magnitude PPL] 1/8 ppl=7.769980
+[layer34_magnitude PPL] 8/8 ppl=8.277049
+[layer-calibration-v8 arm] layer34_full_readout
+[layer34_full_readout PPL] 1/8 ppl=7.766241
+[layer34_full_readout PPL] 8/8 ppl=8.278869
+[layer-calibration-v8 arm] layer34_preserve_retained80
+[layer34_preserve_retained80 PPL] 1/8 ppl=7.782258
+[layer34_preserve_retained80 PPL] 8/8 ppl=8.280715
+[layer-calibration-v8 arm] layer35_magnitude
+[layer35_magnitude PPL] 1/8 ppl=7.738141
+[layer35_magnitude PPL] 8/8 ppl=8.278077
+[layer-calibration-v8 arm] layer35_full_readout
+[layer35_full_readout PPL] 1/8 ppl=7.748119
+[layer35_full_readout PPL] 8/8 ppl=8.275468
+[layer-calibration-v8 arm] layer35_preserve_retained80
+[layer35_preserve_retained80 PPL] 1/8 ppl=7.742822
+[layer35_preserve_retained80 PPL] 8/8 ppl=8.280222
+[layer-calibration-v8 arm] layer36_magnitude
+[layer36_magnitude PPL] 1/8 ppl=7.737524
+[layer36_magnitude PPL] 8/8 ppl=8.273349
+[layer-calibration-v8 arm] layer36_full_readout
+[layer36_full_readout PPL] 1/8 ppl=7.750486
+[layer36_full_readout PPL] 8/8 ppl=8.277143
+[layer-calibration-v8 arm] layer36_preserve_retained80
+[layer36_preserve_retained80 PPL] 1/8 ppl=7.749081
+[layer36_preserve_retained80 PPL] 8/8 ppl=8.275312
+[layer-calibration-v8 arm] layer37_magnitude
+[layer37_magnitude PPL] 1/8 ppl=7.751537
+[layer37_magnitude PPL] 8/8 ppl=8.276566
+[layer-calibration-v8 arm] layer37_full_readout
+[layer37_full_readout PPL] 1/8 ppl=7.746387
+[layer37_full_readout PPL] 8/8 ppl=8.271743
+[layer-calibration-v8 arm] layer37_preserve_retained80
+[layer37_preserve_retained80 PPL] 1/8 ppl=7.755203
+[layer37_preserve_retained80 PPL] 8/8 ppl=8.275027
+[layer-calibration-v8 arm] layer38_magnitude
+[layer38_magnitude PPL] 1/8 ppl=7.758488
+[layer38_magnitude PPL] 8/8 ppl=8.273726
+[layer-calibration-v8 arm] layer38_full_readout
+[layer38_full_readout PPL] 1/8 ppl=7.737381
+[layer38_full_readout PPL] 8/8 ppl=8.268200
+[layer-calibration-v8 arm] layer38_preserve_retained80
+[layer38_preserve_retained80 PPL] 1/8 ppl=7.749775
+[layer38_preserve_retained80 PPL] 8/8 ppl=8.270415
+[layer-calibration-v8 arm] layer39_magnitude
+[layer39_magnitude PPL] 1/8 ppl=7.755407
+[layer39_magnitude PPL] 8/8 ppl=8.277024
+[layer-calibration-v8 arm] layer39_full_readout
+[layer39_full_readout PPL] 1/8 ppl=7.753391
+[layer39_full_readout PPL] 8/8 ppl=8.274676
+[layer-calibration-v8 arm] layer39_preserve_retained80
+[layer39_preserve_retained80 PPL] 1/8 ppl=7.767086
+[layer39_preserve_retained80 PPL] 8/8 ppl=8.273932
+[layer-calibration-v8 arm] layer40_magnitude
+[layer40_magnitude PPL] 1/8 ppl=7.751694
+[layer40_magnitude PPL] 8/8 ppl=8.275141
+[layer-calibration-v8 arm] layer40_full_readout
+[layer40_full_readout PPL] 1/8 ppl=7.748138
+[layer40_full_readout PPL] 8/8 ppl=8.276071
+[layer-calibration-v8 arm] layer40_preserve_retained80
+[layer40_preserve_retained80 PPL] 1/8 ppl=7.753188
+[layer40_preserve_retained80 PPL] 8/8 ppl=8.276553
+[layer-calibration-v8 arm] layer41_magnitude
+[layer41_magnitude PPL] 1/8 ppl=7.752016
+[layer41_magnitude PPL] 8/8 ppl=8.276931
+[layer-calibration-v8 arm] layer41_full_readout
+[layer41_full_readout PPL] 1/8 ppl=7.745835
+[layer41_full_readout PPL] 8/8 ppl=8.277879
+[layer-calibration-v8 arm] layer41_preserve_retained80
+[layer41_preserve_retained80 PPL] 1/8 ppl=7.750647
+[layer41_preserve_retained80 PPL] 8/8 ppl=8.274153
+[layer-calibration-v8 arm] layer42_magnitude
+[layer42_magnitude PPL] 1/8 ppl=7.751742
+[layer42_magnitude PPL] 8/8 ppl=8.271054
+[layer-calibration-v8 arm] layer42_full_readout
+[layer42_full_readout PPL] 1/8 ppl=7.746684
+[layer42_full_readout PPL] 8/8 ppl=8.276414
+[layer-calibration-v8 arm] layer42_preserve_retained80
+[layer42_preserve_retained80 PPL] 1/8 ppl=7.757287
+[layer42_preserve_retained80 PPL] 8/8 ppl=8.272519
+[layer-calibration-v8 arm] layer43_magnitude
+[layer43_magnitude PPL] 1/8 ppl=7.750567
+[layer43_magnitude PPL] 8/8 ppl=8.279173
+[layer-calibration-v8 arm] layer43_full_readout
+[layer43_full_readout PPL] 1/8 ppl=7.748971
+[layer43_full_readout PPL] 8/8 ppl=8.278244
+[layer-calibration-v8 arm] layer43_preserve_retained80
+[layer43_preserve_retained80 PPL] 1/8 ppl=7.752960
+[layer43_preserve_retained80 PPL] 8/8 ppl=8.277811
+[layer-calibration-v8 arm] layer44_magnitude
+[layer44_magnitude PPL] 1/8 ppl=7.751561
+[layer44_magnitude PPL] 8/8 ppl=8.273824
+[layer-calibration-v8 arm] layer44_full_readout
+[layer44_full_readout PPL] 1/8 ppl=7.754350
+[layer44_full_readout PPL] 8/8 ppl=8.277510
+[layer-calibration-v8 arm] layer44_preserve_retained80
+[layer44_preserve_retained80 PPL] 1/8 ppl=7.748453
+[layer44_preserve_retained80 PPL] 8/8 ppl=8.272687
+[layer-calibration-v8 arm] layer45_magnitude
+[layer45_magnitude PPL] 1/8 ppl=7.755070
+[layer45_magnitude PPL] 8/8 ppl=8.276754
+[layer-calibration-v8 arm] layer45_full_readout
+[layer45_full_readout PPL] 1/8 ppl=7.756990
+[layer45_full_readout PPL] 8/8 ppl=8.278390
+[layer-calibration-v8 arm] layer45_preserve_retained80
+[layer45_preserve_retained80 PPL] 1/8 ppl=7.751068
+[layer45_preserve_retained80 PPL] 8/8 ppl=8.276892
+[layer-calibration-v8 arm] layer46_magnitude
+[layer46_magnitude PPL] 1/8 ppl=7.744420
+[layer46_magnitude PPL] 8/8 ppl=8.272365
+[layer-calibration-v8 arm] layer46_full_readout
+[layer46_full_readout PPL] 1/8 ppl=7.761716
+[layer46_full_readout PPL] 8/8 ppl=8.273844
+[layer-calibration-v8 arm] layer46_preserve_retained80
+[layer46_preserve_retained80 PPL] 1/8 ppl=7.749887
+[layer46_preserve_retained80 PPL] 8/8 ppl=8.271112
+[layer-calibration-v8 arm] layer47_magnitude
+[layer47_magnitude PPL] 1/8 ppl=7.752959
+[layer47_magnitude PPL] 8/8 ppl=8.280565
+[layer-calibration-v8 arm] layer47_full_readout
+[layer47_full_readout PPL] 1/8 ppl=7.753084
+[layer47_full_readout PPL] 8/8 ppl=8.276995
+[layer-calibration-v8 arm] layer47_preserve_retained80
+[layer47_preserve_retained80 PPL] 1/8 ppl=7.752061
+[layer47_preserve_retained80 PPL] 8/8 ppl=8.280915
+[layer-calibration-v8 arm] layer48_magnitude
+[layer48_magnitude PPL] 1/8 ppl=7.750808
+[layer48_magnitude PPL] 8/8 ppl=8.279259
+[layer-calibration-v8 arm] layer48_full_readout
+[layer48_full_readout PPL] 1/8 ppl=7.752470
+[layer48_full_readout PPL] 8/8 ppl=8.277287
+[layer-calibration-v8 arm] layer48_preserve_retained80
+[layer48_preserve_retained80 PPL] 1/8 ppl=7.753257
+[layer48_preserve_retained80 PPL] 8/8 ppl=8.279372
+[layer-calibration-v8 arm] layer49_magnitude
+[layer49_magnitude PPL] 1/8 ppl=7.750855
+[layer49_magnitude PPL] 8/8 ppl=8.277895
+[layer-calibration-v8 arm] layer49_full_readout
+[layer49_full_readout PPL] 1/8 ppl=7.748840
+[layer49_full_readout PPL] 8/8 ppl=8.275287
+[layer-calibration-v8 arm] layer49_preserve_retained80
+[layer49_preserve_retained80 PPL] 1/8 ppl=7.751256
+[layer49_preserve_retained80 PPL] 8/8 ppl=8.279001
+[layer-calibration-v8 arm] layer50_magnitude
+[layer50_magnitude PPL] 1/8 ppl=7.751837
+[layer50_magnitude PPL] 8/8 ppl=8.276835
+[layer-calibration-v8 arm] layer50_full_readout
+[layer50_full_readout PPL] 1/8 ppl=7.749858
+[layer50_full_readout PPL] 8/8 ppl=8.278371
+[layer-calibration-v8 arm] layer50_preserve_retained80
+[layer50_preserve_retained80 PPL] 1/8 ppl=7.750132
+[layer50_preserve_retained80 PPL] 8/8 ppl=8.280902
+[layer-calibration-v8 arm] layer51_magnitude
+[layer51_magnitude PPL] 1/8 ppl=7.756814
+[layer51_magnitude PPL] 8/8 ppl=8.278434
+[layer-calibration-v8 arm] layer51_full_readout
+[layer51_full_readout PPL] 1/8 ppl=7.751870
+[layer51_full_readout PPL] 8/8 ppl=8.274859
+[layer-calibration-v8 arm] layer51_preserve_retained80
+[layer51_preserve_retained80 PPL] 1/8 ppl=7.753220
+[layer51_preserve_retained80 PPL] 8/8 ppl=8.283473
+[layer-calibration-v8 arm] layer52_magnitude
+[layer52_magnitude PPL] 1/8 ppl=7.751826
+[layer52_magnitude PPL] 8/8 ppl=8.283795
+[layer-calibration-v8 arm] layer52_full_readout
+[layer52_full_readout PPL] 1/8 ppl=7.749894
+[layer52_full_readout PPL] 8/8 ppl=8.276852
+[layer-calibration-v8 arm] layer52_preserve_retained80
+[layer52_preserve_retained80 PPL] 1/8 ppl=7.751722
+[layer52_preserve_retained80 PPL] 8/8 ppl=8.283543
+[layer-calibration-v8 arm] layer53_magnitude
+[layer53_magnitude PPL] 1/8 ppl=7.750567
+[layer53_magnitude PPL] 8/8 ppl=8.276690
+[layer-calibration-v8 arm] layer53_full_readout
+[layer53_full_readout PPL] 1/8 ppl=7.749946
+[layer53_full_readout PPL] 8/8 ppl=8.276513
+[layer-calibration-v8 arm] layer53_preserve_retained80
+[layer53_preserve_retained80 PPL] 1/8 ppl=7.749724
+[layer53_preserve_retained80 PPL] 8/8 ppl=8.276631
+[layer-calibration-v8 arm] layer54_magnitude
+[layer54_magnitude PPL] 1/8 ppl=7.748452
+[layer54_magnitude PPL] 8/8 ppl=8.275184
+[layer-calibration-v8 arm] layer54_full_readout
+[layer54_full_readout PPL] 1/8 ppl=7.745678
+[layer54_full_readout PPL] 8/8 ppl=8.274229
+[layer-calibration-v8 arm] layer54_preserve_retained80
+[layer54_preserve_retained80 PPL] 1/8 ppl=7.746123
+[layer54_preserve_retained80 PPL] 8/8 ppl=8.274231
+[layer-calibration-v8 arm] layer55_magnitude
+[layer55_magnitude PPL] 1/8 ppl=7.749570
+[layer55_magnitude PPL] 8/8 ppl=8.276906
+[layer-calibration-v8 arm] layer55_full_readout
+[layer55_full_readout PPL] 1/8 ppl=7.750075
+[layer55_full_readout PPL] 8/8 ppl=8.276760
+[layer-calibration-v8 arm] layer55_preserve_retained80
+[layer55_preserve_retained80 PPL] 1/8 ppl=7.749864
+[layer55_preserve_retained80 PPL] 8/8 ppl=8.277068
+[layer-calibration-v8 arm] restored_baseline
+[restored_baseline PPL] 1/8 ppl=7.750752
+[restored_baseline PPL] 8/8 ppl=8.277007
+{
+  "complete": true,
+  "calibration_stopped": false,
+  "improving_layers": 46,
+  "candidates": [
+    "baseline",
+    "top1",
+    "top2",
+    "top4",
+    "top8",
+    "top16",
+    "allnegative"
+  ],
+  "candidates_sha256": "13f36a937c34720ed9d558b19582aaf58be2383a5bb54d42a06791609e154b5d",
+  "candidate_specs": {
+    "baseline": {
+      "table_sha256": "6dc1c15ca18d07fb87de8f0517baecbf47adec0846575172fa344f86ac10cde5",
+      "swap_count": 0,
+      "swaps": [],
+      "scale_mode": "stored_scale",
+      "int4_clip": 1.0,
+      "cache_bytes": 28499968
+    },
+    "top1": {
+      "table_sha256": "bc118024c2eea8d6aacefd80320d6787cac3b7e8bdee8dee0d897e6c3baf5313",
+      "swap_count": 1,
+      "swaps": [
+        {
+          "layer": 0,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -137.9699935913086,
+          "calibration_arm": "layer00_preserve_retained80"
+        }
+      ],
+      "scale_mode": "stored_scale",
+      "int4_clip": 1.0,
+      "cache_bytes": 28499968
+    },
+    "top2": {
+      "table_sha256": "0d7f0d15a9c17d488e50b88c2b63eac862e304247eca8ed0f5bd660c149bae05",
+      "swap_count": 2,
+      "swaps": [
+        {
+          "layer": 0,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -137.9699935913086,
+          "calibration_arm": "layer00_preserve_retained80"
+        },
+        {
+          "layer": 3,
+          "kind": "magnitude",
+          "calibration_delta_nll": -95.32943344116211,
+          "calibration_arm": "layer03_magnitude"
+        }
+      ],
+      "scale_mode": "stored_scale",
+      "int4_clip": 1.0,
+      "cache_bytes": 28499968
+    },
+    "top4": {
+      "table_sha256": "78d8f69514254d84f4db6b24ba16382838f05426a4648c546abe261a172abe38",
+      "swap_count": 4,
+      "swaps": [
+        {
+          "layer": 0,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -137.9699935913086,
+          "calibration_arm": "layer00_preserve_retained80"
+        },
+        {
+          "layer": 3,
+          "kind": "magnitude",
+          "calibration_delta_nll": -95.32943344116211,
+          "calibration_arm": "layer03_magnitude"
+        },
+        {
+          "layer": 6,
+          "kind": "full_readout",
+          "calibration_delta_nll": -88.1083984375,
+          "calibration_arm": "layer06_full_readout"
+        },
+        {
+          "layer": 1,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -82.92154693603516,
+          "calibration_arm": "layer01_preserve_retained80"
+        }
+      ],
+      "scale_mode": "stored_scale",
+      "int4_clip": 1.0,
+      "cache_bytes": 28499968
+    },
+    "top8": {
+      "table_sha256": "281f7c9fbfdabd6bfa04964ed44b19761708a08447989436b978fae37dc27298",
+      "swap_count": 8,
+      "swaps": [
+        {
+          "layer": 0,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -137.9699935913086,
+          "calibration_arm": "layer00_preserve_retained80"
+        },
+        {
+          "layer": 3,
+          "kind": "magnitude",
+          "calibration_delta_nll": -95.32943344116211,
+          "calibration_arm": "layer03_magnitude"
+        },
+        {
+          "layer": 6,
+          "kind": "full_readout",
+          "calibration_delta_nll": -88.1083984375,
+          "calibration_arm": "layer06_full_readout"
+        },
+        {
+          "layer": 1,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -82.92154693603516,
+          "calibration_arm": "layer01_preserve_retained80"
+        },
+        {
+          "layer": 4,
+          "kind": "full_readout",
+          "calibration_delta_nll": -80.67039489746094,
+          "calibration_arm": "layer04_full_readout"
+        },
+        {
+          "layer": 2,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -78.76013946533203,
+          "calibration_arm": "layer02_preserve_retained80"
+        },
+        {
+          "layer": 7,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -57.38111114501953,
+          "calibration_arm": "layer07_preserve_retained80"
+        },
+        {
+          "layer": 10,
+          "kind": "full_readout",
+          "calibration_delta_nll": -51.812705993652344,
+          "calibration_arm": "layer10_full_readout"
+        }
+      ],
+      "scale_mode": "stored_scale",
+      "int4_clip": 1.0,
+      "cache_bytes": 28499968
+    },
+    "top16": {
+      "table_sha256": "5182203c65da5c743296724e3869561360e2221b78af4b26c4e72353352c0bf2",
+      "swap_count": 16,
+      "swaps": [
+        {
+          "layer": 0,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -137.9699935913086,
+          "calibration_arm": "layer00_preserve_retained80"
+        },
+        {
+          "layer": 3,
+          "kind": "magnitude",
+          "calibration_delta_nll": -95.32943344116211,
+          "calibration_arm": "layer03_magnitude"
+        },
+        {
+          "layer": 6,
+          "kind": "full_readout",
+          "calibration_delta_nll": -88.1083984375,
+          "calibration_arm": "layer06_full_readout"
+        },
+        {
+          "layer": 1,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -82.92154693603516,
+          "calibration_arm": "layer01_preserve_retained80"
+        },
+        {
+          "layer": 4,
+          "kind": "full_readout",
+          "calibration_delta_nll": -80.67039489746094,
+          "calibration_arm": "layer04_full_readout"
+        },
+        {
+          "layer": 2,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -78.76013946533203,
+          "calibration_arm": "layer02_preserve_retained80"
+        },
+        {
+          "layer": 7,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -57.38111114501953,
+          "calibration_arm": "layer07_preserve_retained80"
+        },
+        {
+          "layer": 10,
+          "kind": "full_readout",
+          "calibration_delta_nll": -51.812705993652344,
+          "calibration_arm": "layer10_full_readout"
+        },
+        {
+          "layer": 13,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -50.64707565307617,
+          "calibration_arm": "layer13_preserve_retained80"
+        },
+        {
+          "layer": 9,
+          "kind": "magnitude",
+          "calibration_delta_nll": -50.19123840332031,
+          "calibration_arm": "layer09_magnitude"
+        },
+        {
+          "layer": 12,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -47.86362838745117,
+          "calibration_arm": "layer12_preserve_retained80"
+        },
+        {
+          "layer": 5,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -42.54106521606445,
+          "calibration_arm": "layer05_preserve_retained80"
+        },
+        {
+          "layer": 14,
+          "kind": "magnitude",
+          "calibration_delta_nll": -36.17839813232422,
+          "calibration_arm": "layer14_magnitude"
+        },
+        {
+          "layer": 8,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -34.897613525390625,
+          "calibration_arm": "layer08_preserve_retained80"
+        },
+        {
+          "layer": 28,
+          "kind": "full_readout",
+          "calibration_delta_nll": -32.33380126953125,
+          "calibration_arm": "layer28_full_readout"
+        },
+        {
+          "layer": 16,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -25.656494140625,
+          "calibration_arm": "layer16_preserve_retained80"
+        }
+      ],
+      "scale_mode": "stored_scale",
+      "int4_clip": 1.0,
+      "cache_bytes": 28499968
+    },
+    "allnegative": {
+      "table_sha256": "8c45228fcc46368b72b348a3a32bd61df5fb6dfb6c1cf136b40e1181b47c68aa",
+      "swap_count": 46,
+      "swaps": [
+        {
+          "layer": 0,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -137.9699935913086,
+          "calibration_arm": "layer00_preserve_retained80"
+        },
+        {
+          "layer": 3,
+          "kind": "magnitude",
+          "calibration_delta_nll": -95.32943344116211,
+          "calibration_arm": "layer03_magnitude"
+        },
+        {
+          "layer": 6,
+          "kind": "full_readout",
+          "calibration_delta_nll": -88.1083984375,
+          "calibration_arm": "layer06_full_readout"
+        },
+        {
+          "layer": 1,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -82.92154693603516,
+          "calibration_arm": "layer01_preserve_retained80"
+        },
+        {
+          "layer": 4,
+          "kind": "full_readout",
+          "calibration_delta_nll": -80.67039489746094,
+          "calibration_arm": "layer04_full_readout"
+        },
+        {
+          "layer": 2,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -78.76013946533203,
+          "calibration_arm": "layer02_preserve_retained80"
+        },
+        {
+          "layer": 7,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -57.38111114501953,
+          "calibration_arm": "layer07_preserve_retained80"
+        },
+        {
+          "layer": 10,
+          "kind": "full_readout",
+          "calibration_delta_nll": -51.812705993652344,
+          "calibration_arm": "layer10_full_readout"
+        },
+        {
+          "layer": 13,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -50.64707565307617,
+          "calibration_arm": "layer13_preserve_retained80"
+        },
+        {
+          "layer": 9,
+          "kind": "magnitude",
+          "calibration_delta_nll": -50.19123840332031,
+          "calibration_arm": "layer09_magnitude"
+        },
+        {
+          "layer": 12,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -47.86362838745117,
+          "calibration_arm": "layer12_preserve_retained80"
+        },
+        {
+          "layer": 5,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -42.54106521606445,
+          "calibration_arm": "layer05_preserve_retained80"
+        },
+        {
+          "layer": 14,
+          "kind": "magnitude",
+          "calibration_delta_nll": -36.17839813232422,
+          "calibration_arm": "layer14_magnitude"
+        },
+        {
+          "layer": 8,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -34.897613525390625,
+          "calibration_arm": "layer08_preserve_retained80"
+        },
+        {
+          "layer": 28,
+          "kind": "full_readout",
+          "calibration_delta_nll": -32.33380126953125,
+          "calibration_arm": "layer28_full_readout"
+        },
+        {
+          "layer": 16,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -25.656494140625,
+          "calibration_arm": "layer16_preserve_retained80"
+        },
+        {
+          "layer": 11,
+          "kind": "magnitude",
+          "calibration_delta_nll": -25.128135681152344,
+          "calibration_arm": "layer11_magnitude"
+        },
+        {
+          "layer": 31,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -23.357696533203125,
+          "calibration_arm": "layer31_preserve_retained80"
+        },
+        {
+          "layer": 26,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -22.475433349609375,
+          "calibration_arm": "layer26_preserve_retained80"
+        },
+        {
+          "layer": 23,
+          "kind": "full_readout",
+          "calibration_delta_nll": -21.59139633178711,
+          "calibration_arm": "layer23_full_readout"
+        },
+        {
+          "layer": 38,
+          "kind": "full_readout",
+          "calibration_delta_nll": -17.434444427490234,
+          "calibration_arm": "layer38_full_readout"
+        },
+        {
+          "layer": 22,
+          "kind": "magnitude",
+          "calibration_delta_nll": -11.98067855834961,
+          "calibration_arm": "layer22_magnitude"
+        },
+        {
+          "layer": 42,
+          "kind": "magnitude",
+          "calibration_delta_nll": -11.78359603881836,
+          "calibration_arm": "layer42_magnitude"
+        },
+        {
+          "layer": 46,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -11.667896270751953,
+          "calibration_arm": "layer46_preserve_retained80"
+        },
+        {
+          "layer": 37,
+          "kind": "full_readout",
+          "calibration_delta_nll": -10.420032501220703,
+          "calibration_arm": "layer37_full_readout"
+        },
+        {
+          "layer": 19,
+          "kind": "full_readout",
+          "calibration_delta_nll": -10.302207946777344,
+          "calibration_arm": "layer19_full_readout"
+        },
+        {
+          "layer": 29,
+          "kind": "full_readout",
+          "calibration_delta_nll": -10.025642395019531,
+          "calibration_arm": "layer29_full_readout"
+        },
+        {
+          "layer": 44,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -8.550148010253906,
+          "calibration_arm": "layer44_preserve_retained80"
+        },
+        {
+          "layer": 36,
+          "kind": "magnitude",
+          "calibration_delta_nll": -7.239654541015625,
+          "calibration_arm": "layer36_magnitude"
+        },
+        {
+          "layer": 39,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -6.086616516113281,
+          "calibration_arm": "layer39_preserve_retained80"
+        },
+        {
+          "layer": 41,
+          "kind": "preserve_retained80",
+          "calibration_delta_nll": -5.648303985595703,
+          "calibration_arm": "layer41_preserve_retained80"
+        },
+        {
+          "layer": 54,
+          "kind": "full_readout",
+          "calibration_delta_nll": -5.497364044189453,
+          "calibration_arm": "layer54_full_readout"
+        },
+        {
+          "layer": 51,
+          "kind": "full_readout",
+          "calibration_delta_nll": -4.251575469970703,
+          "calibration_arm": "layer51_full_readout"
+        },
+        {
+          "layer": 40,
+          "kind": "magnitude",
+          "calibration_delta_nll": -3.6925506591796875,
+          "calibration_arm": "layer40_magnitude"
+        },
+        {
+          "layer": 49,
+          "kind": "full_readout",
+          "calibration_delta_nll": -3.404132843017578,
+          "calibration_arm": "layer49_full_readout"
+        },
+        {
+          "layer": 35,
+          "kind": "full_readout",
+          "calibration_delta_nll": -3.0467872619628906,
+          "calibration_arm": "layer35_full_readout"
+        },
+        {
+          "layer": 25,
+          "kind": "magnitude",
+          "calibration_delta_nll": -1.4813270568847656,
+          "calibration_arm": "layer25_magnitude"
+        },
+        {
+          "layer": 24,
+          "kind": "full_readout",
+          "calibration_delta_nll": -1.1176490783691406,
+          "calibration_arm": "layer24_full_readout"
+        },
+        {
+          "layer": 53,
+          "kind": "full_readout",
+          "calibration_delta_nll": -0.9784088134765625,
+          "calibration_arm": "layer53_full_readout"
+        },
+        {
+          "layer": 27,
+          "kind": "full_readout",
+          "calibration_delta_nll": -0.9745712280273438,
+          "calibration_arm": "layer27_full_readout"
+        },
+        {
+          "layer": 32,
+          "kind": "magnitude",
+          "calibration_delta_nll": -0.9448623657226562,
+          "calibration_arm": "layer32_magnitude"
+        },
+        {
+          "layer": 45,
+          "kind": "magnitude",
+          "calibration_delta_nll": -0.5014266967773438,
+          "calibration_arm": "layer45_magnitude"
+        },
+        {
+          "layer": 55,
+          "kind": "full_readout",
+          "calibration_delta_nll": -0.49015045166015625,
+          "calibration_arm": "layer55_full_readout"
+        },
+        {
+          "layer": 50,
+          "kind": "magnitude",
+          "calibration_delta_nll": -0.3406982421875,
+          "calibration_arm": "layer50_magnitude"
+        },
+        {
+          "layer": 52,
+          "kind": "full_readout",
+          "calibration_delta_nll": -0.30689239501953125,
+          "calibration_arm": "layer52_full_readout"
+        },
+        {
+          "layer": 47,
+          "kind": "full_readout",
+          "calibration_delta_nll": -0.024761199951171875,
+          "calibration_arm": "layer47_full_readout"
+        }
+      ],
+      "scale_mode": "stored_scale",
+      "int4_clip": 1.0,
+      "cache_bytes": 28499968
+    }
+  }
+}
