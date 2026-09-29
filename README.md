@@ -3,11 +3,15 @@
 ## In progress: optimize unadapted SQ3.25, then fresh Resurface v5
 
 The user clarified the order: **original source with no adapter → optimize
-SQ3.25 → freeze the table → train fresh Resurface for recall**. Four fixed
-same-budget tier tables will be compared on an expanded TRAIN screen without
-loading any adapter. Only its selected table can advance to fresh training;
-no v2/v3 adapter is reused. See the [v5 protocol](docs/STATE_FIRST_V5_PROTOCOL.md)
-and [checklist](PLAN.md). No v5 quality result is available yet.
+SQ3.25 → freeze the table → train fresh Resurface for recall**. The completed
+four-table TRAIN screen selected `preserve_int8`: unadapted TRAIN PPL improves
+from **11.1296 to 10.8452** (−2.56%), with MK **10/96 to 11/96**. This protects
+the original 16 INT8 coordinates and optimizes the other INT4/zero assignments.
+The table and byte budget are frozen. Independent screen/smoke audits passed;
+fresh 1536-update training is running, with no v2/v3 adapter reused. Full v5
+quality is not yet measured. See [current evidence](docs/STATE_FIRST_V5_RESULTS.md),
+[reproduction commands](docs/STATE_FIRST_V5_REPRODUCTION.md),
+[protocol](docs/STATE_FIRST_V5_PROTOCOL.md), and [checklist](PLAN.md).
 
 ## Completed v4: changing the codec with frozen Resurface trades recall for PPL
 

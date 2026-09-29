@@ -90,9 +90,9 @@ Random CPU/GPU recurrence diagnostics retain disclosed numerical differences.
 
 - [x] Freeze unadapted candidate selection, fresh training and full quality gates.
 - [x] Derive four same-budget tier tables and independently verify original-S16 TRAIN provenance.
-- [ ] Screen 32 TRAIN windows and 96 numeric TRAIN prompts without any adapter.
-- [ ] Independently audit selection and freeze the selected non-baseline table.
-- [ ] Pass a discarded fresh one-update training/export smoke.
+- [x] Screen 32 TRAIN windows and 96 numeric TRAIN prompts without any adapter.
+- [x] Independently audit selection and freeze the selected non-baseline table.
+- [x] Pass a discarded fresh one-update training/export smoke and its independent audit.
 - [ ] Train fresh Resurface for 1536 successful updates on the selected state.
 - [ ] Verify final checkpoint/export equality and packed inference parity.
 - [ ] Run all four full PPL/MK arms and exact unadapted baseline replays.

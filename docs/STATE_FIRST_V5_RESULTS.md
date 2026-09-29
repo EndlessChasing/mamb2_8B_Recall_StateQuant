@@ -4,9 +4,9 @@ Experiment date: 2026-09-28. The [protocol](STATE_FIRST_V5_PROTOCOL.md) was
 reviewed and committed before candidate measurements. Its SHA256 is
 `ce700910f27230e062fe62e89dd6bddee05bcbf7bb7972c59fdba24cb3db9f5d`.
 
-**Status: candidate preparation and independent CPU audit passed; unadapted
-TRAIN screening is running. No v5 trained adapter or full quality result exists
-yet.** This follows the user's clarified order:
+**Status: unadapted selection and discarded GPU smoke completed; their independent
+audits passed. Formal fresh Resurface training is running. No final v5 adapter
+or full quality result exists yet.** This follows the user's clarified order:
 
 1. Load original pure Mamba2-8B with no Resurface.
 2. Compare fixed Q3.25 state tables on TRAIN and freeze one selection.
@@ -50,7 +50,7 @@ selection/storage fixtures passed, and CUDA remained uninitialized. The
 [helper CPU checks](../reports/state_first_v5_helper_cpu_checks.json) separately
 cover derivation, ties and selection rejection/fallback cases.
 
-## Unadapted selection — running
+## Completed unadapted selection
 
 The expanded TRAIN screen includes rows 8–39, first 512 tokens each:
 **32 windows / 16,352 prediction targets**, plus **96 normal numeric prompts**.
@@ -63,7 +63,33 @@ collapse before recall training. Magnitude is an admissible fallback; if it
 wins, v5 stops without duplicating its prior Resurface training. A tie on PPL
 may advance a table with higher MK and is not proof of PPL improvement.
 
-## Fresh training — pending selection
+| Unadapted state table | TRAIN PPL | Normal TRAIN MK |
+| --- | ---: | ---: |
+| Original magnitude | 11.129552 | 10/96 |
+| Full readout | 10.897633 | 10/96 |
+| **Preserve INT8** | **10.845167** | **11/96** |
+| Preserve retained80 | 11.161503 | 14/96 |
+| Restored magnitude | 11.129552 | 10/96 |
+
+All four candidates are finite, use the exact cache budget and meet the
+predeclared MK noncollapse guard of five correct answers. The fixed lowest-PPL
+rule selects **preserve_int8**, with **2.5552% lower TRAIN PPL** than magnitude.
+The higher-MK retained80 table has worse PPL and does not win this selection.
+This is TRAIN evidence and does not establish the full validation gate.
+
+The [screen comparison](../reports/state_first_v5_screen/screen_comparison.json)
+and [independent audit](../reports/state_first_v5_screen_audit.json) verify all
+32 window NLLs, generated IDs and scoring for each arm, and exact magnitude
+restoration. The selected
+[calibration payload](../reports/state_first_v5_screen/selected_calibration.pt)
+is 60,905 bytes, SHA256
+`c525fbf62ef4a72db2d4bb13c13920d9f5d4946485538da0f00a369aab3092e3`.
+Its sole table SHA256 is
+`6dc1c15ca18d07fb87de8f0517baecbf47adec0846575172fa344f86ac10cde5`.
+The selection report SHA256 is
+`a7ff703281309d83031d4b3bc3b4c6edf718e8646fa62506ff162dbf1cd62437`.
+
+## Fresh training — running
 
 The trainer creates all 224 FP32 adapter tensors, Adam and GradScaler from
 scratch, with the same v2 training math and fixed 1,536-update recipe. Both
@@ -74,8 +100,21 @@ pass before formal training starts from scratch again.
 The [CPU trainer checks](../reports/state_first_v5_trainer_cpu_checks.json)
 passed 11 checks: fresh values, empty optimizer state, scaler initialization,
 one synthetic CPU update and complete checkpoint roundtrip. These bookkeeping
-checks do not establish GPU packed parity or model quality. Actual GPU smoke,
-formal training, final FP16 export and 128-token packed parity are still pending.
+checks do not establish GPU packed parity or model quality.
+
+The actual GPU [smoke receipt](../reports/state_first_v5_smoke/report.json)
+records **one successful update in two attempts**, with one initial overflow
+and the same schedule entry retried after scale reduction 1024→512. All 224
+fresh FP32 masters, empty optimizer and initial scaler were verified. Initial
+identity and the serialized discarded adapter both passed **128-token bitwise
+packed training/inference parity**, with the exact 28,499,968-byte cache.
+The [independent smoke audit](../reports/state_first_v5_smoke_audit.json) passed.
+
+The smoke export is explicitly discarded and is not a model candidate. Formal
+training reloads the original models and reinitializes every adapter parameter,
+optimizer and scaler. It does not continue the smoke update. Only its final
+1,536-successful-update export will be evaluated. Training is currently running;
+its final checkpoint, export and full quality remain pending.
 
 ## Full confirmation — pending
 

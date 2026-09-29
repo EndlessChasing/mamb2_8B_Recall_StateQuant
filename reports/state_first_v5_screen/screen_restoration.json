@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "per_window_nll_exact": true,
+  "all_generated_ids_exact": true,
+  "all_decoded_predictions_exact": true,
+  "ppl_windows_repeated": 32,
+  "ppl_target_tokens_repeated": 16352,
+  "mk_cases_repeated": 96,
+  "scope": "Exact no-adapter replay after candidate/adapter removal"
+}
