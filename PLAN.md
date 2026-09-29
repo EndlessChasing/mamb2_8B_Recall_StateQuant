@@ -37,3 +37,19 @@ its PPL is not restored (candidate is 14.38% higher). State cache remains
 independent evidence audit passed. See docs/QUANT_FIRST_RESULTS.md.
 
 See docs/QUANT_FIRST_PROTOCOL.md. No Q8 or old-adapter initialization; no public release.
+
+## Continuation v3: more Resurface training
+
+- [x] Freeze a separate continuation protocol; preserve all v2 evidence.
+- [x] Verify the parent FP32 master / Adam / GradScaler checkpoint on CPU.
+- [x] Implement and review exact checkpoint restoration and continuation receipts.
+- [x] Pass one discarded resumed smoke update and packed-forward parity (1/1, no overflow).
+- [ ] Complete 3072 additional successful updates (4608 cumulative), final candidate only.
+- [ ] Export FP16; verify final checkpoint casts and packed inference equality.
+- [ ] Run full parent / continued / restored-parent PPL and MK comparisons.
+- [ ] Independently audit training, scores, calibration, memory and full replay.
+- [ ] Document results and push artifacts to the private repository.
+
+State format, adapter capacity, frozen source, calibration and loss stay fixed.
+The parent is the v2 239/384 adapter; this experiment tests additional training
+against that parent. See docs/RESURFACE_MORE_PROTOCOL.md. No Q8 or public release.
