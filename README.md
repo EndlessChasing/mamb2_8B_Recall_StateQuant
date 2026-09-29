@@ -1,18 +1,36 @@
 # Mamb2_8B_Recall + StateQuant
 
-## In progress: same-budget state repair v4
+## In progress: optimize unadapted SQ3.25, then fresh Resurface v5
 
-Three new candidates test readout-aware tier calibration, dense3-bit carry,
-and dense3 with power-of-two coordinate equalization. Each retains exactly
-**3.25 bits per state element including scales**, and **27.1797 MiB** total
-batch-one persistent cache. Original source weights and the v2 adapter remain
-fixed. TRAIN calibration and 36 GPU codec checks passed. All nine TRAIN arms,
-exact parent replay and the independent screen audit are complete. Readout-aware
-tiers reduce TRAIN PPL from 10.8142 to 10.5247, but MK falls from 37/48 to 30/48.
-Neither dense Q3 variant improves quality. No candidate passes the screen gate;
-readout-aware tiers advance for full diagnostic confirmation under the frozen
-rule. See [current evidence](docs/STATE_REPAIR_RESULTS.md) and the
-[frozen repair protocol](docs/STATE_REPAIR_PROTOCOL.md).
+The user clarified the order: **original source with no adapter → optimize
+SQ3.25 → freeze the table → train fresh Resurface for recall**. Four fixed
+same-budget tier tables will be compared on an expanded TRAIN screen without
+loading any adapter. Only its selected table can advance to fresh training;
+no v2/v3 adapter is reused. See the [v5 protocol](docs/STATE_FIRST_V5_PROTOCOL.md)
+and [checklist](PLAN.md). No v5 quality result is available yet.
+
+## Completed v4: changing the codec with frozen Resurface trades recall for PPL
+
+This distinct experiment kept the v2 adapter fixed while testing readout-aware
+tiers, dense3-bit carry and equalized dense3. Each retained **3.25 bits per
+state element including scales** and **27.1797 MiB** total batch-one cache.
+Only readout-aware tiers advanced to full diagnostic confirmation; both dense
+variants substantially worsened TRAIN quality.
+
+| State table with the same frozen v2 adapter | Full PPL | Normal MK |
+| --- | ---: | ---: |
+| Original magnitude tiers | 8.388906 | 239/384 (62.24%) |
+| Readout-aware tiers | 8.258201 | 204/384 (53.125%) |
+
+PPL improves **1.56%**, but MK falls **9.11 percentage points** (35 gains,
+70 regressions; paired 95% interval **−14.32 to −4.17 pp**). The combined repair
+gate **fails**. Candidate PPL remains **12.60% above original S16**. Keep the
+v2 endpoint as the recall reference. Both exact full parent replays and the
+independent CPU audit passed. This did not retrain Resurface for the new table.
+See [all results and limits](docs/STATE_REPAIR_RESULTS.md),
+[raw comparison](reports/state_repair_full/full_comparison.json),
+[independent audit](reports/state_repair_full_audit.json), and
+[reproduction commands](docs/STATE_REPAIR_REPRODUCTION.md).
 
 ## v3: more training gives lower PPL without a recall improvement
 

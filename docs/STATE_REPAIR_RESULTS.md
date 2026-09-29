@@ -3,11 +3,11 @@
 Experiment date: 2026-09-28. This follows the frozen
 [v4 protocol](STATE_REPAIR_PROTOCOL.md).
 
-**Status: calibration, implementation checks, TRAIN screening and its independent
-CPU audit are complete. Full PPL/MK confirmation is running.** Readout-aware
-tiers improve TRAIN PPL but lose recall; neither dense Q3 variant improves
-quality. No candidate passes the screening gate. Full diagnostic confirmation
-of readout-aware tiers follows the frozen advancement rule.
+**Status: complete; both exact full parent replays and the independent CPU
+audit passed. The joint quality gate failed.** Readout-aware tiers
+reduce full PPL by 1.56%, but MK falls from 239 to 204 out of 384. The observed
+scores fail the joint repair gate. Keep the old SQ3.25 plus v2 adapter as the
+recall reference. Neither dense Q3 variant improves TRAIN quality.
 
 ## Scope and fixed controls
 
@@ -25,8 +25,8 @@ codec implementations live in separate files.
 Native projections, convolution, gating and FP16 residual orchestration remain
 unchanged. The RMSNorm backend is pinned to the existing 16-warp, three-stage,
 one-CTA configuration before model execution, following the
-[replay clarification](RESURFACE_MORE_BACKEND_REPLAY.md). Full control replay
-is still required before interpreting a new quality result.
+[replay clarification](RESURFACE_MORE_BACKEND_REPLAY.md). Both required full
+control replays completed exactly.
 
 | Candidate | Carry allocation | Coordinate metadata |
 | --- | --- | --- |
@@ -139,6 +139,19 @@ failed receipt and source/log snapshots were preserved. The passing receipt
 binds the corrected code hashes. These checks validate the specified arithmetic
 on bounded probes and do not establish full-model quality.
 
+An additional [independent multistep check](../reports/state_repair_dense3_multistep_checks.json)
+compared CPU decoding, recurrence, quantization and bit packing at every one
+of 65 tokens. Both controlled fixtures were bitwise exact for both table modes;
+all six cases also matched full/segmented/tokenwise GPU execution exactly.
+Random CPU/GPU arithmetic was not universally exact: permutation mode had
+113 differing integer codes out of 931,840 and output relative L2 error 0.0037972;
+equalizer mode had no differing codes and output relative L2 error 0.00001930.
+All values were finite and both random final carries matched exactly. This
+supports the controlled recurrence/packing implementation but does not establish
+arbitrary numerical equivalence near quantization thresholds. The initial
+inverse-softplus fixture-construction failure occurred on CPU before GPU use;
+it is preserved separately and is not a codec failure.
+
 ## Completed TRAIN screening
 
 The fixed TRAIN screen uses rows 8–15, first 512 tokens each: **4,088 prediction
@@ -211,7 +224,7 @@ explains a mechanism; it does not isolate the causal contribution in the full
 model. Both dense variants also fail without an adapter. Independent code and
 metadata inspection found no demonstrated mismatch with the specified format.
 
-## Full confirmation — pending
+## Full confirmation
 
 The selected candidate's full confirmation uses 130 WikiText-2 validation
 windows / 264,764 prediction targets, 384 normal CONFIRM prompts and 384
@@ -221,13 +234,50 @@ NLLs and generated IDs, and reproduce again after restoring it.
 The final same-budget repair gate requires at least 1% lower PPL than old
 SQ plus v2, no observed normal-MK decrease, a paired MK bootstrap 95% lower bound
 of at least -2 percentage points, and no extra cache bytes. Restoration of
-original S16 PPL is reported separately. Full confirmation is still pending.
+original S16 PPL is reported separately.
 
-The fresh parent has completed and reproduced all 130 archived window NLLs and
-all 768 generated token sequences exactly. The candidate's 130-window PPL is
-**8.258201**, versus **8.388906** for old SQ plus v2, an improvement of **1.5581%**.
-Candidate MK, final parent restoration and the full independent audit remain
-pending, so the joint repair gate has no final outcome yet.
+| Configuration | Full PPL | Normal MK | Target-removed matches | Cache/sequence |
+| --- | ---: | ---: | ---: | ---: |
+| Archived original S16, no adapter | 7.334322 | 146/384 | 0/384 | 116.3750 MiB |
+| Fresh old SQ3.25 plus frozen v2 | 8.388906 | 239/384 (62.24%) | 0/384 | 27.1797 MiB |
+| Readout-aware tiers plus frozen v2 | **8.258201** | **204/384 (53.125%)** | 0/384 | 27.1797 MiB |
+
+Full PPL improves **1.5581%**, with lower NLL in **102/130** windows. Candidate
+PPL remains **12.5967% above original S16**; original perplexity is not restored.
+The S16 row is explicitly hash-verified archived context, not a new v4 S16 run.
+
+Normal MK has **35 gains and 70 regressions**, a net loss of 35 correct answers
+or **9.1146 percentage points**. A separate CPU calculation of the frozen paired
+bootstrap (10,000 draws, seed 20260928) gives a 95% interval of
+**−14.3229 to −4.1667 percentage points**. By list length:
+
+| Number of records | Old SQ plus v2 | Readout-aware plus v2 | Change |
+| --- | ---: | ---: | ---: |
+| N=16 | 169/192 | 162/192 | −7 |
+| N=64 | 70/192 | 42/192 | −28 |
+
+The larger-list condition loses more answers, consistent with the concern that
+an immediate-readout proxy can discard useful history. This is association,
+not a controlled causal isolation. Target-removed matches remain zero; this
+means no matches to removed target values, not a claim of correct abstention.
+
+The measured outcome satisfies the PPL and cache conditions, but fails both
+the no-observed-MK-decrease condition and the −2 pp bootstrap lower-bound
+condition. **This is a PPL improvement with a recall cost, not a successful
+combined SQ3.25 repair.** It does not prove all 3.25-bit state methods infeasible.
+
+The fresh parent reproduced all 130 archived window NLLs and all 768 generated
+token sequences exactly. Restoring the old table at the end reproduced all of
+them exactly again. The full independent CPU audit passed, including calibration
+derivation, input identities, scores, selection, backend, storage and gates.
+The inherited `full_parent_replay.json` scope string
+mentions removing an adapter because it comes from the older replay helper;
+both archived and fresh v4 parent records explicitly use the same frozen v2
+adapter. The replay compares their complete score/output records.
+
+See [full comparison](../reports/state_repair_full/full_comparison.json),
+[exact restoration](../reports/state_repair_full/full_restoration.json), and
+[independent full audit](../reports/state_repair_full_audit.json).
 
 ## Artifacts and provenance
 
@@ -252,7 +302,8 @@ pending, so the joint repair gate has no final outcome yet.
   [original S16](../reports/quant_first_v2/evaluation/full_source_s16.json),
   [old SQ3.25](../reports/quant_first_v2/evaluation/full_source_sq3p25.json), and
   [old SQ3.25 plus v2](../reports/quant_first_v2/evaluation/full_resurface_sq3p25.json).
-  These are archived context until the required fresh replay finishes.
+  The v2-adapted control was freshly replayed in full twice; the other two
+  full rows remain explicitly archived context.
 
 | Artifact | SHA256 |
 | --- | --- |
@@ -278,7 +329,7 @@ trained with the old tiered state format and is kept frozen in this experiment.
 No dense-codec surrogate training gradient or adaptation result is included.
 
 Both the TRAIN screen and benchmark families have historical project exposure.
-The independent CPU result audit, when complete, will reconstruct recorded
-evidence rather than rerun GPU logits. No broad downstream, long-context,
+The completed independent CPU result audit reconstructs recorded evidence
+rather than rerunning GPU logits. No broad downstream, long-context,
 throughput, ASIC-energy or unseen-generalization claim follows from the current
 implementation checks. No public release is included.

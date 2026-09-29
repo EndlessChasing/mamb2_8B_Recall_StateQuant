@@ -72,9 +72,31 @@ Keep v2 as the recall reference; see docs/RESURFACE_MORE_RESULTS.md.
 - [x] Pass36 GPU codec/oracle/segmentation/numerical-boundary/storage checks.
 - [x] Complete nine TRAIN screening arms and exact parent replay.
 - [x] Independently audit screening and select one candidate by the frozen rule.
-- [ ] Complete the selected candidate's full PPL/MK and exact baseline replays, if advanced.
-- [ ] Audit the full outcome, document limitations and push private artifacts.
+- [x] Complete the selected candidate's full PPL/MK and exact baseline replays, if advanced.
+- [x] Audit the full outcome and document limitations.
+- [ ] Push the completed v4 artifacts privately.
 
 No new adapter training in this experiment. Keep original source weights and
 the v2 adapter fixed; each candidate retains exactly52B per128-state row plus
 one57,344B table. See docs/STATE_REPAIR_PROTOCOL.md.
+
+Full v4 result: PPL **8.388906 → 8.258201** (−1.56%), MK **239 → 204/384**.
+The combined gate fails: 35 gains, 70 regressions, paired95% interval
+−14.32 to −4.17 pp. Cache stays 27.1797 MiB. Exact archived/final parent replays,
+the independent CPU audit and the targeted controlled multistep codec checks pass.
+Random CPU/GPU recurrence diagnostics retain disclosed numerical differences.
+
+## State first v5: user-corrected order
+
+- [x] Freeze unadapted candidate selection, fresh training and full quality gates.
+- [ ] Derive four same-budget tier tables from original-S16 TRAIN statistics.
+- [ ] Screen 32 TRAIN windows and 96 numeric TRAIN prompts without any adapter.
+- [ ] Independently audit selection and freeze the selected non-baseline table.
+- [ ] Pass a discarded fresh one-update training/export smoke.
+- [ ] Train fresh Resurface for 1536 successful updates on the selected state.
+- [ ] Verify final checkpoint/export equality and packed inference parity.
+- [ ] Run all four full PPL/MK arms and exact unadapted baseline replays.
+- [ ] Independently audit, report all three gates, and push private evidence.
+
+If the original magnitude table wins TRAIN selection, stop this experiment
+without repeating its existing Resurface run. See docs/STATE_FIRST_V5_PROTOCOL.md.

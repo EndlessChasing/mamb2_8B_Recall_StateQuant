@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "per_window_nll_exact": true,
+  "all_generated_ids_exact": true,
+  "all_decoded_predictions_exact": true,
+  "ppl_windows_repeated": 130,
+  "ppl_target_tokens_repeated": 264764,
+  "mk_cases_repeated": 768,
+  "scope": "Restore original codec/table with the same frozen v2 adapter; all windows and generated IDs exact"
+}
