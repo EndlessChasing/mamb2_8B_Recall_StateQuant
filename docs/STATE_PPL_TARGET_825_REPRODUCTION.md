@@ -3,19 +3,29 @@
 These commands implement the frozen [v7 protocol](STATE_PPL_V7_PROTOCOL.md)
 (`84ffdce1d9e5d5dbac2b6996072f0db09bd1bf79fd3c55dad8b8f35973cd5d14`)
 and conditional [v8 protocol](STATE_PPL_V8_PROTOCOL.md)
-(`880839c0b0919d0a9a119647d2d9c1657e5b8eb5389c8c2ee22ee1785917aa01`).
+(`880839c0b0919d0a9a119647d2d9c1657e5b8eb5389c8c2ee22ee1785917aa01`),
+followed by the separately frozen [v9 protocol](STATE_PPL_V9_PROTOCOL.md)
+(`9e01c03ee6870a8ecbcd9a0ba9157b1651d2830ea65d2951664ebcb81b4a09b3`).
 Run from the existing repository on the CUDA host, in **Bash**, one GPU job
 at a time. The examples reference existing source weights and inputs in place;
 they do not copy weights or change the frozen source.
 
-**Preparation checkpoint:** v7's 119 GPU codec checks and both routes' CPU
-input audits have passed. The independently audited v7 screen retained baseline,
-so no v7 full run is needed. The guide was prepared before v8 model measurements;
-v8 calibration has since completed, with its screen/full confirmation still pending.
-The commands below describe the complete flow, including prospective stages;
-they do not claim that all stages have run. See [current results/status](STATE_PPL_TARGET_825.md).
+**Completed v7/v8 results:** v7's independently audited TRAIN screen retained
+baseline, so no v7 full run was needed. V8 calibrated 170 arms, exported seven
+distinct combined tables, and selected `top8` on its separate TRAIN screen.
+Full validation then measured **8.28386254265227**, versus the unchanged v6
+baseline's **8.355268708845868**. The independent full audit passed, including
+exact baseline replay/restoration and the unchanged cache budget; the strict
+**PPL < 8.25 target remains unmet**. The commands below reproduce those stages.
+See [current results/status](STATE_PPL_TARGET_825.md).
 
-Both routes measure PPL without an adapter. There is no MK generation, scoring,
+The canonical v8 full audit is
+[`reports/state_ppl_v8_full_audit.json`](../reports/state_ppl_v8_full_audit.json),
+SHA256 `051316fe074ea1ba9cfeef87ba7fe4bb9c3a4c18e3c7427c9a2ef256d490e9cf`.
+Its completed finite miss permits the separately frozen v9 procedure described
+below; it does not permit changing the v8 winner or revisiting its candidate grid.
+
+All three routes measure PPL without an adapter. There is no MK generation, scoring,
 selection or Resurface training. The batch-one persistent cache must remain
 **28,499,968 bytes**, including the packed Q3.25 state, FP16 convolution cache
 and one 57,344-byte permutation table. This is not total GPU memory. The full
@@ -391,3 +401,250 @@ context is active; use `reset=True` for a new independent request. Leaving the
 context restores the original mixer methods and releases its request caches.
 Native `InferenceParams` and variable-length batching are not supported by
 this controller API.
+
+## 9. Conditional v9: pinned parent and start audit
+
+V9 refines groups within the v8 TRAIN-selected `top8` table. Its protocol was
+frozen while v8 full validation was running, before that result was seen.
+The completed finite v8 miss now satisfies its start condition. The parent,
+eligible layers, group alternatives, TRAIN rows and candidate grid stay fixed;
+v8 validation does not select a new parent or an intervention.
+
+This route pins the **canonical original v8 artifacts**, including their exact
+serialized payload and audit hashes. Use the paths below, preserving all their
+raw reports and upstream receipts. Outputs freshly reproduced in sections 5–7
+can have different receipt hashes even if table bytes agree; they cannot be
+substituted for these pinned inputs to the frozen v9 experiment. The existing
+`PPL825_MODEL_ARGS`, `PPL825_AUDIT_ARGS`, Python and source variables come from
+section 1. Choose a fresh v9 output directory independently of earlier reruns.
+To reproduce v9 alone using the retained evidence, run section 1's setup and
+then sections 9–13; rerunning the earlier GPU experiments is unnecessary.
+
+```bash
+PPL9_RUN=artifacts/repro_state_ppl_v9_01
+test ! -e "$PPL9_RUN"
+mkdir -p "$PPL9_RUN"
+
+PPL9_PARENT_ARGS=(
+  --layer-candidates artifacts/state_ppl_v8_calibration/candidates.pt
+  --v8-selected-calibration artifacts/state_ppl_v8_screen/selected_calibration.pt
+  --v8-screen-audit reports/state_ppl_v8_screen_audit.json
+  --v8-full-dir artifacts/state_ppl_v8_full
+  --v8-full-audit reports/state_ppl_v8_full_audit.json
+)
+PPL9_MODEL_ARGS=(
+  "${PPL825_MODEL_ARGS[@]}"
+  --codec-checks "$PPL825_V6_CHECKS"
+  "${PPL9_PARENT_ARGS[@]}"
+)
+PPL9_AUDIT_ARGS=(
+  "${PPL825_AUDIT_ARGS[@]}"
+  --kernel-checks "$PPL825_V6_CHECKS"
+  "${PPL9_PARENT_ARGS[@]}"
+)
+
+CUDA_VISIBLE_DEVICES= "$PPL825_PYTHON" scripts/audit_state_ppl_v9.py \
+  "${PPL9_AUDIT_ARGS[@]}" --stage inputs \
+  --output "$PPL9_RUN/inputs_audit.json"
+```
+
+Proceed only after the input audit reports `complete=true`, `passed=true`,
+`cuda_initialized=false`. It must validate the completed v8 full miss, exact
+parent table and the complete upstream provenance. The canonical v8 selected
+payload SHA256 is
+`9b7c04814085abbb67d7a10e0b70d1a6e9b34e97299fc0dc26e4373ea8f8ea39`;
+its full comparison SHA256 is
+`4fcafaadf18dbd1b0a5cdbf51b035c16fc66b2cf56a5bfe37dea402293ff493b`.
+The full audit hash is recorded at the beginning of this guide. A passing full
+audit with PPL below 8.25 would prohibit starting v9 under this protocol.
+
+## 10. v9: single-group calibration
+
+The eligible layers are **0, 3, 6, 1, 4, 2, 7, 10**, in that fixed order from
+v8's TRAIN calibration ranking. Each of their eight groups is considered.
+For each group, inspect the four existing v5 table alternatives in their
+original order, skip bytes identical to the parent, and deduplicate identical
+remaining group bytes. The intervention inventory is saved before the first
+model forward. The actual pinned inputs yield **192 interventions plus the
+parent baseline and its restoration**, 194 arms total.
+
+Every arm uses TRAIN rows **144..151**, eight complete windows / **16,376
+targets**. All other groups retain their parent bytes. Within each group, use
+the lowest raw NLL alternative with fixed table-order ties, retaining only
+strict improvement. Rank retained changes by delta NLL, numeric layer, group,
+then table order. The fixed combined proposals are baseline, top1, top2, top4,
+top8, top16, top32 and allnegative; cap counts and deduplicate complete tables.
+
+```bash
+CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=8 "$PPL825_PYTHON" \
+  scripts/prepare_state_ppl_v9.py "${PPL9_MODEL_ARGS[@]}" \
+  --out "$PPL9_RUN/calibration"
+
+CUDA_VISIBLE_DEVICES= "$PPL825_PYTHON" scripts/audit_state_ppl_v9.py \
+  "${PPL9_AUDIT_ARGS[@]}" --stage calibration \
+  --calibration-dir "$PPL9_RUN/calibration" \
+  --output "$PPL9_RUN/calibration_audit.json"
+```
+
+The independent CPU audit reconstructs the actual group bytes, intervention
+inventory, raw NLL ranking and each exported combination. If
+`candidates.json → calibration_stopped=true`, preserve the negative result
+and skip screen/full. Single-group gains do not establish additive gains.
+
+## 11. v9: disjoint screen and one frozen winner
+
+After calibration passes its audit, evaluate every distinct combined table
+on TRAIN rows **152..183**, 32 complete windows / **65,504 targets**, followed
+by restored parent. At most eight candidates plus restoration are allowed.
+These rows are disjoint from the preceding v6/v7/v8/v9 selection/calibration
+rows. Minimum finite exact-budget PPL wins, with exact ties preferring parent
+baseline and then export order. No MK or adapter is used.
+
+```bash
+PPL9_GROUP_CANDIDATES="$PPL9_RUN/calibration/candidates.pt"
+
+CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=8 "$PPL825_PYTHON" \
+  scripts/run_state_ppl_v9.py "${PPL9_MODEL_ARGS[@]}" \
+  --group-candidates "$PPL9_GROUP_CANDIDATES" \
+  --stage screen --out "$PPL9_RUN/screen"
+
+CUDA_VISIBLE_DEVICES= "$PPL825_PYTHON" scripts/audit_state_ppl_v9.py \
+  "${PPL9_AUDIT_ARGS[@]}" --stage screen \
+  --calibration-dir "$PPL9_RUN/calibration" \
+  --group-candidates "$PPL9_GROUP_CANDIDATES" --eval-dir "$PPL9_RUN/screen" \
+  --output "$PPL9_RUN/screen_audit.json"
+```
+
+If `screen_comparison.json → selection.baseline_wins=true`, preserve the
+result and skip full confirmation. Otherwise the exported
+`screen/selected_calibration.pt` fixes the single table allowed to advance.
+A failed integrity/runtime check must be diagnosed; only recognized
+nonfinite candidates may be excluded with their evidence retained.
+
+## 12. v9: full confirmation against the exact v8 parent
+
+```bash
+CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=8 "$PPL825_PYTHON" \
+  scripts/run_state_ppl_v9.py "${PPL9_MODEL_ARGS[@]}" \
+  --group-candidates "$PPL9_GROUP_CANDIDATES" \
+  --stage full --selected-calibration "$PPL9_RUN/screen/selected_calibration.pt" \
+  --s16-report "$PPL825_S16" --out "$PPL9_RUN/full"
+
+CUDA_VISIBLE_DEVICES= "$PPL825_PYTHON" scripts/audit_state_ppl_v9.py \
+  "${PPL9_AUDIT_ARGS[@]}" --stage full \
+  --calibration-dir "$PPL9_RUN/calibration" \
+  --group-candidates "$PPL9_GROUP_CANDIDATES" \
+  --screening-report "$PPL9_RUN/screen/screen_comparison.json" \
+  --selected-calibration "$PPL9_RUN/screen/selected_calibration.pt" \
+  --s16-report "$PPL825_S16" --eval-dir "$PPL9_RUN/full" \
+  --output "$PPL9_RUN/full_audit.json"
+```
+
+All three arms—`v8_baseline`, `selected`, `restored_baseline`—use the same
+130 validation windows / **264,764 targets**. Both parent evaluations must
+repeat the archived v8 selected result, including complete PPL, reset probe
+and actual cache dictionaries. All target checks must pass:
+`ppl_strictly_below_8p25`, `cache_same_budget` and
+`all_integrity_checks_passed`, followed by the independent full audit.
+
+Group refinement stores one 57,344-byte uint8 permutation table. The existing
+v6 codec still uses 52 bytes per state row and **28,499,968 persistent bytes**
+at batch one. No new codec, extra resident table, predictor, parameter or
+Resurface adapter is introduced. The original FP16 source weights remain
+separate from this cache budget. This is a bounded, historically exposed
+benchmark search; an improvement does not establish generalization to other
+models, tasks or context lengths.
+
+## 13. Load a successful frozen v9 table for inference
+
+Run this example only after section 12 has a **passing full audit and
+`target_pass=true`**. It refuses a failed or incomplete target outcome.
+The source weights, request-reset semantics and controller API are identical
+to section 8; v9 changes only the validated static table passed to that
+controller. This documented example has been checked statically, without
+an additional GPU run for documentation.
+
+```bash
+CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=8 "$PPL825_PYTHON" - "$PPL9_RUN" <<'PY'
+import json
+import sys
+from pathlib import Path
+from types import SimpleNamespace
+
+sys.path.insert(0, str(Path.cwd() / 'scripts'))
+import torch
+from mamba2_recall import runtime, resurface_data as data
+from evaluate_resurface_more import pin_replay_backend, check_replay_backend
+from state_ppl_codec_v6 import StatePPLQuant
+import run_state_ppl_v9 as v9
+
+run = Path(sys.argv[1])
+selected_path = run / 'screen/selected_calibration.pt'
+full_path = run / 'full/full_comparison.json'
+audit = json.loads((run / 'full_audit.json').read_text())
+full = json.loads(full_path.read_text())
+assert audit['complete'] and audit['passed'] and not audit['cuda_initialized']
+assert audit['stage'] == 'full' and full['complete']
+assert audit['source_sha256'] == data.sha_file('scripts/audit_state_ppl_v9.py')
+assert audit['full']['comparison_sha256'] == data.sha_file(full_path)
+assert audit['full']['target_pass'] is True and full['target_pass'] is True
+assert all(full['target_checks'].values())
+assert audit['selected_calibration']['sha256'] == data.sha_file(selected_path)
+assert full['selected_calibration_sha256'] == data.sha_file(selected_path)
+
+args = SimpleNamespace(
+    candidates=Path('artifacts/state_first_v5_candidates/candidates.pt'),
+    v5_selected_calibration=Path('artifacts/state_first_v5_screen/selected_calibration.pt'),
+    v6_selected_calibration=Path('artifacts/state_ppl_v6_screen/selected_calibration.pt'),
+    prose_tokens=Path('/home/horde/mamb2_8B_Recall/training_data/prose/training_tokens.pt'),
+    codec_checks=Path('reports/state_ppl_v6_codec_checks.json'),
+    layer_candidates=Path('artifacts/state_ppl_v8_calibration/candidates.pt'),
+    v8_selected_calibration=Path('artifacts/state_ppl_v8_screen/selected_calibration.pt'),
+    v8_screen_audit=Path('reports/state_ppl_v8_screen_audit.json'),
+    v8_full_dir=Path('artifacts/state_ppl_v8_full'),
+    v8_full_audit=Path('reports/state_ppl_v8_full_audit.json'),
+    group_candidates=run / 'calibration/candidates.pt',
+)
+candidates, binding, train_windows, _ = v9.load_inputs(args)
+selected, _, _ = v9.load_selection(selected_path, candidates, binding, train_windows)
+
+torch.set_num_threads(8)
+torch.manual_seed(20260929)
+torch.cuda.manual_seed_all(20260929)
+torch.backends.cuda.matmul.allow_tf32 = False
+torch.backends.cudnn.allow_tf32 = False
+torch.set_float32_matmul_precision('highest')
+backend = pin_replay_backend()
+source = Path('/home/horde/Mamba2-8B-E8W5/models/source')
+tokenizer = runtime.SentencePieceTokenizer(source)
+model = runtime.load_source_model(source, dtype=torch.float16)
+assert v9.v6.no_adapter_hooks(model)
+
+with torch.inference_mode(), StatePPLQuant(
+    model, selected['permutations'], scale_mode='stored_scale', int4_clip=1.0
+) as execution:
+    ids = torch.tensor([tokenizer.encode('The capital of France is')],
+                       dtype=torch.long, device='cuda')
+    hidden = execution.backbone(ids, reset=True)
+    next_id = int(model.lm_head(hidden[:, -1:]).argmax(dim=-1).item())
+    execution.assert_finite_cache()
+    cache = execution.cache_breakdown()
+    assert cache['total_bytes'] == 28_499_968
+    check_replay_backend(backend)
+    print(json.dumps({
+        'selected_id': selected['selected_id'],
+        'table_sha256': selected['table_sha256'],
+        'next_token_id': next_id,
+        'next_token_text': tokenizer.decode([next_id]),
+        'persistent_cache_bytes': cache['total_bytes'],
+        'full_target_pass': full['target_pass'],
+        'adapter_loaded': False,
+    }, indent=2))
+PY
+```
+
+Continue tokens for the same request using `reset=False` inside the active
+controller context; use `reset=True` for each new request. The selected payload
+is a coordinate-table artifact with provenance, not a model-weight checkpoint.
+The demonstrated interface is batch one and does not support native
+`InferenceParams` or variable-length batching.
