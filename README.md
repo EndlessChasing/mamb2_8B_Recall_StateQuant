@@ -2,6 +2,11 @@
 
 ## Public release: Q3.25 state + Resurface
 
+Hugging Face family name:
+[**Mamb2_8B_Recall_SQ3.25**](https://huggingface.co/EndlessChasing/Mamb2_8B_Recall_SQ3.25).
+Its model card includes download and inference instructions for the same
+verified adapter, state table and runtime.
+
 Download the adapter/table bundle from
 [v0.1.0-q325-resurface](https://github.com/EndlessChasing/mamb2_8B_Recall_StateQuant/releases/tag/v0.1.0-q325-resurface)
 and follow the [installation, verification and inference guide](docs/STATE_RESURFACE_V11_RELEASE.md).

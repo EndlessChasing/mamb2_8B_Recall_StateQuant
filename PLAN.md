@@ -1,5 +1,19 @@
 # Checklist
 
+## Hugging Face release: Mamb2_8B_Recall_SQ3.25
+
+- [x] Preserve the exact GitHub release artifacts and measured runtime.
+- [x] Prepare the family model card, source download instructions and file checksums.
+- [x] Upload 77 files and create the public, ungated model repository and version tag.
+- [x] Verify anonymous downloads of every file, tag identity and downloaded entrypoints.
+
+Published [Mamb2_8B_Recall_SQ3.25](https://huggingface.co/EndlessChasing/Mamb2_8B_Recall_SQ3.25)
+at revision `ebd2ca7cc644ba0e11e4b1595ba03afb8d27e6e4`, tagged
+`v0.1.0-q325-resurface`. The [publication receipt](reports/hf_state_resurface_v11_publication.json)
+records all 77 anonymous full downloads (17,030,105 bytes), exact hashes and
+inventory, and both downloaded verification entrypoints passing with site
+packages disabled. Original 8B weights remain a separate download.
+
 ## GitHub release: v0.1.0-q325-resurface
 
 - [x] Audit reachable repository history and artifact scope for public release.

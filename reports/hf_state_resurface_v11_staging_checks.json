@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "exact_github_release_members": 18,
+    "exact_measured_source_files": 46,
+    "new_gpu_evaluation_performed": false,
+    "no_source_weights_or_training_data_required_for_verification": true,
+    "staged_verify_only_passed": true
+  },
+  "file_count": 77,
+  "format": "MAMBA2_STATE_RESURFACE_V11_HF_PAYLOAD_V1",
+  "github_archive_sha256": "6f5c219f7c92cbfa9541af610970fd015d7005e9257fbb9c7a9ab772e5d4ef80",
+  "publish_manifest_sha256": "bb1f5e26b13a933749fd9a3fd251b2002a17e88ca337b3a34556bb7c061d1681",
+  "ready_for_upload": true,
+  "root_sha256sums_sha256": "82a53fc474c681e89cde1c5c7b3ef5ad404e964ee8b10e3d1368659fe65a7de0",
+  "target_repo_id": "EndlessChasing/Mamb2_8B_Recall_SQ3.25",
+  "total_file_bytes": 17030105,
+  "verify_only_output": {
+    "adapter_sha256": "339334b3431027504fb8da4ce3167d63c8c2f309920cfb0076bde1f72a115cb7",
+    "scope": "Checks the fixed published evidence and exact runtime files; does not rerun GPU quality or independent audit",
+    "verified": true
+  }
+}
