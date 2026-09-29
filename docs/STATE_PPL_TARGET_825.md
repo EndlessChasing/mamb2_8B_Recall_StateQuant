@@ -8,7 +8,8 @@ static table). Source weights remain FP16. MK is not a selection objective.
 ## Status
 
 V7 screening is complete: the unchanged baseline wins. V8 calibration and
-TRAIN screening pass their independent audits; full validation is running. Prior full unadapted references:
+TRAIN screening pass their independent audits; full validation is complete
+with PPL 8.283863, still above target. The independent full CPU audit passes. Prior full unadapted references:
 
 | Configuration | Full PPL | Persistent cache |
 | --- | ---: | ---: |
@@ -64,7 +65,7 @@ This audited baseline-win outcome satisfies the predeclared v8 start condition.
 - [x] Compare 168 single-layer replacements on eight full TRAIN windows.
 - [x] Independently reconstruct ranking and proposed combined tables.
 - [x] Screen combined top-k candidates on 32 other TRAIN windows.
-- [ ] Fully validate the one selected table with exact baseline replays.
+- [x] Fully validate the one selected table with exact baseline replays.
 
 This route changes only the existing uint8 permutation table and retains the
 v6 codec. It calibrates on rows72..79 and screens on112..143. Individual layer
@@ -117,6 +118,36 @@ SHA256 90fbed838e0c97f5543b6687b20d6a3740fc4fa0ebade2920d73d08df40526e2.
 its actual table SHA256 is
 281f7c9fbfdabd6bfa04964ed44b19761708a08447989436b978fae37dc27298.
 Only this frozen TRAIN winner advances to full validation.
+
+### V8 full result
+
+The frozen top8 table achieves **8.28386254265227**, compared with the v6
+parent's **8.355268708845868**: a 0.854624% PPL improvement, 100/130 windows
+improved and 30 regressed. All three arms complete 130 windows / 264,764 targets.
+Both archived-parent and restored-parent NLLs, hidden/cache probes and actual
+allocation agree exactly. The evaluation loop took 144.71 seconds.
+
+The target is **not reached**: 8.283863 is greater than 8.25. All source,
+backend, table, cache and no-adapter checks pass. Original S16 remains
+7.334322; the v8 result is 12.9465% above it. No MK is evaluated.
+See [raw full comparison](../reports/state_ppl_v8_full/full_comparison.json).
+The [independent full CPU audit](../reports/state_ppl_v8_full_audit.json) passes;
+SHA256 051316fe074ea1ba9cfeef87ba7fe4bb9c3a4c18e3c7427c9a2ef256d490e9cf.
+This confirms the finite target miss required to start v9.
+
+## Route v9: refine individual groups in the selected eight layers
+
+- [x] Freeze the protocol before viewing the v8 full result.
+- [ ] Implement and independently audit group interventions and provenance.
+- [ ] Calibrate up to 192 individual group replacements on TRAIN rows144..151.
+- [ ] Reconstruct proposals and screen on disjoint TRAIN rows152..183.
+- [ ] Fully validate the frozen TRAIN winner and independently audit evidence.
+
+The v8 TRAIN winner remains the parent. Refine its eight selected layers,
+all eight groups per layer, using only existing v5 group tables; the codec
+and persistent cache are unchanged. The family grid was fixed while v8 full
+was running, before any full outcome was seen. Start only after the v8 full
+CPU audit confirms a finite target miss. See [frozen protocol](STATE_PPL_V9_PROTOCOL.md).
 
 ## Completion and scope
 

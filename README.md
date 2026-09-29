@@ -3,10 +3,13 @@
 ## Active target: unadapted Q3.25 PPL below 8.25
 
 Continue without Resurface, keeping the existing 27.1797 MiB persistent cache.
-The next fixed experiments test max-preserving nonuniform INT4 codebooks and,
-if needed, per-layer static table mixing. Selection uses TRAIN PPL only;
-full validation must confirm strict PPL < 8.25 and exact baseline restoration.
-See [current progress and checklist](docs/STATE_PPL_TARGET_825.md).
+V7 nonuniform codebooks do not improve TRAIN PPL. V8 per-layer mixing lowers
+full PPL from 8.355269 to **8.283863**, still above target; its independent
+full CPU audit passes. The next frozen route refines individual groups within the
+selected eight layers. Selection uses TRAIN PPL only. Full validation must
+confirm strict PPL < 8.25 and exact baseline restoration. Source weights stay FP16.
+See [current progress and checklist](docs/STATE_PPL_TARGET_825.md) and
+[reproduction](docs/STATE_PPL_TARGET_825_REPRODUCTION.md).
 
 ## Completed v6: PPL-first scale search finds only a small improvement
 
