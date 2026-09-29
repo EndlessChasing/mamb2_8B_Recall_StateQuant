@@ -1,0 +1,104 @@
+{
+  "format": "MAMBA2_STATE_RESURFACE_V11_EVAL_CPU_FIXTURES_V1",
+  "complete": true,
+  "passed": true,
+  "checks": [
+    {
+      "name": "normal prediction correct_target",
+      "passed": true
+    },
+    {
+      "name": "normal prediction wrong_present_value",
+      "passed": true
+    },
+    {
+      "name": "normal prediction unparseable",
+      "passed": true
+    },
+    {
+      "name": "normal prediction not_present_value",
+      "passed": true
+    },
+    {
+      "name": "removed prediction removed_target_match",
+      "passed": true
+    },
+    {
+      "name": "removed prediction other_present_value",
+      "passed": true
+    },
+    {
+      "name": "removed prediction unparseable",
+      "passed": true
+    },
+    {
+      "name": "removed prediction not_present_value",
+      "passed": true
+    },
+    {
+      "name": "exact768 cases and N16/N64 strata",
+      "passed": true
+    },
+    {
+      "name": "six template cells and all query positions",
+      "passed": true
+    },
+    {
+      "name": "duplicate case rejected",
+      "passed": true
+    },
+    {
+      "name": "complete removal replay",
+      "passed": true
+    },
+    {
+      "name": "removal rejects ppl_cache",
+      "passed": true
+    },
+    {
+      "name": "removal rejects mk_cache",
+      "passed": true
+    },
+    {
+      "name": "removal rejects repeated_reset_probe",
+      "passed": true
+    },
+    {
+      "name": "removal rejects storage_descriptor_mk",
+      "passed": true
+    },
+    {
+      "name": "removal rejects changed generated IDs",
+      "passed": true
+    },
+    {
+      "name": "positive paired MK gate and equality PPL",
+      "passed": true
+    },
+    {
+      "name": "one ULP PPL degradation is rejected",
+      "passed": true
+    },
+    {
+      "name": "strict8p25 boundary",
+      "passed": true
+    },
+    {
+      "name": "unchanged MK fails repair",
+      "passed": true
+    },
+    {
+      "name": "no loaded baseline adapter residency",
+      "passed": true
+    },
+    {
+      "name": "CUDA uninitialized",
+      "passed": true
+    }
+  ],
+  "count": 23,
+  "source_sha256": "076cdad0d5251e28adbc03b15e565084123fa84eb195813191ab0004f4cefe5b",
+  "protocol_sha256": "cebe06473806d74726ac006ff6d5dd316f4fdcfb779eb47f5af271ddb1fa04a6",
+  "cuda_initialized": false,
+  "quality_measured": false
+}

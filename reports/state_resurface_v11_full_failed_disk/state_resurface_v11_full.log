@@ -1,0 +1,121 @@
+[v10_no_adapter PPL] 1/130 ppl=5.595618
+[v10_no_adapter PPL] 8/130 ppl=6.216907
+[v10_no_adapter PPL] 16/130 ppl=7.159176
+[v10_no_adapter PPL] 24/130 ppl=7.382116
+[v10_no_adapter PPL] 32/130 ppl=7.236402
+[v10_no_adapter PPL] 40/130 ppl=7.459099
+[v10_no_adapter PPL] 48/130 ppl=7.664935
+[v10_no_adapter PPL] 56/130 ppl=7.806594
+[v10_no_adapter PPL] 64/130 ppl=7.762126
+[v10_no_adapter PPL] 72/130 ppl=8.013154
+[v10_no_adapter PPL] 80/130 ppl=8.153963
+[v10_no_adapter PPL] 88/130 ppl=8.191001
+[v10_no_adapter PPL] 96/130 ppl=8.225896
+[v10_no_adapter PPL] 104/130 ppl=8.115359
+[v10_no_adapter PPL] 112/130 ppl=8.051354
+[v10_no_adapter PPL] 120/130 ppl=8.104813
+[v10_no_adapter PPL] 128/130 ppl=8.180368
+[v10_no_adapter PPL] 130/130 ppl=8.186187
+[v10_no_adapter MK] 1/768
+[v10_no_adapter MK] 8/768
+[v10_no_adapter MK] 16/768
+[v10_no_adapter MK] 24/768
+[v10_no_adapter MK] 32/768
+[v10_no_adapter MK] 40/768
+[v10_no_adapter MK] 48/768
+[v10_no_adapter MK] 56/768
+[v10_no_adapter MK] 64/768
+[v10_no_adapter MK] 72/768
+[v10_no_adapter MK] 80/768
+[v10_no_adapter MK] 88/768
+[v10_no_adapter MK] 96/768
+[v10_no_adapter MK] 104/768
+[v10_no_adapter MK] 112/768
+[v10_no_adapter MK] 120/768
+[v10_no_adapter MK] 128/768
+[v10_no_adapter MK] 136/768
+[v10_no_adapter MK] 144/768
+[v10_no_adapter MK] 152/768
+[v10_no_adapter MK] 160/768
+[v10_no_adapter MK] 168/768
+[v10_no_adapter MK] 176/768
+[v10_no_adapter MK] 184/768
+[v10_no_adapter MK] 192/768
+[v10_no_adapter MK] 200/768
+[v10_no_adapter MK] 208/768
+[v10_no_adapter MK] 216/768
+[v10_no_adapter MK] 224/768
+[v10_no_adapter MK] 232/768
+[v10_no_adapter MK] 240/768
+[v10_no_adapter MK] 248/768
+[v10_no_adapter MK] 256/768
+[v10_no_adapter MK] 264/768
+[v10_no_adapter MK] 272/768
+[v10_no_adapter MK] 280/768
+[v10_no_adapter MK] 288/768
+[v10_no_adapter MK] 296/768
+[v10_no_adapter MK] 304/768
+[v10_no_adapter MK] 312/768
+[v10_no_adapter MK] 320/768
+[v10_no_adapter MK] 328/768
+[v10_no_adapter MK] 336/768
+[v10_no_adapter MK] 344/768
+[v10_no_adapter MK] 352/768
+[v10_no_adapter MK] 360/768
+[v10_no_adapter MK] 368/768
+[v10_no_adapter MK] 376/768
+[v10_no_adapter MK] 384/768
+[v10_no_adapter MK] 392/768
+[v10_no_adapter MK] 400/768
+[v10_no_adapter MK] 408/768
+[v10_no_adapter MK] 416/768
+[v10_no_adapter MK] 424/768
+[v10_no_adapter MK] 432/768
+[v10_no_adapter MK] 440/768
+[v10_no_adapter MK] 448/768
+[v10_no_adapter MK] 456/768
+[v10_no_adapter MK] 464/768
+[v10_no_adapter MK] 472/768
+[v10_no_adapter MK] 480/768
+[v10_no_adapter MK] 488/768
+[v10_no_adapter MK] 496/768
+[v10_no_adapter MK] 504/768
+[v10_no_adapter MK] 512/768
+[v10_no_adapter MK] 520/768
+[v10_no_adapter MK] 528/768
+[v10_no_adapter MK] 536/768
+[v10_no_adapter MK] 544/768
+[v10_no_adapter MK] 552/768
+[v10_no_adapter MK] 560/768
+[v10_no_adapter MK] 568/768
+[v10_no_adapter MK] 576/768
+[v10_no_adapter MK] 584/768
+[v10_no_adapter MK] 592/768
+[v10_no_adapter MK] 600/768
+[v10_no_adapter MK] 608/768
+[v10_no_adapter MK] 616/768
+[v10_no_adapter MK] 624/768
+[v10_no_adapter MK] 632/768
+[v10_no_adapter MK] 640/768
+[v10_no_adapter MK] 648/768
+[v10_no_adapter MK] 656/768
+[v10_no_adapter MK] 664/768
+[v10_no_adapter MK] 672/768
+[v10_no_adapter MK] 680/768
+[v10_no_adapter MK] 688/768
+[v10_no_adapter MK] 696/768
+[v10_no_adapter MK] 704/768
+[v10_no_adapter MK] 712/768
+[v10_no_adapter MK] 720/768
+[v10_no_adapter MK] 728/768
+[v10_no_adapter MK] 736/768
+[v10_no_adapter MK] 744/768
+Traceback (most recent call last):
+  File "/home/horde/mamb2_8B_Recall_StateQuant/scripts/run_state_resurface_v11.py", line 402, in main
+    result=evaluate_arm(model,tokenizer,table,windows,cases,path,arm_common,archive if not adapted else None)
+  File "/home/horde/.local/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/horde/mamb2_8B_Recall_StateQuant/scripts/run_state_resurface_v11.py", line 250, in evaluate_arm
+    save_json(path,result);print(f'[{common["arm"]} MK] {index+1}/{len(cases)}',flush=True)
+  File "/home/horde/mamb2_8B_Recall_StateQuant/scripts/run_statequant.py", line 32, in save_json
+    temp.write_text(json.dumps(result, inden

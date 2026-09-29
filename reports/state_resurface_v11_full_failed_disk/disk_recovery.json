@@ -1,0 +1,14 @@
+{
+  "reason": "Full baseline evaluation stopped during atomic JSON write with the root filesystem full; retained partial744MK rows.",
+  "failed_process_exit": 120,
+  "failed_eval_dir": "/home/horde/mamb2_8B_Recall_StateQuant/artifacts/state_resurface_v11_full",
+  "cache_removed": "/home/horde/.cache/pip",
+  "cache_logical_bytes": 280731323,
+  "disk_free_before": 819126272,
+  "disk_free_after": 1106644992,
+  "new_output_root": "/dev/shm/state_resurface_v11_run",
+  "triton_cache_directory": "/dev/shm/state_resurface_v11_run/triton",
+  "temporary_directory": "/dev/shm/state_resurface_v11_run/tmp",
+  "model_training_and_measurement_code_unchanged": true,
+  "next_evaluation": "Restart all three fixed arms, including full baseline, in a fresh output directory."
+}

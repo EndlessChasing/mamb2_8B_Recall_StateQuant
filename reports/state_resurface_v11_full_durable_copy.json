@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "canonical_full": "/home/horde/mamb2_8B_Recall_StateQuant/artifacts/state_resurface_v11_full",
+  "canonical_audit": "/home/horde/mamb2_8B_Recall_StateQuant/reports/state_resurface_v11_full_audit.json",
+  "failed_attempt_preserved": "/home/horde/mamb2_8B_Recall_StateQuant/artifacts/state_resurface_v11_full_failed_disk",
+  "full_sha256_verified": true,
+  "disk_free_after": 1075396608
+}

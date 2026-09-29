@@ -1,0 +1,38 @@
+{
+  "full/full_comparison.json": {
+    "bytes": 35930,
+    "sha256": "dc8211177d5eb760ae593f2645a52053794af2c043bf2b04b2deba2dfb0464fc"
+  },
+  "full/full_parent_replay.json": {
+    "bytes": 201,
+    "sha256": "cdec39b1aa7de376822749ca9ec4ad4b464b62c5d84388d3b3603e8a73c13c01"
+  },
+  "full/full_restoration.json": {
+    "bytes": 460,
+    "sha256": "07bad821e7172ba82424eb3a4dd534bbf556c61f2172475915a8035e83bca3c3"
+  },
+  "full/full_restored_v10_no_adapter.json": {
+    "bytes": 3790055,
+    "sha256": "4610afee27c4460ad21ebed7c70b439f13d8a337f393c281481979cbd802d9e0"
+  },
+  "full/full_v10_no_adapter.json": {
+    "bytes": 3790044,
+    "sha256": "fe44ac311e2405bf5df315628a19135ab1cc9c6b88779044f0904bc702601c76"
+  },
+  "full/full_v10_resurface.json": {
+    "bytes": 3801930,
+    "sha256": "8e901f22bdd6667bb050c4e2d05c87f8f908172b822c09443534e7fc54c62538"
+  },
+  "full.log": {
+    "bytes": 47559,
+    "sha256": "d3b66f82753398addbd68bca5a022ffc0b5a13a0840faa92434a000bf30d8a69"
+  },
+  "full_audit.json": {
+    "bytes": 122306,
+    "sha256": "ad2b3f14a075b0d60993f3579e99fc98bfbac8aa527f6a0c8d684cc9493e7d72"
+  },
+  "full_audit.log": {
+    "bytes": 122689,
+    "sha256": "d067d8abaa678578770a4a91355285a588ad23cf534da6fb4fa85bc4718a2931"
+  }
+}

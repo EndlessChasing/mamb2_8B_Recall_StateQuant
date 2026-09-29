@@ -1,0 +1,172 @@
+{
+  "format": "MAMBA2_STATE_PPL_V11_TRAINING_CPU_CHECK_V1",
+  "protocol_sha256": "cebe06473806d74726ac006ff6d5dd316f4fdcfb779eb47f5af271ddb1fa04a6",
+  "mode": "cpu",
+  "complete": true,
+  "passed": true,
+  "layout": "32_32_64",
+  "checks": [
+    {
+      "name": "protocol_hash",
+      "pass": true
+    },
+    {
+      "name": "cuda_uninitialized_before_tests",
+      "pass": true
+    },
+    {
+      "name": "cpu_fixture_dyadic",
+      "pass": true,
+      "tokens": 65,
+      "geometry": [
+        2,
+        65,
+        4,
+        19
+      ],
+      "dead_carry_zero": true
+    },
+    {
+      "name": "cpu_fixture_rounded_scales",
+      "pass": true,
+      "tokens": 5,
+      "geometry": [
+        2,
+        5,
+        4,
+        19
+      ],
+      "dead_carry_zero": true
+    },
+    {
+      "name": "cpu_fixture_underflow",
+      "pass": true,
+      "tokens": 5,
+      "geometry": [
+        2,
+        5,
+        4,
+        19
+      ],
+      "dead_carry_zero": true
+    },
+    {
+      "name": "cpu_scale_underflow_defined_zero",
+      "pass": true
+    },
+    {
+      "name": "cpu_fixture_subnormal",
+      "pass": true,
+      "tokens": 5,
+      "geometry": [
+        2,
+        5,
+        4,
+        19
+      ],
+      "dead_carry_zero": true
+    },
+    {
+      "name": "cpu_scale_subnormal_present",
+      "pass": true
+    },
+    {
+      "name": "cpu_fixture_wide_safe",
+      "pass": true,
+      "tokens": 5,
+      "geometry": [
+        2,
+        5,
+        4,
+        19
+      ],
+      "dead_carry_zero": true
+    },
+    {
+      "name": "cpu_fixture_zero",
+      "pass": true,
+      "tokens": 5,
+      "geometry": [
+        2,
+        5,
+        4,
+        19
+      ],
+      "dead_carry_zero": true
+    },
+    {
+      "name": "reject_chunk_0",
+      "pass": true
+    },
+    {
+      "name": "reject_chunk_257",
+      "pass": true
+    },
+    {
+      "name": "reject_chunk_True",
+      "pass": true
+    },
+    {
+      "name": "reject_chunk_1.5",
+      "pass": true
+    },
+    {
+      "name": "reject_trainable_A",
+      "pass": true
+    },
+    {
+      "name": "reject_trainable_D",
+      "pass": true
+    },
+    {
+      "name": "reject_trainable_dt_bias",
+      "pass": true
+    },
+    {
+      "name": "workspace_64_live_count",
+      "pass": true,
+      "carry_scratch_bytes": 203423744,
+      "gradient_scratch_bytes": 84934656,
+      "total_scratch_bytes": 288358400
+    },
+    {
+      "name": "cpu_run_did_not_initialize_cuda",
+      "pass": true
+    }
+  ],
+  "criteria": {
+    "forward": "bitwise_equal",
+    "carry": "every_token_bitwise_equal",
+    "cpu_controlled": "raw_packed_bytes_and_readout_exact",
+    "ste_gradient": {
+      "atol": 2e-05,
+      "rtol": 0.015
+    },
+    "gradient_replay": {
+      "atol": 2e-06,
+      "rtol": 0.002
+    },
+    "live_coordinates": 64,
+    "current_readout_coordinates": 128
+  },
+  "limitations": [
+    "Declared live-mask STE, not the derivative of hard quantization.",
+    "FP32 atomic gradient sums need not be bitwise repeatable.",
+    "CPU oracle uses exact deployed carry values with an independent autograd graph.",
+    "Synthetic checks do not establish model PPL/MK; model export probes belong to training receipts."
+  ],
+  "elapsed_seconds": 0.7590261290315539,
+  "cuda_initialized": false,
+  "code_sha256": {
+    "scripts/state_ppl_training_scan_v11.py": "d845dc86a8e94c2c9b8f39f81fce2abef34e0b4d00404547ffbd59f34c03a80d",
+    "scripts/state_ppl_training_v11.py": "ff4f91ba88233d2e6f6f07224f0d2072a7728332dc78774ee210e6542ce3a659",
+    "scripts/check_state_ppl_training_v11.py": "7053230fd0fb55c5592670d5ae82908b72a6339e3bc9504cefd759944aa2d9f9",
+    "scripts/state_ppl_codec_v10.py": "53cbba84e608cc20e4ca7fc39afca23e0b2c09fdd6002c4cb17affa629638da6",
+    "scripts/state_ppl_codec_v6.py": "76d76577559c8bb8d86907934f2d65282da27e1d1e8e378392eba5809ae34c54",
+    "mamba2_recall/state_training.py": "2d7babbf5d402e3dafaa69681ebd3028452a688b31cb1b6c4fc18d1d73dbb894",
+    "mamba2_recall/state_training_scan.py": "cc33e0b88e2b5d6649fdfc85570ba484363eea34b14b536de669fd4c7d0b54ba",
+    "mamba2_recall/state_codec.py": "56bd56d2fcb96382a4c6139824245f7608e903bbf1e3d07c9ea6d61ac8ce371a",
+    "mamba2_recall/state_quant.py": "d57ccba302c81808456ef8ccd9bc36bcb22ee976b2e4cad5efe43f99e4e17efd",
+    "docs/STATE_RESURFACE_V11_PROTOCOL.md": "cebe06473806d74726ac006ff6d5dd316f4fdcfb779eb47f5af271ddb1fa04a6"
+  }
+}

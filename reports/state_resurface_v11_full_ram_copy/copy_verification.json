@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "files_verified": 9,
+  "bytes_verified": 11711174,
+  "all_sha256_match": true,
+  "source": "horde-gpu:/dev/shm/state_resurface_v11_run",
+  "canonical_full": "reports/state_resurface_v11_full",
+  "canonical_audit": "reports/state_resurface_v11_full_audit.json",
+  "failed_attempt_preserved": "reports/state_resurface_v11_full_failed_disk"
+}

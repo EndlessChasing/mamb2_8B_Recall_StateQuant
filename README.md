@@ -1,5 +1,45 @@
 # Mamb2_8B_Recall + StateQuant
 
+## Completed v11: fresh Resurface improves PPL and recall on V10 Q3.25
+
+**All nine predefined quality and integrity gates pass.** Fresh Resurface
+training completed 1,536 successful updates on the fixed 32 INT8 / 32 INT4 /
+64 zero-carry layout. Original source weights remain frozen FP16.
+
+| Configuration | Full WikiText-2 PPL | Normal MK /384 |
+| --- | ---: | ---: |
+| Original S16, archived reference | 7.334322057221965 | 146 (38.02%) |
+| V10 Q3.25, no adapter | 8.186186562837207 | 32 (8.33%) |
+| **V10 Q3.25 + fresh V11 Resurface** | **7.855569605864836** | **271 (70.57%)** |
+
+Against the fixed V10 base, PPL improves **4.0387%**, remaining below 8.25;
+normal MK improves **62.2396 percentage points**, with paired bootstrap 95%
+interval **[+57.2917, +67.1875] pp**. There are 242 paired gains and 3 regressions.
+N16 recall improves **30 → 181/192** and N64 **2 → 90/192**. Target-removed
+accidental matches remain **0/384** in both arms; this is a diagnostic, not
+an abstention score.
+
+All three arms complete 130 PPL windows / 264,764 targets and 384 normal +
+384 target-removed MK prompts. Removing the adapter reproduces every baseline
+window NLL and all 768 generated sequences exactly, including reset/cache
+receipts. The archived V10 replay and independent CPU full audit pass.
+
+Persistent state remains **28,499,968 bytes (27.1797 MiB)** per sequence at
+batch one. The separate FP16 adapter payload/residency is **2,308,208 bytes**;
+cache plus adapter is **30,808,176 bytes (29.3810 MiB)**. These figures exclude
+source weights, temporary computation and allocator reserve. Although recall
+exceeds the historical S16 result, PPL is still **7.11% higher than S16**.
+
+Only the final TRAIN-derived export was evaluated; validation/CONFIRM did not
+select a checkpoint. This benchmark family has historical exposure, so these
+results are not a new unseen-benchmark claim. The repository remains private;
+the audited adapter, checkpoints and reproduction evidence are retained here.
+See [V11 results and checklist](docs/STATE_RESURFACE_V11_RESULTS.md),
+[raw full comparison](reports/state_resurface_v11_full/full_comparison.json),
+[independent full audit](reports/state_resurface_v11_full_audit.json),
+[reproduction](docs/STATE_RESURFACE_V11_REPRODUCTION.md), and
+[frozen protocol](docs/STATE_RESURFACE_V11_PROTOCOL.md).
+
 ## Completed: unadapted Q3.25 full PPL 8.186187
 
 **The requested no-Resurface PPL < 8.25 target is achieved.** The selected
@@ -45,8 +85,9 @@ ends without new Resurface training. Every tested clipping factor worsens
 TRAIN PPL. Both complete baseline replays pass, including the archived v5
 window NLLs and hidden/cache probe. v6 measures no MK and does not establish
 recall quality. Separate larger-memory ablations are diagnostic only.
-The v5 **8.093011 PPL / 244 of 384 MK** endpoint below remains the validated
-combined reference; it is not a v6 result. Weights remain frozen FP16.
+The v5 **8.093011 PPL / 244 of 384 MK** endpoint below was the validated
+combined reference at the end of v6; it is not a v6 result. The current V11
+endpoint is reported above. Weights remain frozen FP16.
 
 See the [frozen v6 protocol](docs/STATE_PPL_V6_PROTOCOL.md),
 [results and evidence](docs/STATE_PPL_V6_RESULTS.md),

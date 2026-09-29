@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "per_window_nll_exact": true,
+  "ppl_windows_repeated": 130,
+  "target_tokens": 264764,
+  "reset_hidden_exact": true,
+  "reset_cache_exact": true,
+  "cache_bytes_exact": true
+}

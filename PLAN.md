@@ -1,5 +1,36 @@
 # Checklist
 
+## Completed v11: fresh Resurface on V10 Q3.25
+
+- [x] Freeze V10 32/32/64 state and the achieved unadapted PPL 8.186187.
+- [x] Freeze a fresh 1,536-update recipe and strict PPL-preservation gate.
+- [x] Validate new stored-scale training scan and discarded smoke.
+- [x] Complete fresh training, final FP16 export and independent audit.
+- [x] Complete all three full arms: 130 PPL windows / 264,764 targets and 768 MK prompts each.
+- [x] Pass exact archived V10 replay and adapter-removal replay of all window NLLs, generated sequences and cache receipts.
+- [x] Pass all nine quality/integrity gates and the independent CPU full audit.
+- [x] Save audited results and reproduction evidence privately.
+
+Full PPL **8.186186562837207 → 7.855569605864836** improves **4.0387%** and
+stays below 8.25. Normal MK **32 → 271/384** improves **62.2396 pp**;
+paired bootstrap 95% interval **[+57.2917, +67.1875] pp**, with 242 gains and
+3 regressions. N16 is **30 → 181/192**; N64 is **2 → 90/192**. Target-removed
+accidental matches stay **0/384**, a diagnostic only.
+
+State cache stays **28,499,968 bytes**; separate FP16 adapter payload/residency
+is **2,308,208 bytes**, for **30,808,176 bytes** combined at batch one, excluding
+source weights, scratch and allocator reserve. Compared with hash-bound
+historical S16 (**7.334322057221965 / 146 of 384 MK**), recall is higher but
+PPL remains **7.11% worse**. The benchmark family has historical exposure;
+only the fixed final TRAIN export was evaluated, with no heldout selection.
+The experiment and private evidence retention are complete.
+
+See [V11 results and checklist](docs/STATE_RESURFACE_V11_RESULTS.md),
+[raw full comparison](reports/state_resurface_v11_full/full_comparison.json),
+[independent full audit](reports/state_resurface_v11_full_audit.json),
+[reproduction](docs/STATE_RESURFACE_V11_REPRODUCTION.md), and
+[frozen protocol](docs/STATE_RESURFACE_V11_PROTOCOL.md).
+
 ## Complete: no-Resurface Q3.25 full PPL below 8.25
 
 - [x] Preserve original FP16 source and exclude Resurface/MK from selection.
@@ -140,5 +171,6 @@ budget and cannot win selection. If no confirmed meaningful PPL improvement is
 found, stop this experiment and retain v5 without repeating its training.
 Full PPL is 8.367465 → 8.355269 (−0.1458%), with unchanged cache and exact
 archived/restored baseline checks. Original S16 PPL is 7.334322, so v6 remains
-13.92% higher. No v6 MK result is measured; retain v5 as the combined reference.
+13.92% higher. No v6 MK result is measured; v5 was the combined reference at
+the end of v6. The current completed V11 endpoint is recorded above.
 See docs/STATE_PPL_V6_PROTOCOL.md and docs/STATE_PPL_V6_RESULTS.md.
