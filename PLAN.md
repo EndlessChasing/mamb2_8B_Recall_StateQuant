@@ -7,7 +7,14 @@
 - [x] Package reproducible release assets, checksums and an inference entrypoint.
 - [x] Document separate code, adapter, source-weight and dataset license scopes.
 - [x] Verify the inference entrypoint against an archived MK generation.
-- [ ] Publish the tagged GitHub release and verify anonymous asset downloads.
+- [x] Publish the tagged GitHub release and verify anonymous asset downloads.
+
+Public release: [v0.1.0-q325-resurface](https://github.com/EndlessChasing/mamb2_8B_Recall_StateQuant/releases/tag/v0.1.0-q325-resurface).
+The [publication receipt](reports/state_resurface_v11_github_publication.json)
+records anonymous SHA256 verification of all three assets and 51 public code
+and documentation files, including all 46 measured runtime files. The tag
+pins `be037e1a2635ad7b540e0a1d2e551febf647c346`; this post-publication receipt
+is retained on main without moving the release tag.
 
 ## Completed v11: fresh Resurface on V10 Q3.25
 

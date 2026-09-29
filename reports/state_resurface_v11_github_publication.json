@@ -1,0 +1,43 @@
+{
+  "anonymous_code_files_verified": 51,
+  "assets": [
+    {
+      "anonymous_verified": true,
+      "bytes": 339,
+      "name": "build_receipt.json",
+      "sha256": "f37360cc349625931c1381d916ff6f5394a8dbad25beade4496241c11c89385f",
+      "url": "https://github.com/EndlessChasing/mamb2_8B_Recall_StateQuant/releases/download/v0.1.0-q325-resurface/build_receipt.json"
+    },
+    {
+      "anonymous_verified": true,
+      "bytes": 3786324,
+      "name": "mamba2-8b-q325-resurface-v11.tar.gz",
+      "sha256": "6f5c219f7c92cbfa9541af610970fd015d7005e9257fbb9c7a9ab772e5d4ef80",
+      "url": "https://github.com/EndlessChasing/mamb2_8B_Recall_StateQuant/releases/download/v0.1.0-q325-resurface/mamba2-8b-q325-resurface-v11.tar.gz"
+    },
+    {
+      "anonymous_verified": true,
+      "bytes": 102,
+      "name": "SHA256SUMS",
+      "sha256": "8fc47d3783796887e4996dc6e1fe8bc355c59fa1a7a9dc32cfb57d5fa56d88d7",
+      "url": "https://github.com/EndlessChasing/mamb2_8B_Recall_StateQuant/releases/download/v0.1.0-q325-resurface/SHA256SUMS"
+    }
+  ],
+  "authentication": "No credentials or authorization headers supplied; curl config disabled with -q.",
+  "complete": true,
+  "format": "MAMBA2_STATE_RESURFACE_V11_GITHUB_PUBLICATION_V1",
+  "measured_code_files_verified": 46,
+  "passed": true,
+  "public_downloaded_bundle_and_runtime_verification": true,
+  "release": "https://github.com/EndlessChasing/mamb2_8B_Recall_StateQuant/releases/tag/v0.1.0-q325-resurface",
+  "release_body_matches_reviewed_file": true,
+  "release_id": 399415758,
+  "release_published_at": "2026-09-29T18:27:48Z",
+  "repository": "https://github.com/EndlessChasing/mamb2_8B_Recall_StateQuant",
+  "scope": "Anonymous public repository, annotated tag, release, asset download SHA256 and runtime-file verification; not a new quality evaluation.",
+  "tag": "v0.1.0-q325-resurface",
+  "tag_commit_sha": "be037e1a2635ad7b540e0a1d2e551febf647c346",
+  "tag_object_sha": "51a6644ae6f4cf974d251ec98aaf1d6322771462",
+  "verified_utc": "2026-09-29T18:28:23.861120+00:00",
+  "visibility": "public"
+}
