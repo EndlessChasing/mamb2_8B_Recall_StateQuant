@@ -84,12 +84,14 @@ adapter. Score PPL and full-vocabulary greedy MK (at most12 generated tokens,
 EOS stop, first standalone six-digit integer). Report all nine arms, including
 failures. Repeat old SQ+v2 after candidates and require exact score/output replay.
 
-Select ONE candidate using its with-v2-adapter TRAIN scores. Prefer candidates
+Select ONE candidate using its with-v2-adapter TRAIN scores. Exclude any
+nonfinite, incomplete, failed implementation or over-budget candidate. Prefer candidates
 whose PPL is <=1.01x old-SQ+v2 and MK is no more than2/48 lower. Among eligible
 candidates choose lowest PPL, then highest MK, then the candidate order above.
-If none is eligible, the lowest-PPL candidate may receive one diagnostic full
-validation if its TRAIN PPL is <=1.25x baseline; otherwise stop the family at
-screening. Record this as diagnostic advancement, not a screening pass. Do not
+If none is eligible, advance the lowest-PPL remaining candidate to one diagnostic
+full validation if and only if its TRAIN PPL is <=1.25x baseline; otherwise stop
+the family at screening. Apply the same MK and candidate-order tiebreaks.
+Record this as diagnostic advancement, not a screening pass. Do not
 change candidates, metadata or selection after observing CONFIRM outcomes.
 
 ## Full confirmation and repair gate
