@@ -5,20 +5,29 @@ without Resurface, until full PPL is strictly below 8.25. Keep the actual
 28,499,968-byte batch-one persistent cache (Q3.25 state, convolution and one
 static table). Source weights remain FP16. MK is not a selection objective.
 
-## Status
+## Status: target achieved
 
-V7 screening is complete: the unchanged baseline wins. V8 calibration and
-TRAIN screening pass their independent audits; full validation is complete
-with PPL 8.283863, still above target. The independent full CPU audit passes. Prior full unadapted references:
+**V10 full PPL is 8.186186562837207 < 8.25, with no Resurface.** The independent
+full audit passes. Search stops at this requested target.
 
-| Configuration | Full PPL | Persistent cache |
+| Configuration | Full PPL | Persistent cache / sequence |
 | --- | ---: | ---: |
-| Original S16 | 7.334322 | 116.3750 MiB |
-| v5 Q3.25 | 8.367465 | 27.1797 MiB |
-| v6 Q3.25 stored scale | 8.355269 | 27.1797 MiB |
+| Original S16, archived reference | 7.334322 | 116.3750 MiB |
+| v6 Q3.25 stored scale, starting reference | 8.355269 | 27.1797 MiB |
+| v8 per-layer table mixture, prior best | 8.283863 | 27.1797 MiB |
+| v9 group refinement | 8.290607 | 27.1797 MiB |
+| **v10: 32 INT8 + 32 INT4 + 64 zero** | **8.186187** | **27.1797 MiB** |
 
-The v6 result remains above target. Its old 1% gate does not stop this
-user-requested continuation. No Resurface adapter is loaded or trained.
+This improves full PPL by 2.023659% from the starting v6 reference and by
+1.179112% from the previous best v8. Source weights remain FP16 and frozen.
+The new layout changes tier counts while keeping exactly 52 bytes per state
+row and 28,499,968 total persistent bytes. No MK was evaluated or adapter trained.
+
+Use the saved [selected layout/table](../reports/state_ppl_v10_screen/selected_calibration.pt)
+with the [v10 inference and reproduction guide](STATE_PPL_V10_REPRODUCTION.md).
+The [full audit](../reports/state_ppl_v10_full_audit.json) verifies recorded GPU
+evidence on CPU; it is not an independent rerun of model logits. Results apply
+to the fixed WikiText-2 validation protocol below, with historical benchmark exposure.
 
 ## Route v7: max-preserving nonuniform INT4
 
@@ -192,9 +201,9 @@ See [raw comparison](../reports/state_ppl_v9_full/full_comparison.json).
 
 - [x] Freeze a distinct four-layout protocol and TRAIN-only selection.
 - [x] Implement actual packed layouts and pass independent codec checks.
-- [ ] Independently audit source/input/packing evidence before quality runs.
-- [ ] Screen four layouts on 32 full TRAIN windows, rows184..215.
-- [ ] Fully validate the frozen TRAIN winner and independently audit evidence.
+- [x] Independently audit source/input/packing evidence before quality runs.
+- [x] Screen four layouts on 32 full TRAIN windows, rows184..215.
+- [x] Fully validate the frozen TRAIN winner and independently audit evidence.
 
 | Layout | INT8 coordinates | INT4 coordinates | Zero carry | Payload + scales |
 | --- | ---: | ---: | ---: | ---: |
@@ -212,24 +221,88 @@ are retained; nonbaseline layouts require new masked packed kernels.
 
 The codec passes 57 CPU preparation checks and all 174 GPU checks on its first
 GPU attempt, including 44 raw-evidence oracle cases, partition/reset equality,
-exact baseline delegation, padding/row boundaries and all56 actual allocations.
+exact baseline delegation, padding/row boundaries and all 56 actual allocations.
 [Canonical receipt](../reports/state_ppl_v10_codec_checks.json) SHA256:
 ca54b1c82032f0a2883ae83a3a21b79fa0b874d28514dac97fa912e1096e67f1.
 The first CPU invocation only found a missing remote protocol file; its failed
 receipt is preserved. The unchanged code passed after copying that file.
-Independent CPU evidence audit and quality measurements are still pending.
+Independent CPU input audit passes, reconstructing44 raw controlled traces,
+294 scalar boundaries and the complete predecessor chain without CUDA.
+[Input audit](../reports/state_ppl_v10_inputs_audit.json) SHA256:
+7f5cfa84bbfb1f0d13a60ac8e49606cef180f21f08d967494aa809d4565c5563.
+The runner also passes23 CPU orchestration fixtures and actual input loading.
+All sources/evidence are committed before the four-layout quality screen,
+which is complete.
 See [reproduction](STATE_PPL_V10_REPRODUCTION.md).
 
 The family/grid/rows were proposed and approved before the v9 full outcome;
 the final protocol document was frozen after the target-failure notification.
 No choices were changed using that outcome. See [v10 protocol](STATE_PPL_V10_PROTOCOL.md).
 
+### V10 TRAIN screen
+
+| INT8 / INT4 / zero | TRAIN PPL |
+| --- | ---: |
+| 16 / 64 / 48 baseline | 8.011208 |
+| 8 / 80 / 40 | 8.790699 |
+| 24 / 48 / 56 | 7.916897 |
+| **32 / 32 / 64** | **7.913416** |
+
+All four candidates are valid, with no exclusions; baseline restoration is
+exact. Every arm uses 32 full windows / 65,504 targets. The fixed winner improves
+23/32 windows and TRAIN PPL by 1.220683%. The coordinate table is unchanged;
+only global tier counts differ. This is not yet a full-target result.
+
+The [independent screen audit](../reports/state_ppl_v10_screen_audit.json)
+passes, including all 56 layers' actual allocations at both reset probe and
+final evaluation. Audit SHA256:
+bd905f930693c9c3299e8ad66532739ca12a593125e7efe07d9275752544933a.
+[Selected artifact](../reports/state_ppl_v10_screen/selected_calibration.pt)
+SHA256 a77bbd86ae609d8ef7cf90f10d0904cf95b4df8e059c9ea6cb2fd12886436fb8.
+Only this frozen layout advances to full validation; its completed result follows.
+
+### V10 full result: target achieved
+
+**PPL 8.186186562837207**, from the frozen 32/32/64 TRAIN winner, is strictly
+below 8.25 by 0.063813437. Against the v9 parent 8.290607333938492, it improves
+PPL by 1.259507% and raw NLL by 3355.8993759; 107/130 windows improve and 23 regress.
+All three arms cover 130 windows / 264,764 prediction targets, with 2048-token
+windows and the full 256,000-token vocabulary. The evaluation loop took 143.83 s.
+
+Both complete parent evaluations exactly match the archived v9 PPL, every
+window NLL, the 128-token reset hidden/cache probe and the entire cache dictionary.
+All 56 layers' actual buffer shapes and storage sizes were recorded and audited
+at the reset probe and at the end of each arm. The cache remains:
+
+| Component | Bytes |
+| --- | ---: |
+| Packed SSM payload and scales | 23,855,104 |
+| FP16 convolution state | 4,587,520 |
+| One static permutation table | 57,344 |
+| **Total** | **28,499,968** |
+
+Each 128-coordinate row uses 32 INT8 values (32 B), 32 INT4 values (16 B),
+64 zero-carry coordinates (0 B), and two FP16 scales (4 B): 52 B = 3.25 bits
+per coordinate. Original FP16 model weights and temporary activations are
+outside this cache total. Every token, including prefill, uses quantized carry;
+there is no persistent FP16 shadow SSM state.
+
+[Full comparison](../reports/state_ppl_v10_full/full_comparison.json) SHA256:
+d0a86c047d992377f8a6cf9c996d8b5525f03309497d378b814dd22d39ddea57.
+[Selected raw report](../reports/state_ppl_v10_full/full_selected.json) SHA256:
+598b7d3f8088d58513c4ab99aaf911543b0c355e02d9e79cb59a734c55a3f610.
+[Independent full audit](../reports/state_ppl_v10_full_audit.json) SHA256:
+31d93219972466f6c62b8e1036c4de6cceee1d4c53d438faffeb02853c0affe5.
+All three target checks pass. This does not restore original S16 quality:
+PPL remains 11.614768% above 7.334322. MK recovery is a separate future task.
+
 ## Completion and scope
 
-Success requires full 130-window/264,764-target PPL < 8.25, no adapter, exact cache
-accounting, frozen source/backend/table checks, baseline restoration and an
-independent CPU evidence audit. CPU audit reconstructs recorded GPU evidence;
-it does not rerun model logits. Corpus/validation families have historical
-exposure and are not untouched generalization evidence. If a family fails,
-continue a separately recorded TRAIN-selected method. Preserve all attempted
-results and keep the repository private.
+All completion requirements pass: full 130-window / 264,764-target PPL <8.25,
+no adapter, exact cache accounting, frozen source/backend/table checks,
+baseline restoration and an independent CPU evidence audit.
+
+CPU audit reconstructs recorded GPU evidence; it does not rerun model logits.
+Corpus/validation families have historical exposure and are not untouched
+generalization evidence. All attempted results are preserved and the repository
+remains private. The requested threshold is reached; the search is complete.

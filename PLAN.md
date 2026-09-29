@@ -1,10 +1,17 @@
 # Checklist
 
-## Active: no-Resurface Q3.25 full PPL below 8.25
+## Complete: no-Resurface Q3.25 full PPL below 8.25
 
-Continue with the same cache budget and PPL-only TRAIN selection. The previous
-v6 1% continuation gate is superseded by this explicit target. See the
-[current search checklist](docs/STATE_PPL_TARGET_825.md) and frozen protocols.
+- [x] Preserve original FP16 source and exclude Resurface/MK from selection.
+- [x] Compare distinct TRAIN-selected same-budget quantization families.
+- [x] Validate the frozen winner on all 130 windows / 264,764 targets.
+- [x] Pass exact parent restoration, actual cache and independent evidence audit.
+- [x] Reach **PPL 8.186186562837207 < 8.25**, with **28,499,968-byte** cache.
+- [x] Save selected layout/table, raw results and runnable inference instructions.
+
+Selected allocation: 32 INT8 + 32 INT4 + 64 zero coordinates,52 bytes per row.
+Stop the target search. See the [complete checklist/results](docs/STATE_PPL_TARGET_825.md)
+and [v10 reproduction/inference](docs/STATE_PPL_V10_REPRODUCTION.md).
 
 ## Historical experiment v1: old Recall adapter, then SQ3.25
 
@@ -83,7 +90,7 @@ Keep v2 as the recall reference; see docs/RESURFACE_MORE_RESULTS.md.
 - [x] Push the completed v4 artifacts privately.
 
 No new adapter training in this experiment. Keep original source weights and
-the v2 adapter fixed; each candidate retains exactly52B per128-state row plus
+the v2 adapter fixed; each candidate retains exactly 52B per 128-state row plus
 one57,344B table. See docs/STATE_REPAIR_PROTOCOL.md.
 
 Full v4 result: PPL **8.388906 → 8.258201** (−1.56%), MK **239 → 204/384**.

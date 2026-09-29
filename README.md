@@ -1,16 +1,30 @@
 # Mamb2_8B_Recall + StateQuant
 
-## Active target: unadapted Q3.25 PPL below 8.25
+## Completed: unadapted Q3.25 full PPL 8.186187
 
-Continue without Resurface, keeping the existing 27.1797 MiB persistent cache.
-V7 nonuniform codebooks do not improve TRAIN PPL. V8 per-layer mixing lowers
-full PPL from 8.355269 to **8.283863**, still above target; its independent
-full CPU audit passes. V9 group refinement gives 8.290607 and does not
-improve the best full result. The next frozen route tests four INT8/INT4/zero
-allocations at exactly the same 3.25-bit storage budget. Selection uses TRAIN PPL only. Full validation must
-confirm strict PPL < 8.25 and exact baseline restoration. Source weights stay FP16.
-See [current progress and checklist](docs/STATE_PPL_TARGET_825.md) and
-[reproduction](docs/STATE_PPL_TARGET_825_REPRODUCTION.md).
+**The requested no-Resurface PPL < 8.25 target is achieved.** The selected
+layout uses 32 INT8 + 32 INT4 + 64 zero-carry coordinates per 128-element state row.
+Payload plus two FP16 scales remains 52 bytes: 3.25 bits per coordinate.
+
+| Configuration | Full WikiText-2 PPL | Persistent cache / sequence |
+| --- | ---: | ---: |
+| Original S16, archived reference | 7.334322 | 116.3750 MiB |
+| Previous best unadapted Q3.25 (v8) | 8.283863 | 27.1797 MiB |
+| **Selected v10 Q3.25, no Resurface** | **8.186187** | **27.1797 MiB** |
+
+The full 130-window / 264,764-target validation and independent CPU evidence audit
+pass, including exact archived/restored parent PPL, hidden/cache probes and
+actual allocation checks. Source weights remain frozen FP16. The 27.1797 MiB
+figure includes SSM, convolution and one static table; it excludes model weights
+and temporary computation. No MK or Resurface training is part of this result.
+The benchmark family has historical exposure.
+
+Use the [saved selected layout/table](reports/state_ppl_v10_screen/selected_calibration.pt)
+with the [v10 runtime and reproduction guide](docs/STATE_PPL_V10_REPRODUCTION.md).
+See [all search results/checklist](docs/STATE_PPL_TARGET_825.md),
+[raw full comparison](reports/state_ppl_v10_full/full_comparison.json), and
+[independent full audit](reports/state_ppl_v10_full_audit.json).
+The repository remains private and the target search is complete.
 
 ## Completed v6: PPL-first scale search finds only a small improvement
 
