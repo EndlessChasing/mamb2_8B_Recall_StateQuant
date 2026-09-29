@@ -4,9 +4,9 @@ Experiment date: 2026-09-28. The [protocol](STATE_FIRST_V5_PROTOCOL.md) was
 reviewed and committed before candidate measurements. Its SHA256 is
 `ce700910f27230e062fe62e89dd6bddee05bcbf7bb7972c59fdba24cb3db9f5d`.
 
-**Status: unadapted selection and discarded GPU smoke completed; their independent
-audits passed. Formal fresh Resurface training is running. No final v5 adapter
-or full quality result exists yet.** This follows the user's clarified order:
+**Status: unadapted selection, discarded GPU smoke and fresh formal training
+completed; their independent audits passed. The final v5 adapter is exported.
+Four-arm full quality evaluation is running.** This follows the user's clarified order:
 
 1. Load original pure Mamba2-8B with no Resurface.
 2. Compare fixed Q3.25 state tables on TRAIN and freeze one selection.
@@ -109,7 +109,7 @@ Paired TRAIN MK has four gains and three regressions. Magnitude and preserve
 INT8 both score **0/48 on N64** before Resurface, so one more total answer does
 not establish reliable recall repair. No new table was fit using this analysis.
 
-## Fresh training — running
+## Fresh training — completed and independently audited
 
 The trainer creates all 224 FP32 adapter tensors, Adam and GradScaler from
 scratch, with the same v2 training math and fixed 1,536-update recipe. Both
@@ -133,10 +133,34 @@ The [independent smoke audit](../reports/state_first_v5_smoke_audit.json) passed
 The smoke export is explicitly discarded and is not a model candidate. Formal
 training reloads the original models and reinitializes every adapter parameter,
 optimizer and scaler. It does not continue the smoke update. Only its final
-1,536-successful-update export will be evaluated. Training is currently running;
-its final checkpoint, export and full quality remain pending.
+1,536-successful-update export is evaluated.
 
-## Full confirmation — pending
+Formal training completed **1,536 successful updates in 1,543 attempts**, with
+seven overflows and same-entry retries. Final loss scale is eight. All four
+recovery checkpoints (384, 768, 1152 and 1536 updates) are retained beside the
+[training report](../reports/state_first_v5_training/report.json). The final
+[FP16 adapter](../reports/state_first_v5_training/adapter_fp16.pt) is **2,375,551
+bytes**, containing 1,154,104 parameters / 2,308,208 tensor payload bytes.
+Its SHA256 is `48dc63ef46a23711df8e8de6d4df9aae975f2e14c5a003e6bea6c222ff887974`;
+the report SHA256 is `055c1d9703f5b43f64b99992e810e5ecca8ebc652a677062af9741795a4e1d3c`.
+
+The [independent training audit](../reports/state_first_v5_training_audit.json)
+reconstructed schedules, learning rates, retry/scaler transitions and all four
+checkpoint states. It checked all 224 FP32 masters, Adam moment/step states and
+parameter mappings. Every final master cast to FP16 equals the actual serialized
+export. The 128-token deployed packed-forward parity receipt is bitwise exact,
+and the state table bytes and 28,499,968-byte cache remain unchanged. CUDA was
+uninitialized during the CPU audit; it audits recorded GPU evidence rather than
+re-executing the model.
+
+The source freeze guard checks all 507 tensors' identities, version counters
+and gradients; it does not hash their complete post-training contents. A
+separate frozen S16 teacher was used. Forward RMSNorm is pinned as documented,
+but backward reductions can remain nondeterministic, so a new training run is
+not promised to produce identical adapter bytes. These checks establish the
+training/export path, not the final PPL or MK quality.
+
+## Full confirmation — running
 
 The final four arms are old unadapted SQ, selected unadapted SQ, selected SQ plus
 fresh Resurface, and restored selected unadapted SQ. Each receives all 130 PPL

@@ -7,9 +7,10 @@ SQ3.25 → freeze the table → train fresh Resurface for recall**. The complete
 four-table TRAIN screen selected `preserve_int8`: unadapted TRAIN PPL improves
 from **11.1296 to 10.8452** (−2.56%), with MK **10/96 to 11/96**. This protects
 the original 16 INT8 coordinates and optimizes the other INT4/zero assignments.
-The table and byte budget are frozen. Independent screen/smoke audits passed;
-fresh 1536-update training is running, with no v2/v3 adapter reused. Full v5
-quality is not yet measured. See [current evidence](docs/STATE_FIRST_V5_RESULTS.md),
+The table and byte budget are frozen. Fresh training completed 1536 updates in
+1543 attempts, with no v2/v3 adapter reused. Independent training/export audit
+passed; four-arm full evaluation is running. Full v5 quality is not yet measured.
+See [current evidence](docs/STATE_FIRST_V5_RESULTS.md),
 [reproduction commands](docs/STATE_FIRST_V5_REPRODUCTION.md),
 [protocol](docs/STATE_FIRST_V5_PROTOCOL.md), and [checklist](PLAN.md).
 

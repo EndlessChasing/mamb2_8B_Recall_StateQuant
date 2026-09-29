@@ -1,0 +1,260 @@
+{
+  "format": "MAMBA2_STATE_FIRST_INDEPENDENT_AUDIT_V1",
+  "complete": true,
+  "passed": true,
+  "stage": "training",
+  "protocol_sha256": "ce700910f27230e062fe62e89dd6bddee05bcbf7bb7972c59fdba24cb3db9f5d",
+  "source_sha256": "9a44d39e1b6ec98d70fb44ee563eed7321e03f9a7a91253c07bc87a418e1863e",
+  "auditor_dependency_sha256": {
+    "audit_quant_first.py": "5439e766a59b3eb14db1024002ba92ffa4337c72540f27f6dd5869d79f0cfceb",
+    "audit_state_repair.py": "acdf1a107685ca803f2928f3fc399cf6c770202ec2f0c557d4984eb3ef800320",
+    "audit_resurface_more.py": "debfcdb3e61a4f6e31d814de6e7713d357a415a721dc519246906118dc9aba60"
+  },
+  "limitations": [
+    "CPU audit verifies recorded evidence; it does not independently regenerate GPU logits or training gradients.",
+    "Calibration tables are reconstructed from recorded sums, not fresh original GPU traces.",
+    "Source identity/version/gradient receipts do not replace post-inference weight byte hashes.",
+    "Historically exposed benchmark families do not establish untouched generalization."
+  ],
+  "self_tests": {
+    "complete": true,
+    "passed": true,
+    "count": 22,
+    "checks": [
+      "full-tie-baseline-fallback",
+      "odd-ceil-guard-inclusive",
+      "one-below-guard-excluded",
+      "even-half-guard",
+      "zero-baseline-minimum-one",
+      "zero-baseline-one-admissible",
+      "equal-ppl-higher-mk-advances",
+      "new-candidate-tie-order",
+      "ppl-primary",
+      "nan-excluded",
+      "infinite-excluded",
+      "one-byte-over-budget",
+      "incomplete-excluded",
+      "error-excludes",
+      "persistent_float_finite_checks_passed-excludes",
+      "adapter_loaded-excludes",
+      "invalid-baseline-fatal",
+      "52-byte-row-includes-scales-and-full-cache",
+      "overflow-halves-scale-preserves-tracker",
+      "success-increments-tracker",
+      "growth-at-2000-resets-tracker",
+      "fresh1536-cosine-endpoints"
+    ],
+    "gpu_used": false
+  },
+  "candidates": {
+    "complete": true,
+    "independent_table_derivation": true,
+    "candidates_sha256": "cd86a755db5004c716922696cf5532b307c57f5fb7dad4bcca298eb58b55f9a7",
+    "table_sha256": {
+      "magnitude": "6d2b53f63d0a56b527840b344be8396da483f3a6affd3d89fbbe0747d9bdd327",
+      "full_readout": "a3f33fba0433bce8de413dd22baa8c0d3b40c3934be6eee5bea75b4e306f81b3",
+      "preserve_int8": "6dc1c15ca18d07fb87de8f0517baecbf47adec0846575172fa344f86ac10cde5",
+      "preserve_retained80": "9789f1a45b0487ec15a104bfc60d33af14a5fce4d4290344eb5264ad0ddef536"
+    },
+    "table_bytes": 57344,
+    "packed_row_bytes_including_scales": 52,
+    "total_cache_bytes": 28499968,
+    "upstream_calibration_audit": {
+      "complete": true,
+      "table_derivation_independent": true,
+      "calibration_sha256": "8509bb266d40875608f3e0b3be22407fd6ea1b8aacbc79ce04e958726516b0a4",
+      "calibration_tokens": 4096,
+      "table_bytes_per_candidate": 57344,
+      "one_packed_row_bytes": 52,
+      "cache_bytes": 28499968,
+      "readout_score_tier_mass": {
+        "int8": 0.9101367807922354,
+        "int4": 0.08702321558372682,
+        "dead": 0.002840003624037507
+      },
+      "unit_receipts": {
+        "dense_checks": 36,
+        "collector_cases": 3,
+        "all_bound_passed": true,
+        "packing_scope": "CPU verifies recorded GPU test identities/results and allocation arithmetic, not a GPU kernel rerun"
+      }
+    }
+  },
+  "screen": {
+    "complete": true,
+    "arms": {
+      "magnitude": {
+        "complete": true,
+        "ppl": 11.129551551918102,
+        "ppl_windows": 32,
+        "ppl_targets": 16352,
+        "mk_cases": 96,
+        "mk": {
+          "normal": {
+            "correct": 10,
+            "count": 96,
+            "accuracy": 0.10416666666666667
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "full_readout": {
+        "complete": true,
+        "ppl": 10.897633030982046,
+        "ppl_windows": 32,
+        "ppl_targets": 16352,
+        "mk_cases": 96,
+        "mk": {
+          "normal": {
+            "correct": 10,
+            "count": 96,
+            "accuracy": 0.10416666666666667
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "preserve_int8": {
+        "complete": true,
+        "ppl": 10.845166946798157,
+        "ppl_windows": 32,
+        "ppl_targets": 16352,
+        "mk_cases": 96,
+        "mk": {
+          "normal": {
+            "correct": 11,
+            "count": 96,
+            "accuracy": 0.11458333333333333
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "preserve_retained80": {
+        "complete": true,
+        "ppl": 11.161502562933375,
+        "ppl_windows": 32,
+        "ppl_targets": 16352,
+        "mk_cases": 96,
+        "mk": {
+          "normal": {
+            "correct": 14,
+            "count": 96,
+            "accuracy": 0.14583333333333334
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "restored_magnitude": {
+        "complete": true,
+        "ppl": 11.129551551918102,
+        "ppl_windows": 32,
+        "ppl_targets": 16352,
+        "mk_cases": 96,
+        "mk": {
+          "normal": {
+            "correct": 10,
+            "count": 96,
+            "accuracy": 0.10416666666666667
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      }
+    },
+    "report_sha256": {
+      "magnitude": "e4a8c39b72dc7c7eab2aed0d9d6847327a7503cb1dbe1472fe8e8b05bb83e9c0",
+      "full_readout": "a2425b3e0820f6e2c27b2ba133580b927c0cdfc249816aaabe0d008ed2430eac",
+      "preserve_int8": "b6530e25ebd548cce4a1db7a353efb3d6fdde69310af1520def6499a9486c82b",
+      "preserve_retained80": "44620326e00a71a852ff1527453e32f4fb6325ef82dac1239d0b09431f8d9fa1",
+      "restored_magnitude": "0035b662864d41be81fbb07b453992b5a2e24810287c011fcd07b377859c6068"
+    },
+    "restoration": {
+      "complete": true,
+      "per_window_nll_exact": true,
+      "all_generated_ids_exact": true,
+      "all_decoded_predictions_exact": true,
+      "ppl_windows_repeated": 32,
+      "ppl_target_tokens_repeated": 16352,
+      "mk_cases_repeated": 96,
+      "scope": "Exact no-adapter replay after candidate/adapter removal"
+    },
+    "comparison_sha256": "a7ff703281309d83031d4b3bc3b4c6edf718e8646fa62506ff162dbf1cd62437",
+    "selection": {
+      "selected_kind": "preserve_int8",
+      "valid": [
+        "magnitude",
+        "full_readout",
+        "preserve_int8",
+        "preserve_retained80"
+      ],
+      "admissible": [
+        "magnitude",
+        "full_readout",
+        "preserve_int8",
+        "preserve_retained80"
+      ],
+      "minimum_mk_correct": 5,
+      "baseline_mk_correct": 10,
+      "stopped": false,
+      "adapter_used": false,
+      "heldout_used": false,
+      "rule": "Fixed v5: finite complete exact-budget; new MK>=max(1,ceil(.5*baseline)); lowest PPL, highest MK, candidate order; magnitude fallback stops"
+    }
+  },
+  "selected_calibration": {
+    "complete": true,
+    "sha256": "c525fbf62ef4a72db2d4bb13c13920d9f5d4946485538da0f00a369aab3092e3",
+    "receipt_sha256": "482399518e5b41561d93cf1db2509949d27f522b1a720bea1e6e10a3864c77d6",
+    "selected_kind": "preserve_int8",
+    "table_sha256": "6dc1c15ca18d07fb87de8f0517baecbf47adec0846575172fa344f86ac10cde5"
+  },
+  "discarded_smoke": {
+    "complete": true,
+    "mode": "smoke",
+    "report_sha256": "bc10041e708f72feb05f9dfd3f608240be4a5b7c5abecb1245620e4c95359353",
+    "adapter_sha256": "3a19cd75826853e1495324f6fcbced8d51ff627091241639489996f7477797aa",
+    "successful_updates": 1,
+    "attempts": 2,
+    "overflows": 1,
+    "independent_initial_master_hashes": true,
+    "independent_schedule_and_scaler": true,
+    "recovery_checkpoints_verified": 0,
+    "actual_final_checkpoint_cast_equals_export": false,
+    "actual_serialized_FP16_parity_recorded": true,
+    "optimizer_scope": "Smoke records fresh empty optimizer and retry/scaler evidence; no stored checkpoint moments or masters are available for independent comparison."
+  },
+  "training": {
+    "complete": true,
+    "mode": "formal",
+    "report_sha256": "055c1d9703f5b43f64b99992e810e5ecca8ebc652a677062af9741795a4e1d3c",
+    "adapter_sha256": "48dc63ef46a23711df8e8de6d4df9aae975f2e14c5a003e6bea6c222ff887974",
+    "successful_updates": 1536,
+    "attempts": 1543,
+    "overflows": 7,
+    "independent_initial_master_hashes": true,
+    "independent_schedule_and_scaler": true,
+    "recovery_checkpoints_verified": 4,
+    "actual_final_checkpoint_cast_equals_export": true,
+    "actual_serialized_FP16_parity_recorded": true,
+    "optimizer_scope": "Checks complete finite moments, mapping, recipe and step counts; does not recompute GPU gradients or Adam updates."
+  },
+  "cuda_initialized": false
+}
