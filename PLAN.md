@@ -74,7 +74,7 @@ Keep v2 as the recall reference; see docs/RESURFACE_MORE_RESULTS.md.
 - [x] Independently audit screening and select one candidate by the frozen rule.
 - [x] Complete the selected candidate's full PPL/MK and exact baseline replays, if advanced.
 - [x] Audit the full outcome and document limitations.
-- [ ] Push the completed v4 artifacts privately.
+- [x] Push the completed v4 artifacts privately.
 
 No new adapter training in this experiment. Keep original source weights and
 the v2 adapter fixed; each candidate retains exactly52B per128-state row plus
@@ -89,7 +89,7 @@ Random CPU/GPU recurrence diagnostics retain disclosed numerical differences.
 ## State first v5: user-corrected order
 
 - [x] Freeze unadapted candidate selection, fresh training and full quality gates.
-- [ ] Derive four same-budget tier tables from original-S16 TRAIN statistics.
+- [x] Derive four same-budget tier tables and independently verify original-S16 TRAIN provenance.
 - [ ] Screen 32 TRAIN windows and 96 numeric TRAIN prompts without any adapter.
 - [ ] Independently audit selection and freeze the selected non-baseline table.
 - [ ] Pass a discarded fresh one-update training/export smoke.

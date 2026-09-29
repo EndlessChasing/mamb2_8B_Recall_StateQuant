@@ -1,0 +1,37 @@
+{
+  "format": "MAMBA2_STATE_FIRST_TRAINER_CPU_CHECK_V1",
+  "complete": true,
+  "started_unix": 1790654397.3869169,
+  "trainer_sha256": "40e46155163049594bf1465cbd255f1c9e500f1bc88455996a9c1a402b7b078c",
+  "protocol_sha256": "ce700910f27230e062fe62e89dd6bddee05bcbf7bb7972c59fdba24cb3db9f5d",
+  "torch_version": "2.11.0+cu128",
+  "scope": "CPU-only synthetic Adam/GradScaler update using the real224-master geometry; verifies initialization and checkpoint bookkeeping, not model forward/backward, training losses, packed GPU parity or quality",
+  "checks": {
+    "fresh_masters": true,
+    "fresh_optimizer_empty": true,
+    "fresh_scaler_exact": true,
+    "scaler_transition_exact": true,
+    "masters_roundtrip_exact": true,
+    "optimizer_roundtrip_exact": true,
+    "scaler_roundtrip_exact": true,
+    "all224_optimizer_steps_one": true,
+    "checkpoint_format_exact": true,
+    "checkpoint_byte_receipt_exact": true,
+    "cuda_uninitialized": true
+  },
+  "master_tensors": 224,
+  "parameters": 1154104,
+  "scaler_after": {
+    "scale": 1024.0,
+    "growth_factor": 2.0,
+    "backoff_factor": 0.5,
+    "growth_interval": 2000,
+    "_growth_tracker": 1
+  },
+  "optimizer_groups": [
+    112,
+    112
+  ],
+  "cuda_initialized": false,
+  "finished_unix": 1790654398.2897508
+}

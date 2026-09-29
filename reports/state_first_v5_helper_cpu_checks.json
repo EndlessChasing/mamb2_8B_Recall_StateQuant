@@ -1,0 +1,32 @@
+{
+  "format": "MAMBA2_STATE_FIRST_V5_HELPER_CPU_CHECKS_V1",
+  "complete": true,
+  "passed": true,
+  "execution": "Remote horde-gpu Python with CUDA_VISIBLE_DEVICES empty; inline CPU fixture assertions",
+  "cuda_initialized": false,
+  "code_sha256": {
+    "scripts/prepare_state_first_v5.py": "848eb4b3dfde96de02affc391d715a3ae74ed37ac4831d0a2760ecd33893c474",
+    "scripts/run_state_first_v5.py": "8bb0d5940a2b674a21577d5eaf1200af94ecd3394ee39e7caa446bec0f6091a2",
+    "scripts/train_state_first_v5.py": "40e46155163049594bf1465cbd255f1c9e500f1bc88455996a9c1a402b7b078c",
+    "docs/STATE_FIRST_V5_PROTOCOL.md": "ce700910f27230e062fe62e89dd6bddee05bcbf7bb7972c59fdba24cb3db9f5d"
+  },
+  "input_calibration_sha256": "8509bb266d40875608f3e0b3be22407fd6ea1b8aacbc79ce04e958726516b0a4",
+  "tests": [
+    "Actual pinned calibration derives four complete uint8 permutation tables",
+    "preserve_int8 first16 exactly match magnitude first16",
+    "preserve_retained80 retains exact original80 set and original final48 order",
+    "Synthetic old descending127..0/readout ascending0..127 verifies coordinate-index tie ordering",
+    "Selector magnitude tie fallback",
+    "Selector max(1,ceil(.5*baseline)) rejects MK4 for baselineMK10",
+    "Selector equalPPL favors higherMK then fixed candidate order",
+    "Selector excludes failed finite-state check and NaN PPL",
+    "Prep/run/trainer imports agree on final protocol hash"
+  ],
+  "table_sha256": {
+    "magnitude": "6d2b53f63d0a56b527840b344be8396da483f3a6affd3d89fbbe0747d9bdd327",
+    "full_readout": "a3f33fba0433bce8de413dd22baa8c0d3b40c3934be6eee5bea75b4e306f81b3",
+    "preserve_int8": "6dc1c15ca18d07fb87de8f0517baecbf47adec0846575172fa344f86ac10cde5",
+    "preserve_retained80": "9789f1a45b0487ec15a104bfc60d33af14a5fce4d4290344eb5264ad0ddef536"
+  },
+  "scope": "CPU helper fixtures only; not GPU candidate quality, full training, or independent evidence audit"
+}
