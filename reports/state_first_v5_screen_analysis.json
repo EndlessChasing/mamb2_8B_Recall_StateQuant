@@ -1,0 +1,7510 @@
+{
+  "format": "MAMBA2_STATE_FIRST_V5_TRAIN_SCREEN_ANALYSIS_V1",
+  "complete": true,
+  "scope": "Descriptive analysis of frozen unadapted TRAIN selection; no new candidate, fitting, training change or CONFIRM access",
+  "heldout_used": false,
+  "cuda_initialized": false,
+  "protocol_sha256": "ce700910f27230e062fe62e89dd6bddee05bcbf7bb7972c59fdba24cb3db9f5d",
+  "analysis_script_sha256": "8b357b3deb0cc6749102ee6dceab1fa9b9e159b58cda068162f66a58d47f8e2e",
+  "input_screen_sha256": {
+    "screen_comparison.json": "a7ff703281309d83031d4b3bc3b4c6edf718e8646fa62506ff162dbf1cd62437",
+    "selected_calibration.pt": "c525fbf62ef4a72db2d4bb13c13920d9f5d4946485538da0f00a369aab3092e3",
+    "selected_calibration.json": "482399518e5b41561d93cf1db2509949d27f522b1a720bea1e6e10a3864c77d6",
+    "screen_magnitude.json": "e4a8c39b72dc7c7eab2aed0d9d6847327a7503cb1dbe1472fe8e8b05bb83e9c0",
+    "screen_full_readout.json": "a2425b3e0820f6e2c27b2ba133580b927c0cdfc249816aaabe0d008ed2430eac",
+    "screen_preserve_int8.json": "b6530e25ebd548cce4a1db7a353efb3d6fdde69310af1520def6499a9486c82b",
+    "screen_preserve_retained80.json": "44620326e00a71a852ff1527453e32f4fb6325ef82dac1239d0b09431f8d9fa1",
+    "screen_restored_magnitude.json": "0035b662864d41be81fbb07b453992b5a2e24810287c011fcd07b377859c6068",
+    "screen_restoration.json": "2028ff6c2e28188547ddccde6f2ecfef833750a88812046b803107dad7689886"
+  },
+  "candidates_sha256": "cd86a755db5004c716922696cf5532b307c57f5fb7dad4bcca298eb58b55f9a7",
+  "candidates_receipt_sha256": "9e0a42f52fc8f9bde587cc81e64989db4c9290a4b2e39ec6689771e40c1ddc4d",
+  "v4_statistics_sha256": "8509bb266d40875608f3e0b3be22407fd6ea1b8aacbc79ce04e958726516b0a4",
+  "selected_calibration_sha256": "c525fbf62ef4a72db2d4bb13c13920d9f5d4946485538da0f00a369aab3092e3",
+  "selection": {
+    "selected_kind": "preserve_int8",
+    "valid": [
+      "magnitude",
+      "full_readout",
+      "preserve_int8",
+      "preserve_retained80"
+    ],
+    "admissible": [
+      "magnitude",
+      "full_readout",
+      "preserve_int8",
+      "preserve_retained80"
+    ],
+    "minimum_mk_correct": 5,
+    "baseline_mk_correct": 10,
+    "stopped": false,
+    "adapter_used": false,
+    "heldout_used": false,
+    "rule": "Fixed v5: finite complete exact-budget; new MK>=max(1,ceil(.5*baseline)); lowest PPL, highest MK, candidate order; magnitude fallback stops"
+  },
+  "summary": {
+    "magnitude": {
+      "ppl": 11.129551551918102,
+      "nll": 39401.84252548218,
+      "target_tokens": 16352,
+      "mk_correct": 10,
+      "mk_count": 96,
+      "persistent_cache_bytes": 28499968
+    },
+    "full_readout": {
+      "ppl": 10.897633030982046,
+      "nll": 39057.49785614014,
+      "target_tokens": 16352,
+      "mk_correct": 10,
+      "mk_count": 96,
+      "persistent_cache_bytes": 28499968
+    },
+    "preserve_int8": {
+      "ppl": 10.845166946798157,
+      "nll": 38978.581886291504,
+      "target_tokens": 16352,
+      "mk_correct": 11,
+      "mk_count": 96,
+      "persistent_cache_bytes": 28499968
+    },
+    "preserve_retained80": {
+      "ppl": 11.161502562933375,
+      "nll": 39448.7190246582,
+      "target_tokens": 16352,
+      "mk_correct": 14,
+      "mk_count": 96,
+      "persistent_cache_bytes": 28499968
+    },
+    "restored_magnitude": {
+      "ppl": 11.129551551918102,
+      "nll": 39401.84252548218,
+      "target_tokens": 16352,
+      "mk_correct": 10,
+      "mk_count": 96,
+      "persistent_cache_bytes": 28499968
+    }
+  },
+  "paired_train": {
+    "magnitude_to_preserve_int8": {
+      "old_arm": "magnitude",
+      "new_arm": "preserve_int8",
+      "relative_ppl_change": -0.025552207004327365,
+      "nll_delta": -423.2606391906738,
+      "ppl_windows_improved": 29,
+      "ppl_windows_regressed": 3,
+      "ppl_windows": [
+        {
+          "start": 16384,
+          "old_ppl": 6.105945884170247,
+          "new_ppl": 5.899012133172275,
+          "relative_ppl_change": -0.033890531446479244,
+          "nll_delta": -17.618324279785156
+        },
+        {
+          "start": 18432,
+          "old_ppl": 11.134818823914001,
+          "new_ppl": 10.928448749001232,
+          "relative_ppl_change": -0.018533761363907608,
+          "nll_delta": -9.559616088867188
+        },
+        {
+          "start": 20480,
+          "old_ppl": 14.699743793629224,
+          "new_ppl": 14.678131398999055,
+          "relative_ppl_change": -0.0014702565523309064,
+          "nll_delta": -0.7518539428710938
+        },
+        {
+          "start": 22528,
+          "old_ppl": 13.148667225877432,
+          "new_ppl": 12.515897869769544,
+          "relative_ppl_change": -0.04812422013864315,
+          "nll_delta": -25.202896118164062
+        },
+        {
+          "start": 24576,
+          "old_ppl": 12.628710702807373,
+          "new_ppl": 12.284585971727564,
+          "relative_ppl_change": -0.027249395379950414,
+          "nll_delta": -14.11767578125
+        },
+        {
+          "start": 26624,
+          "old_ppl": 12.338416013210514,
+          "new_ppl": 11.896863307476448,
+          "relative_ppl_change": -0.03578682265708211,
+          "nll_delta": -18.62230682373047
+        },
+        {
+          "start": 28672,
+          "old_ppl": 11.466272689512074,
+          "new_ppl": 10.967111436188743,
+          "relative_ppl_change": -0.04353300037769925,
+          "nll_delta": -22.744094848632812
+        },
+        {
+          "start": 30720,
+          "old_ppl": 16.288399055703103,
+          "new_ppl": 16.08648651571786,
+          "relative_ppl_change": -0.0123960948706342,
+          "nll_delta": -6.373992919921875
+        },
+        {
+          "start": 32768,
+          "old_ppl": 10.885775153152894,
+          "new_ppl": 10.783750102429455,
+          "relative_ppl_change": -0.00937232758237605,
+          "nll_delta": -4.8118438720703125
+        },
+        {
+          "start": 34816,
+          "old_ppl": 10.962337089292594,
+          "new_ppl": 10.63753020496083,
+          "relative_ppl_change": -0.029629346524019717,
+          "nll_delta": -15.369430541992188
+        },
+        {
+          "start": 36864,
+          "old_ppl": 11.940597793127571,
+          "new_ppl": 11.531892581030375,
+          "relative_ppl_change": -0.034228203577246985,
+          "nll_delta": -17.796958923339844
+        },
+        {
+          "start": 38912,
+          "old_ppl": 9.217734817375192,
+          "new_ppl": 9.218344097846307,
+          "relative_ppl_change": 6.609871982510285e-05,
+          "nll_delta": 0.03377532958984375
+        },
+        {
+          "start": 40960,
+          "old_ppl": 5.8186921608957105,
+          "new_ppl": 5.583285071162598,
+          "relative_ppl_change": -0.04045704485196122,
+          "nll_delta": -21.103378295898438
+        },
+        {
+          "start": 43008,
+          "old_ppl": 11.90927059232491,
+          "new_ppl": 11.52995853075008,
+          "relative_ppl_change": -0.03185015057255347,
+          "nll_delta": -16.540252685546875
+        },
+        {
+          "start": 45056,
+          "old_ppl": 11.61047006625138,
+          "new_ppl": 11.286428374291493,
+          "relative_ppl_change": -0.027909437784245483,
+          "nll_delta": -14.464523315429688
+        },
+        {
+          "start": 47104,
+          "old_ppl": 16.670104529315804,
+          "new_ppl": 16.336500170535025,
+          "relative_ppl_change": -0.02001213358885101,
+          "nll_delta": -10.329910278320312
+        },
+        {
+          "start": 49152,
+          "old_ppl": 6.24478896222182,
+          "new_ppl": 6.09567099586414,
+          "relative_ppl_change": -0.023878783936459258,
+          "nll_delta": -12.350105285644531
+        },
+        {
+          "start": 51200,
+          "old_ppl": 10.87083867301655,
+          "new_ppl": 10.898282859213042,
+          "relative_ppl_change": 0.0025245693567887972,
+          "nll_delta": 1.2884292602539062
+        },
+        {
+          "start": 53248,
+          "old_ppl": 13.789272652084499,
+          "new_ppl": 13.53483756529067,
+          "relative_ppl_change": -0.018451668424684153,
+          "nll_delta": -9.516876220703125
+        },
+        {
+          "start": 55296,
+          "old_ppl": 12.307455702311941,
+          "new_ppl": 11.646501823287087,
+          "relative_ppl_change": -0.053703535077578635,
+          "nll_delta": -28.206878662109375
+        },
+        {
+          "start": 57344,
+          "old_ppl": 13.76577378042704,
+          "new_ppl": 13.412624535918622,
+          "relative_ppl_change": -0.025654151385993584,
+          "nll_delta": -13.280357360839844
+        },
+        {
+          "start": 59392,
+          "old_ppl": 7.449480263614635,
+          "new_ppl": 7.321295364521296,
+          "relative_ppl_change": -0.017207227156427307,
+          "nll_delta": -8.869422912597656
+        },
+        {
+          "start": 61440,
+          "old_ppl": 6.894655594724989,
+          "new_ppl": 6.856268707398396,
+          "relative_ppl_change": -0.0055676294195118325,
+          "nll_delta": -2.853008270263672
+        },
+        {
+          "start": 63488,
+          "old_ppl": 13.052747286696684,
+          "new_ppl": 12.477661493512617,
+          "relative_ppl_change": -0.044058601653170215,
+          "nll_delta": -23.024978637695312
+        },
+        {
+          "start": 65536,
+          "old_ppl": 7.68238425309237,
+          "new_ppl": 7.438635122927234,
+          "relative_ppl_change": -0.031728317945957984,
+          "nll_delta": -16.4759521484375
+        },
+        {
+          "start": 67584,
+          "old_ppl": 12.38122132683913,
+          "new_ppl": 11.942835200414445,
+          "relative_ppl_change": -0.03540734107340304,
+          "nll_delta": -18.421234130859375
+        },
+        {
+          "start": 69632,
+          "old_ppl": 13.587830491564661,
+          "new_ppl": 13.190690232251676,
+          "relative_ppl_change": -0.02922764304128833,
+          "nll_delta": -15.157936096191406
+        },
+        {
+          "start": 71680,
+          "old_ppl": 8.813053829056145,
+          "new_ppl": 8.402965135925918,
+          "relative_ppl_change": -0.04653196282294203,
+          "nll_delta": -24.348831176757812
+        },
+        {
+          "start": 73728,
+          "old_ppl": 11.325838040267433,
+          "new_ppl": 11.415559044754389,
+          "relative_ppl_change": 0.007921798295893456,
+          "nll_delta": 4.0320892333984375
+        },
+        {
+          "start": 75776,
+          "old_ppl": 13.022148970162352,
+          "new_ppl": 12.744291184305517,
+          "relative_ppl_change": -0.02133732201140459,
+          "nll_delta": -11.021377563476562
+        },
+        {
+          "start": 77824,
+          "old_ppl": 12.146842051986903,
+          "new_ppl": 11.852549104092867,
+          "relative_ppl_change": -0.024227938968375495,
+          "nll_delta": -12.532920837402344
+        },
+        {
+          "start": 79872,
+          "old_ppl": 21.010825898817934,
+          "new_ppl": 20.317449614455807,
+          "relative_ppl_change": -0.03300090570933423,
+          "nll_delta": -17.147994995117188
+        }
+      ],
+      "mk_overall": {
+        "count": 96,
+        "old_correct": 10,
+        "new_correct": 11,
+        "gains": 4,
+        "regressions": 3,
+        "unchanged": 89
+      },
+      "mk_by_N": [
+        {
+          "N": 16,
+          "count": 48,
+          "old_correct": 10,
+          "new_correct": 11,
+          "gains": 4,
+          "regressions": 3,
+          "unchanged": 41
+        },
+        {
+          "N": 64,
+          "count": 48,
+          "old_correct": 0,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 0,
+          "unchanged": 48
+        }
+      ],
+      "mk_by_template": [
+        {
+          "template": 0,
+          "count": 32,
+          "old_correct": 1,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 1,
+          "unchanged": 31
+        },
+        {
+          "template": 1,
+          "count": 32,
+          "old_correct": 3,
+          "new_correct": 2,
+          "gains": 0,
+          "regressions": 1,
+          "unchanged": 31
+        },
+        {
+          "template": 2,
+          "count": 32,
+          "old_correct": 6,
+          "new_correct": 9,
+          "gains": 4,
+          "regressions": 1,
+          "unchanged": 27
+        }
+      ],
+      "mk_by_N_template": [
+        {
+          "N": 16,
+          "template": 0,
+          "count": 16,
+          "old_correct": 1,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 1,
+          "unchanged": 15
+        },
+        {
+          "N": 16,
+          "template": 1,
+          "count": 16,
+          "old_correct": 3,
+          "new_correct": 2,
+          "gains": 0,
+          "regressions": 1,
+          "unchanged": 15
+        },
+        {
+          "N": 16,
+          "template": 2,
+          "count": 16,
+          "old_correct": 6,
+          "new_correct": 9,
+          "gains": 4,
+          "regressions": 1,
+          "unchanged": 11
+        },
+        {
+          "N": 64,
+          "template": 0,
+          "count": 16,
+          "old_correct": 0,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 0,
+          "unchanged": 16
+        },
+        {
+          "N": 64,
+          "template": 1,
+          "count": 16,
+          "old_correct": 0,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 0,
+          "unchanged": 16
+        },
+        {
+          "N": 64,
+          "template": 2,
+          "count": 16,
+          "old_correct": 0,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 0,
+          "unchanged": 16
+        }
+      ],
+      "mk_by_query_position_quartile": [
+        {
+          "query_position_quartile": 1,
+          "count": 21,
+          "old_correct": 5,
+          "new_correct": 5,
+          "gains": 1,
+          "regressions": 1,
+          "unchanged": 19
+        },
+        {
+          "query_position_quartile": 2,
+          "count": 29,
+          "old_correct": 1,
+          "new_correct": 3,
+          "gains": 2,
+          "regressions": 0,
+          "unchanged": 27
+        },
+        {
+          "query_position_quartile": 3,
+          "count": 24,
+          "old_correct": 1,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 1,
+          "unchanged": 23
+        },
+        {
+          "query_position_quartile": 4,
+          "count": 22,
+          "old_correct": 3,
+          "new_correct": 3,
+          "gains": 1,
+          "regressions": 1,
+          "unchanged": 20
+        }
+      ],
+      "mk_changed_cases": [
+        {
+          "id": "resurface-train-n16-t0-s176",
+          "N": 16,
+          "template": 0,
+          "query_position": 10,
+          "query_position_quartile": 3,
+          "records_after_target": 5,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "887539",
+          "new_prediction": "889999",
+          "answer": "887539"
+        },
+        {
+          "id": "resurface-train-n16-t1-s128",
+          "N": 16,
+          "template": 1,
+          "query_position": 14,
+          "query_position_quartile": 4,
+          "records_after_target": 1,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "988493",
+          "new_prediction": "985068",
+          "answer": "988493"
+        },
+        {
+          "id": "resurface-train-n16-t2-s112",
+          "N": 16,
+          "template": 2,
+          "query_position": 6,
+          "query_position_quartile": 2,
+          "records_after_target": 9,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "681578",
+          "new_prediction": "688807",
+          "answer": "688807"
+        },
+        {
+          "id": "resurface-train-n16-t2-s144",
+          "N": 16,
+          "template": 2,
+          "query_position": 1,
+          "query_position_quartile": 1,
+          "records_after_target": 14,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "988209",
+          "new_prediction": "985032",
+          "answer": "988209"
+        },
+        {
+          "id": "resurface-train-n16-t2-s16",
+          "N": 16,
+          "template": 2,
+          "query_position": 6,
+          "query_position_quartile": 2,
+          "records_after_target": 9,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "883071",
+          "new_prediction": "889302",
+          "answer": "889302"
+        },
+        {
+          "id": "resurface-train-n16-t2-s160",
+          "N": 16,
+          "template": 2,
+          "query_position": 15,
+          "query_position_quartile": 4,
+          "records_after_target": 0,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "786549",
+          "new_prediction": "986955",
+          "answer": "986955"
+        },
+        {
+          "id": "resurface-train-n16-t2-s48",
+          "N": 16,
+          "template": 2,
+          "query_position": 0,
+          "query_position_quartile": 1,
+          "records_after_target": 15,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "882837",
+          "new_prediction": "883694",
+          "answer": "883694"
+        }
+      ]
+    },
+    "full_readout_to_preserve_int8": {
+      "old_arm": "full_readout",
+      "new_arm": "preserve_int8",
+      "relative_ppl_change": -0.004814447691046997,
+      "nll_delta": -78.91596984863281,
+      "ppl_windows_improved": 23,
+      "ppl_windows_regressed": 9,
+      "ppl_windows": [
+        {
+          "start": 16384,
+          "old_ppl": 5.992839598744735,
+          "new_ppl": 5.899012133172275,
+          "relative_ppl_change": -0.015656595513104166,
+          "nll_delta": -8.063812255859375
+        },
+        {
+          "start": 18432,
+          "old_ppl": 10.972396516118064,
+          "new_ppl": 10.928448749001232,
+          "relative_ppl_change": -0.0040053024926937075,
+          "nll_delta": -2.0508193969726562
+        },
+        {
+          "start": 20480,
+          "old_ppl": 14.317888059207698,
+          "new_ppl": 14.678131398999055,
+          "relative_ppl_change": 0.02516036850558323,
+          "nll_delta": 12.697868347167969
+        },
+        {
+          "start": 22528,
+          "old_ppl": 12.361836290381666,
+          "new_ppl": 12.515897869769544,
+          "relative_ppl_change": 0.012462677531795974,
+          "nll_delta": 6.329071044921875
+        },
+        {
+          "start": 24576,
+          "old_ppl": 12.767454382117053,
+          "new_ppl": 12.284585971727564,
+          "relative_ppl_change": -0.03782025734635297,
+          "nll_delta": -19.701095581054688
+        },
+        {
+          "start": 26624,
+          "old_ppl": 12.023802072008785,
+          "new_ppl": 11.896863307476448,
+          "relative_ppl_change": -0.010557289929767566,
+          "nll_delta": -5.423454284667969
+        },
+        {
+          "start": 28672,
+          "old_ppl": 10.795027945939252,
+          "new_ppl": 10.967111436188743,
+          "relative_ppl_change": 0.015940995346308773,
+          "nll_delta": 8.08160400390625
+        },
+        {
+          "start": 30720,
+          "old_ppl": 15.72184062426243,
+          "new_ppl": 16.08648651571786,
+          "relative_ppl_change": 0.02319358783555514,
+          "nll_delta": 11.716567993164062
+        },
+        {
+          "start": 32768,
+          "old_ppl": 10.825283802945721,
+          "new_ppl": 10.783750102429455,
+          "relative_ppl_change": -0.0038367308675052447,
+          "nll_delta": -1.9643402099609375
+        },
+        {
+          "start": 34816,
+          "old_ppl": 10.558706797396606,
+          "new_ppl": 10.63753020496083,
+          "relative_ppl_change": 0.007465252049963178,
+          "nll_delta": 3.8005752563476562
+        },
+        {
+          "start": 36864,
+          "old_ppl": 11.711214918930198,
+          "new_ppl": 11.531892581030375,
+          "relative_ppl_change": -0.015312018363693669,
+          "nll_delta": -7.8849639892578125
+        },
+        {
+          "start": 38912,
+          "old_ppl": 9.311984581532752,
+          "new_ppl": 9.218344097846307,
+          "relative_ppl_change": -0.010055910516878375,
+          "nll_delta": -5.164581298828125
+        },
+        {
+          "start": 40960,
+          "old_ppl": 5.624305133544785,
+          "new_ppl": 5.583285071162598,
+          "relative_ppl_change": -0.007293356496171022,
+          "nll_delta": -3.7405624389648438
+        },
+        {
+          "start": 43008,
+          "old_ppl": 11.79632355644117,
+          "new_ppl": 11.52995853075008,
+          "relative_ppl_change": -0.022580342461499092,
+          "nll_delta": -11.670822143554688
+        },
+        {
+          "start": 45056,
+          "old_ppl": 11.33481057208505,
+          "new_ppl": 11.286428374291493,
+          "relative_ppl_change": -0.004268461081538666,
+          "nll_delta": -2.18585205078125
+        },
+        {
+          "start": 47104,
+          "old_ppl": 16.399984473671758,
+          "new_ppl": 16.336500170535025,
+          "relative_ppl_change": -0.0038709977584825417,
+          "nll_delta": -1.9819183349609375
+        },
+        {
+          "start": 49152,
+          "old_ppl": 6.086588567190294,
+          "new_ppl": 6.09567099586414,
+          "relative_ppl_change": 0.001492203485348842,
+          "nll_delta": 0.7619476318359375
+        },
+        {
+          "start": 51200,
+          "old_ppl": 11.171769416259988,
+          "new_ppl": 10.898282859213042,
+          "relative_ppl_change": -0.02448014695406253,
+          "nll_delta": -12.665016174316406
+        },
+        {
+          "start": 53248,
+          "old_ppl": 13.615430639623574,
+          "new_ppl": 13.53483756529067,
+          "relative_ppl_change": -0.005919245337592249,
+          "nll_delta": -3.033721923828125
+        },
+        {
+          "start": 55296,
+          "old_ppl": 11.686750880926477,
+          "new_ppl": 11.646501823287087,
+          "relative_ppl_change": -0.0034439903827400142,
+          "nll_delta": -1.7629165649414062
+        },
+        {
+          "start": 57344,
+          "old_ppl": 13.293985523854856,
+          "new_ppl": 13.412624535918622,
+          "relative_ppl_change": 0.008924262167344654,
+          "nll_delta": 4.540069580078125
+        },
+        {
+          "start": 59392,
+          "old_ppl": 7.32260981749278,
+          "new_ppl": 7.321295364521296,
+          "relative_ppl_change": -0.00017950607833072674,
+          "nll_delta": -0.09173583984375
+        },
+        {
+          "start": 61440,
+          "old_ppl": 6.978750622134441,
+          "new_ppl": 6.856268707398396,
+          "relative_ppl_change": -0.017550693722680144,
+          "nll_delta": -9.048038482666016
+        },
+        {
+          "start": 63488,
+          "old_ppl": 12.381506007768095,
+          "new_ppl": 12.477661493512617,
+          "relative_ppl_change": 0.007766057350712785,
+          "nll_delta": 3.953125
+        },
+        {
+          "start": 65536,
+          "old_ppl": 7.511137819200057,
+          "new_ppl": 7.438635122927234,
+          "relative_ppl_change": -0.00965269151199577,
+          "nll_delta": -4.956485748291016
+        },
+        {
+          "start": 67584,
+          "old_ppl": 12.042227308832008,
+          "new_ppl": 11.942835200414445,
+          "relative_ppl_change": -0.008253631647084703,
+          "nll_delta": -4.235107421875
+        },
+        {
+          "start": 69632,
+          "old_ppl": 13.457572176569759,
+          "new_ppl": 13.190690232251676,
+          "relative_ppl_change": -0.019831358941751476,
+          "nll_delta": -10.23565673828125
+        },
+        {
+          "start": 71680,
+          "old_ppl": 8.363258764594608,
+          "new_ppl": 8.402965135925918,
+          "relative_ppl_change": 0.004747715268527131,
+          "nll_delta": 2.4203414916992188
+        },
+        {
+          "start": 73728,
+          "old_ppl": 11.55110141069199,
+          "new_ppl": 11.415559044754389,
+          "relative_ppl_change": -0.01173415080679141,
+          "nll_delta": -6.031608581542969
+        },
+        {
+          "start": 75776,
+          "old_ppl": 12.822462588582104,
+          "new_ppl": 12.744291184305517,
+          "relative_ppl_change": -0.0060964423749767516,
+          "nll_delta": -3.12481689453125
+        },
+        {
+          "start": 77824,
+          "old_ppl": 11.987274162826482,
+          "new_ppl": 11.852549104092867,
+          "relative_ppl_change": -0.011239007042268878,
+          "nll_delta": -5.7756500244140625
+        },
+        {
+          "start": 79872,
+          "old_ppl": 20.414063778697898,
+          "new_ppl": 20.317449614455807,
+          "relative_ppl_change": -0.004732725697805806,
+          "nll_delta": -2.424163818359375
+        }
+      ],
+      "mk_overall": {
+        "count": 96,
+        "old_correct": 10,
+        "new_correct": 11,
+        "gains": 7,
+        "regressions": 6,
+        "unchanged": 83
+      },
+      "mk_by_N": [
+        {
+          "N": 16,
+          "count": 48,
+          "old_correct": 8,
+          "new_correct": 11,
+          "gains": 7,
+          "regressions": 4,
+          "unchanged": 37
+        },
+        {
+          "N": 64,
+          "count": 48,
+          "old_correct": 2,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 2,
+          "unchanged": 46
+        }
+      ],
+      "mk_by_template": [
+        {
+          "template": 0,
+          "count": 32,
+          "old_correct": 1,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 1,
+          "unchanged": 31
+        },
+        {
+          "template": 1,
+          "count": 32,
+          "old_correct": 2,
+          "new_correct": 2,
+          "gains": 2,
+          "regressions": 2,
+          "unchanged": 28
+        },
+        {
+          "template": 2,
+          "count": 32,
+          "old_correct": 7,
+          "new_correct": 9,
+          "gains": 5,
+          "regressions": 3,
+          "unchanged": 24
+        }
+      ],
+      "mk_by_N_template": [
+        {
+          "N": 16,
+          "template": 0,
+          "count": 16,
+          "old_correct": 1,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 1,
+          "unchanged": 15
+        },
+        {
+          "N": 16,
+          "template": 1,
+          "count": 16,
+          "old_correct": 1,
+          "new_correct": 2,
+          "gains": 2,
+          "regressions": 1,
+          "unchanged": 13
+        },
+        {
+          "N": 16,
+          "template": 2,
+          "count": 16,
+          "old_correct": 6,
+          "new_correct": 9,
+          "gains": 5,
+          "regressions": 2,
+          "unchanged": 9
+        },
+        {
+          "N": 64,
+          "template": 0,
+          "count": 16,
+          "old_correct": 0,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 0,
+          "unchanged": 16
+        },
+        {
+          "N": 64,
+          "template": 1,
+          "count": 16,
+          "old_correct": 1,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 1,
+          "unchanged": 15
+        },
+        {
+          "N": 64,
+          "template": 2,
+          "count": 16,
+          "old_correct": 1,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 1,
+          "unchanged": 15
+        }
+      ],
+      "mk_by_query_position_quartile": [
+        {
+          "query_position_quartile": 1,
+          "count": 21,
+          "old_correct": 4,
+          "new_correct": 5,
+          "gains": 3,
+          "regressions": 2,
+          "unchanged": 16
+        },
+        {
+          "query_position_quartile": 2,
+          "count": 29,
+          "old_correct": 5,
+          "new_correct": 3,
+          "gains": 2,
+          "regressions": 4,
+          "unchanged": 23
+        },
+        {
+          "query_position_quartile": 3,
+          "count": 24,
+          "old_correct": 0,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 0,
+          "unchanged": 24
+        },
+        {
+          "query_position_quartile": 4,
+          "count": 22,
+          "old_correct": 1,
+          "new_correct": 3,
+          "gains": 2,
+          "regressions": 0,
+          "unchanged": 20
+        }
+      ],
+      "mk_changed_cases": [
+        {
+          "id": "resurface-train-n16-t0-s192",
+          "N": 16,
+          "template": 0,
+          "query_position": 7,
+          "query_position_quartile": 2,
+          "records_after_target": 8,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "986804",
+          "new_prediction": "985311",
+          "answer": "986804"
+        },
+        {
+          "id": "resurface-train-n16-t1-s0",
+          "N": 16,
+          "template": 1,
+          "query_position": 3,
+          "query_position_quartile": 1,
+          "records_after_target": 12,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "989027",
+          "new_prediction": "889120",
+          "answer": "889120"
+        },
+        {
+          "id": "resurface-train-n16-t1-s16",
+          "N": 16,
+          "template": 1,
+          "query_position": 7,
+          "query_position_quartile": 2,
+          "records_after_target": 8,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "987943",
+          "new_prediction": "888654",
+          "answer": "987943"
+        },
+        {
+          "id": "resurface-train-n16-t1-s224",
+          "N": 16,
+          "template": 1,
+          "query_position": 5,
+          "query_position_quartile": 2,
+          "records_after_target": 10,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "988581",
+          "new_prediction": "885213",
+          "answer": "885213"
+        },
+        {
+          "id": "resurface-train-n16-t2-s144",
+          "N": 16,
+          "template": 2,
+          "query_position": 1,
+          "query_position_quartile": 1,
+          "records_after_target": 14,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "988209",
+          "new_prediction": "985032",
+          "answer": "988209"
+        },
+        {
+          "id": "resurface-train-n16-t2-s16",
+          "N": 16,
+          "template": 2,
+          "query_position": 6,
+          "query_position_quartile": 2,
+          "records_after_target": 9,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "883071",
+          "new_prediction": "889302",
+          "answer": "889302"
+        },
+        {
+          "id": "resurface-train-n16-t2-s160",
+          "N": 16,
+          "template": 2,
+          "query_position": 15,
+          "query_position_quartile": 4,
+          "records_after_target": 0,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "986914",
+          "new_prediction": "986955",
+          "answer": "986955"
+        },
+        {
+          "id": "resurface-train-n16-t2-s176",
+          "N": 16,
+          "template": 2,
+          "query_position": 13,
+          "query_position_quartile": 4,
+          "records_after_target": 2,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "782321",
+          "new_prediction": "782341",
+          "answer": "782341"
+        },
+        {
+          "id": "resurface-train-n16-t2-s192",
+          "N": 16,
+          "template": 2,
+          "query_position": 7,
+          "query_position_quartile": 2,
+          "records_after_target": 8,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "982199",
+          "new_prediction": "982082",
+          "answer": "982199"
+        },
+        {
+          "id": "resurface-train-n16-t2-s48",
+          "N": 16,
+          "template": 2,
+          "query_position": 0,
+          "query_position_quartile": 1,
+          "records_after_target": 15,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "886124",
+          "new_prediction": "883694",
+          "answer": "883694"
+        },
+        {
+          "id": "resurface-train-n16-t2-s96",
+          "N": 16,
+          "template": 2,
+          "query_position": 0,
+          "query_position_quartile": 1,
+          "records_after_target": 15,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "882885",
+          "new_prediction": "986999",
+          "answer": "986999"
+        },
+        {
+          "id": "resurface-train-n64-t1-s16",
+          "N": 64,
+          "template": 1,
+          "query_position": 22,
+          "query_position_quartile": 2,
+          "records_after_target": 41,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "987560",
+          "new_prediction": "985551",
+          "answer": "987560"
+        },
+        {
+          "id": "resurface-train-n64-t2-s176",
+          "N": 64,
+          "template": 2,
+          "query_position": 10,
+          "query_position_quartile": 1,
+          "records_after_target": 53,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "987126",
+          "new_prediction": "786080",
+          "answer": "987126"
+        }
+      ]
+    },
+    "magnitude_to_full_readout": {
+      "old_arm": "magnitude",
+      "new_arm": "full_readout",
+      "relative_ppl_change": -0.0208380831747067,
+      "nll_delta": -344.344669342041,
+      "ppl_windows_improved": 27,
+      "ppl_windows_regressed": 5,
+      "ppl_windows": [
+        {
+          "start": 16384,
+          "old_ppl": 6.105945884170247,
+          "new_ppl": 5.992839598744735,
+          "relative_ppl_change": -0.01852395805189533,
+          "nll_delta": -9.554512023925781
+        },
+        {
+          "start": 18432,
+          "old_ppl": 11.134818823914001,
+          "new_ppl": 10.972396516118064,
+          "relative_ppl_change": -0.014586883753070712,
+          "nll_delta": -7.508796691894531
+        },
+        {
+          "start": 20480,
+          "old_ppl": 14.699743793629224,
+          "new_ppl": 14.317888059207698,
+          "relative_ppl_change": -0.025977033326731847,
+          "nll_delta": -13.449722290039062
+        },
+        {
+          "start": 22528,
+          "old_ppl": 13.148667225877432,
+          "new_ppl": 12.361836290381666,
+          "relative_ppl_change": -0.05984111712457307,
+          "nll_delta": -31.531967163085938
+        },
+        {
+          "start": 24576,
+          "old_ppl": 12.628710702807373,
+          "new_ppl": 12.767454382117053,
+          "relative_ppl_change": 0.01098636927986929,
+          "nll_delta": 5.5834197998046875
+        },
+        {
+          "start": 26624,
+          "old_ppl": 12.338416013210514,
+          "new_ppl": 12.023802072008785,
+          "relative_ppl_change": -0.02549873021503557,
+          "nll_delta": -13.1988525390625
+        },
+        {
+          "start": 28672,
+          "old_ppl": 11.466272689512074,
+          "new_ppl": 10.795027945939252,
+          "relative_ppl_change": -0.05854079714908522,
+          "nll_delta": -30.825698852539062
+        },
+        {
+          "start": 30720,
+          "old_ppl": 16.288399055703103,
+          "new_ppl": 15.72184062426243,
+          "relative_ppl_change": -0.034782941497390585,
+          "nll_delta": -18.090560913085938
+        },
+        {
+          "start": 32768,
+          "old_ppl": 10.885775153152894,
+          "new_ppl": 10.825283802945721,
+          "relative_ppl_change": -0.00555691711027595,
+          "nll_delta": -2.847503662109375
+        },
+        {
+          "start": 34816,
+          "old_ppl": 10.962337089292594,
+          "new_ppl": 10.558706797396606,
+          "relative_ppl_change": -0.036819730009053586,
+          "nll_delta": -19.170005798339844
+        },
+        {
+          "start": 36864,
+          "old_ppl": 11.940597793127571,
+          "new_ppl": 11.711214918930198,
+          "relative_ppl_change": -0.019210334203652257,
+          "nll_delta": -9.911994934082031
+        },
+        {
+          "start": 38912,
+          "old_ppl": 9.217734817375192,
+          "new_ppl": 9.311984581532752,
+          "relative_ppl_change": 0.010224829204231511,
+          "nll_delta": 5.198356628417969
+        },
+        {
+          "start": 40960,
+          "old_ppl": 5.8186921608957105,
+          "new_ppl": 5.624305133544785,
+          "relative_ppl_change": -0.033407339995969565,
+          "nll_delta": -17.362815856933594
+        },
+        {
+          "start": 43008,
+          "old_ppl": 11.90927059232491,
+          "new_ppl": 11.79632355644117,
+          "relative_ppl_change": -0.009483959156703636,
+          "nll_delta": -4.8694305419921875
+        },
+        {
+          "start": 45056,
+          "old_ppl": 11.61047006625138,
+          "new_ppl": 11.33481057208505,
+          "relative_ppl_change": -0.0237423198710619,
+          "nll_delta": -12.278671264648438
+        },
+        {
+          "start": 47104,
+          "old_ppl": 16.670104529315804,
+          "new_ppl": 16.399984473671758,
+          "relative_ppl_change": -0.01620386093974502,
+          "nll_delta": -8.347991943359375
+        },
+        {
+          "start": 49152,
+          "old_ppl": 6.24478896222182,
+          "new_ppl": 6.086588567190294,
+          "relative_ppl_change": -0.02533318515462546,
+          "nll_delta": -13.112052917480469
+        },
+        {
+          "start": 51200,
+          "old_ppl": 10.87083867301655,
+          "new_ppl": 11.171769416259988,
+          "relative_ppl_change": 0.027682385167797863,
+          "nll_delta": 13.953445434570312
+        },
+        {
+          "start": 53248,
+          "old_ppl": 13.789272652084499,
+          "new_ppl": 13.615430639623574,
+          "relative_ppl_change": -0.012607047293001772,
+          "nll_delta": -6.483154296875
+        },
+        {
+          "start": 55296,
+          "old_ppl": 12.307455702311941,
+          "new_ppl": 11.686750880926477,
+          "relative_ppl_change": -0.05043323627554197,
+          "nll_delta": -26.44396209716797
+        },
+        {
+          "start": 57344,
+          "old_ppl": 13.76577378042704,
+          "new_ppl": 13.293985523854856,
+          "relative_ppl_change": -0.034272556275986465,
+          "nll_delta": -17.82042694091797
+        },
+        {
+          "start": 59392,
+          "old_ppl": 7.449480263614635,
+          "new_ppl": 7.32260981749278,
+          "relative_ppl_change": -0.017030778206303387,
+          "nll_delta": -8.777687072753906
+        },
+        {
+          "start": 61440,
+          "old_ppl": 6.894655594724989,
+          "new_ppl": 6.978750622134441,
+          "relative_ppl_change": 0.012197132438898306,
+          "nll_delta": 6.195030212402344
+        },
+        {
+          "start": 63488,
+          "old_ppl": 13.052747286696684,
+          "new_ppl": 12.381506007768095,
+          "relative_ppl_change": -0.05142528727363904,
+          "nll_delta": -26.978103637695312
+        },
+        {
+          "start": 65536,
+          "old_ppl": 7.68238425309237,
+          "new_ppl": 7.511137819200057,
+          "relative_ppl_change": -0.022290792578278262,
+          "nll_delta": -11.519466400146484
+        },
+        {
+          "start": 67584,
+          "old_ppl": 12.38122132683913,
+          "new_ppl": 12.042227308832008,
+          "relative_ppl_change": -0.027379691313027088,
+          "nll_delta": -14.186126708984375
+        },
+        {
+          "start": 69632,
+          "old_ppl": 13.587830491564661,
+          "new_ppl": 13.457572176569759,
+          "relative_ppl_change": -0.009586395346613097,
+          "nll_delta": -4.922279357910156
+        },
+        {
+          "start": 71680,
+          "old_ppl": 8.813053829056145,
+          "new_ppl": 8.363258764594608,
+          "relative_ppl_change": -0.051037367203929596,
+          "nll_delta": -26.76917266845703
+        },
+        {
+          "start": 73728,
+          "old_ppl": 11.325838040267433,
+          "new_ppl": 11.55110141069199,
+          "relative_ppl_change": 0.019889333541912357,
+          "nll_delta": 10.063697814941406
+        },
+        {
+          "start": 75776,
+          "old_ppl": 13.022148970162352,
+          "new_ppl": 12.822462588582104,
+          "relative_ppl_change": -0.01533436470722227,
+          "nll_delta": -7.8965606689453125
+        },
+        {
+          "start": 77824,
+          "old_ppl": 12.146842051986903,
+          "new_ppl": 11.987274162826482,
+          "relative_ppl_change": -0.013136573973506094,
+          "nll_delta": -6.757270812988281
+        },
+        {
+          "start": 79872,
+          "old_ppl": 21.010825898817934,
+          "new_ppl": 20.414063778697898,
+          "relative_ppl_change": -0.028402601734642485,
+          "nll_delta": -14.723831176757812
+        }
+      ],
+      "mk_overall": {
+        "count": 96,
+        "old_correct": 10,
+        "new_correct": 10,
+        "gains": 6,
+        "regressions": 6,
+        "unchanged": 84
+      },
+      "mk_by_N": [
+        {
+          "N": 16,
+          "count": 48,
+          "old_correct": 10,
+          "new_correct": 8,
+          "gains": 4,
+          "regressions": 6,
+          "unchanged": 38
+        },
+        {
+          "N": 64,
+          "count": 48,
+          "old_correct": 0,
+          "new_correct": 2,
+          "gains": 2,
+          "regressions": 0,
+          "unchanged": 46
+        }
+      ],
+      "mk_by_template": [
+        {
+          "template": 0,
+          "count": 32,
+          "old_correct": 1,
+          "new_correct": 1,
+          "gains": 1,
+          "regressions": 1,
+          "unchanged": 30
+        },
+        {
+          "template": 1,
+          "count": 32,
+          "old_correct": 3,
+          "new_correct": 2,
+          "gains": 2,
+          "regressions": 3,
+          "unchanged": 27
+        },
+        {
+          "template": 2,
+          "count": 32,
+          "old_correct": 6,
+          "new_correct": 7,
+          "gains": 3,
+          "regressions": 2,
+          "unchanged": 27
+        }
+      ],
+      "mk_by_N_template": [
+        {
+          "N": 16,
+          "template": 0,
+          "count": 16,
+          "old_correct": 1,
+          "new_correct": 1,
+          "gains": 1,
+          "regressions": 1,
+          "unchanged": 14
+        },
+        {
+          "N": 16,
+          "template": 1,
+          "count": 16,
+          "old_correct": 3,
+          "new_correct": 1,
+          "gains": 1,
+          "regressions": 3,
+          "unchanged": 12
+        },
+        {
+          "N": 16,
+          "template": 2,
+          "count": 16,
+          "old_correct": 6,
+          "new_correct": 6,
+          "gains": 2,
+          "regressions": 2,
+          "unchanged": 12
+        },
+        {
+          "N": 64,
+          "template": 0,
+          "count": 16,
+          "old_correct": 0,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 0,
+          "unchanged": 16
+        },
+        {
+          "N": 64,
+          "template": 1,
+          "count": 16,
+          "old_correct": 0,
+          "new_correct": 1,
+          "gains": 1,
+          "regressions": 0,
+          "unchanged": 15
+        },
+        {
+          "N": 64,
+          "template": 2,
+          "count": 16,
+          "old_correct": 0,
+          "new_correct": 1,
+          "gains": 1,
+          "regressions": 0,
+          "unchanged": 15
+        }
+      ],
+      "mk_by_query_position_quartile": [
+        {
+          "query_position_quartile": 1,
+          "count": 21,
+          "old_correct": 5,
+          "new_correct": 4,
+          "gains": 1,
+          "regressions": 2,
+          "unchanged": 18
+        },
+        {
+          "query_position_quartile": 2,
+          "count": 29,
+          "old_correct": 1,
+          "new_correct": 5,
+          "gains": 5,
+          "regressions": 1,
+          "unchanged": 23
+        },
+        {
+          "query_position_quartile": 3,
+          "count": 24,
+          "old_correct": 1,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 1,
+          "unchanged": 23
+        },
+        {
+          "query_position_quartile": 4,
+          "count": 22,
+          "old_correct": 3,
+          "new_correct": 1,
+          "gains": 0,
+          "regressions": 2,
+          "unchanged": 20
+        }
+      ],
+      "mk_changed_cases": [
+        {
+          "id": "resurface-train-n16-t0-s176",
+          "N": 16,
+          "template": 0,
+          "query_position": 10,
+          "query_position_quartile": 3,
+          "records_after_target": 5,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "887539",
+          "new_prediction": "887064",
+          "answer": "887539"
+        },
+        {
+          "id": "resurface-train-n16-t0-s192",
+          "N": 16,
+          "template": 0,
+          "query_position": 7,
+          "query_position_quartile": 2,
+          "records_after_target": 8,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "986853",
+          "new_prediction": "986804",
+          "answer": "986804"
+        },
+        {
+          "id": "resurface-train-n16-t1-s0",
+          "N": 16,
+          "template": 1,
+          "query_position": 3,
+          "query_position_quartile": 1,
+          "records_after_target": 12,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "889120",
+          "new_prediction": "989027",
+          "answer": "889120"
+        },
+        {
+          "id": "resurface-train-n16-t1-s128",
+          "N": 16,
+          "template": 1,
+          "query_position": 14,
+          "query_position_quartile": 4,
+          "records_after_target": 1,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "988493",
+          "new_prediction": "985068",
+          "answer": "988493"
+        },
+        {
+          "id": "resurface-train-n16-t1-s16",
+          "N": 16,
+          "template": 1,
+          "query_position": 7,
+          "query_position_quartile": 2,
+          "records_after_target": 8,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "888654",
+          "new_prediction": "987943",
+          "answer": "987943"
+        },
+        {
+          "id": "resurface-train-n16-t1-s224",
+          "N": 16,
+          "template": 1,
+          "query_position": 5,
+          "query_position_quartile": 2,
+          "records_after_target": 10,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "885213",
+          "new_prediction": "988581",
+          "answer": "885213"
+        },
+        {
+          "id": "resurface-train-n16-t2-s112",
+          "N": 16,
+          "template": 2,
+          "query_position": 6,
+          "query_position_quartile": 2,
+          "records_after_target": 9,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "681578",
+          "new_prediction": "688807",
+          "answer": "688807"
+        },
+        {
+          "id": "resurface-train-n16-t2-s176",
+          "N": 16,
+          "template": 2,
+          "query_position": 13,
+          "query_position_quartile": 4,
+          "records_after_target": 2,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "782341",
+          "new_prediction": "782321",
+          "answer": "782341"
+        },
+        {
+          "id": "resurface-train-n16-t2-s192",
+          "N": 16,
+          "template": 2,
+          "query_position": 7,
+          "query_position_quartile": 2,
+          "records_after_target": 8,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "983898",
+          "new_prediction": "982199",
+          "answer": "982199"
+        },
+        {
+          "id": "resurface-train-n16-t2-s96",
+          "N": 16,
+          "template": 2,
+          "query_position": 0,
+          "query_position_quartile": 1,
+          "records_after_target": 15,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "986999",
+          "new_prediction": "882885",
+          "answer": "986999"
+        },
+        {
+          "id": "resurface-train-n64-t1-s16",
+          "N": 64,
+          "template": 1,
+          "query_position": 22,
+          "query_position_quartile": 2,
+          "records_after_target": 41,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "887639",
+          "new_prediction": "987560",
+          "answer": "987560"
+        },
+        {
+          "id": "resurface-train-n64-t2-s176",
+          "N": 64,
+          "template": 2,
+          "query_position": 10,
+          "query_position_quartile": 1,
+          "records_after_target": 53,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "989005",
+          "new_prediction": "987126",
+          "answer": "987126"
+        }
+      ]
+    },
+    "magnitude_to_preserve_retained80": {
+      "old_arm": "magnitude",
+      "new_arm": "preserve_retained80",
+      "relative_ppl_change": 0.0028708264538985784,
+      "nll_delta": 46.87649917602539,
+      "ppl_windows_improved": 15,
+      "ppl_windows_regressed": 17,
+      "ppl_windows": [
+        {
+          "start": 16384,
+          "old_ppl": 6.105945884170247,
+          "new_ppl": 6.191577042476611,
+          "relative_ppl_change": 0.014024224899923166,
+          "nll_delta": 7.1165924072265625
+        },
+        {
+          "start": 18432,
+          "old_ppl": 11.134818823914001,
+          "new_ppl": 11.337393013745837,
+          "relative_ppl_change": 0.01819285908781665,
+          "nll_delta": 9.212997436523438
+        },
+        {
+          "start": 20480,
+          "old_ppl": 14.699743793629224,
+          "new_ppl": 14.628094383666776,
+          "relative_ppl_change": -0.004874194473613924,
+          "nll_delta": -2.4968032836914062
+        },
+        {
+          "start": 22528,
+          "old_ppl": 13.148667225877432,
+          "new_ppl": 13.075003413027789,
+          "relative_ppl_change": -0.005602378673381314,
+          "nll_delta": -2.8708648681640625
+        },
+        {
+          "start": 24576,
+          "old_ppl": 12.628710702807373,
+          "new_ppl": 12.785644298456887,
+          "relative_ppl_change": 0.012426731385542622,
+          "nll_delta": 6.3109283447265625
+        },
+        {
+          "start": 26624,
+          "old_ppl": 12.338416013210514,
+          "new_ppl": 12.367349958206429,
+          "relative_ppl_change": 0.002345029132178267,
+          "nll_delta": 1.1969070434570312
+        },
+        {
+          "start": 28672,
+          "old_ppl": 11.466272689512074,
+          "new_ppl": 11.362739326171397,
+          "relative_ppl_change": -0.0090293826201584,
+          "nll_delta": -4.634971618652344
+        },
+        {
+          "start": 30720,
+          "old_ppl": 16.288399055703103,
+          "new_ppl": 16.12446040714847,
+          "relative_ppl_change": -0.010064749027451803,
+          "nll_delta": -5.1691436767578125
+        },
+        {
+          "start": 32768,
+          "old_ppl": 10.885775153152894,
+          "new_ppl": 10.962234140577118,
+          "relative_ppl_change": 0.007023752222374391,
+          "nll_delta": 3.5765914916992188
+        },
+        {
+          "start": 34816,
+          "old_ppl": 10.962337089292594,
+          "new_ppl": 10.948145186405812,
+          "relative_ppl_change": -0.0012946055910508791,
+          "nll_delta": -0.6619720458984375
+        },
+        {
+          "start": 36864,
+          "old_ppl": 11.940597793127571,
+          "new_ppl": 12.153320373786386,
+          "relative_ppl_change": 0.01781506959234891,
+          "nll_delta": 9.023361206054688
+        },
+        {
+          "start": 38912,
+          "old_ppl": 9.217734817375192,
+          "new_ppl": 9.315793417394941,
+          "relative_ppl_change": 0.010638036563485276,
+          "nll_delta": 5.407325744628906
+        },
+        {
+          "start": 40960,
+          "old_ppl": 5.8186921608957105,
+          "new_ppl": 5.86511477485327,
+          "relative_ppl_change": 0.007978186966057565,
+          "nll_delta": 4.060676574707031
+        },
+        {
+          "start": 43008,
+          "old_ppl": 11.90927059232491,
+          "new_ppl": 11.870884008427224,
+          "relative_ppl_change": -0.003223252305848634,
+          "nll_delta": -1.6497421264648438
+        },
+        {
+          "start": 45056,
+          "old_ppl": 11.61047006625138,
+          "new_ppl": 11.559941382252072,
+          "relative_ppl_change": -0.0043519929607486185,
+          "nll_delta": -2.2287216186523438
+        },
+        {
+          "start": 47104,
+          "old_ppl": 16.670104529315804,
+          "new_ppl": 16.57670065892617,
+          "relative_ppl_change": -0.005603076466939583,
+          "nll_delta": -2.8712234497070312
+        },
+        {
+          "start": 49152,
+          "old_ppl": 6.24478896222182,
+          "new_ppl": 6.290656562658158,
+          "relative_ppl_change": 0.0073449400314111735,
+          "nll_delta": 3.7395477294921875
+        },
+        {
+          "start": 51200,
+          "old_ppl": 10.87083867301655,
+          "new_ppl": 10.84182371055153,
+          "relative_ppl_change": -0.002669063844820019,
+          "nll_delta": -1.3657150268554688
+        },
+        {
+          "start": 53248,
+          "old_ppl": 13.789272652084499,
+          "new_ppl": 13.739491185523375,
+          "relative_ppl_change": -0.003610158984969969,
+          "nll_delta": -1.8481292724609375
+        },
+        {
+          "start": 55296,
+          "old_ppl": 12.307455702311941,
+          "new_ppl": 12.351427081434418,
+          "relative_ppl_change": 0.0035727432367858025,
+          "nll_delta": 1.822418212890625
+        },
+        {
+          "start": 57344,
+          "old_ppl": 13.76577378042704,
+          "new_ppl": 13.700373162751676,
+          "relative_ppl_change": -0.004750958334674538,
+          "nll_delta": -2.4335250854492188
+        },
+        {
+          "start": 59392,
+          "old_ppl": 7.449480263614635,
+          "new_ppl": 7.539054195920111,
+          "relative_ppl_change": 0.012024185464720283,
+          "nll_delta": 6.1077117919921875
+        },
+        {
+          "start": 61440,
+          "old_ppl": 6.894655594724989,
+          "new_ppl": 6.962262777397949,
+          "relative_ppl_change": 0.009805737464926523,
+          "nll_delta": 4.986324310302734
+        },
+        {
+          "start": 63488,
+          "old_ppl": 13.052747286696684,
+          "new_ppl": 13.144183397313677,
+          "relative_ppl_change": 0.007005123795676749,
+          "nll_delta": 3.567138671875
+        },
+        {
+          "start": 65536,
+          "old_ppl": 7.68238425309237,
+          "new_ppl": 7.763510219174568,
+          "relative_ppl_change": 0.010559998486087574,
+          "nll_delta": 5.367866516113281
+        },
+        {
+          "start": 67584,
+          "old_ppl": 12.38122132683913,
+          "new_ppl": 12.314615380595976,
+          "relative_ppl_change": -0.005379594184199754,
+          "nll_delta": -2.7563934326171875
+        },
+        {
+          "start": 69632,
+          "old_ppl": 13.587830491564661,
+          "new_ppl": 13.521310460285955,
+          "relative_ppl_change": -0.004895559399272886,
+          "nll_delta": -2.5077743530273438
+        },
+        {
+          "start": 71680,
+          "old_ppl": 8.813053829056145,
+          "new_ppl": 8.745200862325147,
+          "relative_ppl_change": -0.007699143571243128,
+          "nll_delta": -3.9494857788085938
+        },
+        {
+          "start": 73728,
+          "old_ppl": 11.325838040267433,
+          "new_ppl": 11.48646339624492,
+          "relative_ppl_change": 0.014182204919972019,
+          "nll_delta": 7.196197509765625
+        },
+        {
+          "start": 75776,
+          "old_ppl": 13.022148970162352,
+          "new_ppl": 12.867534285560513,
+          "relative_ppl_change": -0.011873208097688548,
+          "nll_delta": -6.103515625
+        },
+        {
+          "start": 77824,
+          "old_ppl": 12.146842051986903,
+          "new_ppl": 12.28576977512816,
+          "relative_ppl_change": 0.011437353227008673,
+          "nll_delta": 5.811317443847656
+        },
+        {
+          "start": 79872,
+          "old_ppl": 21.010825898817934,
+          "new_ppl": 21.25567847877105,
+          "relative_ppl_change": 0.011653638992215498,
+          "nll_delta": 5.9205780029296875
+        }
+      ],
+      "mk_overall": {
+        "count": 96,
+        "old_correct": 10,
+        "new_correct": 14,
+        "gains": 8,
+        "regressions": 4,
+        "unchanged": 84
+      },
+      "mk_by_N": [
+        {
+          "N": 16,
+          "count": 48,
+          "old_correct": 10,
+          "new_correct": 13,
+          "gains": 7,
+          "regressions": 4,
+          "unchanged": 37
+        },
+        {
+          "N": 64,
+          "count": 48,
+          "old_correct": 0,
+          "new_correct": 1,
+          "gains": 1,
+          "regressions": 0,
+          "unchanged": 47
+        }
+      ],
+      "mk_by_template": [
+        {
+          "template": 0,
+          "count": 32,
+          "old_correct": 1,
+          "new_correct": 3,
+          "gains": 2,
+          "regressions": 0,
+          "unchanged": 30
+        },
+        {
+          "template": 1,
+          "count": 32,
+          "old_correct": 3,
+          "new_correct": 3,
+          "gains": 2,
+          "regressions": 2,
+          "unchanged": 28
+        },
+        {
+          "template": 2,
+          "count": 32,
+          "old_correct": 6,
+          "new_correct": 8,
+          "gains": 4,
+          "regressions": 2,
+          "unchanged": 26
+        }
+      ],
+      "mk_by_N_template": [
+        {
+          "N": 16,
+          "template": 0,
+          "count": 16,
+          "old_correct": 1,
+          "new_correct": 3,
+          "gains": 2,
+          "regressions": 0,
+          "unchanged": 14
+        },
+        {
+          "N": 16,
+          "template": 1,
+          "count": 16,
+          "old_correct": 3,
+          "new_correct": 3,
+          "gains": 2,
+          "regressions": 2,
+          "unchanged": 12
+        },
+        {
+          "N": 16,
+          "template": 2,
+          "count": 16,
+          "old_correct": 6,
+          "new_correct": 7,
+          "gains": 3,
+          "regressions": 2,
+          "unchanged": 11
+        },
+        {
+          "N": 64,
+          "template": 0,
+          "count": 16,
+          "old_correct": 0,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 0,
+          "unchanged": 16
+        },
+        {
+          "N": 64,
+          "template": 1,
+          "count": 16,
+          "old_correct": 0,
+          "new_correct": 0,
+          "gains": 0,
+          "regressions": 0,
+          "unchanged": 16
+        },
+        {
+          "N": 64,
+          "template": 2,
+          "count": 16,
+          "old_correct": 0,
+          "new_correct": 1,
+          "gains": 1,
+          "regressions": 0,
+          "unchanged": 15
+        }
+      ],
+      "mk_by_query_position_quartile": [
+        {
+          "query_position_quartile": 1,
+          "count": 21,
+          "old_correct": 5,
+          "new_correct": 4,
+          "gains": 1,
+          "regressions": 2,
+          "unchanged": 18
+        },
+        {
+          "query_position_quartile": 2,
+          "count": 29,
+          "old_correct": 1,
+          "new_correct": 5,
+          "gains": 5,
+          "regressions": 1,
+          "unchanged": 23
+        },
+        {
+          "query_position_quartile": 3,
+          "count": 24,
+          "old_correct": 1,
+          "new_correct": 2,
+          "gains": 1,
+          "regressions": 0,
+          "unchanged": 23
+        },
+        {
+          "query_position_quartile": 4,
+          "count": 22,
+          "old_correct": 3,
+          "new_correct": 3,
+          "gains": 1,
+          "regressions": 1,
+          "unchanged": 20
+        }
+      ],
+      "mk_changed_cases": [
+        {
+          "id": "resurface-train-n16-t0-s0",
+          "N": 16,
+          "template": 0,
+          "query_position": 15,
+          "query_position_quartile": 4,
+          "records_after_target": 0,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "881244",
+          "new_prediction": "781143",
+          "answer": "781143"
+        },
+        {
+          "id": "resurface-train-n16-t0-s192",
+          "N": 16,
+          "template": 0,
+          "query_position": 7,
+          "query_position_quartile": 2,
+          "records_after_target": 8,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "986853",
+          "new_prediction": "986804",
+          "answer": "986804"
+        },
+        {
+          "id": "resurface-train-n16-t1-s128",
+          "N": 16,
+          "template": 1,
+          "query_position": 14,
+          "query_position_quartile": 4,
+          "records_after_target": 1,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "988493",
+          "new_prediction": "983231",
+          "answer": "988493"
+        },
+        {
+          "id": "resurface-train-n16-t1-s192",
+          "N": 16,
+          "template": 1,
+          "query_position": 6,
+          "query_position_quartile": 2,
+          "records_after_target": 9,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "782058",
+          "new_prediction": "781169",
+          "answer": "781169"
+        },
+        {
+          "id": "resurface-train-n16-t1-s224",
+          "N": 16,
+          "template": 1,
+          "query_position": 5,
+          "query_position_quartile": 2,
+          "records_after_target": 10,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "885213",
+          "new_prediction": "883060",
+          "answer": "885213"
+        },
+        {
+          "id": "resurface-train-n16-t1-s32",
+          "N": 16,
+          "template": 1,
+          "query_position": 7,
+          "query_position_quartile": 2,
+          "records_after_target": 8,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "885821",
+          "new_prediction": "683348",
+          "answer": "683348"
+        },
+        {
+          "id": "resurface-train-n16-t2-s0",
+          "N": 16,
+          "template": 2,
+          "query_position": 3,
+          "query_position_quartile": 1,
+          "records_after_target": 12,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "882410",
+          "new_prediction": "889891",
+          "answer": "889891"
+        },
+        {
+          "id": "resurface-train-n16-t2-s112",
+          "N": 16,
+          "template": 2,
+          "query_position": 6,
+          "query_position_quartile": 2,
+          "records_after_target": 9,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "681578",
+          "new_prediction": "688807",
+          "answer": "688807"
+        },
+        {
+          "id": "resurface-train-n16-t2-s144",
+          "N": 16,
+          "template": 2,
+          "query_position": 1,
+          "query_position_quartile": 1,
+          "records_after_target": 14,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "988209",
+          "new_prediction": "985032",
+          "answer": "988209"
+        },
+        {
+          "id": "resurface-train-n16-t2-s16",
+          "N": 16,
+          "template": 2,
+          "query_position": 6,
+          "query_position_quartile": 2,
+          "records_after_target": 9,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "883071",
+          "new_prediction": "889302",
+          "answer": "889302"
+        },
+        {
+          "id": "resurface-train-n16-t2-s80",
+          "N": 16,
+          "template": 2,
+          "query_position": 2,
+          "query_position_quartile": 1,
+          "records_after_target": 13,
+          "old_correct": true,
+          "new_correct": false,
+          "delta": -1,
+          "old_prediction": "989545",
+          "new_prediction": "982143",
+          "answer": "989545"
+        },
+        {
+          "id": "resurface-train-n64-t2-s48",
+          "N": 64,
+          "template": 2,
+          "query_position": 43,
+          "query_position_quartile": 3,
+          "records_after_target": 20,
+          "old_correct": false,
+          "new_correct": true,
+          "delta": 1,
+          "old_prediction": "989499",
+          "new_prediction": "989491",
+          "answer": "989491"
+        }
+      ]
+    }
+  },
+  "state_statistics": {
+    "coordinate_scope": "56 layers x 8 groups x 128 state-coordinate table entries; not model parameters",
+    "tier_order": [
+      "int8",
+      "int4",
+      "zero_carry"
+    ],
+    "transitions": {
+      "magnitude_to_preserve_int8": {
+        "old": "magnitude",
+        "new": "preserve_int8",
+        "tier_order": [
+          "int8",
+          "int4",
+          "zero_carry"
+        ],
+        "matrix_rows": "old tier",
+        "matrix_columns": "new tier",
+        "matrix": [
+          [
+            7168,
+            0,
+            0
+          ],
+          [
+            0,
+            19240,
+            9432
+          ],
+          [
+            0,
+            9432,
+            12072
+          ]
+        ],
+        "per_layer": [
+          {
+            "layer": 0,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                388,
+                124
+              ],
+              [
+                0,
+                124,
+                260
+              ]
+            ]
+          },
+          {
+            "layer": 1,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                402,
+                110
+              ],
+              [
+                0,
+                110,
+                274
+              ]
+            ]
+          },
+          {
+            "layer": 2,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                392,
+                120
+              ],
+              [
+                0,
+                120,
+                264
+              ]
+            ]
+          },
+          {
+            "layer": 3,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                377,
+                135
+              ],
+              [
+                0,
+                135,
+                249
+              ]
+            ]
+          },
+          {
+            "layer": 4,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                373,
+                139
+              ],
+              [
+                0,
+                139,
+                245
+              ]
+            ]
+          },
+          {
+            "layer": 5,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                370,
+                142
+              ],
+              [
+                0,
+                142,
+                242
+              ]
+            ]
+          },
+          {
+            "layer": 6,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                351,
+                161
+              ],
+              [
+                0,
+                161,
+                223
+              ]
+            ]
+          },
+          {
+            "layer": 7,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                357,
+                155
+              ],
+              [
+                0,
+                155,
+                229
+              ]
+            ]
+          },
+          {
+            "layer": 8,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                365,
+                147
+              ],
+              [
+                0,
+                147,
+                237
+              ]
+            ]
+          },
+          {
+            "layer": 9,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                334,
+                178
+              ],
+              [
+                0,
+                178,
+                206
+              ]
+            ]
+          },
+          {
+            "layer": 10,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                327,
+                185
+              ],
+              [
+                0,
+                185,
+                199
+              ]
+            ]
+          },
+          {
+            "layer": 11,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                353,
+                159
+              ],
+              [
+                0,
+                159,
+                225
+              ]
+            ]
+          },
+          {
+            "layer": 12,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                340,
+                172
+              ],
+              [
+                0,
+                172,
+                212
+              ]
+            ]
+          },
+          {
+            "layer": 13,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                342,
+                170
+              ],
+              [
+                0,
+                170,
+                214
+              ]
+            ]
+          },
+          {
+            "layer": 14,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                370,
+                142
+              ],
+              [
+                0,
+                142,
+                242
+              ]
+            ]
+          },
+          {
+            "layer": 15,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                344,
+                168
+              ],
+              [
+                0,
+                168,
+                216
+              ]
+            ]
+          },
+          {
+            "layer": 16,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                328,
+                184
+              ],
+              [
+                0,
+                184,
+                200
+              ]
+            ]
+          },
+          {
+            "layer": 17,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                324,
+                188
+              ],
+              [
+                0,
+                188,
+                196
+              ]
+            ]
+          },
+          {
+            "layer": 18,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                332,
+                180
+              ],
+              [
+                0,
+                180,
+                204
+              ]
+            ]
+          },
+          {
+            "layer": 19,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                316,
+                196
+              ],
+              [
+                0,
+                196,
+                188
+              ]
+            ]
+          },
+          {
+            "layer": 20,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                304,
+                208
+              ],
+              [
+                0,
+                208,
+                176
+              ]
+            ]
+          },
+          {
+            "layer": 21,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                309,
+                203
+              ],
+              [
+                0,
+                203,
+                181
+              ]
+            ]
+          },
+          {
+            "layer": 22,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                345,
+                167
+              ],
+              [
+                0,
+                167,
+                217
+              ]
+            ]
+          },
+          {
+            "layer": 23,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                289,
+                223
+              ],
+              [
+                0,
+                223,
+                161
+              ]
+            ]
+          },
+          {
+            "layer": 24,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                308,
+                204
+              ],
+              [
+                0,
+                204,
+                180
+              ]
+            ]
+          },
+          {
+            "layer": 25,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                329,
+                183
+              ],
+              [
+                0,
+                183,
+                201
+              ]
+            ]
+          },
+          {
+            "layer": 26,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                350,
+                162
+              ],
+              [
+                0,
+                162,
+                222
+              ]
+            ]
+          },
+          {
+            "layer": 27,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                344,
+                168
+              ],
+              [
+                0,
+                168,
+                216
+              ]
+            ]
+          },
+          {
+            "layer": 28,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                335,
+                177
+              ],
+              [
+                0,
+                177,
+                207
+              ]
+            ]
+          },
+          {
+            "layer": 29,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                294,
+                218
+              ],
+              [
+                0,
+                218,
+                166
+              ]
+            ]
+          },
+          {
+            "layer": 30,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                304,
+                208
+              ],
+              [
+                0,
+                208,
+                176
+              ]
+            ]
+          },
+          {
+            "layer": 31,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                300,
+                212
+              ],
+              [
+                0,
+                212,
+                172
+              ]
+            ]
+          },
+          {
+            "layer": 32,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                323,
+                189
+              ],
+              [
+                0,
+                189,
+                195
+              ]
+            ]
+          },
+          {
+            "layer": 33,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                364,
+                148
+              ],
+              [
+                0,
+                148,
+                236
+              ]
+            ]
+          },
+          {
+            "layer": 34,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                330,
+                182
+              ],
+              [
+                0,
+                182,
+                202
+              ]
+            ]
+          },
+          {
+            "layer": 35,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                344,
+                168
+              ],
+              [
+                0,
+                168,
+                216
+              ]
+            ]
+          },
+          {
+            "layer": 36,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                309,
+                203
+              ],
+              [
+                0,
+                203,
+                181
+              ]
+            ]
+          },
+          {
+            "layer": 37,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                317,
+                195
+              ],
+              [
+                0,
+                195,
+                189
+              ]
+            ]
+          },
+          {
+            "layer": 38,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                337,
+                175
+              ],
+              [
+                0,
+                175,
+                209
+              ]
+            ]
+          },
+          {
+            "layer": 39,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                362,
+                150
+              ],
+              [
+                0,
+                150,
+                234
+              ]
+            ]
+          },
+          {
+            "layer": 40,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                324,
+                188
+              ],
+              [
+                0,
+                188,
+                196
+              ]
+            ]
+          },
+          {
+            "layer": 41,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                343,
+                169
+              ],
+              [
+                0,
+                169,
+                215
+              ]
+            ]
+          },
+          {
+            "layer": 42,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                334,
+                178
+              ],
+              [
+                0,
+                178,
+                206
+              ]
+            ]
+          },
+          {
+            "layer": 43,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                331,
+                181
+              ],
+              [
+                0,
+                181,
+                203
+              ]
+            ]
+          },
+          {
+            "layer": 44,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                355,
+                157
+              ],
+              [
+                0,
+                157,
+                227
+              ]
+            ]
+          },
+          {
+            "layer": 45,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                341,
+                171
+              ],
+              [
+                0,
+                171,
+                213
+              ]
+            ]
+          },
+          {
+            "layer": 46,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                331,
+                181
+              ],
+              [
+                0,
+                181,
+                203
+              ]
+            ]
+          },
+          {
+            "layer": 47,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                343,
+                169
+              ],
+              [
+                0,
+                169,
+                215
+              ]
+            ]
+          },
+          {
+            "layer": 48,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                372,
+                140
+              ],
+              [
+                0,
+                140,
+                244
+              ]
+            ]
+          },
+          {
+            "layer": 49,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                323,
+                189
+              ],
+              [
+                0,
+                189,
+                195
+              ]
+            ]
+          },
+          {
+            "layer": 50,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                352,
+                160
+              ],
+              [
+                0,
+                160,
+                224
+              ]
+            ]
+          },
+          {
+            "layer": 51,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                351,
+                161
+              ],
+              [
+                0,
+                161,
+                223
+              ]
+            ]
+          },
+          {
+            "layer": 52,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                386,
+                126
+              ],
+              [
+                0,
+                126,
+                258
+              ]
+            ]
+          },
+          {
+            "layer": 53,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                396,
+                116
+              ],
+              [
+                0,
+                116,
+                268
+              ]
+            ]
+          },
+          {
+            "layer": 54,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                384,
+                128
+              ],
+              [
+                0,
+                128,
+                256
+              ]
+            ]
+          },
+          {
+            "layer": 55,
+            "matrix": [
+              [
+                128,
+                0,
+                0
+              ],
+              [
+                0,
+                392,
+                120
+              ],
+              [
+                0,
+                120,
+                264
+              ]
+            ]
+          }
+        ],
+        "old_int8_preserved": 7168,
+        "old_int8_total": 7168,
+        "old_int8_preserved_fraction": 1.0,
+        "old_zero_became_retained": 9432,
+        "old_retained_became_zero": 9432,
+        "unchanged_tier": 38480,
+        "entries": 57344
+      },
+      "full_readout_to_preserve_int8": {
+        "old": "full_readout",
+        "new": "preserve_int8",
+        "tier_order": [
+          "int8",
+          "int4",
+          "zero_carry"
+        ],
+        "matrix_rows": "old tier",
+        "matrix_columns": "new tier",
+        "matrix": [
+          [
+            4368,
+            2800,
+            0
+          ],
+          [
+            2448,
+            25872,
+            352
+          ],
+          [
+            352,
+            0,
+            21152
+          ]
+        ],
+        "per_layer": [
+          {
+            "layer": 0,
+            "matrix": [
+              [
+                115,
+                13,
+                0
+              ],
+              [
+                13,
+                499,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 1,
+            "matrix": [
+              [
+                103,
+                25,
+                0
+              ],
+              [
+                24,
+                487,
+                1
+              ],
+              [
+                1,
+                0,
+                383
+              ]
+            ]
+          },
+          {
+            "layer": 2,
+            "matrix": [
+              [
+                104,
+                24,
+                0
+              ],
+              [
+                24,
+                488,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 3,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                38,
+                474,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 4,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                38,
+                474,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 5,
+            "matrix": [
+              [
+                98,
+                30,
+                0
+              ],
+              [
+                30,
+                482,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 6,
+            "matrix": [
+              [
+                77,
+                51,
+                0
+              ],
+              [
+                50,
+                461,
+                1
+              ],
+              [
+                1,
+                0,
+                383
+              ]
+            ]
+          },
+          {
+            "layer": 7,
+            "matrix": [
+              [
+                77,
+                51,
+                0
+              ],
+              [
+                50,
+                461,
+                1
+              ],
+              [
+                1,
+                0,
+                383
+              ]
+            ]
+          },
+          {
+            "layer": 8,
+            "matrix": [
+              [
+                75,
+                53,
+                0
+              ],
+              [
+                51,
+                459,
+                2
+              ],
+              [
+                2,
+                0,
+                382
+              ]
+            ]
+          },
+          {
+            "layer": 9,
+            "matrix": [
+              [
+                79,
+                49,
+                0
+              ],
+              [
+                48,
+                463,
+                1
+              ],
+              [
+                1,
+                0,
+                383
+              ]
+            ]
+          },
+          {
+            "layer": 10,
+            "matrix": [
+              [
+                87,
+                41,
+                0
+              ],
+              [
+                38,
+                471,
+                3
+              ],
+              [
+                3,
+                0,
+                381
+              ]
+            ]
+          },
+          {
+            "layer": 11,
+            "matrix": [
+              [
+                87,
+                41,
+                0
+              ],
+              [
+                40,
+                471,
+                1
+              ],
+              [
+                1,
+                0,
+                383
+              ]
+            ]
+          },
+          {
+            "layer": 12,
+            "matrix": [
+              [
+                85,
+                43,
+                0
+              ],
+              [
+                40,
+                469,
+                3
+              ],
+              [
+                3,
+                0,
+                381
+              ]
+            ]
+          },
+          {
+            "layer": 13,
+            "matrix": [
+              [
+                74,
+                54,
+                0
+              ],
+              [
+                52,
+                458,
+                2
+              ],
+              [
+                2,
+                0,
+                382
+              ]
+            ]
+          },
+          {
+            "layer": 14,
+            "matrix": [
+              [
+                85,
+                43,
+                0
+              ],
+              [
+                41,
+                469,
+                2
+              ],
+              [
+                2,
+                0,
+                382
+              ]
+            ]
+          },
+          {
+            "layer": 15,
+            "matrix": [
+              [
+                85,
+                43,
+                0
+              ],
+              [
+                41,
+                469,
+                2
+              ],
+              [
+                2,
+                0,
+                382
+              ]
+            ]
+          },
+          {
+            "layer": 16,
+            "matrix": [
+              [
+                77,
+                51,
+                0
+              ],
+              [
+                50,
+                461,
+                1
+              ],
+              [
+                1,
+                0,
+                383
+              ]
+            ]
+          },
+          {
+            "layer": 17,
+            "matrix": [
+              [
+                83,
+                45,
+                0
+              ],
+              [
+                45,
+                467,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 18,
+            "matrix": [
+              [
+                84,
+                44,
+                0
+              ],
+              [
+                43,
+                468,
+                1
+              ],
+              [
+                1,
+                0,
+                383
+              ]
+            ]
+          },
+          {
+            "layer": 19,
+            "matrix": [
+              [
+                69,
+                59,
+                0
+              ],
+              [
+                52,
+                453,
+                7
+              ],
+              [
+                7,
+                0,
+                377
+              ]
+            ]
+          },
+          {
+            "layer": 20,
+            "matrix": [
+              [
+                78,
+                50,
+                0
+              ],
+              [
+                43,
+                462,
+                7
+              ],
+              [
+                7,
+                0,
+                377
+              ]
+            ]
+          },
+          {
+            "layer": 21,
+            "matrix": [
+              [
+                65,
+                63,
+                0
+              ],
+              [
+                58,
+                449,
+                5
+              ],
+              [
+                5,
+                0,
+                379
+              ]
+            ]
+          },
+          {
+            "layer": 22,
+            "matrix": [
+              [
+                83,
+                45,
+                0
+              ],
+              [
+                42,
+                467,
+                3
+              ],
+              [
+                3,
+                0,
+                381
+              ]
+            ]
+          },
+          {
+            "layer": 23,
+            "matrix": [
+              [
+                71,
+                57,
+                0
+              ],
+              [
+                53,
+                455,
+                4
+              ],
+              [
+                4,
+                0,
+                380
+              ]
+            ]
+          },
+          {
+            "layer": 24,
+            "matrix": [
+              [
+                68,
+                60,
+                0
+              ],
+              [
+                50,
+                452,
+                10
+              ],
+              [
+                10,
+                0,
+                374
+              ]
+            ]
+          },
+          {
+            "layer": 25,
+            "matrix": [
+              [
+                74,
+                54,
+                0
+              ],
+              [
+                50,
+                458,
+                4
+              ],
+              [
+                4,
+                0,
+                380
+              ]
+            ]
+          },
+          {
+            "layer": 26,
+            "matrix": [
+              [
+                76,
+                52,
+                0
+              ],
+              [
+                43,
+                460,
+                9
+              ],
+              [
+                9,
+                0,
+                375
+              ]
+            ]
+          },
+          {
+            "layer": 27,
+            "matrix": [
+              [
+                76,
+                52,
+                0
+              ],
+              [
+                49,
+                460,
+                3
+              ],
+              [
+                3,
+                0,
+                381
+              ]
+            ]
+          },
+          {
+            "layer": 28,
+            "matrix": [
+              [
+                79,
+                49,
+                0
+              ],
+              [
+                45,
+                463,
+                4
+              ],
+              [
+                4,
+                0,
+                380
+              ]
+            ]
+          },
+          {
+            "layer": 29,
+            "matrix": [
+              [
+                66,
+                62,
+                0
+              ],
+              [
+                54,
+                450,
+                8
+              ],
+              [
+                8,
+                0,
+                376
+              ]
+            ]
+          },
+          {
+            "layer": 30,
+            "matrix": [
+              [
+                72,
+                56,
+                0
+              ],
+              [
+                46,
+                456,
+                10
+              ],
+              [
+                10,
+                0,
+                374
+              ]
+            ]
+          },
+          {
+            "layer": 31,
+            "matrix": [
+              [
+                77,
+                51,
+                0
+              ],
+              [
+                48,
+                461,
+                3
+              ],
+              [
+                3,
+                0,
+                381
+              ]
+            ]
+          },
+          {
+            "layer": 32,
+            "matrix": [
+              [
+                64,
+                64,
+                0
+              ],
+              [
+                60,
+                448,
+                4
+              ],
+              [
+                4,
+                0,
+                380
+              ]
+            ]
+          },
+          {
+            "layer": 33,
+            "matrix": [
+              [
+                73,
+                55,
+                0
+              ],
+              [
+                47,
+                457,
+                8
+              ],
+              [
+                8,
+                0,
+                376
+              ]
+            ]
+          },
+          {
+            "layer": 34,
+            "matrix": [
+              [
+                77,
+                51,
+                0
+              ],
+              [
+                39,
+                461,
+                12
+              ],
+              [
+                12,
+                0,
+                372
+              ]
+            ]
+          },
+          {
+            "layer": 35,
+            "matrix": [
+              [
+                75,
+                53,
+                0
+              ],
+              [
+                42,
+                459,
+                11
+              ],
+              [
+                11,
+                0,
+                373
+              ]
+            ]
+          },
+          {
+            "layer": 36,
+            "matrix": [
+              [
+                67,
+                61,
+                0
+              ],
+              [
+                37,
+                451,
+                24
+              ],
+              [
+                24,
+                0,
+                360
+              ]
+            ]
+          },
+          {
+            "layer": 37,
+            "matrix": [
+              [
+                82,
+                46,
+                0
+              ],
+              [
+                36,
+                466,
+                10
+              ],
+              [
+                10,
+                0,
+                374
+              ]
+            ]
+          },
+          {
+            "layer": 38,
+            "matrix": [
+              [
+                70,
+                58,
+                0
+              ],
+              [
+                48,
+                454,
+                10
+              ],
+              [
+                10,
+                0,
+                374
+              ]
+            ]
+          },
+          {
+            "layer": 39,
+            "matrix": [
+              [
+                59,
+                69,
+                0
+              ],
+              [
+                61,
+                443,
+                8
+              ],
+              [
+                8,
+                0,
+                376
+              ]
+            ]
+          },
+          {
+            "layer": 40,
+            "matrix": [
+              [
+                64,
+                64,
+                0
+              ],
+              [
+                44,
+                448,
+                20
+              ],
+              [
+                20,
+                0,
+                364
+              ]
+            ]
+          },
+          {
+            "layer": 41,
+            "matrix": [
+              [
+                60,
+                68,
+                0
+              ],
+              [
+                56,
+                444,
+                12
+              ],
+              [
+                12,
+                0,
+                372
+              ]
+            ]
+          },
+          {
+            "layer": 42,
+            "matrix": [
+              [
+                61,
+                67,
+                0
+              ],
+              [
+                49,
+                445,
+                18
+              ],
+              [
+                18,
+                0,
+                366
+              ]
+            ]
+          },
+          {
+            "layer": 43,
+            "matrix": [
+              [
+                67,
+                61,
+                0
+              ],
+              [
+                48,
+                451,
+                13
+              ],
+              [
+                13,
+                0,
+                371
+              ]
+            ]
+          },
+          {
+            "layer": 44,
+            "matrix": [
+              [
+                53,
+                75,
+                0
+              ],
+              [
+                60,
+                437,
+                15
+              ],
+              [
+                15,
+                0,
+                369
+              ]
+            ]
+          },
+          {
+            "layer": 45,
+            "matrix": [
+              [
+                69,
+                59,
+                0
+              ],
+              [
+                46,
+                453,
+                13
+              ],
+              [
+                13,
+                0,
+                371
+              ]
+            ]
+          },
+          {
+            "layer": 46,
+            "matrix": [
+              [
+                75,
+                53,
+                0
+              ],
+              [
+                41,
+                459,
+                12
+              ],
+              [
+                12,
+                0,
+                372
+              ]
+            ]
+          },
+          {
+            "layer": 47,
+            "matrix": [
+              [
+                78,
+                50,
+                0
+              ],
+              [
+                36,
+                462,
+                14
+              ],
+              [
+                14,
+                0,
+                370
+              ]
+            ]
+          },
+          {
+            "layer": 48,
+            "matrix": [
+              [
+                70,
+                58,
+                0
+              ],
+              [
+                44,
+                454,
+                14
+              ],
+              [
+                14,
+                0,
+                370
+              ]
+            ]
+          },
+          {
+            "layer": 49,
+            "matrix": [
+              [
+                71,
+                57,
+                0
+              ],
+              [
+                49,
+                455,
+                8
+              ],
+              [
+                8,
+                0,
+                376
+              ]
+            ]
+          },
+          {
+            "layer": 50,
+            "matrix": [
+              [
+                66,
+                62,
+                0
+              ],
+              [
+                55,
+                450,
+                7
+              ],
+              [
+                7,
+                0,
+                377
+              ]
+            ]
+          },
+          {
+            "layer": 51,
+            "matrix": [
+              [
+                91,
+                37,
+                0
+              ],
+              [
+                31,
+                475,
+                6
+              ],
+              [
+                6,
+                0,
+                378
+              ]
+            ]
+          },
+          {
+            "layer": 52,
+            "matrix": [
+              [
+                87,
+                41,
+                0
+              ],
+              [
+                37,
+                471,
+                4
+              ],
+              [
+                4,
+                0,
+                380
+              ]
+            ]
+          },
+          {
+            "layer": 53,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                28,
+                474,
+                10
+              ],
+              [
+                10,
+                0,
+                374
+              ]
+            ]
+          },
+          {
+            "layer": 54,
+            "matrix": [
+              [
+                95,
+                33,
+                0
+              ],
+              [
+                33,
+                479,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 55,
+            "matrix": [
+              [
+                95,
+                33,
+                0
+              ],
+              [
+                32,
+                479,
+                1
+              ],
+              [
+                1,
+                0,
+                383
+              ]
+            ]
+          }
+        ],
+        "old_int8_preserved": 4368,
+        "old_int8_total": 7168,
+        "old_int8_preserved_fraction": 0.609375,
+        "old_zero_became_retained": 352,
+        "old_retained_became_zero": 352,
+        "unchanged_tier": 51392,
+        "entries": 57344
+      },
+      "magnitude_to_full_readout": {
+        "old": "magnitude",
+        "new": "full_readout",
+        "tier_order": [
+          "int8",
+          "int4",
+          "zero_carry"
+        ],
+        "matrix_rows": "old tier",
+        "matrix_columns": "new tier",
+        "matrix": [
+          [
+            4368,
+            2448,
+            352
+          ],
+          [
+            2018,
+            17432,
+            9222
+          ],
+          [
+            782,
+            8792,
+            11930
+          ]
+        ],
+        "per_layer": [
+          {
+            "layer": 0,
+            "matrix": [
+              [
+                115,
+                13,
+                0
+              ],
+              [
+                13,
+                375,
+                124
+              ],
+              [
+                0,
+                124,
+                260
+              ]
+            ]
+          },
+          {
+            "layer": 1,
+            "matrix": [
+              [
+                103,
+                24,
+                1
+              ],
+              [
+                23,
+                379,
+                110
+              ],
+              [
+                2,
+                109,
+                273
+              ]
+            ]
+          },
+          {
+            "layer": 2,
+            "matrix": [
+              [
+                104,
+                24,
+                0
+              ],
+              [
+                24,
+                368,
+                120
+              ],
+              [
+                0,
+                120,
+                264
+              ]
+            ]
+          },
+          {
+            "layer": 3,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                36,
+                341,
+                135
+              ],
+              [
+                2,
+                133,
+                249
+              ]
+            ]
+          },
+          {
+            "layer": 4,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                33,
+                340,
+                139
+              ],
+              [
+                5,
+                134,
+                245
+              ]
+            ]
+          },
+          {
+            "layer": 5,
+            "matrix": [
+              [
+                98,
+                30,
+                0
+              ],
+              [
+                28,
+                342,
+                142
+              ],
+              [
+                2,
+                140,
+                242
+              ]
+            ]
+          },
+          {
+            "layer": 6,
+            "matrix": [
+              [
+                77,
+                50,
+                1
+              ],
+              [
+                47,
+                305,
+                160
+              ],
+              [
+                4,
+                157,
+                223
+              ]
+            ]
+          },
+          {
+            "layer": 7,
+            "matrix": [
+              [
+                77,
+                50,
+                1
+              ],
+              [
+                44,
+                313,
+                155
+              ],
+              [
+                7,
+                149,
+                228
+              ]
+            ]
+          },
+          {
+            "layer": 8,
+            "matrix": [
+              [
+                75,
+                51,
+                2
+              ],
+              [
+                40,
+                326,
+                146
+              ],
+              [
+                13,
+                135,
+                236
+              ]
+            ]
+          },
+          {
+            "layer": 9,
+            "matrix": [
+              [
+                79,
+                48,
+                1
+              ],
+              [
+                39,
+                296,
+                177
+              ],
+              [
+                10,
+                168,
+                206
+              ]
+            ]
+          },
+          {
+            "layer": 10,
+            "matrix": [
+              [
+                87,
+                38,
+                3
+              ],
+              [
+                34,
+                294,
+                184
+              ],
+              [
+                7,
+                180,
+                197
+              ]
+            ]
+          },
+          {
+            "layer": 11,
+            "matrix": [
+              [
+                87,
+                40,
+                1
+              ],
+              [
+                34,
+                320,
+                158
+              ],
+              [
+                7,
+                152,
+                225
+              ]
+            ]
+          },
+          {
+            "layer": 12,
+            "matrix": [
+              [
+                85,
+                40,
+                3
+              ],
+              [
+                33,
+                308,
+                171
+              ],
+              [
+                10,
+                164,
+                210
+              ]
+            ]
+          },
+          {
+            "layer": 13,
+            "matrix": [
+              [
+                74,
+                52,
+                2
+              ],
+              [
+                38,
+                306,
+                168
+              ],
+              [
+                16,
+                154,
+                214
+              ]
+            ]
+          },
+          {
+            "layer": 14,
+            "matrix": [
+              [
+                85,
+                41,
+                2
+              ],
+              [
+                35,
+                336,
+                141
+              ],
+              [
+                8,
+                135,
+                241
+              ]
+            ]
+          },
+          {
+            "layer": 15,
+            "matrix": [
+              [
+                85,
+                41,
+                2
+              ],
+              [
+                36,
+                309,
+                167
+              ],
+              [
+                7,
+                162,
+                215
+              ]
+            ]
+          },
+          {
+            "layer": 16,
+            "matrix": [
+              [
+                77,
+                50,
+                1
+              ],
+              [
+                34,
+                295,
+                183
+              ],
+              [
+                17,
+                167,
+                200
+              ]
+            ]
+          },
+          {
+            "layer": 17,
+            "matrix": [
+              [
+                83,
+                45,
+                0
+              ],
+              [
+                32,
+                292,
+                188
+              ],
+              [
+                13,
+                175,
+                196
+              ]
+            ]
+          },
+          {
+            "layer": 18,
+            "matrix": [
+              [
+                84,
+                43,
+                1
+              ],
+              [
+                32,
+                301,
+                179
+              ],
+              [
+                12,
+                168,
+                204
+              ]
+            ]
+          },
+          {
+            "layer": 19,
+            "matrix": [
+              [
+                69,
+                52,
+                7
+              ],
+              [
+                33,
+                288,
+                191
+              ],
+              [
+                26,
+                172,
+                186
+              ]
+            ]
+          },
+          {
+            "layer": 20,
+            "matrix": [
+              [
+                78,
+                43,
+                7
+              ],
+              [
+                20,
+                289,
+                203
+              ],
+              [
+                30,
+                180,
+                174
+              ]
+            ]
+          },
+          {
+            "layer": 21,
+            "matrix": [
+              [
+                65,
+                58,
+                5
+              ],
+              [
+                32,
+                280,
+                200
+              ],
+              [
+                31,
+                174,
+                179
+              ]
+            ]
+          },
+          {
+            "layer": 22,
+            "matrix": [
+              [
+                83,
+                42,
+                3
+              ],
+              [
+                28,
+                318,
+                166
+              ],
+              [
+                17,
+                152,
+                215
+              ]
+            ]
+          },
+          {
+            "layer": 23,
+            "matrix": [
+              [
+                71,
+                53,
+                4
+              ],
+              [
+                24,
+                268,
+                220
+              ],
+              [
+                33,
+                191,
+                160
+              ]
+            ]
+          },
+          {
+            "layer": 24,
+            "matrix": [
+              [
+                68,
+                50,
+                10
+              ],
+              [
+                32,
+                281,
+                199
+              ],
+              [
+                28,
+                181,
+                175
+              ]
+            ]
+          },
+          {
+            "layer": 25,
+            "matrix": [
+              [
+                74,
+                50,
+                4
+              ],
+              [
+                28,
+                304,
+                180
+              ],
+              [
+                26,
+                158,
+                200
+              ]
+            ]
+          },
+          {
+            "layer": 26,
+            "matrix": [
+              [
+                76,
+                43,
+                9
+              ],
+              [
+                35,
+                320,
+                157
+              ],
+              [
+                17,
+                149,
+                218
+              ]
+            ]
+          },
+          {
+            "layer": 27,
+            "matrix": [
+              [
+                76,
+                49,
+                3
+              ],
+              [
+                33,
+                312,
+                167
+              ],
+              [
+                19,
+                151,
+                214
+              ]
+            ]
+          },
+          {
+            "layer": 28,
+            "matrix": [
+              [
+                79,
+                45,
+                4
+              ],
+              [
+                22,
+                316,
+                174
+              ],
+              [
+                27,
+                151,
+                206
+              ]
+            ]
+          },
+          {
+            "layer": 29,
+            "matrix": [
+              [
+                66,
+                54,
+                8
+              ],
+              [
+                31,
+                270,
+                211
+              ],
+              [
+                31,
+                188,
+                165
+              ]
+            ]
+          },
+          {
+            "layer": 30,
+            "matrix": [
+              [
+                72,
+                46,
+                10
+              ],
+              [
+                35,
+                273,
+                204
+              ],
+              [
+                21,
+                193,
+                170
+              ]
+            ]
+          },
+          {
+            "layer": 31,
+            "matrix": [
+              [
+                77,
+                48,
+                3
+              ],
+              [
+                29,
+                273,
+                210
+              ],
+              [
+                22,
+                191,
+                171
+              ]
+            ]
+          },
+          {
+            "layer": 32,
+            "matrix": [
+              [
+                64,
+                60,
+                4
+              ],
+              [
+                47,
+                279,
+                186
+              ],
+              [
+                17,
+                173,
+                194
+              ]
+            ]
+          },
+          {
+            "layer": 33,
+            "matrix": [
+              [
+                73,
+                47,
+                8
+              ],
+              [
+                38,
+                330,
+                144
+              ],
+              [
+                17,
+                135,
+                232
+              ]
+            ]
+          },
+          {
+            "layer": 34,
+            "matrix": [
+              [
+                77,
+                39,
+                12
+              ],
+              [
+                43,
+                295,
+                174
+              ],
+              [
+                8,
+                178,
+                198
+              ]
+            ]
+          },
+          {
+            "layer": 35,
+            "matrix": [
+              [
+                75,
+                42,
+                11
+              ],
+              [
+                41,
+                309,
+                162
+              ],
+              [
+                12,
+                161,
+                211
+              ]
+            ]
+          },
+          {
+            "layer": 36,
+            "matrix": [
+              [
+                67,
+                37,
+                24
+              ],
+              [
+                34,
+                292,
+                186
+              ],
+              [
+                27,
+                183,
+                174
+              ]
+            ]
+          },
+          {
+            "layer": 37,
+            "matrix": [
+              [
+                82,
+                36,
+                10
+              ],
+              [
+                32,
+                291,
+                189
+              ],
+              [
+                14,
+                185,
+                185
+              ]
+            ]
+          },
+          {
+            "layer": 38,
+            "matrix": [
+              [
+                70,
+                48,
+                10
+              ],
+              [
+                49,
+                294,
+                169
+              ],
+              [
+                9,
+                170,
+                205
+              ]
+            ]
+          },
+          {
+            "layer": 39,
+            "matrix": [
+              [
+                59,
+                61,
+                8
+              ],
+              [
+                59,
+                307,
+                146
+              ],
+              [
+                10,
+                144,
+                230
+              ]
+            ]
+          },
+          {
+            "layer": 40,
+            "matrix": [
+              [
+                64,
+                44,
+                20
+              ],
+              [
+                46,
+                292,
+                174
+              ],
+              [
+                18,
+                176,
+                190
+              ]
+            ]
+          },
+          {
+            "layer": 41,
+            "matrix": [
+              [
+                60,
+                56,
+                12
+              ],
+              [
+                52,
+                297,
+                163
+              ],
+              [
+                16,
+                159,
+                209
+              ]
+            ]
+          },
+          {
+            "layer": 42,
+            "matrix": [
+              [
+                61,
+                49,
+                18
+              ],
+              [
+                49,
+                298,
+                165
+              ],
+              [
+                18,
+                165,
+                201
+              ]
+            ]
+          },
+          {
+            "layer": 43,
+            "matrix": [
+              [
+                67,
+                48,
+                13
+              ],
+              [
+                44,
+                294,
+                174
+              ],
+              [
+                17,
+                170,
+                197
+              ]
+            ]
+          },
+          {
+            "layer": 44,
+            "matrix": [
+              [
+                53,
+                60,
+                15
+              ],
+              [
+                52,
+                311,
+                149
+              ],
+              [
+                23,
+                141,
+                220
+              ]
+            ]
+          },
+          {
+            "layer": 45,
+            "matrix": [
+              [
+                69,
+                46,
+                13
+              ],
+              [
+                36,
+                313,
+                163
+              ],
+              [
+                23,
+                153,
+                208
+              ]
+            ]
+          },
+          {
+            "layer": 46,
+            "matrix": [
+              [
+                75,
+                41,
+                12
+              ],
+              [
+                41,
+                298,
+                173
+              ],
+              [
+                12,
+                173,
+                199
+              ]
+            ]
+          },
+          {
+            "layer": 47,
+            "matrix": [
+              [
+                78,
+                36,
+                14
+              ],
+              [
+                41,
+                309,
+                162
+              ],
+              [
+                9,
+                167,
+                208
+              ]
+            ]
+          },
+          {
+            "layer": 48,
+            "matrix": [
+              [
+                70,
+                44,
+                14
+              ],
+              [
+                48,
+                326,
+                138
+              ],
+              [
+                10,
+                142,
+                232
+              ]
+            ]
+          },
+          {
+            "layer": 49,
+            "matrix": [
+              [
+                71,
+                49,
+                8
+              ],
+              [
+                44,
+                284,
+                184
+              ],
+              [
+                13,
+                179,
+                192
+              ]
+            ]
+          },
+          {
+            "layer": 50,
+            "matrix": [
+              [
+                66,
+                55,
+                7
+              ],
+              [
+                45,
+                313,
+                154
+              ],
+              [
+                17,
+                144,
+                223
+              ]
+            ]
+          },
+          {
+            "layer": 51,
+            "matrix": [
+              [
+                91,
+                31,
+                6
+              ],
+              [
+                34,
+                319,
+                159
+              ],
+              [
+                3,
+                162,
+                219
+              ]
+            ]
+          },
+          {
+            "layer": 52,
+            "matrix": [
+              [
+                87,
+                37,
+                4
+              ],
+              [
+                33,
+                356,
+                123
+              ],
+              [
+                8,
+                119,
+                257
+              ]
+            ]
+          },
+          {
+            "layer": 53,
+            "matrix": [
+              [
+                90,
+                28,
+                10
+              ],
+              [
+                32,
+                371,
+                109
+              ],
+              [
+                6,
+                113,
+                265
+              ]
+            ]
+          },
+          {
+            "layer": 54,
+            "matrix": [
+              [
+                95,
+                33,
+                0
+              ],
+              [
+                30,
+                354,
+                128
+              ],
+              [
+                3,
+                125,
+                256
+              ]
+            ]
+          },
+          {
+            "layer": 55,
+            "matrix": [
+              [
+                95,
+                32,
+                1
+              ],
+              [
+                31,
+                362,
+                119
+              ],
+              [
+                2,
+                118,
+                264
+              ]
+            ]
+          }
+        ],
+        "old_int8_preserved": 4368,
+        "old_int8_total": 7168,
+        "old_int8_preserved_fraction": 0.609375,
+        "old_zero_became_retained": 9574,
+        "old_retained_became_zero": 9574,
+        "unchanged_tier": 33730,
+        "entries": 57344
+      },
+      "magnitude_to_preserve_retained80": {
+        "old": "magnitude",
+        "new": "preserve_retained80",
+        "tier_order": [
+          "int8",
+          "int4",
+          "zero_carry"
+        ],
+        "matrix_rows": "old tier",
+        "matrix_columns": "new tier",
+        "matrix": [
+          [
+            4682,
+            2486,
+            0
+          ],
+          [
+            2486,
+            26186,
+            0
+          ],
+          [
+            0,
+            0,
+            21504
+          ]
+        ],
+        "per_layer": [
+          {
+            "layer": 0,
+            "matrix": [
+              [
+                115,
+                13,
+                0
+              ],
+              [
+                13,
+                499,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 1,
+            "matrix": [
+              [
+                103,
+                25,
+                0
+              ],
+              [
+                25,
+                487,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 2,
+            "matrix": [
+              [
+                104,
+                24,
+                0
+              ],
+              [
+                24,
+                488,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 3,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                38,
+                474,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 4,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                38,
+                474,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 5,
+            "matrix": [
+              [
+                99,
+                29,
+                0
+              ],
+              [
+                29,
+                483,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 6,
+            "matrix": [
+              [
+                78,
+                50,
+                0
+              ],
+              [
+                50,
+                462,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 7,
+            "matrix": [
+              [
+                80,
+                48,
+                0
+              ],
+              [
+                48,
+                464,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 8,
+            "matrix": [
+              [
+                82,
+                46,
+                0
+              ],
+              [
+                46,
+                466,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 9,
+            "matrix": [
+              [
+                83,
+                45,
+                0
+              ],
+              [
+                45,
+                467,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 10,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                38,
+                474,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 11,
+            "matrix": [
+              [
+                88,
+                40,
+                0
+              ],
+              [
+                40,
+                472,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 12,
+            "matrix": [
+              [
+                87,
+                41,
+                0
+              ],
+              [
+                41,
+                471,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 13,
+            "matrix": [
+              [
+                82,
+                46,
+                0
+              ],
+              [
+                46,
+                466,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 14,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                38,
+                474,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 15,
+            "matrix": [
+              [
+                87,
+                41,
+                0
+              ],
+              [
+                41,
+                471,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 16,
+            "matrix": [
+              [
+                89,
+                39,
+                0
+              ],
+              [
+                39,
+                473,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 17,
+            "matrix": [
+              [
+                89,
+                39,
+                0
+              ],
+              [
+                39,
+                473,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 18,
+            "matrix": [
+              [
+                88,
+                40,
+                0
+              ],
+              [
+                40,
+                472,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 19,
+            "matrix": [
+              [
+                84,
+                44,
+                0
+              ],
+              [
+                44,
+                468,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 20,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                38,
+                474,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 21,
+            "matrix": [
+              [
+                81,
+                47,
+                0
+              ],
+              [
+                47,
+                465,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 22,
+            "matrix": [
+              [
+                93,
+                35,
+                0
+              ],
+              [
+                35,
+                477,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 23,
+            "matrix": [
+              [
+                86,
+                42,
+                0
+              ],
+              [
+                42,
+                470,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 24,
+            "matrix": [
+              [
+                77,
+                51,
+                0
+              ],
+              [
+                51,
+                461,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 25,
+            "matrix": [
+              [
+                87,
+                41,
+                0
+              ],
+              [
+                41,
+                471,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 26,
+            "matrix": [
+              [
+                79,
+                49,
+                0
+              ],
+              [
+                49,
+                463,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 27,
+            "matrix": [
+              [
+                83,
+                45,
+                0
+              ],
+              [
+                45,
+                467,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 28,
+            "matrix": [
+              [
+                91,
+                37,
+                0
+              ],
+              [
+                37,
+                475,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 29,
+            "matrix": [
+              [
+                81,
+                47,
+                0
+              ],
+              [
+                47,
+                465,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 30,
+            "matrix": [
+              [
+                77,
+                51,
+                0
+              ],
+              [
+                51,
+                461,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 31,
+            "matrix": [
+              [
+                84,
+                44,
+                0
+              ],
+              [
+                44,
+                468,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 32,
+            "matrix": [
+              [
+                75,
+                53,
+                0
+              ],
+              [
+                53,
+                459,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 33,
+            "matrix": [
+              [
+                81,
+                47,
+                0
+              ],
+              [
+                47,
+                465,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 34,
+            "matrix": [
+              [
+                82,
+                46,
+                0
+              ],
+              [
+                46,
+                466,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 35,
+            "matrix": [
+              [
+                80,
+                48,
+                0
+              ],
+              [
+                48,
+                464,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 36,
+            "matrix": [
+              [
+                78,
+                50,
+                0
+              ],
+              [
+                50,
+                462,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 37,
+            "matrix": [
+              [
+                89,
+                39,
+                0
+              ],
+              [
+                39,
+                473,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 38,
+            "matrix": [
+              [
+                73,
+                55,
+                0
+              ],
+              [
+                55,
+                457,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 39,
+            "matrix": [
+              [
+                61,
+                67,
+                0
+              ],
+              [
+                67,
+                445,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 40,
+            "matrix": [
+              [
+                68,
+                60,
+                0
+              ],
+              [
+                60,
+                452,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 41,
+            "matrix": [
+              [
+                67,
+                61,
+                0
+              ],
+              [
+                61,
+                451,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 42,
+            "matrix": [
+              [
+                65,
+                63,
+                0
+              ],
+              [
+                63,
+                449,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 43,
+            "matrix": [
+              [
+                72,
+                56,
+                0
+              ],
+              [
+                56,
+                456,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 44,
+            "matrix": [
+              [
+                62,
+                66,
+                0
+              ],
+              [
+                66,
+                446,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 45,
+            "matrix": [
+              [
+                78,
+                50,
+                0
+              ],
+              [
+                50,
+                462,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 46,
+            "matrix": [
+              [
+                80,
+                48,
+                0
+              ],
+              [
+                48,
+                464,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 47,
+            "matrix": [
+              [
+                79,
+                49,
+                0
+              ],
+              [
+                49,
+                463,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 48,
+            "matrix": [
+              [
+                74,
+                54,
+                0
+              ],
+              [
+                54,
+                458,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 49,
+            "matrix": [
+              [
+                75,
+                53,
+                0
+              ],
+              [
+                53,
+                459,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 50,
+            "matrix": [
+              [
+                71,
+                57,
+                0
+              ],
+              [
+                57,
+                455,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 51,
+            "matrix": [
+              [
+                91,
+                37,
+                0
+              ],
+              [
+                37,
+                475,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 52,
+            "matrix": [
+              [
+                90,
+                38,
+                0
+              ],
+              [
+                38,
+                474,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 53,
+            "matrix": [
+              [
+                92,
+                36,
+                0
+              ],
+              [
+                36,
+                476,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 54,
+            "matrix": [
+              [
+                96,
+                32,
+                0
+              ],
+              [
+                32,
+                480,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          },
+          {
+            "layer": 55,
+            "matrix": [
+              [
+                96,
+                32,
+                0
+              ],
+              [
+                32,
+                480,
+                0
+              ],
+              [
+                0,
+                0,
+                384
+              ]
+            ]
+          }
+        ],
+        "old_int8_preserved": 4682,
+        "old_int8_total": 7168,
+        "old_int8_preserved_fraction": 0.6531807780265808,
+        "old_zero_became_retained": 0,
+        "old_retained_became_zero": 0,
+        "unchanged_tier": 52372,
+        "entries": 57344
+      }
+    },
+    "calibration_mass": {
+      "magnitude": {
+        "mean_readout_score": {
+          "total": 7.708123290263013,
+          "tier_sums": [
+            6.5631848027367035,
+            1.0879564680639409,
+            0.0569820194623707
+          ],
+          "tier_fractions": [
+            0.8514633920071558,
+            0.14114414457255237,
+            0.007392463420292073
+          ],
+          "zero_fraction": 0.007392463420292073,
+          "per_layer_zero_fraction": [
+            0.002478353224244042,
+            0.013903711495080488,
+            0.009673015132598087,
+            0.00721172245464389,
+            0.028357333097351993,
+            0.0015091010679708424,
+            0.024330236723582397,
+            0.004997890635523535,
+            0.014448075006811126,
+            0.02203439523572921,
+            0.011419837082922673,
+            0.009218598461327112,
+            0.007244488097652642,
+            0.08275491389556867,
+            0.009340722732386238,
+            0.031156452911409085,
+            0.05667749288098093,
+            0.010981306534952724,
+            0.03925412425475717,
+            0.0358135048203945,
+            0.016745433132403537,
+            0.0354149388199664,
+            0.025173479071636792,
+            0.029749827776324976,
+            0.02133669527454522,
+            0.025880795020980396,
+            0.009665895272287511,
+            0.0207874680650547,
+            0.007903826383315675,
+            0.027464565419059644,
+            0.017679602878402784,
+            0.02573534647172221,
+            0.03211900942370684,
+            0.13868533626877763,
+            0.03387928199750708,
+            0.027531308581764762,
+            0.042843835011563,
+            0.014839026215467467,
+            0.11047050426106707,
+            0.046169141645658635,
+            0.027878595101173725,
+            0.02545565607504719,
+            0.016166794906145265,
+            0.03171017420505816,
+            0.026259233939447374,
+            0.04117751428251139,
+            0.01420729304466027,
+            0.026128925951755737,
+            0.031174234775399167,
+            0.0045418404297997116,
+            0.03620159351482902,
+            0.006228174492750781,
+            0.005346528805927164,
+            0.0034073610401286927,
+            0.011445417769410701,
+            0.0013595441759841698
+          ]
+        },
+        "mean_abs": {
+          "total": 88.09912552840753,
+          "tier_sums": [
+            38.9333621777635,
+            36.61475017317754,
+            12.551013177466487
+          ],
+          "tier_fractions": [
+            0.4419267721926417,
+            0.4156085540414488,
+            0.1424646737659095
+          ],
+          "zero_fraction": 0.1424646737659095,
+          "per_layer_zero_fraction": [
+            0.06276349437021139,
+            0.1075607313991928,
+            0.1080186855066117,
+            0.12063662256540704,
+            0.13319855027760588,
+            0.1298498171034198,
+            0.169965850734698,
+            0.1454312004130514,
+            0.16601184652711437,
+            0.15858347800726172,
+            0.14649061508135186,
+            0.15010379317648762,
+            0.15759740939329508,
+            0.19866522447279086,
+            0.18380770728740112,
+            0.19823854251754752,
+            0.19895363914889158,
+            0.17927391063022113,
+            0.16387132683122138,
+            0.20188092816692246,
+            0.2237940513457765,
+            0.18227926310304646,
+            0.17729463818800767,
+            0.18632280358216996,
+            0.1668140216393866,
+            0.17283452953301118,
+            0.1795381435879244,
+            0.17822779749820628,
+            0.1419047321324926,
+            0.16908808410917664,
+            0.12970923943688142,
+            0.15347996291735447,
+            0.14049116263416758,
+            0.14382150756391393,
+            0.1429455647408833,
+            0.15614203897574197,
+            0.15917793317701878,
+            0.14415881562476576,
+            0.1509416288462926,
+            0.14583020821628054,
+            0.14729783830237697,
+            0.16944980255369121,
+            0.14374031962756328,
+            0.15431340271046512,
+            0.12895422268469786,
+            0.14114564248106806,
+            0.13185532114202586,
+            0.15340684642624325,
+            0.13246096070533964,
+            0.11758778551523807,
+            0.1391309905172256,
+            0.14111068989540582,
+            0.1407575001514523,
+            0.1712790782352948,
+            0.09274114247780584,
+            0.10861565783223942
+          ]
+        }
+      },
+      "full_readout": {
+        "mean_readout_score": {
+          "total": 7.708123290263013,
+          "tier_sums": [
+            7.015446517349636,
+            0.6707856748345039,
+            0.021891098078874884
+          ],
+          "tier_fractions": [
+            0.9101367807922358,
+            0.08702321558372682,
+            0.0028400036240375085
+          ],
+          "zero_fraction": 0.0028400036240375085,
+          "per_layer_zero_fraction": [
+            0.000770280792659911,
+            0.0059113602546481325,
+            0.002979726738991815,
+            0.0028202635956946433,
+            0.01111115485998785,
+            0.0006352705124699392,
+            0.01025962906488778,
+            0.0019028406253100703,
+            0.0052432247306228846,
+            0.007336255762674571,
+            0.0043190481146186364,
+            0.0033491724586891627,
+            0.0030132995970411636,
+            0.021480637529561402,
+            0.0049467432268225295,
+            0.01618582671261372,
+            0.03893662776680373,
+            0.0038913089903218384,
+            0.02032530614582153,
+            0.010794375855330537,
+            0.0079179055924429,
+            0.019207220851800384,
+            0.010166868844884902,
+            0.007815621102729441,
+            0.009628352879512771,
+            0.00831545257407004,
+            0.0046277846246288385,
+            0.007459716816322645,
+            0.003238327641210682,
+            0.007635345508361524,
+            0.006588452407047141,
+            0.010083421069220382,
+            0.008070361007617809,
+            0.0342318256981758,
+            0.015296978439572777,
+            0.013040042370186996,
+            0.015263428567675097,
+            0.00565951339281044,
+            0.07085107899231001,
+            0.03012799318234316,
+            0.011270098892794901,
+            0.009855386234700404,
+            0.00764159858543075,
+            0.011122839820494307,
+            0.008137891770156495,
+            0.026476436840671313,
+            0.006303233445878082,
+            0.00598281864519394,
+            0.02341482235620409,
+            0.001237338099139014,
+            0.008311561902967278,
+            0.0015071294944645737,
+            0.0009836918039041961,
+            0.0017613687138403637,
+            0.0012485976836066667,
+            0.0005375516667865511
+          ]
+        },
+        "mean_abs": {
+          "total": 88.09912552840753,
+          "tier_sums": [
+            33.00546545706756,
+            38.017174049409476,
+            17.076486021930492
+          ],
+          "tier_fractions": [
+            0.3746401029420543,
+            0.43152725774957723,
+            0.19383263930836847
+          ],
+          "zero_fraction": 0.19383263930836847,
+          "per_layer_zero_fraction": [
+            0.0810138510519149,
+            0.14769937631282223,
+            0.1373377592422887,
+            0.1508027279520673,
+            0.1751153893193808,
+            0.15928873231104432,
+            0.20662704906482304,
+            0.18180467592332783,
+            0.19910391726247303,
+            0.20838367144517242,
+            0.18905279367989242,
+            0.1825835450280862,
+            0.2083250503838262,
+            0.2325162587199809,
+            0.2155870927507902,
+            0.23163986149285476,
+            0.23367932430967708,
+            0.2162391406051849,
+            0.2053912329138458,
+            0.24803153268645872,
+            0.26907076393970397,
+            0.2374094453095871,
+            0.20922680009198746,
+            0.23890992631843042,
+            0.23327607448627707,
+            0.22891264192974212,
+            0.238720535152637,
+            0.22050844401628208,
+            0.1902398215261294,
+            0.24219666427900519,
+            0.20313138159501604,
+            0.2254590359474458,
+            0.20311371690993768,
+            0.2136373821055838,
+            0.22603884954394643,
+            0.21512607938640343,
+            0.2571188140296159,
+            0.23079939837960853,
+            0.22486487902565588,
+            0.21373894743876531,
+            0.2540257869248521,
+            0.24986733004053174,
+            0.23148937422057453,
+            0.2562150973092014,
+            0.23851400611459642,
+            0.23560335966063747,
+            0.2371017867100047,
+            0.23291689746744076,
+            0.2367663546966824,
+            0.21696987090716738,
+            0.20980267676241723,
+            0.2071472061272716,
+            0.19266317698661362,
+            0.2137875168528338,
+            0.14508625141943793,
+            0.14086024847231393
+          ]
+        }
+      },
+      "preserve_int8": {
+        "mean_readout_score": {
+          "total": 7.708123290263013,
+          "tier_sums": [
+            6.5631848027367035,
+            1.1230365373366888,
+            0.02190195018962264
+          ],
+          "tier_fractions": [
+            0.8514633920071558,
+            0.14569519648904955,
+            0.0028414115037948898
+          ],
+          "zero_fraction": 0.0028414115037948898,
+          "per_layer_zero_fraction": [
+            0.000770280792659911,
+            0.005913541007056525,
+            0.002979726738991815,
+            0.0028202635956946433,
+            0.01111115485998785,
+            0.0006352705124699392,
+            0.010276722335904105,
+            0.0019028708546450373,
+            0.005243248390355347,
+            0.00733863784995062,
+            0.004319077319238872,
+            0.003349223345187082,
+            0.003019112015219503,
+            0.021484007105347543,
+            0.00494827401277098,
+            0.016186030351220165,
+            0.038937178593118696,
+            0.0038913089903218384,
+            0.020344730596664702,
+            0.010866631227769794,
+            0.007952447961279845,
+            0.01923627543830407,
+            0.010172765287970752,
+            0.00783565692481506,
+            0.009662516739502582,
+            0.008346369679072738,
+            0.004661712773234631,
+            0.007480227152310436,
+            0.0032458793114509736,
+            0.007787282485808928,
+            0.006655186335598012,
+            0.010121069752956952,
+            0.008071714676963907,
+            0.034657071763724415,
+            0.015698667720866945,
+            0.013125153192108545,
+            0.01601839030718321,
+            0.005776139997688349,
+            0.0743232584740434,
+            0.03018361327070414,
+            0.011457997416572184,
+            0.009955325944185679,
+            0.007679911194672342,
+            0.011564672066541723,
+            0.00830037404273348,
+            0.027116617015124914,
+            0.0064454419874899315,
+            0.0064236182537654755,
+            0.026046034390789955,
+            0.0012440343514402855,
+            0.008454128681475702,
+            0.0015222990045723212,
+            0.0010005026485711988,
+            0.0018345115417990904,
+            0.0012485976836066667,
+            0.0005376648577090027
+          ]
+        },
+        "mean_abs": {
+          "total": 88.09912552840753,
+          "tier_sums": [
+            38.9333621777635,
+            32.599816605464014,
+            16.565946745180014
+          ],
+          "tier_fractions": [
+            0.4419267721926417,
+            0.3700356434860663,
+            0.18803758432129195
+          ],
+          "zero_fraction": 0.18803758432129195,
+          "per_layer_zero_fraction": [
+            0.0810138510519149,
+            0.1462213005099794,
+            0.1373377592422887,
+            0.1508027279520673,
+            0.1751153893193808,
+            0.15928873231104432,
+            0.20629927398762193,
+            0.1810969111351635,
+            0.1972301188482362,
+            0.20658291112838442,
+            0.18890029051108498,
+            0.18249535733391814,
+            0.2067150934093841,
+            0.23193158034743933,
+            0.21307476683422008,
+            0.23019416337668291,
+            0.23322280243086174,
+            0.2162391406051849,
+            0.20132878562511428,
+            0.24425960673243235,
+            0.2651738624895148,
+            0.23577377887882683,
+            0.20860269946645124,
+            0.23641709937453137,
+            0.2296927453905444,
+            0.22687212910690932,
+            0.2144960954934976,
+            0.21854618845536794,
+            0.18883869891323796,
+            0.23400230738361436,
+            0.19507540988922628,
+            0.22264390422449082,
+            0.19919033828886254,
+            0.19619872192412718,
+            0.20974984651067435,
+            0.2079482193574237,
+            0.23129455951117472,
+            0.21020782698705182,
+            0.20839088686881652,
+            0.20396328812738834,
+            0.23157977181465644,
+            0.2351507721160913,
+            0.21606196873791003,
+            0.24195395903170208,
+            0.21470264096503291,
+            0.21631515335827836,
+            0.21697742278580273,
+            0.20930471903609757,
+            0.18067019776973767,
+            0.20675115761254942,
+            0.20218881360305596,
+            0.19746116265865768,
+            0.18594856490196124,
+            0.20715399247964986,
+            0.14508625141943793,
+            0.14056452605401068
+          ]
+        }
+      },
+      "preserve_retained80": {
+        "mean_readout_score": {
+          "total": 7.708123290263013,
+          "tier_sums": [
+            7.014879964658158,
+            0.6362613061424854,
+            0.0569820194623707
+          ],
+          "tier_fractions": [
+            0.9100632800618839,
+            0.08254425651782422,
+            0.007392463420292073
+          ],
+          "zero_fraction": 0.007392463420292073,
+          "per_layer_zero_fraction": [
+            0.002478353224244042,
+            0.013903711495080488,
+            0.009673015132598087,
+            0.00721172245464389,
+            0.028357333097351993,
+            0.0015091010679708424,
+            0.024330236723582397,
+            0.004997890635523535,
+            0.014448075006811126,
+            0.02203439523572921,
+            0.011419837082922673,
+            0.009218598461327112,
+            0.007244488097652642,
+            0.08275491389556867,
+            0.009340722732386238,
+            0.031156452911409085,
+            0.05667749288098093,
+            0.010981306534952724,
+            0.03925412425475717,
+            0.0358135048203945,
+            0.016745433132403537,
+            0.0354149388199664,
+            0.025173479071636792,
+            0.029749827776324976,
+            0.02133669527454522,
+            0.025880795020980396,
+            0.009665895272287511,
+            0.0207874680650547,
+            0.007903826383315675,
+            0.027464565419059644,
+            0.017679602878402784,
+            0.02573534647172221,
+            0.03211900942370684,
+            0.13868533626877763,
+            0.03387928199750708,
+            0.027531308581764762,
+            0.042843835011563,
+            0.014839026215467467,
+            0.11047050426106707,
+            0.046169141645658635,
+            0.027878595101173725,
+            0.02545565607504719,
+            0.016166794906145265,
+            0.03171017420505816,
+            0.026259233939447374,
+            0.04117751428251139,
+            0.01420729304466027,
+            0.026128925951755737,
+            0.031174234775399167,
+            0.0045418404297997116,
+            0.03620159351482902,
+            0.006228174492750781,
+            0.005346528805927164,
+            0.0034073610401286927,
+            0.011445417769410701,
+            0.0013595441759841698
+          ]
+        },
+        "mean_abs": {
+          "total": 88.09912552840753,
+          "tier_sums": [
+            34.04577198909648,
+            41.50234036184456,
+            12.551013177466487
+          ],
+          "tier_fractions": [
+            0.386448466825229,
+            0.4710868594088615,
+            0.1424646737659095
+          ],
+          "zero_fraction": 0.1424646737659095,
+          "per_layer_zero_fraction": [
+            0.06276349437021139,
+            0.1075607313991928,
+            0.1080186855066117,
+            0.12063662256540704,
+            0.13319855027760588,
+            0.1298498171034198,
+            0.169965850734698,
+            0.1454312004130514,
+            0.16601184652711437,
+            0.15858347800726172,
+            0.14649061508135186,
+            0.15010379317648762,
+            0.15759740939329508,
+            0.19866522447279086,
+            0.18380770728740112,
+            0.19823854251754752,
+            0.19895363914889158,
+            0.17927391063022113,
+            0.16387132683122138,
+            0.20188092816692246,
+            0.2237940513457765,
+            0.18227926310304646,
+            0.17729463818800767,
+            0.18632280358216996,
+            0.1668140216393866,
+            0.17283452953301118,
+            0.1795381435879244,
+            0.17822779749820628,
+            0.1419047321324926,
+            0.16908808410917664,
+            0.12970923943688142,
+            0.15347996291735447,
+            0.14049116263416758,
+            0.14382150756391393,
+            0.1429455647408833,
+            0.15614203897574197,
+            0.15917793317701878,
+            0.14415881562476576,
+            0.1509416288462926,
+            0.14583020821628054,
+            0.14729783830237697,
+            0.16944980255369121,
+            0.14374031962756328,
+            0.15431340271046512,
+            0.12895422268469786,
+            0.14114564248106806,
+            0.13185532114202586,
+            0.15340684642624325,
+            0.13246096070533964,
+            0.11758778551523807,
+            0.1391309905172256,
+            0.14111068989540582,
+            0.1407575001514523,
+            0.1712790782352948,
+            0.09274114247780584,
+            0.10861565783223942
+          ]
+        }
+      }
+    },
+    "mass_scope": "Global sums of recorded per-coordinate TRAIN S16 means; fractions of proxy statistics, not output error or recall information"
+  },
+  "limitations": [
+    "PPL uses32 TRAIN windows; MK uses96 TRAIN cases. These are selection/development observations, not heldout confirmation.",
+    "Tier mass uses original unadapted S16 prose traces. SQ recurrence can change the actual state trajectory.",
+    "Readout score is a one-step diagonal carry proxy and omits future C, cross-coordinate covariance and downstream sensitivity.",
+    "Preserving INT8 also changes other tier membership/scales and reduction order; aggregate differences do not isolate a single causal mechanism.",
+    "A one-answer MK difference does not establish a reliable recall improvement.",
+    "This analysis rechecks recorded output-text scoring and NLL arithmetic; it does not independently regenerate GPU logits or decode token IDs."
+  ]
+}

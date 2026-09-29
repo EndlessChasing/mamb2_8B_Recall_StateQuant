@@ -89,6 +89,26 @@ Its sole table SHA256 is
 The selection report SHA256 is
 `a7ff703281309d83031d4b3bc3b4c6edf718e8646fa62506ff162dbf1cd62437`.
 
+### Descriptive TRAIN analysis
+
+The [reproducible CPU analysis](../reports/state_first_v5_screen_analysis.json)
+confirms that all 7,168 old INT8 table entries are preserved. Across all
+56 layers and eight groups, 9,432 old INT4 entries exchange with 9,432 old zero
+entries; no INT8 entry is demoted. Lower NLL appears in **29/32** windows versus
+magnitude and **23/32** versus full readout.
+
+| Zero-carry coordinates' share of calibration statistic | Magnitude | Full readout | Preserve INT8 |
+| --- | ---: | ---: | ---: |
+| One-step readout score | 0.739246% | 0.284000% | 0.284141% |
+| Mean absolute S16 state | 14.246467% | 19.383264% | 18.803758% |
+
+Preserve INT8 retains nearly all of the readout proxy reduction while preserving
+the original high-magnitude INT8 allocation. This is consistent with its TRAIN
+PPL improvement; it does not isolate the causal mechanism or predict final MK.
+Paired TRAIN MK has four gains and three regressions. Magnitude and preserve
+INT8 both score **0/48 on N64** before Resurface, so one more total answer does
+not establish reliable recall repair. No new table was fit using this analysis.
+
 ## Fresh training — running
 
 The trainer creates all 224 FP32 adapter tensors, Adam and GradScaler from
