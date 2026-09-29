@@ -58,8 +58,10 @@ loss selects or alters the training recipe.
 Keep `training/report.json`, `adapter_fp16.pt` and all four recovery checkpoints
 (`checkpoint_0768.pt`, `checkpoint_1536.pt`, `checkpoint_2304.pt`,
 `checkpoint_3072.pt`). Checkpoint filenames count **additional** updates; each
-payload also records cumulative updates. Code hashes and frozen input identities
-are checked throughout. New output directories are required for independent runs.
+payload also records cumulative updates. Input and code hashes are recorded and
+verified before fitting, then rechecked during evaluation and audit. Frozen
+source/table identities and gradients are checked at every update. New output
+directories are required for independent runs.
 
 ## Full comparison and independent audit
 

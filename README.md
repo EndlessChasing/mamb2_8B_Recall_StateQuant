@@ -7,10 +7,11 @@ complete GradScaler state, then adds **3072 successful updates (4608 total)**.
 Source weights, SQ3.25 calibration, adapter capacity and loss remain fixed.
 The discarded resumed smoke passed exact 128-token parent-forward parity and
 one update without overflow; formal continuation is running.
-See the [frozen continuation protocol](docs/RESURFACE_MORE_PROTOCOL.md).
+See the [frozen continuation protocol](docs/RESURFACE_MORE_PROTOCOL.md) and
+[reproduction commands](docs/RESURFACE_MORE_REPRODUCTION.md).
 The completed measurements below are the v2 parent, not v3 results.
 
-## Current experiment: quantize first, then train a new adapter
+## Completed v2: quantize first, then train a new adapter
 
 The new requested order is **original Mamba2-8B -> SQ3.25 state -> fresh
 Resurface training**. Calibration is repeated on the unadapted source model;
