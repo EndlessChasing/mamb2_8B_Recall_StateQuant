@@ -15,7 +15,14 @@ recall and PPL on the fixed V10 Q3.25 base, with unchanged recurrent cache.
 - [x] Audit all updates, source/table freezing, checkpoints and final FP16 export.
 - [x] Evaluate unadapted, adapted and adapter-removed arms on full PPL and 768 MK prompts each.
 - [x] Audit complete raw results, paired MK confidence interval, memory and exact restoration.
-- [x] Save adapter, reproduction commands and evidence in the existing private repository.
+- [x] Save adapter, reproduction commands and evidence in this repository.
+
+The [release usage guide](STATE_RESURFACE_V11_RELEASE.md) covers the packaged
+adapter/table, source checkpoint download and inference entrypoint.
+The new inference wrapper also passes a [GPU smoke check](../reports/state_resurface_v11_release_wrapper_smoke.json):
+all 12 generated tokens match one archived 263-token MK prompt exactly,
+with the same 28,499,968-byte state cache. This checks the new wrapper and
+does not replace or repeat the full quality evaluation below.
 
 Primary acceptance: adapted PPL <= 8.186186562837207 and < 8.25, positive normal
 MK improvement with paired 95% lower bound > 0, exact control replay, and unchanged

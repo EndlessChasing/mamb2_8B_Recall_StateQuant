@@ -1,0 +1,51 @@
+{
+  "format": "MAMBA2_STATE_RESURFACE_V11_RELEASE_WRAPPER_SMOKE_V1",
+  "passed": true,
+  "case_id": "resurface-confirm-n16-t0-s0",
+  "case_condition": "normal",
+  "prompt_sha256_utf8": "7dc375f47812b55ec9b01027098e8f91b2f35759b2c0a7438bf80f306881ba99",
+  "prompt_tokens": 263,
+  "expected_generated_token_ids": [
+    251490,
+    251574,
+    251561,
+    251574,
+    251581,
+    251574,
+    251581,
+    14,
+    14,
+    155786,
+    276,
+    2184
+  ],
+  "actual_generated_token_ids": [
+    251490,
+    251574,
+    251561,
+    251574,
+    251581,
+    251574,
+    251581,
+    14,
+    14,
+    155786,
+    276,
+    2184
+  ],
+  "completion": "696767\n\nLookup the value",
+  "exact_archived_ids": true,
+  "exact_archived_decoded_output": true,
+  "batch_one_cache_bytes": 28499968,
+  "adapter_storage_bytes": 2308208,
+  "weight_payload_bytes": 16473999360,
+  "elapsed_seconds": 37.16660761833191,
+  "code_sha256": {
+    "release_state_resurface_v11.py": "8083629cabdbced2f3a8cde4d98c4d2500430eb4d7a0b9f212c6c293b5ee9528",
+    "infer_state_resurface_v11.py": "74c4566e8bba122c578c63c3c10bbe9b32cd8f7e7a474f81d929043f9dd28ee5"
+  },
+  "source_checkpoint_sha256": "47c2766f6aad89d73beafbeaecb334aab902d7370906d081764a90bb7a8bbbcb",
+  "adapter_sha256": "339334b3431027504fb8da4ce3167d63c8c2f309920cfb0076bde1f72a115cb7",
+  "archived_arm_sha256": "8e901f22bdd6667bb050c4e2d05c87f8f908172b822c09443534e7fc54c62538",
+  "scope": "One fixed archived MK prompt and its 12-token greedy continuation through the public wrapper; exact generation/cache smoke, not a new full quality evaluation."
+}

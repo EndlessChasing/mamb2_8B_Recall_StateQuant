@@ -1,0 +1,27 @@
+{
+  "format": "MAMBA2_STATE_RESURFACE_V11_RELEASE_PACKAGE_CHECKS_V1",
+  "passed": true,
+  "checks": {
+    "deterministic_archive": true,
+    "extract_roundtrip": true,
+    "no_training_data_or_historical_artifact_paths_needed": true,
+    "reject_corrupt_adapter": true,
+    "reject_changed_runtime": true,
+    "reject_changed_metrics": true,
+    "restored_bundle_verified": true,
+    "new_entrypoints_parse": true,
+    "help_without_torch_or_cuda": true,
+    "inference_wrapper_verify_only": true,
+    "pinned_hf_nested_checkpoint_download_documented": true,
+    "current_third_party_notices_included": true
+  },
+  "archive_sha256": "6f5c219f7c92cbfa9541af610970fd015d7005e9257fbb9c7a9ab772e5d4ef80",
+  "archive_bytes": 3786324,
+  "manifest_sha256": "6c3ebce9eaa7ec14ce63a04b46ef4fe44730433dbc941ca95e4e2c2d7121c721",
+  "code_sha256": {
+    "scripts/release_state_resurface_v11.py": "8083629cabdbced2f3a8cde4d98c4d2500430eb4d7a0b9f212c6c293b5ee9528",
+    "scripts/infer_state_resurface_v11.py": "74c4566e8bba122c578c63c3c10bbe9b32cd8f7e7a474f81d929043f9dd28ee5",
+    "docs/STATE_RESURFACE_V11_RELEASE.md": "21ef97c90964935e46b6e571dcf3905871f7b8f832e63081ad14ef889ebcde91"
+  },
+  "scope": "Standard library artifact integrity, deterministic packaging, fresh code-only tree verification, mutation rejection and CLI checks. No new GPU inference or quality evaluation."
+}

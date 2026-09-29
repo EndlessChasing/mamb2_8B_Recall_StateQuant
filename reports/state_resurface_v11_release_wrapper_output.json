@@ -1,0 +1,24 @@
+{
+  "prompt": "Key-value records:\n466285: 696767\n431048: 793866\n473470: 996837\n404905: 697834\n404843: 998935\n477068: 699519\n437587: 899446\n422749: 692216\n469256: 993635\n475896: 792410\n417125: 791535\n467630: 798753\n402325: 698472\n449265: 893470\n449941: 895446\n448602: 796828\n\nLookup the value for key 466285.\nValue:",
+  "completion": "696767\n\nLookup the value",
+  "generated_token_ids": [
+    251490,
+    251574,
+    251561,
+    251574,
+    251581,
+    251574,
+    251581,
+    14,
+    14,
+    155786,
+    276,
+    2184
+  ],
+  "prompt_tokens": 263,
+  "adapter_sha256": "339334b3431027504fb8da4ce3167d63c8c2f309920cfb0076bde1f72a115cb7",
+  "batch_one_cache_bytes": 28499968,
+  "adapter_storage_bytes": 2308208,
+  "weight_payload_bytes": 16473999360,
+  "memory_scope": "Persistent tensor payload only; excludes temporaries and allocator reserve"
+}

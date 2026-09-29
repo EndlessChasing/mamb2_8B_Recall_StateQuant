@@ -1,0 +1,30 @@
+{
+  "format": "MAMBA2_STATE_RESURFACE_V11_RELEASE_BUNDLE_EQUIVALENCE_V1",
+  "passed": true,
+  "gpu_smoke_receipt_sha256": "bc782e6349af1843fd692f12d81420783e266b90ce868e7d4665711f47ce87a9",
+  "gpu_smoked_archive_sha256": "0a22e00f00c526391952c61c67b040b15cc77a4e621102867d14a73e0d85b3cd",
+  "final_release_archive_sha256": "6f5c219f7c92cbfa9541af610970fd015d7005e9257fbb9c7a9ab772e5d4ef80",
+  "changed_members": [
+    "mamba2-8b-q325-resurface-v11/RELEASE.md",
+    "mamba2-8b-q325-resurface-v11/SHA256SUMS",
+    "mamba2-8b-q325-resurface-v11/docs/THIRD_PARTY_NOTICES.md",
+    "mamba2-8b-q325-resurface-v11/manifest.json"
+  ],
+  "identical_members": [
+    "mamba2-8b-q325-resurface-v11/LICENSE",
+    "mamba2-8b-q325-resurface-v11/adapter_fp16.pt",
+    "mamba2-8b-q325-resurface-v11/full_audit.json",
+    "mamba2-8b-q325-resurface-v11/full_comparison.json",
+    "mamba2-8b-q325-resurface-v11/full_parent_replay.json",
+    "mamba2-8b-q325-resurface-v11/full_restoration.json",
+    "mamba2-8b-q325-resurface-v11/full_restored_v10_no_adapter.json",
+    "mamba2-8b-q325-resurface-v11/full_v10_no_adapter.json",
+    "mamba2-8b-q325-resurface-v11/full_v10_resurface.json",
+    "mamba2-8b-q325-resurface-v11/reference/statequant/LICENSE",
+    "mamba2-8b-q325-resurface-v11/selected_calibration.json",
+    "mamba2-8b-q325-resurface-v11/selected_calibration.pt",
+    "mamba2-8b-q325-resurface-v11/training_audit.json",
+    "mamba2-8b-q325-resurface-v11/training_report.json"
+  ],
+  "scope": "GPU smoke ran the earlier bundle before documentation/notice finalization. All adapter, selected calibration, receipts, raw evidence and audited runtime/wrapper code are unchanged. Final bundle CPU checks verify the finalized archive; no second GPU run was required."
+}

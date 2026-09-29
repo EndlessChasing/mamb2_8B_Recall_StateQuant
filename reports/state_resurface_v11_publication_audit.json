@@ -1,0 +1,151 @@
+{
+  "audited_base_commit": "41e04732ad5d9369e027daaca13f44ee936e1c69",
+  "complete": true,
+  "created_utc": "2026-09-29T18:25:47.519886+00:00",
+  "embedded_dataset_excerpt": {
+    "attribution_added_in": "docs/THIRD_PARTY_NOTICES.md",
+    "configuration": "wikitext-2-raw-v1",
+    "discrepancy_preserved": true,
+    "field": "token_ids",
+    "files": [
+      "reports/state_resurface_v11_smoke/probe_evidence.pt",
+      "reports/state_resurface_v11_training/probe_evidence.pt"
+    ],
+    "not_relicensed_as_gpl": true,
+    "prefix_lengths": [
+      128,
+      512
+    ],
+    "present": true,
+    "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "scope": "Same first TRAIN-window prefixes duplicated in initialization and export evidence; not the full corpus.",
+    "source": "Salesforce/wikitext",
+    "split": "train",
+    "training_window_start": 18432,
+    "upstream_license_metadata": [
+      "cc-by-sa-3.0",
+      "gfdl"
+    ],
+    "upstream_licensing_section": "cc-by-sa-4.0"
+  },
+  "format": "MAMBA2_STATE_RESURFACE_V11_PUBLICATION_AUDIT_V1",
+  "history_scan": {
+    "credential_file_paths_found": false,
+    "full_training_corpus_found": false,
+    "limitations": "A targeted pattern and metadata review cannot prove the absence of every possible secret.",
+    "logical_blob_bytes": 352050099,
+    "patterns": [
+      "private key headers",
+      "GitHub tokens",
+      "Hugging Face tokens",
+      "AWS access keys",
+      "Google API keys",
+      "OpenAI keys",
+      "signed URL signatures",
+      "credential-bearing URLs",
+      "quoted password or credential assignments"
+    ],
+    "reachable_blobs": 892,
+    "reachable_commits": 44,
+    "secret_pattern_hits": 0,
+    "source_model_weights_found": false,
+    "text_blobs": 858,
+    "tracked_files_at_base": 857,
+    "unrelated_project_directories_found": false,
+    "zip_pickle_metadata_decompressed": true,
+    "zip_pt_blobs": 34
+  },
+  "license_scope": {
+    "embedded_wikitext_excerpts": "Separate upstream text terms and attribution in third-party notices",
+    "fresh_v11_vs_historical_adapter_clarified": true,
+    "nvidia_base_checkpoint": "Apache-2.0; separately downloaded, excluded from bundle",
+    "project_code_and_new_adapter": "GPL-3.0",
+    "statequant_reference": "Apache-2.0 with retained notices"
+  },
+  "live_source_download_check": {
+    "checkpoint_file_bytes": 16474189490,
+    "checkpoint_path": "release/mp_rank_00/model_optim_rng.pt",
+    "endpoint": "https://huggingface.co/api/models/nvidia/mamba2-8b-3t-4k/tree/b915550c63ba9359f88f44d1f6a600d85af27302?recursive=true",
+    "incorrect_root_filename_fixed_in_usage": true,
+    "tokenizer_file_bytes": 4573028,
+    "tokenizer_path": "mt_nlg_plus_multilingual_ja_zh_the_stack_frac_015_256k.model"
+  },
+  "package_build_receipt": {
+    "archive": "mamba2-8b-q325-resurface-v11.tar.gz",
+    "bundle_files": 18,
+    "bytes": 3786324,
+    "format": "MAMBA2_STATE_RESURFACE_V11_RELEASE_V1",
+    "manifest_sha256": "6c3ebce9eaa7ec14ce63a04b46ef4fe44730433dbc941ca95e4e2c2d7121c721",
+    "sha256": "6f5c219f7c92cbfa9541af610970fd015d7005e9257fbb9c7a9ab772e5d4ef80",
+    "verified": true
+  },
+  "passed": true,
+  "publication_status": "Preparation audit only; anonymous release accessibility and download verification remain publishing-workflow responsibilities.",
+  "release_review": {
+    "builder_pins_artifacts_and_measured_runtime": true,
+    "github_visibility_or_release_changed_by_auditor": false,
+    "gpu_wrapper_smoke": "Performed separately by packaging workflow; not rerun by this audit",
+    "inference_preserves_packed_carry_for_prompt_and_decode": true,
+    "material_blockers": [],
+    "python_ast_checks_passed": true,
+    "resolved_findings": [
+      "Release-facing private-status wording updated",
+      "Fresh V11 adapter scope distinguished from inherited adapter",
+      "WikiText probe excerpts attributed under separate source text terms",
+      "Hugging Face download corrected to pinned nested checkpoint path"
+    ],
+    "separate_packaging_receipts_reviewed": {
+      "adapter_storage_bytes": 2308208,
+      "batch_one_cache_bytes": 28499968,
+      "files_sha256": {
+        "reports/state_resurface_v11_release_package_checks.json": "1795cc2106c91290f914372e6db8732eb3d99b08318e5b415296ffaee03263bb",
+        "reports/state_resurface_v11_release_wrapper_output.json": "2ca698795dcfdb3caf6e757cf469715c7bfbc19aa4b33f8ea181daa9c5725705",
+        "reports/state_resurface_v11_release_wrapper_smoke.json": "bc782e6349af1843fd692f12d81420783e266b90ce868e7d4665711f47ce87a9"
+      },
+      "package_checks_passed": 12,
+      "scope": "Read and cross-checked separate packaging and single-case GPU smoke receipts; did not rerun the GPU experiment.",
+      "wrapper_exact_archived_generated_tokens": 12,
+      "wrapper_prompt_tokens": 263
+    },
+    "shell_syntax_checks": [
+      {
+        "block": 0,
+        "file": "docs/STATE_RESURFACE_V11_RELEASE.md",
+        "passed": true
+      },
+      {
+        "block": 1,
+        "file": "docs/STATE_RESURFACE_V11_RELEASE.md",
+        "passed": true
+      },
+      {
+        "block": 2,
+        "file": "docs/STATE_RESURFACE_V11_RELEASE.md",
+        "passed": true
+      },
+      {
+        "block": 3,
+        "file": "docs/STATE_RESURFACE_V11_RELEASE.md",
+        "passed": true
+      }
+    ],
+    "smoke_final_bundle_equivalence_receipt": {
+      "path": "reports/state_resurface_v11_release_bundle_equivalence.json",
+      "scope": "Separate comparison receipt accounts for documentation-only changes between smoke bundle and final release bundle.",
+      "sha256": "b5f4d0d1a107cc6d1a98edd91bb1905ffd0609255969a271c229e2d763002ac4"
+    },
+    "source_and_tokenizer_hash_checks_preserved": true,
+    "verifier_standard_library_only": true
+  },
+  "reviewed_files_sha256": {
+    "PLAN.md": "749e73d75b9efecbf3e97607702db7a73887e8bdfaeb87a758248f1ba89bb799",
+    "README.md": "5a97e57d1adb95e615b74c977843c389b7150c1828e7693ed29dab45b8e0836c",
+    "docs/STATE_RESURFACE_V11_RELEASE.md": "21ef97c90964935e46b6e571dcf3905871f7b8f832e63081ad14ef889ebcde91",
+    "docs/STATE_RESURFACE_V11_RESULTS.md": "930240e30bb9437dec711d620eb39acad546a7aac907f519c4a615661e1678ce",
+    "docs/THIRD_PARTY_NOTICES.md": "569e5c738a800a2cb81298b35e877fcb52e1f5aed3384cb565684dc7660934d0",
+    "scripts/infer_state_resurface_v11.py": "74c4566e8bba122c578c63c3c10bbe9b32cd8f7e7a474f81d929043f9dd28ee5",
+    "scripts/release_state_resurface_v11.py": "8083629cabdbced2f3a8cde4d98c4d2500430eb4d7a0b9f212c6c293b5ee9528"
+  },
+  "reviewed_release_body_sha256": "42132dec3ba631f7c7cca833cfb1e592997efcbdd3cea3bcae7f33e2a355a961",
+  "scope": "Read-only publication confidentiality, artifact provenance, license-scope and release-entrypoint review; not a new model quality evaluation or formal legal opinion."
+}

@@ -1,5 +1,14 @@
 # Checklist
 
+## GitHub release: v0.1.0-q325-resurface
+
+- [x] Audit reachable repository history and artifact scope for public release.
+- [x] Preserve all measured runtime hashes and the exact final adapter/table.
+- [x] Package reproducible release assets, checksums and an inference entrypoint.
+- [x] Document separate code, adapter, source-weight and dataset license scopes.
+- [x] Verify the inference entrypoint against an archived MK generation.
+- [ ] Publish the tagged GitHub release and verify anonymous asset downloads.
+
 ## Completed v11: fresh Resurface on V10 Q3.25
 
 - [x] Freeze V10 32/32/64 state and the achieved unadapted PPL 8.186187.
@@ -9,7 +18,7 @@
 - [x] Complete all three full arms: 130 PPL windows / 264,764 targets and 768 MK prompts each.
 - [x] Pass exact archived V10 replay and adapter-removal replay of all window NLLs, generated sequences and cache receipts.
 - [x] Pass all nine quality/integrity gates and the independent CPU full audit.
-- [x] Save audited results and reproduction evidence privately.
+- [x] Save audited results and reproduction evidence.
 
 Full PPL **8.186186562837207 → 7.855569605864836** improves **4.0387%** and
 stays below 8.25. Normal MK **32 → 271/384** improves **62.2396 pp**;
@@ -23,7 +32,8 @@ source weights, scratch and allocator reserve. Compared with hash-bound
 historical S16 (**7.334322057221965 / 146 of 384 MK**), recall is higher but
 PPL remains **7.11% worse**. The benchmark family has historical exposure;
 only the fixed final TRAIN export was evaluated, with no heldout selection.
-The experiment and private evidence retention are complete.
+The experiment and evidence retention are complete. Public release work is
+tracked separately above; older sections below record their original scope.
 
 See [V11 results and checklist](docs/STATE_RESURFACE_V11_RESULTS.md),
 [raw full comparison](reports/state_resurface_v11_full/full_comparison.json),

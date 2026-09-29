@@ -1,5 +1,14 @@
 # Mamb2_8B_Recall + StateQuant
 
+## Public release: Q3.25 state + Resurface
+
+Download the adapter/table bundle from
+[v0.1.0-q325-resurface](https://github.com/EndlessChasing/mamb2_8B_Recall_StateQuant/releases/tag/v0.1.0-q325-resurface)
+and follow the [installation, verification and inference guide](docs/STATE_RESURFACE_V11_RELEASE.md).
+**Q3.25 describes recurrent state. The original 8B model weights remain FP16**
+and are downloaded separately from NVIDIA. The release includes the exact
+audited adapter, calibration table, raw evaluation reports and checksums.
+
 ## Completed v11: fresh Resurface improves PPL and recall on V10 Q3.25
 
 **All nine predefined quality and integrity gates pass.** Fresh Resurface
@@ -32,8 +41,8 @@ exceeds the historical S16 result, PPL is still **7.11% higher than S16**.
 
 Only the final TRAIN-derived export was evaluated; validation/CONFIRM did not
 select a checkpoint. This benchmark family has historical exposure, so these
-results are not a new unseen-benchmark claim. The repository remains private;
-the audited adapter, checkpoints and reproduction evidence are retained here.
+results are not a new unseen-benchmark claim. The audited adapter, checkpoints
+and reproduction evidence are retained in this public repository.
 See [V11 results and checklist](docs/STATE_RESURFACE_V11_RESULTS.md),
 [raw full comparison](reports/state_resurface_v11_full/full_comparison.json),
 [independent full audit](reports/state_resurface_v11_full_audit.json),
@@ -64,7 +73,7 @@ with the [v10 runtime and reproduction guide](docs/STATE_PPL_V10_REPRODUCTION.md
 See [all search results/checklist](docs/STATE_PPL_TARGET_825.md),
 [raw full comparison](reports/state_ppl_v10_full/full_comparison.json), and
 [independent full audit](reports/state_ppl_v10_full_audit.json).
-The repository remains private and the target search is complete.
+The target search is complete; V11 above adds fresh Resurface to this fixed base.
 
 ## Completed v6: PPL-first scale search finds only a small improvement
 
