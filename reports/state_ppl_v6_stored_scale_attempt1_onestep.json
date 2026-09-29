@@ -1,0 +1,31 @@
+{
+  "first_divergence_token": 5,
+  "one_step_from_identical_cache_reproduces_code_difference": true,
+  "one_step_readout_equals_tokenwise": true,
+  "robust_cpu_matches_original_cpu_reference": true,
+  "gpu_matches_robust_cpu": false,
+  "exact_half_ties_by_block": [
+    0,
+    240
+  ],
+  "one_example": {
+    "updated": -0.1327667236328125,
+    "stored_scale": 0.037933349609375,
+    "ratio32": -3.5,
+    "ratio64": -3.5
+  },
+  "rounding_boundary_probe": {
+    "below": [
+      0.4999999701976776,
+      3.499999761581421
+    ],
+    "old": [
+      1.0,
+      3.0
+    ],
+    "robust": [
+      0.0,
+      3.0
+    ]
+  }
+}

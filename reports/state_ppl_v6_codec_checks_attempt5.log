@@ -1,0 +1,249 @@
+{"name": "frozen_protocol", "pass": true}
+{"name": "CPU-half-away-near-boundary", "pass": true}
+{"name": "GPU-stored-scale-half-boundaries-7", "pass": true, "actual_codes": [1, 0, -1, 0, 4, 3, -4, -3, 4, 3, -4, -3, 0, 0, 0], "expected_codes": [1, 0, -1, 0, 4, 3, -4, -3, 4, 3, -4, -3, 0, 0, 0]}
+{"name": "GPU-stored-scale-half-boundaries-127", "pass": true, "actual_codes": [1, 0, -1, 0, 4, 3, -4, -3, 4, 3, -4, -3, 0, 0, 0], "expected_codes": [1, 0, -1, 0, 4, 3, -4, -3, 4, 3, -4, -3, 0, 0, 0]}
+{"name": "CPU-fixture-finite-ties-legacy", "pass": true}
+{"name": "GPU-independent-exact-ties-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-ties-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-ties-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-ties-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-ties-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-prune_only", "pass": true}
+{"name": "GPU-independent-exact-ties-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-quant_only", "pass": true}
+{"name": "GPU-independent-exact-ties-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-ties-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-legacy", "pass": true}
+{"name": "GPU-independent-exact-negative-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-negative-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-negative-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-negative-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-negative-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-prune_only", "pass": true}
+{"name": "GPU-independent-exact-negative-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-quant_only", "pass": true}
+{"name": "GPU-independent-exact-negative-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-negative-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-legacy", "pass": true}
+{"name": "GPU-independent-exact-zero-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-zero-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-zero-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-zero-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-zero-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-prune_only", "pass": true}
+{"name": "GPU-independent-exact-zero-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-quant_only", "pass": true}
+{"name": "GPU-independent-exact-zero-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-zero-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-legacy", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-prune_only", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-quant_only", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-legacy", "pass": true}
+{"name": "GPU-independent-exact-underflow-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-stored_scale", "pass": true}
+{"name": "CPU-zero-scale-integer-zero-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-underflow-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-clip4_095", "pass": true}
+{"name": "CPU-zero-scale-integer-zero-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-underflow-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-clip4_090", "pass": true}
+{"name": "CPU-zero-scale-integer-zero-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-underflow-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-clip4_080", "pass": true}
+{"name": "CPU-zero-scale-integer-zero-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-underflow-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-prune_only", "pass": true}
+{"name": "GPU-independent-exact-underflow-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-quant_only", "pass": true}
+{"name": "GPU-independent-exact-underflow-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-underflow-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-legacy", "pass": true}
+{"name": "CPU-positive-subnormal-scale-legacy", "pass": true}
+{"name": "GPU-independent-exact-subnormal-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-stored_scale", "pass": true}
+{"name": "CPU-positive-subnormal-scale-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-subnormal-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-clip4_095", "pass": true}
+{"name": "CPU-positive-subnormal-scale-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-subnormal-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-clip4_090", "pass": true}
+{"name": "CPU-positive-subnormal-scale-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-subnormal-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-clip4_080", "pass": true}
+{"name": "CPU-positive-subnormal-scale-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-subnormal-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-prune_only", "pass": true}
+{"name": "GPU-independent-exact-subnormal-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-quant_only", "pass": true}
+{"name": "GPU-independent-exact-subnormal-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-subnormal-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-legacy", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-prune_only", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-quant_only", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-legacy", "pass": true}
+{"name": "GPU-independent-exact-large_finite-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-large_finite-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-large_finite-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-large_finite-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-large_finite-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-quant_only", "pass": true}
+{"name": "GPU-independent-exact-large_finite-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-large_finite-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-legacy", "pass": true}
+{"name": "GPU-65token-independent-exact-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-stored_scale", "pass": true}
+{"name": "GPU-65token-independent-exact-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-clip4_095", "pass": true}
+{"name": "GPU-65token-independent-exact-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-clip4_090", "pass": true}
+{"name": "GPU-65token-independent-exact-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-clip4_080", "pass": true}
+{"name": "GPU-65token-independent-exact-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-prune_only", "pass": true}
+{"name": "GPU-65token-independent-exact-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-quant_only", "pass": true}
+{"name": "GPU-65token-independent-exact-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-legacy_emulation", "pass": true}
+{"name": "GPU-65token-independent-exact-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "partition-(2, 17, 8, 19, 2)-legacy", "pass": true}
+{"name": "actual-bytes-(2, 17, 8, 19, 2)-legacy", "pass": true, "row_bytes": 52, "state_bytes": 15808, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(2, 17, 8, 19, 2)-legacy", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 17, 8, 19, 2)-stored_scale", "pass": true}
+{"name": "actual-bytes-(2, 17, 8, 19, 2)-stored_scale", "pass": true, "row_bytes": 52, "state_bytes": 15808, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(2, 17, 8, 19, 2)-stored_scale", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 17, 8, 19, 2)-clip4_095", "pass": true}
+{"name": "actual-bytes-(2, 17, 8, 19, 2)-clip4_095", "pass": true, "row_bytes": 52, "state_bytes": 15808, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(2, 17, 8, 19, 2)-clip4_095", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 17, 8, 19, 2)-clip4_090", "pass": true}
+{"name": "actual-bytes-(2, 17, 8, 19, 2)-clip4_090", "pass": true, "row_bytes": 52, "state_bytes": 15808, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(2, 17, 8, 19, 2)-clip4_090", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 17, 8, 19, 2)-clip4_080", "pass": true}
+{"name": "actual-bytes-(2, 17, 8, 19, 2)-clip4_080", "pass": true, "row_bytes": 52, "state_bytes": 15808, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(2, 17, 8, 19, 2)-clip4_080", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 17, 8, 19, 2)-prune_only", "pass": true}
+{"name": "actual-bytes-(2, 17, 8, 19, 2)-prune_only", "pass": true, "row_bytes": 512, "state_bytes": 155648, "is_3p25_candidate": false}
+{"name": "random-one-token-oracle-(2, 17, 8, 19, 2)-prune_only", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 17, 8, 19, 2)-quant_only", "pass": true}
+{"name": "actual-bytes-(2, 17, 8, 19, 2)-quant_only", "pass": true, "row_bytes": 512, "state_bytes": 155648, "is_3p25_candidate": false}
+{"name": "random-one-token-oracle-(2, 17, 8, 19, 2)-quant_only", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 17, 8, 19, 2)-legacy_emulation", "pass": true}
+{"name": "actual-bytes-(2, 17, 8, 19, 2)-legacy_emulation", "pass": true, "row_bytes": 512, "state_bytes": 155648, "is_3p25_candidate": false}
+{"name": "random-one-token-oracle-(2, 17, 8, 19, 2)-legacy_emulation", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "dense-legacy-emulation-(2, 17, 8, 19, 2)", "pass": true, "all_token_carries_exact": true, "finite_scope": true, "bound_failures": 0, "max_error_to_bound_ratio": 0.8881203148736804, "max_bound": 3.216753232748718e-05, "output_error": {"exact": false, "different_elements": 3, "max_absolute_error": 3.814697265625e-06, "relative_l2": 5.491804131452227e-06}, "scalar_ptx_equivalence": {"exact": true, "artifacts": {"packed": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_2_17_8_19_2/packed.ptx", "sha256": "41b51ece90d884bc7448dc6ce62fa64c05f3b25293bbb8395402a85179041245", "instructions": 47, "scalar_sha256": "3c69ef6ef2017c7dd2e89ba2ad8cb00a21aab4da664952295eac1663ccc28e92"}, "dense": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_2_17_8_19_2/dense.ptx", "sha256": "81638458b6af491006a483f25240065db232607d342daf4da389807953939411", "instructions": 47, "scalar_sha256": "3c69ef6ef2017c7dd2e89ba2ad8cb00a21aab4da664952295eac1663ccc28e92"}, "scalar_probe": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_2_17_8_19_2/scalar_probe.ptx", "sha256": "374fd77f211340caf543d05eb275f9b0f93f05641e7c4f97a8641cf9c62364e2", "instructions": 47, "scalar_sha256": "3c69ef6ef2017c7dd2e89ba2ad8cb00a21aab4da664952295eac1663ccc28e92"}}}, "evidence": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_2_17_8_19_2/evidence.pt", "sha256": "38c023672a6610accf99ae9cb367d8e86c8068eb137f1770b8e597331526ffcd", "bytes": 8349328}, "bound_formula": "2*(gamma21*T8+gamma69*T4+gamma69*Td+gamma3*abs(xD)+4096*2^-126*(1+abs(x))*(1+sum(abs(C))))+r16(a)+r16(b)", "float64_upward_guard": "multiply by1+gamma1024(u64), then nextafter(+inf)"}
+{"name": "delegated-legacy-(2, 17, 8, 19, 2)", "pass": true}
+{"name": "INT8-unchanged-by-INT4-clipping-(2, 17, 8, 19, 2)", "pass": true}
+{"name": "partition-(1, 9, 6, 3, 3)-legacy", "pass": true}
+{"name": "actual-bytes-(1, 9, 6, 3, 3)-legacy", "pass": true, "row_bytes": 52, "state_bytes": 936, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(1, 9, 6, 3, 3)-legacy", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(1, 9, 6, 3, 3)-stored_scale", "pass": true}
+{"name": "actual-bytes-(1, 9, 6, 3, 3)-stored_scale", "pass": true, "row_bytes": 52, "state_bytes": 936, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(1, 9, 6, 3, 3)-stored_scale", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(1, 9, 6, 3, 3)-clip4_095", "pass": true}
+{"name": "actual-bytes-(1, 9, 6, 3, 3)-clip4_095", "pass": true, "row_bytes": 52, "state_bytes": 936, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(1, 9, 6, 3, 3)-clip4_095", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(1, 9, 6, 3, 3)-clip4_090", "pass": true}
+{"name": "actual-bytes-(1, 9, 6, 3, 3)-clip4_090", "pass": true, "row_bytes": 52, "state_bytes": 936, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(1, 9, 6, 3, 3)-clip4_090", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(1, 9, 6, 3, 3)-clip4_080", "pass": true}
+{"name": "actual-bytes-(1, 9, 6, 3, 3)-clip4_080", "pass": true, "row_bytes": 52, "state_bytes": 936, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(1, 9, 6, 3, 3)-clip4_080", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(1, 9, 6, 3, 3)-prune_only", "pass": true}
+{"name": "actual-bytes-(1, 9, 6, 3, 3)-prune_only", "pass": true, "row_bytes": 512, "state_bytes": 9216, "is_3p25_candidate": false}
+{"name": "random-one-token-oracle-(1, 9, 6, 3, 3)-prune_only", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(1, 9, 6, 3, 3)-quant_only", "pass": true}
+{"name": "actual-bytes-(1, 9, 6, 3, 3)-quant_only", "pass": true, "row_bytes": 512, "state_bytes": 9216, "is_3p25_candidate": false}
+{"name": "random-one-token-oracle-(1, 9, 6, 3, 3)-quant_only", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(1, 9, 6, 3, 3)-legacy_emulation", "pass": true}
+{"name": "actual-bytes-(1, 9, 6, 3, 3)-legacy_emulation", "pass": true, "row_bytes": 512, "state_bytes": 9216, "is_3p25_candidate": false}
+{"name": "random-one-token-oracle-(1, 9, 6, 3, 3)-legacy_emulation", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "dense-legacy-emulation-(1, 9, 6, 3, 3)", "pass": true, "all_token_carries_exact": true, "finite_scope": true, "bound_failures": 0, "max_error_to_bound_ratio": 0.0, "max_bound": 6.209304950799291e-05, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "scalar_ptx_equivalence": {"exact": true, "artifacts": {"packed": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_1_9_6_3_3/packed.ptx", "sha256": "30fb69d3e9e47d0692b6e9cbbee32af3b792d9d0e15ce8e42a77334c1e50aadf", "instructions": 47, "scalar_sha256": "3c69ef6ef2017c7dd2e89ba2ad8cb00a21aab4da664952295eac1663ccc28e92"}, "dense": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_1_9_6_3_3/dense.ptx", "sha256": "b7f3c6d97929727ce151887b3f4baa8995a83d545ab667496a47449d909e726e", "instructions": 47, "scalar_sha256": "3c69ef6ef2017c7dd2e89ba2ad8cb00a21aab4da664952295eac1663ccc28e92"}, "scalar_probe": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_1_9_6_3_3/scalar_probe.ptx", "sha256": "86dd59b633d14b2e09c4a331579b3629cfbe5447a4a82eecf74f48052522b8e3", "instructions": 47, "scalar_sha256": "3c69ef6ef2017c7dd2e89ba2ad8cb00a21aab4da664952295eac1663ccc28e92"}}}, "evidence": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_1_9_6_3_3/evidence.pt", "sha256": "5846a55074a11d441ed81d76e4cf1b821fcfeb783dd035014802c71c9cbb35a9", "bytes": 293279}, "bound_formula": "2*(gamma21*T8+gamma69*T4+gamma69*Td+gamma3*abs(xD)+4096*2^-126*(1+abs(x))*(1+sum(abs(C))))+r16(a)+r16(b)", "float64_upward_guard": "multiply by1+gamma1024(u64), then nextafter(+inf)"}
+{"name": "delegated-legacy-(1, 9, 6, 3, 3)", "pass": true}
+{"name": "INT8-unchanged-by-INT4-clipping-(1, 9, 6, 3, 3)", "pass": true}
+{"name": "partition-(2, 5, 4, 1, 1)-legacy", "pass": true}
+{"name": "actual-bytes-(2, 5, 4, 1, 1)-legacy", "pass": true, "row_bytes": 52, "state_bytes": 416, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(2, 5, 4, 1, 1)-legacy", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 5, 4, 1, 1)-stored_scale", "pass": true}
+{"name": "actual-bytes-(2, 5, 4, 1, 1)-stored_scale", "pass": true, "row_bytes": 52, "state_bytes": 416, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(2, 5, 4, 1, 1)-stored_scale", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 5, 4, 1, 1)-clip4_095", "pass": true}
+{"name": "actual-bytes-(2, 5, 4, 1, 1)-clip4_095", "pass": true, "row_bytes": 52, "state_bytes": 416, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(2, 5, 4, 1, 1)-clip4_095", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 5, 4, 1, 1)-clip4_090", "pass": true}
+{"name": "actual-bytes-(2, 5, 4, 1, 1)-clip4_090", "pass": true, "row_bytes": 52, "state_bytes": 416, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(2, 5, 4, 1, 1)-clip4_090", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 5, 4, 1, 1)-clip4_080", "pass": true}
+{"name": "actual-bytes-(2, 5, 4, 1, 1)-clip4_080", "pass": true, "row_bytes": 52, "state_bytes": 416, "is_3p25_candidate": true}
+{"name": "random-one-token-oracle-(2, 5, 4, 1, 1)-clip4_080", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 5, 4, 1, 1)-prune_only", "pass": true}
+{"name": "actual-bytes-(2, 5, 4, 1, 1)-prune_only", "pass": true, "row_bytes": 512, "state_bytes": 4096, "is_3p25_candidate": false}
+{"name": "random-one-token-oracle-(2, 5, 4, 1, 1)-prune_only", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 5, 4, 1, 1)-quant_only", "pass": true}
+{"name": "actual-bytes-(2, 5, 4, 1, 1)-quant_only", "pass": true, "row_bytes": 512, "state_bytes": 4096, "is_3p25_candidate": false}
+{"name": "random-one-token-oracle-(2, 5, 4, 1, 1)-quant_only", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "partition-(2, 5, 4, 1, 1)-legacy_emulation", "pass": true}
+{"name": "actual-bytes-(2, 5, 4, 1, 1)-legacy_emulation", "pass": true, "row_bytes": 512, "state_bytes": 4096, "is_3p25_candidate": false}
+{"name": "random-one-token-oracle-(2, 5, 4, 1, 1)-legacy_emulation", "pass": true, "exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}
+{"name": "dense-legacy-emulation-(2, 5, 4, 1, 1)", "pass": true, "all_token_carries_exact": true, "finite_scope": true, "bound_failures": 0, "max_error_to_bound_ratio": 0.0, "max_bound": 1.637292845795799e-05, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "scalar_ptx_equivalence": {"exact": true, "artifacts": {"packed": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_2_5_4_1_1/packed.ptx", "sha256": "8e0510ad5dff8861041d99aacb1a62575e14bdc3e8c39997722ed7819e44225b", "instructions": 47, "scalar_sha256": "3c69ef6ef2017c7dd2e89ba2ad8cb00a21aab4da664952295eac1663ccc28e92"}, "dense": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_2_5_4_1_1/dense.ptx", "sha256": "9a14cad7404308f43b36fc8c4984665d4efaf4f46195ebf275835e53727c6c53", "instructions": 47, "scalar_sha256": "3c69ef6ef2017c7dd2e89ba2ad8cb00a21aab4da664952295eac1663ccc28e92"}, "scalar_probe": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_2_5_4_1_1/scalar_probe.ptx", "sha256": "4c7addb179b3cf30eec3d921291aff4e60e80200a2b41ed0290227deb768e817", "instructions": 47, "scalar_sha256": "3c69ef6ef2017c7dd2e89ba2ad8cb00a21aab4da664952295eac1663ccc28e92"}}}, "evidence": {"file": "reports/state_ppl_v6_codec_checks_attempt5_details/geometry_2_5_4_1_1/evidence.pt", "sha256": "2db7b8e31a10bf55b33e83db4d025be3b2c2f9acb93375aa8815b8fa0cea0a1d", "bytes": 82831}, "bound_formula": "2*(gamma21*T8+gamma69*T4+gamma69*Td+gamma3*abs(xD)+4096*2^-126*(1+abs(x))*(1+sum(abs(C))))+r16(a)+r16(b)", "float64_upward_guard": "multiply by1+gamma1024(u64), then nextafter(+inf)"}
+{"name": "delegated-legacy-(2, 5, 4, 1, 1)", "pass": true}
+{"name": "INT8-unchanged-by-INT4-clipping-(2, 5, 4, 1, 1)", "pass": true}
+{"name": "production-budget-None", "pass": true, "actual_state_bytes": 23855104, "table_bytes": 57344, "total_bytes": 28499968, "is_3p25_candidate": true}
+{"name": "production-budget-prune_only", "pass": true, "actual_state_bytes": 234881024, "table_bytes": 57344, "total_bytes": 239525888, "is_3p25_candidate": false}
+{"name": "production-budget-quant_only", "pass": true, "actual_state_bytes": 234881024, "table_bytes": 57344, "total_bytes": 239525888, "is_3p25_candidate": false}
+{"name": "production-budget-legacy_emulation", "pass": true, "actual_state_bytes": 234881024, "table_bytes": 57344, "total_bytes": 239525888, "is_3p25_candidate": false}
+{"name": "reject-nonfinite-carry-or-scale-legacy", "pass": true}
+{"name": "reject-nonfinite-carry-or-scale-stored_scale", "pass": true}
+{"name": "reject-nonfinite-carry-or-scale-clip4_095", "pass": true}
+{"name": "reject-nonfinite-carry-or-scale-clip4_090", "pass": true}
+{"name": "reject-nonfinite-carry-or-scale-clip4_080", "pass": true}
+{"name": "reject-nonfinite-carry-or-scale-prune_only", "pass": true}
+{"name": "reject-nonfinite-carry-or-scale-quant_only", "pass": true}
+{"name": "reject-nonfinite-carry-or-scale-legacy_emulation", "pass": true}
+{"name": "reject-unfrozen-legacy-clipping-policy", "pass": true}

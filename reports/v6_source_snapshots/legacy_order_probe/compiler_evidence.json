@@ -1,0 +1,18 @@
+{
+  "source_sha256": "76d76577559c8bb8d86907934f2d65282da27e1d1e8e378392eba5809ae34c54",
+  "scope": "Identical prior carry and token inputs; legacy packed versus diagnostic FP32 dense storage. No model quality measured.",
+  "observations": {
+    "packed_reduction_layout": "sizePerThread=[1,1],threadsPerWarp=[16,2],warpsPerCTA=[1,4],order=[0,1]",
+    "dense_live16_reduction_layout": "sizePerThread=[1,2],threadsPerWarp=[4,8],warpsPerCTA=[4,1],order=[1,0]",
+    "dense_live64_and_dead64_reduction_layout": "sizePerThread=[1,4],threadsPerWarp=[2,16],warpsPerCTA=[4,1],order=[1,0]",
+    "ptx_reduction": "Old uses shfl16 plus shared-memory cross-warp reduction; dense uses within-warp shfl8/4/2/1. Multiply/add fusion differs with reduction tree.",
+    "inference": "The observed readout-only drift is consistent with the different reduction/fusion order. Exact FP32 elementwise recurrence was not instrumented independently; all 17 persisted decoded carries are bitwise equal."
+  },
+  "artifacts": {
+    "old.ttgir": "4509365b466c0d7c77eac3b6c102a0683d6a3a698142e3ee86c04e44329e0a5a",
+    "dense.ttgir": "d21dd1ced9b6a0b62c30e5a9de640f599b48d8631c776ab7e8c7b93255e816bd",
+    "old.ptx": "41b51ece90d884bc7448dc6ce62fa64c05f3b25293bbb8395402a85179041245",
+    "dense.ptx": "81638458b6af491006a483f25240065db232607d342daf4da389807953939411",
+    "receipt.json": "ee61628dca15b2082076f172b4d16e31f63ce89b6ce67700f5f17450c2c3714c"
+  }
+}

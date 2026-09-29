@@ -1,5 +1,17 @@
 # Mamb2_8B_Recall + StateQuant
 
+## In progress v6: PPL-first unadapted optimization
+
+The latest user priority is **optimize PPL first; use Resurface for MK after
+freezing the quantizer**. The new experiment removes the v5 MK selection guard
+and compares 20 fixed, same-budget table/scale candidates on 32 full-length
+TRAIN windows. Separate pruning/rounding ablations are diagnostic only and
+are not deployable 3.25-bit candidates. No v6 model measurements are complete.
+The v5 result below remains the measured reference.
+
+See the [frozen v6 protocol](docs/STATE_PPL_V6_PROTOCOL.md),
+[status and evidence](docs/STATE_PPL_V6_RESULTS.md), and [checklist](PLAN.md).
+
 ## v5: optimize unadapted SQ3.25, then train fresh Resurface
 
 The requested order is complete: **original source with no adapter → optimize

@@ -1,0 +1,153 @@
+{"name": "frozen_protocol", "pass": true}
+{"name": "CPU-half-away-near-boundary", "pass": true}
+{"name": "GPU-stored-scale-half-boundaries-7", "pass": true, "actual_codes": [1, 0, -1, 0, 4, 3, -4, -3, 4, 3, -4, -3, 0, 0, 0], "expected_codes": [1, 0, -1, 0, 4, 3, -4, -3, 4, 3, -4, -3, 0, 0, 0]}
+{"name": "GPU-stored-scale-half-boundaries-127", "pass": true, "actual_codes": [1, 0, -1, 0, 4, 3, -4, -3, 4, 3, -4, -3, 0, 0, 0], "expected_codes": [1, 0, -1, 0, 4, 3, -4, -3, 4, 3, -4, -3, 0, 0, 0]}
+{"name": "CPU-fixture-finite-ties-legacy", "pass": true}
+{"name": "GPU-independent-exact-ties-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-ties-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-ties-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-ties-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-ties-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-prune_only", "pass": true}
+{"name": "GPU-independent-exact-ties-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-quant_only", "pass": true}
+{"name": "GPU-independent-exact-ties-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-ties-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-ties-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-legacy", "pass": true}
+{"name": "GPU-independent-exact-negative-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-negative-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-negative-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-negative-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-negative-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-prune_only", "pass": true}
+{"name": "GPU-independent-exact-negative-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-quant_only", "pass": true}
+{"name": "GPU-independent-exact-negative-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-negative-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-negative-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-legacy", "pass": true}
+{"name": "GPU-independent-exact-zero-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-zero-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-zero-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-zero-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-zero-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-prune_only", "pass": true}
+{"name": "GPU-independent-exact-zero-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-quant_only", "pass": true}
+{"name": "GPU-independent-exact-zero-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-zero-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-zero-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-legacy", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-prune_only", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-quant_only", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-rounded_scales-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-rounded_scales-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-legacy", "pass": true}
+{"name": "GPU-independent-exact-underflow-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-stored_scale", "pass": true}
+{"name": "CPU-zero-scale-integer-zero-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-underflow-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-clip4_095", "pass": true}
+{"name": "CPU-zero-scale-integer-zero-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-underflow-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-clip4_090", "pass": true}
+{"name": "CPU-zero-scale-integer-zero-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-underflow-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-clip4_080", "pass": true}
+{"name": "CPU-zero-scale-integer-zero-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-underflow-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-prune_only", "pass": true}
+{"name": "GPU-independent-exact-underflow-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-quant_only", "pass": true}
+{"name": "GPU-independent-exact-underflow-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-underflow-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-underflow-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-legacy", "pass": true}
+{"name": "CPU-positive-subnormal-scale-legacy", "pass": true}
+{"name": "GPU-independent-exact-subnormal-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-stored_scale", "pass": true}
+{"name": "CPU-positive-subnormal-scale-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-subnormal-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-clip4_095", "pass": true}
+{"name": "CPU-positive-subnormal-scale-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-subnormal-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-clip4_090", "pass": true}
+{"name": "CPU-positive-subnormal-scale-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-subnormal-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-clip4_080", "pass": true}
+{"name": "CPU-positive-subnormal-scale-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-subnormal-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-prune_only", "pass": true}
+{"name": "GPU-independent-exact-subnormal-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-quant_only", "pass": true}
+{"name": "GPU-independent-exact-subnormal-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-subnormal-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-subnormal-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-legacy", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-prune_only", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-prune_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-quant_only", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-mixed_scales-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-mixed_scales-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-legacy", "pass": true}
+{"name": "GPU-independent-exact-large_finite-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-stored_scale", "pass": true}
+{"name": "GPU-independent-exact-large_finite-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-clip4_095", "pass": true}
+{"name": "GPU-independent-exact-large_finite-clip4_095", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-clip4_090", "pass": true}
+{"name": "GPU-independent-exact-large_finite-clip4_090", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-clip4_080", "pass": true}
+{"name": "GPU-independent-exact-large_finite-clip4_080", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-quant_only", "pass": true}
+{"name": "GPU-independent-exact-large_finite-quant_only", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-fixture-finite-large_finite-legacy_emulation", "pass": true}
+{"name": "GPU-independent-exact-large_finite-legacy_emulation", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-legacy", "pass": true}
+{"name": "GPU-65token-independent-exact-legacy", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-stored_scale", "pass": true}
+{"name": "GPU-65token-independent-exact-stored_scale", "pass": true, "output_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}, "carry_error": {"exact": true, "different_elements": 0, "max_absolute_error": 0.0, "relative_l2": 0.0}}
+{"name": "CPU-multistep-finite-clip4_095", "pass": true}
+{"name": "GPU-65token-independent-exact-clip4_095", "pass": false, "output_error": {"exact": false, "different_elements": 7, "max_absolute_error": 6.103515625e-05, "relative_l2": 5.0177244702354074e-05}, "carry_error": {"exact": false, "different_elements": 1160, "max_absolute_error": 5.340576171875e-05, "relative_l2": 1.5542308346994105e-06}}
+Traceback (most recent call last):
+  File "/home/horde/mamb2_8B_Recall_StateQuant/scripts/check_state_ppl_codec_v6.py", line 340, in <module>
+    if __name__ == '__main__': main()
+  File "/home/horde/mamb2_8B_Recall_StateQuant/scripts/check_state_ppl_codec_v6.py", line 272, in main
+    check('GPU-65token-independent-exact-'+policy[0], torch.equal(actual['output'], expected['output'])
+  File "/home/horde/mamb2_8B_Recall_StateQuant/scripts/check_state_ppl_codec_v6.py", line 214, in check
+    if not condition: raise AssertionError(name)
+AssertionError: GPU-65token-independent-exact-clip4_095

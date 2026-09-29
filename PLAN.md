@@ -109,3 +109,20 @@ and MK rises 239 → 244, but the paired 95% interval [−4.17, +6.77] pp fails 
 noninferiority lower-bound requirement. Original S16 PPL is not restored
 (+10.34%). Both complete baseline replays and independent full audit pass.
 All four recovery checkpoints, exported adapter and raw reports are retained.
+
+## PPL first v6: quantizer selection without an MK guard
+
+- [x] Freeze a PPL-only 20-candidate search, diagnostics and confirmation rule.
+- [x] Implement same-format stored-scale rounding / clipping and diagnostic ablations.
+- [x] Independently check kernel arithmetic, segmentation, byte accounting and legacy replay.
+- [ ] Run 32 full-length TRAIN windows per candidate; select solely by PPL.
+- [ ] Independently audit all raw NLLs, candidate eligibility and baseline restoration.
+- [ ] Confirm the one frozen candidate on all 130 validation windows, including exact baseline replays.
+- [ ] If PPL improves at least 1%, freeze the codec and run fresh Resurface training/export validation.
+- [ ] Measure subsequent PPL/MK and preserve complete audits, failures and tradeoffs.
+- [ ] Document and push evidence to the private repository.
+
+Fixed deployment cache: 28,499,968 bytes. Diagnostics explicitly exceed this
+budget and cannot win selection. If no confirmed meaningful PPL improvement is
+found, stop this experiment and retain v5 without repeating its training.
+See docs/STATE_PPL_V6_PROTOCOL.md. No current v6 quality result is established.

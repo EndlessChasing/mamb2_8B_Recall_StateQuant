@@ -1,0 +1,6 @@
+{
+  "packed_dense_probe_arithmetic_equal": true,
+  "instructions": 47,
+  "canonical_sha256": "3c69ef6ef2017c7dd2e89ba2ad8cb00a21aab4da664952295eac1663ccc28e92",
+  "scope": "CPU-only re-extraction of unchanged attempt4 PTX; nested source-column correction, no GPU execution"
+}

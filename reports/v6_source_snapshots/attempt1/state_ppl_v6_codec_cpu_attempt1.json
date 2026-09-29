@@ -1,0 +1,353 @@
+{
+  "format": "MAMBA2_STATE_PPL_CODEC_CPU_PREPARATION_V1",
+  "complete": true,
+  "passed": true,
+  "mode": "cpu_preparation",
+  "protocol_sha256": "86d4e8dc85d79c2c867ce15a846c5938893c86d27e67ad174472975e654e9bff",
+  "started_unix": 1790662647.2122316,
+  "checks": [
+    {
+      "name": "frozen_protocol",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-ties-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-ties-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-ties-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-ties-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-ties-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-ties-prune_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-ties-quant_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-ties-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-negative-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-negative-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-negative-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-negative-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-negative-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-negative-prune_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-negative-quant_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-negative-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-zero-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-zero-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-zero-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-zero-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-zero-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-zero-prune_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-zero-quant_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-zero-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-prune_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-quant_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-zero-scale-integer-zero-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-zero-scale-integer-zero-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-zero-scale-integer-zero-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-zero-scale-integer-zero-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-prune_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-quant_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-positive-subnormal-scale-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-positive-subnormal-scale-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-positive-subnormal-scale-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-positive-subnormal-scale-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-positive-subnormal-scale-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-prune_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-quant_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-prune_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-quant_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-quant_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "CPU-multistep-finite-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-multistep-finite-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-multistep-finite-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-multistep-finite-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-multistep-finite-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-multistep-finite-prune_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-multistep-finite-quant_only",
+      "pass": true
+    },
+    {
+      "name": "CPU-multistep-finite-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "CUDA-remained-uninitialized",
+      "pass": true
+    }
+  ],
+  "code_sha256": {
+    "scripts/state_ppl_codec_v6.py": "1740ae4ba1b0dfef897a8681d095db607ca9c9db2f437f318eabd47b9b778c82",
+    "scripts/check_state_ppl_codec_v6.py": "424a042eff41523025a610e639c8507e2fecf53fdb6d8db903952eb94301dbd1",
+    "mamba2_recall/state_codec.py": "56bd56d2fcb96382a4c6139824245f7608e903bbf1e3d07c9ea6d61ac8ce371a",
+    "mamba2_recall/state_quant.py": "d57ccba302c81808456ef8ccd9bc36bcb22ee976b2e4cad5efe43f99e4e17efd"
+  },
+  "scope": "Independent controlled arithmetic/packing plus GPU kernel partition and legacy replay; no model PPL/MK measurements",
+  "criteria": {
+    "controlled": "exact every-token output/packed bytes/FP16 scales/decoded carry",
+    "random_partition": "exact full/segmented/tokenwise outputs and final cache",
+    "random_one_token_cpu_output_relative_l2_bound": 0.002,
+    "diagnostic_legacy_emulation": "exact every-token output and decoded carry against packed legacy"
+  },
+  "cuda_initialized": false,
+  "finished_unix": 1790662650.7444055
+}

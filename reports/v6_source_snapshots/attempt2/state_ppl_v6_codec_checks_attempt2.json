@@ -1,0 +1,1467 @@
+{
+  "format": "MAMBA2_STATE_PPL_CODEC_CHECK_V1",
+  "complete": false,
+  "passed": false,
+  "mode": "gpu",
+  "protocol_sha256": "86d4e8dc85d79c2c867ce15a846c5938893c86d27e67ad174472975e654e9bff",
+  "started_unix": 1790662919.7807682,
+  "checks": [
+    {
+      "name": "frozen_protocol",
+      "pass": true
+    },
+    {
+      "name": "CPU-half-away-near-boundary",
+      "pass": true
+    },
+    {
+      "name": "GPU-stored-scale-half-boundaries-7",
+      "pass": true,
+      "actual_codes": [
+        1,
+        0,
+        -1,
+        0,
+        4,
+        3,
+        -4,
+        -3,
+        4,
+        3,
+        -4,
+        -3,
+        0,
+        0,
+        0
+      ],
+      "expected_codes": [
+        1,
+        0,
+        -1,
+        0,
+        4,
+        3,
+        -4,
+        -3,
+        4,
+        3,
+        -4,
+        -3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "GPU-stored-scale-half-boundaries-127",
+      "pass": true,
+      "actual_codes": [
+        1,
+        0,
+        -1,
+        0,
+        4,
+        3,
+        -4,
+        -3,
+        4,
+        3,
+        -4,
+        -3,
+        0,
+        0,
+        0
+      ],
+      "expected_codes": [
+        1,
+        0,
+        -1,
+        0,
+        4,
+        3,
+        -4,
+        -3,
+        4,
+        3,
+        -4,
+        -3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CPU-fixture-finite-ties-legacy",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-ties-legacy",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-ties-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-ties-stored_scale",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-ties-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-ties-clip4_095",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-ties-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-ties-clip4_090",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-ties-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-ties-clip4_080",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-ties-prune_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-ties-prune_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-ties-quant_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-ties-quant_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-ties-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-ties-legacy_emulation",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-negative-legacy",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-negative-legacy",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-negative-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-negative-stored_scale",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-negative-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-negative-clip4_095",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-negative-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-negative-clip4_090",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-negative-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-negative-clip4_080",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-negative-prune_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-negative-prune_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-negative-quant_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-negative-quant_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-negative-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-negative-legacy_emulation",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-zero-legacy",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-zero-legacy",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-zero-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-zero-stored_scale",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-zero-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-zero-clip4_095",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-zero-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-zero-clip4_090",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-zero-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-zero-clip4_080",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-zero-prune_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-zero-prune_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-zero-quant_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-zero-quant_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-zero-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-zero-legacy_emulation",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-legacy",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-rounded_scales-legacy",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-rounded_scales-stored_scale",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-rounded_scales-clip4_095",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-rounded_scales-clip4_090",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-rounded_scales-clip4_080",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-prune_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-rounded_scales-prune_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-quant_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-rounded_scales-quant_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-rounded_scales-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-rounded_scales-legacy_emulation",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-legacy",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-underflow-legacy",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-zero-scale-integer-zero-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-underflow-stored_scale",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-zero-scale-integer-zero-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-underflow-clip4_095",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-zero-scale-integer-zero-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-underflow-clip4_090",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-zero-scale-integer-zero-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-underflow-clip4_080",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-prune_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-underflow-prune_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-quant_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-underflow-quant_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-underflow-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-underflow-legacy_emulation",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-legacy",
+      "pass": true
+    },
+    {
+      "name": "CPU-positive-subnormal-scale-legacy",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-subnormal-legacy",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "CPU-positive-subnormal-scale-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-subnormal-stored_scale",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "CPU-positive-subnormal-scale-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-subnormal-clip4_095",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "CPU-positive-subnormal-scale-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-subnormal-clip4_090",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "CPU-positive-subnormal-scale-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-subnormal-clip4_080",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-prune_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-subnormal-prune_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-quant_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-subnormal-quant_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-subnormal-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-subnormal-legacy_emulation",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-legacy",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-mixed_scales-legacy",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-mixed_scales-stored_scale",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-mixed_scales-clip4_095",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-mixed_scales-clip4_090",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-mixed_scales-clip4_080",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-prune_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-mixed_scales-prune_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-quant_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-mixed_scales-quant_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-mixed_scales-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-mixed_scales-legacy_emulation",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-legacy",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-large_finite-legacy",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-large_finite-stored_scale",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-large_finite-clip4_095",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-clip4_090",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-large_finite-clip4_090",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-clip4_080",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-large_finite-clip4_080",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-quant_only",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-large_finite-quant_only",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-fixture-finite-large_finite-legacy_emulation",
+      "pass": true
+    },
+    {
+      "name": "GPU-independent-exact-large_finite-legacy_emulation",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-multistep-finite-legacy",
+      "pass": true
+    },
+    {
+      "name": "GPU-65token-independent-exact-legacy",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-multistep-finite-stored_scale",
+      "pass": true
+    },
+    {
+      "name": "GPU-65token-independent-exact-stored_scale",
+      "pass": true,
+      "output_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      },
+      "carry_error": {
+        "exact": true,
+        "different_elements": 0,
+        "max_absolute_error": 0.0,
+        "relative_l2": 0.0
+      }
+    },
+    {
+      "name": "CPU-multistep-finite-clip4_095",
+      "pass": true
+    },
+    {
+      "name": "GPU-65token-independent-exact-clip4_095",
+      "pass": false,
+      "output_error": {
+        "exact": false,
+        "different_elements": 7,
+        "max_absolute_error": 6.103515625e-05,
+        "relative_l2": 5.0177244702354074e-05
+      },
+      "carry_error": {
+        "exact": false,
+        "different_elements": 1160,
+        "max_absolute_error": 5.340576171875e-05,
+        "relative_l2": 1.5542308346994105e-06
+      }
+    }
+  ],
+  "code_sha256": {
+    "scripts/state_ppl_codec_v6.py": "0efe55d92952adbe1e54de5b00b1e0b2a39508a39c62f8fac38fa1b9ded9abb6",
+    "scripts/check_state_ppl_codec_v6.py": "e19eca72363dd9488db25b1d7a2e0b35edfbd3379a5ce39ee8f547ca38267739",
+    "mamba2_recall/state_codec.py": "56bd56d2fcb96382a4c6139824245f7608e903bbf1e3d07c9ea6d61ac8ce371a",
+    "mamba2_recall/state_quant.py": "d57ccba302c81808456ef8ccd9bc36bcb22ee976b2e4cad5efe43f99e4e17efd"
+  },
+  "scope": "Independent controlled arithmetic/packing plus GPU kernel partition and legacy replay; no model PPL/MK measurements",
+  "criteria": {
+    "controlled": "exact every-token output/packed bytes/FP16 scales/decoded carry",
+    "random_partition": "exact full/segmented/tokenwise outputs and final cache",
+    "random_one_token_cpu_output_relative_l2_bound": 0.002,
+    "stored_scale_division": "Correctly rounded FP32 quotient before half-away rounding; zero-scale integer0",
+    "diagnostic_legacy_emulation": "exact every-token output and decoded carry against packed legacy"
+  },
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "error": "AssertionError('GPU-65token-independent-exact-clip4_095')",
+  "finished_unix": 1790662925.3895972
+}
