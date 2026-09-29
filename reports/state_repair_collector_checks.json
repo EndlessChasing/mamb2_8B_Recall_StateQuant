@@ -1,0 +1,53 @@
+{
+  "format": "MAMBA2_STATE_REPAIR_COLLECTOR_CHECKS_V1",
+  "complete": true,
+  "passed": true,
+  "code_sha256": {
+    "scripts/check_state_repair_calibration.py": "0b7ac2f217e6e12faf82a357d9c8a0018925104b5069428b2423cc6712bc0e30",
+    "mamba2_recall/state_repair_calibration.py": "c1ae810a452a16a2766cd68438303df16cd10c617e68e226429541dd33ebc86d",
+    "mamba2_recall/state_codec.py": "56bd56d2fcb96382a4c6139824245f7608e903bbf1e3d07c9ea6d61ac8ce371a"
+  },
+  "equalizer_identity_and_clamp_passed": true,
+  "cases": [
+    {
+      "batch": 1,
+      "heads": 4,
+      "P": 5,
+      "groups": 2,
+      "tokens": 1,
+      "output_exact": true,
+      "carry_exact": true,
+      "abs_stats_exact": true,
+      "segmented_exact": true,
+      "score_oracle_close": true,
+      "score_max_absolute_error": 5.948007216968754e-10
+    },
+    {
+      "batch": 2,
+      "heads": 8,
+      "P": 29,
+      "groups": 2,
+      "tokens": 33,
+      "output_exact": true,
+      "carry_exact": true,
+      "abs_stats_exact": true,
+      "segmented_exact": true,
+      "score_oracle_close": true,
+      "score_max_absolute_error": 1.8388809960856456e-08
+    },
+    {
+      "batch": 1,
+      "heads": 128,
+      "P": 64,
+      "groups": 8,
+      "tokens": 64,
+      "output_exact": true,
+      "carry_exact": true,
+      "abs_stats_exact": true,
+      "segmented_exact": true,
+      "score_oracle_close": true,
+      "score_max_absolute_error": 5.519730073011431e-08
+    }
+  ],
+  "scope": "Synthetic exact S16 collector output/carry/abs-statistics and independent approximate FP32 readout-score oracle; no model-quality claim"
+}

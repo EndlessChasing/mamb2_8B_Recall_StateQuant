@@ -1,5 +1,15 @@
 # Mamb2_8B_Recall + StateQuant
 
+## In progress: same-budget state repair v4
+
+Three new candidates test readout-aware tier calibration, dense3-bit carry,
+and dense3 with power-of-two coordinate equalization. Each retains exactly
+**3.25 bits per state element including scales**, and **27.1797 MiB** total
+batch-one persistent cache. Original source weights and the v2 adapter remain
+fixed. TRAIN calibration and36 GPU codec checks passed; nine matched TRAIN
+screening arms are running before selecting one full-validation candidate.
+See the [frozen repair protocol](docs/STATE_REPAIR_PROTOCOL.md).
+
 ## v3: more training gives lower PPL without a recall improvement
 
 Exact continuation of the v2 FP32 masters, AdamW and GradScaler added

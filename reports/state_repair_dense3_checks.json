@@ -1,0 +1,214 @@
+{
+  "format": "MAMBA2_DENSE3_CODEC_CHECK_V1",
+  "complete": true,
+  "started_unix": 1790651624.8767066,
+  "checks": [
+    {
+      "name": "partition-bitwise-(2, 17, 8, 19, 2)-permutation",
+      "pass": true,
+      "tokens": 17
+    },
+    {
+      "name": "payload-52B-(2, 17, 8, 19, 2)-permutation",
+      "pass": true,
+      "payload_bytes": 15808
+    },
+    {
+      "name": "random-readout-oracle-(2, 17, 8, 19, 2)-permutation",
+      "pass": true,
+      "relative_l2": 0.0,
+      "bound": 0.002
+    },
+    {
+      "name": "partition-bitwise-(2, 17, 8, 19, 2)-equalizer",
+      "pass": true,
+      "tokens": 17
+    },
+    {
+      "name": "payload-52B-(2, 17, 8, 19, 2)-equalizer",
+      "pass": true,
+      "payload_bytes": 15808
+    },
+    {
+      "name": "random-readout-oracle-(2, 17, 8, 19, 2)-equalizer",
+      "pass": true,
+      "relative_l2": 0.0,
+      "bound": 0.002
+    },
+    {
+      "name": "partition-bitwise-(1, 9, 6, 3, 3)-permutation",
+      "pass": true,
+      "tokens": 9
+    },
+    {
+      "name": "payload-52B-(1, 9, 6, 3, 3)-permutation",
+      "pass": true,
+      "payload_bytes": 936
+    },
+    {
+      "name": "random-readout-oracle-(1, 9, 6, 3, 3)-permutation",
+      "pass": true,
+      "relative_l2": 0.0,
+      "bound": 0.002
+    },
+    {
+      "name": "partition-bitwise-(1, 9, 6, 3, 3)-equalizer",
+      "pass": true,
+      "tokens": 9
+    },
+    {
+      "name": "payload-52B-(1, 9, 6, 3, 3)-equalizer",
+      "pass": true,
+      "payload_bytes": 936
+    },
+    {
+      "name": "random-readout-oracle-(1, 9, 6, 3, 3)-equalizer",
+      "pass": true,
+      "relative_l2": 0.0,
+      "bound": 0.002
+    },
+    {
+      "name": "partition-bitwise-(2, 5, 4, 1, 1)-permutation",
+      "pass": true,
+      "tokens": 5
+    },
+    {
+      "name": "payload-52B-(2, 5, 4, 1, 1)-permutation",
+      "pass": true,
+      "payload_bytes": 416
+    },
+    {
+      "name": "random-readout-oracle-(2, 5, 4, 1, 1)-permutation",
+      "pass": true,
+      "relative_l2": 0.0,
+      "bound": 0.002
+    },
+    {
+      "name": "partition-bitwise-(2, 5, 4, 1, 1)-equalizer",
+      "pass": true,
+      "tokens": 5
+    },
+    {
+      "name": "payload-52B-(2, 5, 4, 1, 1)-equalizer",
+      "pass": true,
+      "payload_bytes": 416
+    },
+    {
+      "name": "random-readout-oracle-(2, 5, 4, 1, 1)-equalizer",
+      "pass": true,
+      "relative_l2": 0.0,
+      "bound": 0.002
+    },
+    {
+      "name": "exact-CPU-oracle-ties-permutation",
+      "pass": true,
+      "zero_scales": 0,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-ties-equalizer",
+      "pass": true,
+      "zero_scales": 0,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-negative-permutation",
+      "pass": true,
+      "zero_scales": 0,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-negative-equalizer",
+      "pass": true,
+      "zero_scales": 0,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-zero-permutation",
+      "pass": true,
+      "zero_scales": 272,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-zero-equalizer",
+      "pass": true,
+      "zero_scales": 272,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-scale_rounding-permutation",
+      "pass": true,
+      "zero_scales": 0,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-scale_rounding-equalizer",
+      "pass": true,
+      "zero_scales": 0,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-scale_underflow-permutation",
+      "pass": true,
+      "zero_scales": 272,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-scale_underflow-equalizer",
+      "pass": true,
+      "zero_scales": 272,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-large_finite-permutation",
+      "pass": true,
+      "zero_scales": 0,
+      "total_scales": 272
+    },
+    {
+      "name": "exact-CPU-oracle-large_finite-equalizer",
+      "pass": true,
+      "zero_scales": 0,
+      "total_scales": 272
+    },
+    {
+      "name": "equalizer-extremes-minus8-plus8",
+      "pass": true,
+      "exponent_min": -8,
+      "exponent_max": 8
+    },
+    {
+      "name": "reject-nonfinite-amplified-FP16-scale",
+      "pass": true,
+      "finite_input_tensors": true
+    },
+    {
+      "name": "zero-scale-underflow-is-representable",
+      "pass": true
+    },
+    {
+      "name": "reject-nonfinite-readout",
+      "pass": true
+    },
+    {
+      "name": "production-cache-budget",
+      "pass": true,
+      "row_bytes": 52,
+      "ssm_bytes": 23855104,
+      "table_bytes": 57344,
+      "total_bytes": 28499968,
+      "includes_convolution": true
+    },
+    {
+      "name": "reject-exponent-outside-frozen-range",
+      "pass": true
+    }
+  ],
+  "code_sha256": {
+    "mamba2_recall/state_codec_dense3.py": "b2643076540ec67f4b879ba9dc2c512fdbfdf3c3db7c957902002e1bc5df0a05",
+    "mamba2_recall/state_quant_dense3.py": "946bdb08d1557d364e8b1f4264412dffcd2481227daee4bfdba6a5238729f9fd",
+    "scripts/check_state_codec_dense3.py": "9f5da1b7549e5f0e6d8fffbf9a4e7e3db161701dd713ef36e3969e2ade830ac8"
+  },
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "finished_unix": 1790651637.6205468
+}

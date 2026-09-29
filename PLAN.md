@@ -62,3 +62,19 @@ Persistent cache remains **27.1797 MiB/sequence**. Both full parent replays and
 the independent CPU audit passed. RMSNorm autotuning drift was diagnosed and
 evaluation pinned to the 16-warp configuration that reproduces the archive.
 Keep v2 as the recall reference; see docs/RESURFACE_MORE_RESULTS.md.
+
+## Repair v4: improve the codec/calibration within 3.25 bits
+
+- [x] Freeze three candidates, TRAIN-only selection and a separate repair gate.
+- [x] Implement readout-aware calibration without changing original S16 forward.
+- [x] Collect 4096 TRAIN tokens; verify full-model128-token collector equality.
+- [x] Implement real dense3 packing and coordinate equalization at the same budget.
+- [x] Pass36 GPU codec/oracle/segmentation/numerical-boundary/storage checks.
+- [ ] Complete nine TRAIN screening arms and exact parent replay.
+- [ ] Independently audit screening and select one candidate by the frozen rule.
+- [ ] Complete the selected candidate's full PPL/MK and exact baseline replays, if advanced.
+- [ ] Audit the full outcome, document limitations and push private artifacts.
+
+No new adapter training in this experiment. Keep original source weights and
+the v2 adapter fixed; each candidate retains exactly52B per128-state row plus
+one57,344B table. See docs/STATE_REPAIR_PROTOCOL.md.
