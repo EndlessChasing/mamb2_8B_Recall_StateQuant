@@ -1,0 +1,136 @@
+{
+  "complete": true,
+  "scope": "First PPL window only; autotune reproducibility diagnostic, no candidate selection",
+  "rows": [
+    {
+      "norm_num_warps": "autotuned",
+      "arm": "source_s16",
+      "nll": 3292.7154846191406,
+      "archive_nll": 3292.7154846191406,
+      "exact_archive": true,
+      "hidden_sha256": "d788f0fb8bd81163f65db73b2178cc36511f7543d9f1f0c7f69728b0267db534",
+      "selected_configs": {
+        "(4096, False, False, True, False, 'torch.float16', 'torch.float16', 'torch.float16', 'torch.float32')": "num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None"
+      }
+    },
+    {
+      "norm_num_warps": "autotuned",
+      "arm": "resurface_sq3p25",
+      "nll": 3528.2185134887695,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": true,
+      "hidden_sha256": "add71db75c1058428cc3fc6c40b8f0792783bf890f22246ea41fbaaca2d79e95",
+      "selected_configs": {
+        "(4096, False, False, True, False, 'torch.float16', 'torch.float16', 'torch.float16', 'torch.float32')": "num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None"
+      }
+    },
+    {
+      "norm_num_warps": 1,
+      "arm": "source_s16",
+      "nll": 3292.2475662231445,
+      "archive_nll": 3292.7154846191406,
+      "exact_archive": false,
+      "hidden_sha256": "6eef6e0c1390fc8108659935a8795d184a53895af3e139b01a8a993fb534f88c",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 1,
+      "arm": "resurface_sq3p25",
+      "nll": 3531.7470703125,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": false,
+      "hidden_sha256": "9507da09820ce09ad6044936b76c7724c93f8cc016b3a9fc4ee3f0f93b8714af",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 2,
+      "arm": "source_s16",
+      "nll": 3292.1120643615723,
+      "archive_nll": 3292.7154846191406,
+      "exact_archive": false,
+      "hidden_sha256": "4292728a0f34193d33c355fb3448939389299b36416216b97c1961008e6b7eb9",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 2,
+      "arm": "resurface_sq3p25",
+      "nll": 3534.385322570801,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": false,
+      "hidden_sha256": "acd587e055c819e1ecec49f0d97d7bac02d1a3ce8da0fbc62868ed395ee727ef",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 4,
+      "arm": "source_s16",
+      "nll": 3292.5781593322754,
+      "archive_nll": 3292.7154846191406,
+      "exact_archive": false,
+      "hidden_sha256": "5a827591aee75ebd91b6037200fadcfcedc6d7395cb4f2b2d405840b97c51988",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 4,
+      "arm": "resurface_sq3p25",
+      "nll": 3527.319236755371,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": false,
+      "hidden_sha256": "e45f2caac80af12a127286240fc3b4034da6687bf36c91728b4f0c68f1b7ffd4",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 8,
+      "arm": "source_s16",
+      "nll": 3292.566764831543,
+      "archive_nll": 3292.7154846191406,
+      "exact_archive": false,
+      "hidden_sha256": "c08b796c962043336ec361a26608374c0253248861e744125fa9af7d55cf317c",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 8,
+      "arm": "resurface_sq3p25",
+      "nll": 3532.2641410827637,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": false,
+      "hidden_sha256": "603e23093cba752186575fad1756d4119f44c45f150030f9bb9158da9db91a2c",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 16,
+      "arm": "source_s16",
+      "nll": 3292.7154846191406,
+      "archive_nll": 3292.7154846191406,
+      "exact_archive": true,
+      "hidden_sha256": "d788f0fb8bd81163f65db73b2178cc36511f7543d9f1f0c7f69728b0267db534",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 16,
+      "arm": "resurface_sq3p25",
+      "nll": 3528.2185134887695,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": true,
+      "hidden_sha256": "add71db75c1058428cc3fc6c40b8f0792783bf890f22246ea41fbaaca2d79e95",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 32,
+      "arm": "source_s16",
+      "nll": 3292.979221343994,
+      "archive_nll": 3292.7154846191406,
+      "exact_archive": false,
+      "hidden_sha256": "f3c4983c972ad740f544c7d17171d78f5c6de9573c7415ef4e355c00336a13aa",
+      "selected_configs": {}
+    },
+    {
+      "norm_num_warps": 32,
+      "arm": "resurface_sq3p25",
+      "nll": 3539.6229820251465,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": false,
+      "hidden_sha256": "3c439a2051060b1dc4d38d7c4473c52e31203f5631ba8b198666fa27eaeb88ac",
+      "selected_configs": {}
+    }
+  ]
+}

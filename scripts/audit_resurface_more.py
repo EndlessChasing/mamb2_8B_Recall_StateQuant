@@ -301,6 +301,45 @@ def replay(before,after,scope):
         mk_cases_repeated=768,scope=scope)
 
 
+
+def audit_backend_policy(policy, check):
+    """Independently validate the recorded external-kernel execution policy."""
+    import inspect
+    import importlib.metadata
+    from mamba_ssm.ops.triton import layer_norm
+    from mamba_ssm.utils import determinism
+    from triton.runtime import autotuner
+    expected_configs=[dict(kwargs={},num_warps=w,num_stages=3,num_ctas=1,
+                           maxnreg=None,pre_hook_is_none=True) for w in (1,2,4,8,16,32)]
+    selected=expected_configs[4]
+    need(policy['format']=='MAMBA2_ARCHIVED_RMSNORM_REPLAY_POLICY_V1'
+         and policy['kernel']=='mamba_ssm.ops.triton.layer_norm._layer_norm_fwd_1pass_kernel'
+         and policy['original_configs']==expected_configs and policy['selected_config']==selected
+         and policy['singleton_config_bypasses_autotuning'] is True
+         and policy['applied_before_first_model_load'] is True
+         and policy['candidate_used_for_selection'] is False,
+         'RMSNorm replay backend policy differs')
+    need(check==dict(singleton_config_unchanged=True,selected_config=selected,best_config=selected),
+         'Actual selected singleton RMSNorm configuration differs')
+    hashes={module.__name__:sha(inspect.getfile(module)) for module in (layer_norm,determinism,autotuner)}
+    need(policy['external_source_sha256']==hashes,'Installed external RMSNorm/helper/autotuner source changed')
+    versions={name:importlib.metadata.version(name) for name in ('torch','mamba-ssm','triton')}
+    need(policy['package_versions']==versions,'Recorded backend package versions differ')
+    import torch
+    need(policy['cudnn_version']==torch.backends.cudnn.version(),'Recorded cuDNN version differs')
+    expected_flags=dict(tf32_matmul=False,tf32_cudnn=False,fp16_reduced_precision_reduction=True,
+        bf16_reduced_precision_reduction=True,cudnn_benchmark=False,cudnn_deterministic=False,
+        deterministic_algorithms=False,float32_matmul_precision='highest')
+    need(policy['precision_flags']==expected_flags,'Evaluation precision flags differ from replay configuration')
+    environment={key:os.environ.get(key) for key in ('MAMBA_DETERMINISTIC','TRITON_CACHE_AUTOTUNING',
+        'TRITON_AUTOTUNE_BLOCK_SIZE_M','TRITON_AUTOTUNE_BLOCK_SIZE_N',
+        'TRITON_AUTOTUNE_BLOCK_SIZE_K','TRITON_AUTOTUNE_BLOCK_SIZE_DSTATE')}
+    need(policy['determinism_environment']==environment,'Relevant backend environment changed since evaluation')
+    need(policy['clarification_sha256']==sha(ROOT/'docs/RESURFACE_MORE_BACKEND_REPLAY.md'),
+         'Backend execution clarification changed')
+    return dict(singleton_rmsnorm_warps=16,external_sources_verified=True,
+                policy_receipt_verified=True,clarification_sha256=policy['clarification_sha256'])
+
 def audit_evaluation(args,training,calibration,validation,dataset,tokenizer,data,np):
     windows=[(s,validation[s:min(s+2049,len(validation))].tolist()) for s in range(0,len(validation)-1,2048)]
     need(len(windows)==130 and sum(len(w)-1 for _,w in windows)==264764
@@ -318,7 +357,7 @@ def audit_evaluation(args,training,calibration,validation,dataset,tokenizer,data
         parent_adapter_sha256=PARENT_ADAPTER,training_report_sha256=sha(args.training_report),
         training_binding=training['binding'],candidate_adapter_sha256=training['adapter']['sha256'],
         archived_report_sha256=ARCHIVE,dataset=dataset)
-    outputs={};metrics={};hashes={}
+    outputs={};metrics={};hashes={};backend=None
     for arm in ARMS:
         path=args.eval_dir/f'full_{arm}.json';result=read(path)
         need(all(result.get(k)==v for k,v in common.items()) and result['arm']==arm and result['mode']=='sq3p25'
@@ -330,6 +369,10 @@ def audit_evaluation(args,training,calibration,validation,dataset,tokenizer,data
         check_cache(result['cache_allocation_after'],'sq3p25',0)
         need(result['cache_allocation_before']==result['cache_allocation_after'],
              'Actual pre/post-arm cache allocation differs')
+        audit_backend_policy(result['backend_policy'],result['backend_policy_check'])
+        if backend is None:
+            backend=result['backend_policy']
+        need(result['backend_policy']==backend,'Backend replay policy changed across arms')
         metrics[arm]=audit_arm(result,windows,cases,tokenizer,dataset)
         outputs[arm]=result;hashes[arm]=sha(path)
     parent_replay=replay(archived['resurface_sq3p25'],outputs[ARMS[0]],
@@ -339,6 +382,8 @@ def audit_evaluation(args,training,calibration,validation,dataset,tokenizer,data
     need(read(args.eval_dir/'full_parent_replay.json')==parent_replay
          and read(args.eval_dir/'full_restoration.json')==restoration,'Replay receipts differ')
     comparison=read(args.eval_dir/'full_comparison.json')
+    backend_proof=audit_backend_policy(comparison['backend_policy'],comparison['backend_policy_check'])
+    need(comparison['backend_policy']==backend,'Comparison backend policy differs from its arms')
     need(comparison['format']=='MAMBA2_MORE_RESURFACE_COMPARISON_V1' and comparison['complete'] is True
          and comparison['stage']=='full' and comparison['protocol_sha256']==PARENT_PROTOCOL
          and comparison['continuation_protocol_sha256']==PROTOCOL
@@ -375,7 +420,7 @@ def audit_evaluation(args,training,calibration,validation,dataset,tokenizer,data
     hashes.update(comparison=sha(args.eval_dir/'full_comparison.json'),
         restoration=sha(args.eval_dir/'full_restoration.json'),parent_replay=sha(args.eval_dir/'full_parent_replay.json'))
     return dict(arms=metrics,paired=pairs,quality_flags=flags,restoration=restoration,
-                parent_replay=parent_replay,report_sha256=hashes)
+                parent_replay=parent_replay,report_sha256=hashes,backend_policy=backend_proof)
 
 
 def main():

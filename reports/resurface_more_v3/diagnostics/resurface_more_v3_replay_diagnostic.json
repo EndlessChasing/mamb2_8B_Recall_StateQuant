@@ -1,0 +1,76 @@
+{
+  "complete": true,
+  "scope": "First PPL window only; diagnostic, not quality selection",
+  "environment": {
+    "python": "3.10.12",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "mamba-ssm": "2.3.2.post1",
+      "numpy": "1.26.4",
+      "triton": "3.6.0",
+      "datasets": "4.8.5",
+      "sentencepiece": "0.2.1"
+    },
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "tf32_matmul": false
+  },
+  "rows": [
+    {
+      "label": "parent_cold_no_preflight",
+      "mode": "sq3p25",
+      "nll": 3532.2641410827637,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": false,
+      "hidden_sha256": "603e23093cba752186575fad1756d4119f44c45f150030f9bb9158da9db91a2c"
+    },
+    {
+      "label": "parent_repeat",
+      "mode": "sq3p25",
+      "nll": 3532.2641410827637,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": false,
+      "hidden_sha256": "603e23093cba752186575fad1756d4119f44c45f150030f9bb9158da9db91a2c"
+    },
+    {
+      "label": "parent_after_preflight",
+      "mode": "sq3p25",
+      "nll": 3532.2641410827637,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": false,
+      "hidden_sha256": "603e23093cba752186575fad1756d4119f44c45f150030f9bb9158da9db91a2c"
+    },
+    {
+      "label": "source_s16",
+      "mode": "s16",
+      "nll": 3292.566764831543,
+      "archive_nll": 3292.7154846191406,
+      "exact_archive": false,
+      "hidden_sha256": "c08b796c962043336ec361a26608374c0253248861e744125fa9af7d55cf317c"
+    },
+    {
+      "label": "source_sq",
+      "mode": "sq3p25",
+      "nll": 3599.3622970581055,
+      "archive_nll": 3597.479217529297,
+      "exact_archive": false,
+      "hidden_sha256": "ea0d505aee9b7dad225595c0a1b4b1c02411dba3d91d739e226b48c87959a590"
+    },
+    {
+      "label": "parent_after_baselines",
+      "mode": "sq3p25",
+      "nll": 3532.2641410827637,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": false,
+      "hidden_sha256": "603e23093cba752186575fad1756d4119f44c45f150030f9bb9158da9db91a2c"
+    },
+    {
+      "label": "parent_after_baselines_repeat",
+      "mode": "sq3p25",
+      "nll": 3532.2641410827637,
+      "archive_nll": 3528.2185134887695,
+      "exact_archive": false,
+      "hidden_sha256": "603e23093cba752186575fad1756d4119f44c45f150030f9bb9158da9db91a2c"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "format": "MAMBA2_MORE_RESURFACE_INDEPENDENT_AUDIT_V1",
+  "complete": true,
+  "passed": true,
+  "training_only": true,
+  "source_sha256": "9a50babc7565a1b37c23bd3f1361b5c9dd525f9ec6acc07fe6625f94634fa929",
+  "limitations": [
+    "CPU reconstruction audits recorded NLL/generated IDs; it does not rerun GPU logits or generation.",
+    "Adam moment values are checked for binding, shapes, finiteness and step counts; gradients are not archived to recompute every update.",
+    "Frozen base checks cover reported identity/version/gradients, not full post-training weight byte hashes.",
+    "Pinned tokenizer/case generator are reused; scoring and aggregate arithmetic are independent of the new evaluator.",
+    "Historically exposed validation and prompt families do not establish unseen generalization."
+  ],
+  "parent_training": {
+    "successful_updates": 1536,
+    "attempts": 1542,
+    "overflow_attempts": 6,
+    "new_identity_initialization": true,
+    "original_base_and_calibration_frozen": true,
+    "adapter_tensors": 224,
+    "adapter_parameters": 1154104,
+    "adapter_sha256": "7144b88265a797ef935b1f94845395abec5532d8dc5b2a4a8fa0a8e07ce205f0",
+    "calibration_sha256": "c366cd577967e64635f1dd960237dc1c0024d7413685ce0b4c4e40da869a7023",
+    "calibration_discarded_abs_mass": 0.14246483720575076,
+    "four_recovery_checkpoint_hashes_verified": true
+  },
+  "continuation_training": {
+    "additional_updates": 3072,
+    "attempts": 3073,
+    "overflows": 1,
+    "final_scaler": {
+      "scale": 32.0,
+      "growth_factor": 2.0,
+      "backoff_factor": 0.5,
+      "growth_interval": 2000,
+      "_growth_tracker": 608
+    },
+    "cumulative_updates": 4608,
+    "parent_masters_cast_to_export_exact": true,
+    "all_four_recovery_checkpoint_hashes_verified": true,
+    "all_adam_steps_and_scaler_transitions_verified": true,
+    "final_master_casts_equal_actual_export": true,
+    "adapter_sha256": "4dbc2ad1e21065a399d9e1189696648105b405c2387da2406f1da8310725bbbd",
+    "adapter_parameters": 1154104,
+    "adapter_tensors": 224,
+    "discarded_smoke": {
+      "additional_updates": 1,
+      "attempts": 1,
+      "overflows": 0,
+      "final_scaler": {
+        "scale": 16.0,
+        "growth_factor": 2.0,
+        "backoff_factor": 0.5,
+        "growth_interval": 2000,
+        "_growth_tracker": 1537
+      }
+    }
+  },
+  "cuda_initialized": false,
+  "continuation_protocol_sha256": "4c2c47aa00936ded52cf7b337126f1cce9556da7021e0a75c6e9df83f4949330",
+  "training_report_sha256": "ff6325677b8da8b3c4eb094b664558688a06ced311466d606df16c28361bbf4b"
+}

@@ -65,6 +65,12 @@ directories are required for independent runs.
 
 ## Full comparison and independent audit
 
+The evaluator explicitly fixes backbone RMSNorm to 16 warps, the configuration
+that reproduces the archived parent. It records and audits this backend choice.
+Read the [replay diagnosis and execution clarification](RESURFACE_MORE_BACKEND_REPLAY.md).
+The completed training used process-local autotuning; its configuration was not
+recorded. A new training run is therefore not promised to reproduce its bytes.
+
 ```bash
 SQ_EVAL_ARGS=(
   --source-dir "$SQ_SOURCE_DIR"

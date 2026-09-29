@@ -1,12 +1,16 @@
 # Mamb2_8B_Recall + StateQuant
 
-## In progress: more Resurface training
+## In progress: full validation of more Resurface training
 
 The v3 continuation restores the verified v2 FP32 masters, AdamW state and
 complete GradScaler state, then adds **3072 successful updates (4608 total)**.
 Source weights, SQ3.25 calibration, adapter capacity and loss remain fixed.
 The discarded resumed smoke passed exact 128-token parent-forward parity and
-one update without overflow; formal continuation is running.
+one update without overflow. Formal continuation completed 3072 successful
+updates in 3073 attempts; checkpoint/export and independent training audit passed.
+Full PPL/MK validation is pending. A baseline replay discrepancy was traced to
+RMSNorm autotune configuration; evaluation is being pinned to the historical
+16-warps configuration before repeating the complete comparison.
 See the [frozen continuation protocol](docs/RESURFACE_MORE_PROTOCOL.md) and
 [reproduction commands](docs/RESURFACE_MORE_REPRODUCTION.md).
 The completed measurements below are the v2 parent, not v3 results.

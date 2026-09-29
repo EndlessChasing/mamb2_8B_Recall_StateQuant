@@ -3,6 +3,9 @@
 from __future__ import annotations
 import argparse
 import json
+import inspect
+import importlib.metadata
+import os
 from pathlib import Path
 import sys
 import time
@@ -35,9 +38,69 @@ ARMS = ('parent_resurface_sq3p25', 'continued_resurface_sq3p25', 'restored_paren
 def code_hashes():
     paths = sorted((ROOT/'mamba2_recall').glob('*.py'))
     paths += [Path(__file__), ROOT/'scripts/run_statequant.py', ROOT/'scripts/evaluate_quant_first.py',
-              ROOT/'docs/RESURFACE_MORE_PROTOCOL.md', ROOT/'docs/QUANT_FIRST_PROTOCOL.md']
+              ROOT/'docs/RESURFACE_MORE_PROTOCOL.md', ROOT/'docs/QUANT_FIRST_PROTOCOL.md',
+              ROOT/'docs/RESURFACE_MORE_BACKEND_REPLAY.md']
     return {str(p.relative_to(ROOT)): data.sha_file(p) for p in paths}
 
+
+
+def _norm_config(config):
+    return dict(kwargs=dict(config.kwargs), num_warps=config.num_warps,
+                num_stages=config.num_stages, num_ctas=config.num_ctas,
+                maxnreg=config.maxnreg, pre_hook_is_none=config.pre_hook is None)
+
+
+def pin_replay_backend():
+    """Select the archived RMSNorm reduction configuration before any forward.
+
+    This selects by exact ORIGINAL/PARENT replay, never by candidate quality.
+    Core files and the completed training remain unchanged.
+    """
+    from mamba_ssm.ops.triton import layer_norm
+    from mamba_ssm.utils import determinism
+    from triton.runtime import autotuner
+    kernel = layer_norm._layer_norm_fwd_1pass_kernel
+    original = [_norm_config(c) for c in kernel.configs]
+    expected = [dict(kwargs={}, num_warps=w, num_stages=3, num_ctas=1,
+                     maxnreg=None, pre_hook_is_none=True) for w in (1, 2, 4, 8, 16, 32)]
+    if original != expected or kernel.cache:
+        raise RuntimeError('Unexpected RMSNorm config inventory or a forward already selected a config')
+    selected = next(c for c in kernel.configs if c.num_warps == 16)
+    kernel.configs = [selected]
+    kernel.cache.clear()
+    flags = dict(tf32_matmul=torch.backends.cuda.matmul.allow_tf32,
+        tf32_cudnn=torch.backends.cudnn.allow_tf32,
+        fp16_reduced_precision_reduction=torch.backends.cuda.matmul.allow_fp16_reduced_precision_reduction,
+        bf16_reduced_precision_reduction=torch.backends.cuda.matmul.allow_bf16_reduced_precision_reduction,
+        cudnn_benchmark=torch.backends.cudnn.benchmark,
+        cudnn_deterministic=torch.backends.cudnn.deterministic,
+        deterministic_algorithms=torch.are_deterministic_algorithms_enabled(),
+        float32_matmul_precision=torch.get_float32_matmul_precision())
+    return dict(format='MAMBA2_ARCHIVED_RMSNORM_REPLAY_POLICY_V1',
+        kernel='mamba_ssm.ops.triton.layer_norm._layer_norm_fwd_1pass_kernel',
+        original_configs=original, selected_config=_norm_config(selected),
+        singleton_config_bypasses_autotuning=True, applied_before_first_model_load=True,
+        candidate_used_for_selection=False,
+        selection_basis='Only warp16 exactly matches both archived S16 and parent first-window NLL; full archived parent replay remains mandatory',
+        external_source_sha256={module.__name__:data.sha_file(Path(inspect.getfile(module)))
+            for module in (layer_norm, determinism, autotuner)},
+        package_versions={name:importlib.metadata.version(name) for name in ('torch','mamba-ssm','triton')},
+        cudnn_version=torch.backends.cudnn.version(), precision_flags=flags,
+        determinism_environment={key:os.environ.get(key) for key in ('MAMBA_DETERMINISTIC',
+            'TRITON_CACHE_AUTOTUNING','TRITON_AUTOTUNE_BLOCK_SIZE_M','TRITON_AUTOTUNE_BLOCK_SIZE_N',
+            'TRITON_AUTOTUNE_BLOCK_SIZE_K','TRITON_AUTOTUNE_BLOCK_SIZE_DSTATE')},
+        clarification_sha256=data.sha_file(ROOT/'docs/RESURFACE_MORE_BACKEND_REPLAY.md'))
+
+
+def check_replay_backend(policy):
+    from mamba_ssm.ops.triton import layer_norm
+    kernel = layer_norm._layer_norm_fwd_1pass_kernel
+    if (len(kernel.configs) != 1 or _norm_config(kernel.configs[0]) != policy['selected_config']
+            or (hasattr(kernel, 'best_config') and _norm_config(kernel.best_config) != policy['selected_config'])):
+        raise RuntimeError('Pinned RMSNorm reduction configuration changed')
+    return dict(singleton_config_unchanged=True,
+                selected_config=_norm_config(kernel.configs[0]),
+                best_config=_norm_config(kernel.best_config) if hasattr(kernel, 'best_config') else None)
 
 def archive_reports(directory):
     results = {}
@@ -187,6 +250,7 @@ def main():
             or sum(c['condition']=='normal' for c in cases) != 384):
         raise RuntimeError('Frozen full evaluation population differs')
     args.out.mkdir(parents=True, exist_ok=True)
+    backend_policy = pin_replay_backend()
     model = runtime.load_source_model(args.source_dir)
     frozen = FrozenBase(model)
     common = dict(format='MAMBA2_MORE_RESURFACE_EVAL_V1', stage='full', protocol_sha256=PARENT_PROTOCOL,
@@ -197,7 +261,7 @@ def main():
         parent_adapter_sha256=PARENT_ADAPTER, training_report_sha256=data.sha_file(args.training_report),
         training_binding=training['binding'], candidate_adapter_sha256=training['adapter']['sha256'],
         archived_report_sha256=ARCHIVE_HASHES, dataset=dataset,
-        environment=runtime.environment_receipt(), code_hashes=code_hashes(),
+        environment=runtime.environment_receipt(), code_hashes=code_hashes(), backend_policy=backend_policy,
         execution='serial recurrence with per-token carried-state rounding/quantization; native prompt convolution and projections',
         candidate_selection='Fixed final4608 successful updates; no DEV/CONFIRM checkpoint selection',
         quality_scope='Historically exposed validation corpus and CONFIRM families; no unseen-generalization claim')
@@ -235,6 +299,7 @@ def main():
             if hashes != {k:native.tensor_hash(v) for k,v in bank.masters.items()}:
                 raise RuntimeError('Inference changed the adapter contents')
             result['adapter_content_unchanged'] = True
+            result['backend_policy_check'] = check_replay_backend(backend_policy)
             save_json(destination, result); results[arm] = result
             if arm == ARMS[0]:
                 parent_replay = replay_check(archived['resurface_sq3p25'], result,
@@ -273,7 +338,8 @@ def main():
         archived_report_sha256=ARCHIVE_HASHES, training_report_sha256=data.sha_file(args.training_report),
         parent_training_report_sha256=PARENT_REPORT, parent_checkpoint_sha256=PARENT_CHECKPOINT,
         parent_adapter_sha256=PARENT_ADAPTER, calibration_sha256=CALIBRATION,
-        adapter_sha256=training['adapter']['sha256'], code_hashes=code_hashes(), frozen_source_final=frozen.check())
+        adapter_sha256=training['adapter']['sha256'], code_hashes=code_hashes(), frozen_source_final=frozen.check(),
+        backend_policy=backend_policy, backend_policy_check=check_replay_backend(backend_policy))
     save_json(args.out/'full_comparison.json', outcome)
     print(json.dumps(outcome, indent=2, allow_nan=False), flush=True)
 

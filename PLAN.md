@@ -44,8 +44,8 @@ See docs/QUANT_FIRST_PROTOCOL.md. No Q8 or old-adapter initialization; no public
 - [x] Verify the parent FP32 master / Adam / GradScaler checkpoint on CPU.
 - [x] Implement and review exact checkpoint restoration and continuation receipts.
 - [x] Pass one discarded resumed smoke update and packed-forward parity (1/1, no overflow).
-- [ ] Complete 3072 additional successful updates (4608 cumulative), final candidate only.
-- [ ] Export FP16; verify final checkpoint casts and packed inference equality.
+- [x] Complete 3072 additional successful updates (4608 cumulative), final candidate only.
+- [x] Export FP16; verify final checkpoint casts and packed inference equality.
 - [ ] Run full parent / continued / restored-parent PPL and MK comparisons.
 - [ ] Independently audit training, scores, calibration, memory and full replay.
 - [ ] Document results and push artifacts to the private repository.
