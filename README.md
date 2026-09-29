@@ -6,13 +6,19 @@ The new requested order is **original Mamba2-8B -> SQ3.25 state -> fresh
 Resurface training**. Calibration is repeated on the unadapted source model;
 the old adapter is not used for initialization. A differentiable training path
 uses the exact packed inference forward and a declared masked STE backward.
-The fixed 1536-update recipe and three-arm evaluation are specified in
-[QUANT_FIRST_PROTOCOL.md](docs/QUANT_FIRST_PROTOCOL.md). Training completed with
-1536 successful updates in 1542 attempts; the 2,374,591-byte FP16 adapter passed
-the 128-token packed training/inference equality check. Independent PPL/MK
-evaluation is in progress. The new artifact is
+The fixed 1536-update recipe and three configurations, plus a complete SQ
+baseline replay, are specified in [the protocol](docs/QUANT_FIRST_PROTOCOL.md).
+Training completed with 1536 successful updates in 1542 attempts; the
+2,374,591-byte FP16 adapter passed the 128-token packed training/inference
+equality check. Full PPL/MK evaluation is in progress. The new artifact is
 [`reports/quant_first_v2/training/adapter_fp16.pt`](reports/quant_first_v2/training/adapter_fp16.pt);
-the measurements below belong to the earlier order and are not new-model results.
+see [current results and evidence](docs/QUANT_FIRST_RESULTS.md) and
+[exact reproduction commands](docs/QUANT_FIRST_REPRODUCTION.md).
+
+The audited descriptive pilot improves SQ3.25 PPL from **7.2166 to 7.0147**
+and MK from **8/48 to 21/48**. Original S16 scores **6.2673 / 28/48**;
+the new adapter has not restored that PPL level. These are pilot measurements,
+not the pending full-corpus result. Q8 and weight quantization are excluded.
 
 ## Historical experiment: old Recall adapter, then quantize state
 
@@ -48,35 +54,29 @@ temporary computation, not persistent compressed cache.
 
 ## Reproduction
 
-See [frozen experiment protocol](docs/PROTOCOL.md) and [checklist](PLAN.md).
-Reuse the official `nvidia/mamba2-8b-3t-4k` checkpoint, tokenizer and the included
-unchanged Recall adapter. A CUDA GPU and the pinned native Mamba environment
-are required. The tested environment used PyTorch 2.11.0+cu128, Triton 3.6.0,
-and mamba-ssm 2.3.2.post1 on an RTX PRO 6000 Blackwell.
+Use [the v2 reproduction guide](docs/QUANT_FIRST_REPRODUCTION.md) and
+[checklist](PLAN.md). It covers original-source loading, no-adapter calibration,
+discarded smoke training, fresh formal training, all four evaluation runs and
+offline evidence audits. The tested CUDA environment used PyTorch 2.11.0+cu128,
+Triton 3.6.0 and mamba-ssm 2.3.2.post1 on an RTX PRO 6000 Blackwell.
 
-```bash
-pip install -e .
-python scripts/check_state_codec.py --output reports/my_codec_checks.json
-CUDA_VISIBLE_DEVICES= python scripts/check_state_runtime_conv.py \
-  --output reports/my_conv_checks.json
+The v2 entry points are `prepare_quant_first.py`, `train_quant_first.py`,
+`evaluate_quant_first.py` and `audit_quant_first.py` in `scripts/`.
+Full v2 validation runs regardless of pilot quality. It uses only the final
+1536-update export, with no DEV-based checkpoint selection.
 
-# Set SOURCE_DIR to the official checkpoint/tokenizer directory.
-CUDA_VISIBLE_DEVICES= python scripts/prepare_prose.py \
-  --source-dir "$SOURCE_DIR" --out training_data/training_tokens.pt
-python scripts/run_statequant.py --source-dir "$SOURCE_DIR" \
-  --train-tokens training_data/training_tokens.pt --out artifacts/my_pilot
-```
-
-Native `mamba-ssm` installation is separate and must match the CUDA environment.
-The runner refuses to overwrite prior pilot artifacts. Full evaluation requires
-a passing pilot and the same calibration/core implementation; the included
-candidate is stopped. The included adapter retains its original training binding.
+The historical `scripts/run_statequant.py` entry point and
+[v1 protocol](docs/PROTOCOL.md) instead load the old Recall adapter before
+calibration and use the earlier pilot stop rule. The preserved
+`pretrained/adapter_fp16.pt` belongs to that historical experiment.
 
 ## Provenance and licenses
 
 - Original base: NVIDIA Mamba2-8B, Apache-2.0; downloaded separately.
 - Recall code and unchanged original Recall adapter: inherited GPL-3.0, see
   [LICENSE](LICENSE) and [original project](https://github.com/EndlessChasing/mamb2_8B_Recall).
+- New training/runtime code and the new Resurface adapter are provided under
+  this repository's GPL-3.0 license.
 - Archived StateQuant reference: Apache-2.0, copyright 2026 Kun Yue, see
   [reference license](reference/statequant/LICENSE). It is a user-supplied
   archive; current online availability is not assumed.

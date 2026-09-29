@@ -1,0 +1,22 @@
+{
+  "format": "MAMBA2_QUANT_FIRST_TRAINING_INDEPENDENT_AUDIT_V1",
+  "complete": true,
+  "passed": true,
+  "cuda_initialized": false,
+  "training_report_sha256": "e5a77d86cf2fb0e2389247e3cb325f74e89957861a6043e92a891d6d402ae359",
+  "audit_source_sha256": "5439e766a59b3eb14db1024002ba92ffa4337c72540f27f6dd5869d79f0cfceb",
+  "proof": {
+    "successful_updates": 1536,
+    "attempts": 1542,
+    "overflow_attempts": 6,
+    "new_identity_initialization": true,
+    "original_base_and_calibration_frozen": true,
+    "adapter_tensors": 224,
+    "adapter_parameters": 1154104,
+    "adapter_sha256": "7144b88265a797ef935b1f94845395abec5532d8dc5b2a4a8fa0a8e07ce205f0",
+    "calibration_sha256": "c366cd577967e64635f1dd960237dc1c0024d7413685ce0b4c4e40da869a7023",
+    "calibration_discarded_abs_mass": 0.14246483720575076,
+    "four_recovery_checkpoint_hashes_verified": true
+  },
+  "scope": "CPU provenance, schedule, artifact and calibration audit; evaluation not yet audited; no model re-run"
+}
