@@ -1,16 +1,34 @@
 # Mamb2_8B_Recall + StateQuant
 
-## In progress: optimize unadapted SQ3.25, then fresh Resurface v5
+## v5: optimize unadapted SQ3.25, then train fresh Resurface
 
-The user clarified the order: **original source with no adapter → optimize
-SQ3.25 → freeze the table → train fresh Resurface for recall**. The completed
-four-table TRAIN screen selected `preserve_int8`: unadapted TRAIN PPL improves
-from **11.1296 to 10.8452** (−2.56%), with MK **10/96 to 11/96**. This protects
-the original 16 INT8 coordinates and optimizes the other INT4/zero assignments.
-The table and byte budget are frozen. Fresh training completed 1536 updates in
-1543 attempts, with no v2/v3 adapter reused. Independent training/export audit
-passed; four-arm full evaluation is running. Full v5 quality is not yet measured.
-See [current evidence](docs/STATE_FIRST_V5_RESULTS.md),
+The requested order is complete: **original source with no adapter → optimize
+SQ3.25 → freeze the table → train fresh Resurface for recall**. TRAIN-only
+selection preserves the original 16 INT8 coordinates and optimizes INT4/zero
+assignments. Fresh training completed 1536 updates, with no old adapter reused.
+
+| Configuration | Full PPL | Normal MK /384 |
+| --- | ---: | ---: |
+| Old SQ3.25, no adapter | 8.691553 | 50 (13.02%) |
+| Optimized SQ3.25, no adapter | 8.367465 | 46 (11.98%) |
+| **Optimized SQ3.25 + fresh Resurface** | **8.093011** | **244 (63.54%)** |
+| Archived old SQ3.25 + v2 Resurface | 8.388906 | 239 (62.24%) |
+
+**State optimization and subsequent recall repair pass their separate gates.**
+Unadapted PPL improves **3.73%**. New Resurface then improves PPL another **3.28%**
+and MK by **51.56 percentage points** (paired 95% interval +46.35 to +56.77 pp).
+The stricter gate against old v2 **fails**: PPL improves **3.53%**, but the
+observed five additional correct answers have an interval of −4.17 to +6.77 pp,
+below the required −2 pp lower bound. It does not establish improved MK over v2.
+
+All SQ arms use **27.1797 MiB/sequence** persistent cache, **76.64% below S16**;
+source weights stay FP16. Final PPL remains **10.34% above original S16 7.334322**.
+All four full arms, exact archived-old replay and exact selected-base restoration
+completed, and the independent full evidence audit passed. Validation covers 264,764
+PPL targets and 384 normal + 384 target-removed cases per arm.
+See [results and limits](docs/STATE_FIRST_V5_RESULTS.md),
+[raw comparison](reports/state_first_v5_full/full_comparison.json),
+[independent audit](reports/state_first_v5_full_audit.json),
 [reproduction commands](docs/STATE_FIRST_V5_REPRODUCTION.md),
 [protocol](docs/STATE_FIRST_V5_PROTOCOL.md), and [checklist](PLAN.md).
 

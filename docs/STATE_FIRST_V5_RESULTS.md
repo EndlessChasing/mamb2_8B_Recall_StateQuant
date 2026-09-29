@@ -4,9 +4,10 @@ Experiment date: 2026-09-28. The [protocol](STATE_FIRST_V5_PROTOCOL.md) was
 reviewed and committed before candidate measurements. Its SHA256 is
 `ce700910f27230e062fe62e89dd6bddee05bcbf7bb7972c59fdba24cb3db9f5d`.
 
-**Status: unadapted selection, discarded GPU smoke and fresh formal training
-completed; their independent audits passed. The final v5 adapter is exported.
-Four-arm full quality evaluation is running.** This follows the user's clarified order:
+**Status: all four full evaluation arms and both exact baseline replays are
+complete. Unadapted state optimization and subsequent Resurface repair pass;
+the stricter comparison against the old v2 endpoint fails its MK interval
+condition. The independent full evidence audit passed.** This follows the user's clarified order:
 
 1. Load original pure Mamba2-8B with no Resurface.
 2. Compare fixed Q3.25 state tables on TRAIN and freeze one selection.
@@ -160,15 +161,97 @@ but backward reductions can remain nondeterministic, so a new training run is
 not promised to produce identical adapter bytes. These checks establish the
 training/export path, not the final PPL or MK quality.
 
-## Full confirmation — running
+## Full confirmation — completed
 
-The final four arms are old unadapted SQ, selected unadapted SQ, selected SQ plus
-fresh Resurface, and restored selected unadapted SQ. Each receives all 130 PPL
-windows / 264,764 targets and 384 normal plus 384 target-removed CONFIRM prompts.
-Exact archived-old and restored-selected replay are required.
+Each of the four measured arms covers **130 WikiText-2 validation windows /
+264,764 targets** and **384 normal + 384 target-removed CONFIRM prompts**.
+Prefill and decoding quantize the carried state after every token; the current
+readout precedes carry quantization. MK uses full-vocabulary greedy generation,
+at most 12 new tokens or EOS, with the first standalone six-digit answer scored.
 
-Report separately: at least 1% unadapted PPL improvement; Resurface MK improvement
-with positive paired 95% lower bound while PPL stays within 1%; and improvement
-over the prior SQ3.25 + v2 endpoint. The exact gates are in the frozen protocol.
-Original S16 PPL restoration is a separate check. Historical benchmark exposure
-and surrogate-gradient limitations remain; no public model release is included.
+| Configuration | Full PPL | Normal MK /384 | N16 /192 | N64 /192 |
+| --- | ---: | ---: | ---: | ---: |
+| Original S16, no adapter (archived context) | 7.334322 | 146 (38.02%) | 113 | 33 |
+| Old magnitude SQ3.25, no adapter | 8.691553 | 50 (13.02%) | 46 | 4 |
+| **Selected preserve-INT8 SQ3.25, no adapter** | **8.367465** | **46 (11.98%)** | 43 | 3 |
+| **Selected SQ3.25 + fresh v5 Resurface** | **8.093011** | **244 (63.54%)** | **179** | **65** |
+| Restored selected SQ3.25, no adapter | 8.367465 | 46 (11.98%) | 43 | 3 |
+| Old magnitude SQ3.25 + v2 Resurface (archived context) | 8.388906 | 239 (62.24%) | 169 | 70 |
+
+Every row has **0/384 target-removed matches**. These are matches to the removed
+answer, not an abstention score. The original S16 and v2 adapted rows are
+hash-verified archived controls, not new v5 GPU runs. Old unadapted SQ was rerun
+and exactly matched its archived 130 window NLLs, 768 generated token sequences
+and decoded predictions. Removing v5 Resurface then exactly reproduced the
+selected no-adapter arm on the same complete population.
+
+### Separate quality decisions
+
+| Comparison | PPL change | MK change | Paired gains / regressions | MK delta 95% interval | Frozen gate |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Optimize unadapted state | **−3.7288%** | −4 answers / −1.04 pp | 27 / 31 | −4.95 to +2.86 pp | **Pass**: PPL improves at least 1%, same cache |
+| Train fresh Resurface on selected state | **−3.2800%** | **+198 answers / +51.56 pp** | **201 / 3** | **+46.35 to +56.77 pp** | **Pass**: MK improvement, positive interval, PPL within 1%, same cache |
+| Compare final model against old v2 endpoint | **−3.5272%** | +5 answers / +1.30 pp | 59 / 54 | −4.17 to +6.77 pp | **Fail**: lower bound is below −2 pp |
+
+All intervals use 10,000 paired bootstrap draws, normal cases sorted by ID and
+NumPy `default_rng(20260928)`. The raw
+[comparison](../reports/state_first_v5_full/full_comparison.json) preserves all
+gate checks. State optimization improves NLL in 126/130 windows; adding fresh
+Resurface improves all 130/130 windows. Relative to archived v2, 128/130 windows
+improve. Window counts are descriptive and not an independent significance test.
+
+The requested order works for **PPL optimization followed by recall repair**.
+The final model's observed MK is five answers higher than v2, but that consists
+of ten additional N16 answers and five fewer N64 answers. The paired interval
+does not establish superiority or the protocol's two-percentage-point
+noninferiority condition. Preserve v2 as a reference and v5 as a measured
+lower-PPL candidate; do not declare v5 an unconditional replacement.
+
+Final PPL is still **10.3444% above original unadapted S16**, so original PPL is
+not restored within 1%. The original S16 comparison has no Resurface adapter;
+it does not isolate quantization against a separately trained S16 + Resurface
+model. This run also changes the table and trains a fresh adapter, so its
+comparison with v2 cannot isolate table effects from training-run variation.
+
+### Storage and evidence boundaries
+
+All four measured SQ arms use **28,499,968 bytes / 27.1796875 MiB** of persistent
+batch-one cache: 23,855,104 bytes of packed SSM state including scales,
+4,587,520 bytes of FP16 convolution state and a 57,344-byte table. This is
+**76.6447% less** than the original 122,028,032-byte S16 cache. v5 improves quality
+at the same SQ3.25 storage budget; it does not add another memory reduction.
+
+The original 8,236,999,680 source parameters remain FP16 and occupy
+16,473,999,360 weight bytes, separate from cache and temporary runtime memory.
+The new adapter adds 2,308,208 resident FP16 parameter bytes, with no additional
+recurrent cache. Its serialized file is 2,375,551 bytes. This is state
+quantization, not W4 weight quantization or an end-to-end 27 MiB model.
+
+Candidate choice uses TRAIN only. The validation/CONFIRM benchmark families
+have historical exposure in this project; these results are not an untouched
+generalization claim. Packed forward and approximate masked-STE backward,
+one frozen training recipe, the bounded export parity probe and backward
+nondeterminism remain relevant limits. No public/Hugging Face release is part
+of this experiment.
+
+### Independent audit and retained artifacts
+
+The [full CPU audit](../reports/state_first_v5_full_audit.json) passed. It
+independently reconstructs candidate tables and selection, validates fresh
+initialization, smoke, all four optimizer checkpoints and the actual FP16
+export, then recomputes PPL aggregation, prompt/token identities, generated
+answer scoring, all paired bootstrap intervals and the three gate decisions.
+Both complete replay comparisons match exactly. All four arms retain the
+28,499,968-byte cache, frozen source/table/adapter guards and pinned backend.
+The auditor does not rerun GPU logits; CUDA stays uninitialized.
+
+- Full comparison SHA256: `0e5ceb6e91d72a159f46a9a0760a23f3b9301be18bb32590fe01a9196f83d1e9`.
+- Full audit SHA256: `9749386e6203c4c45f5ca63396808f1c8579632f331fefb44990db90c741560b`.
+- Auditor source SHA256: `9a44d39e1b6ec98d70fb44ee563eed7321e03f9a7a91253c07bc87a418e1863e`.
+
+All four raw reports and replay receipts are retained under
+[`reports/state_first_v5_full`](../reports/state_first_v5_full), with the
+candidate tables, complete screen, frozen selected calibration, discarded
+smoke, formal adapter and all four training checkpoints in adjacent v5 folders.
+Copied file hashes were checked against their remote receipts. See
+[the reproduction guide](STATE_FIRST_V5_REPRODUCTION.md) for exact commands.

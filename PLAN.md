@@ -95,8 +95,17 @@ Random CPU/GPU recurrence diagnostics retain disclosed numerical differences.
 - [x] Pass a discarded fresh one-update training/export smoke and its independent audit.
 - [x] Train fresh Resurface for 1536 successful updates on the selected state (1543 attempts).
 - [x] Verify final checkpoint/export equality and packed inference parity; independent training audit passes.
-- [ ] Run all four full PPL/MK arms and exact unadapted baseline replays.
-- [ ] Independently audit, report all three gates, and push private evidence.
+- [x] Run all four full PPL/MK arms and exact unadapted baseline replays.
+- [x] Independently audit, report all three gates, and preserve private evidence.
 
 If the original magnitude table wins TRAIN selection, stop this experiment
 without repeating its existing Resurface run. See docs/STATE_FIRST_V5_PROTOCOL.md.
+
+Full v5 result: unadapted state optimization lowers PPL **8.691553 → 8.367465**
+(−3.73%), with MK **50 → 46/384**. Fresh Resurface then reaches **8.093011 /
+244/384**, lowering PPL another 3.28% and increasing MK 51.56 pp. These two gates
+pass, with unchanged 27.1797 MiB cache. Against archived v2, PPL improves 3.53%
+and MK rises 239 → 244, but the paired 95% interval [−4.17, +6.77] pp fails the −2 pp
+noninferiority lower-bound requirement. Original S16 PPL is not restored
+(+10.34%). Both complete baseline replays and independent full audit pass.
+All four recovery checkpoints, exported adapter and raw reports are retained.
