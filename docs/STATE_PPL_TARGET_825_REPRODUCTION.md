@@ -19,6 +19,10 @@ exact baseline replay/restoration and the unchanged cache budget; the strict
 **PPL < 8.25 target remains unmet**. The commands below reproduce those stages.
 See [current results/status](STATE_PPL_TARGET_825.md).
 
+V9 is also complete: its TRAIN top2 winner has full PPL 8.290607333938492,
+a small regression, with the independent full audit passing. Continue the
+separately frozen allocation family using the [v10 guide](STATE_PPL_V10_REPRODUCTION.md).
+
 The canonical v8 full audit is
 [`reports/state_ppl_v8_full_audit.json`](../reports/state_ppl_v8_full_audit.json),
 SHA256 `051316fe074ea1ba9cfeef87ba7fe4bb9c3a4c18e3c7427c9a2ef256d490e9cf`.

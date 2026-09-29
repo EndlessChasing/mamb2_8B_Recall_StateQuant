@@ -1,0 +1,22 @@
+{
+  "format": "MAMBA2_STATE_PPL_V10_CPU_PARENT_BINDING_V1",
+  "complete": true,
+  "passed": true,
+  "parent_selected": "top2",
+  "parent_table_sha256": "b1865e81ff3fbed028027a883872aef9bb91e614e7cf08c72211496a78aeb597",
+  "start_condition": {
+    "complete": true,
+    "comparison_sha256": "939d79990463cfa365d6608d595cf1b456978fbae0c549262a947acb02c626e6",
+    "audit_sha256": "dde9b57633c6994380208c606d9c1231e1c74dd39531763de6cef2ca025a3018",
+    "parent_report_sha256": "9762493fc5cb9a7ad8889b62dbd4f559bde992b266a97d1c2b74c96a73b72522",
+    "selected_calibration_sha256": "3467897358f33de22b1b629819cb2035f4cb8912914f0183959aa581fafeab50",
+    "parent_ppl": 8.290607333938492,
+    "parent_selection": "Frozen v9 TRAIN top2 irrespective of full comparison",
+    "criterion": "Passing independent full audit; finite v9 PPL >=8.25; all integrity guards pass"
+  },
+  "runner_sha256": "090201215840991e684739871d59fe88c5f1ebf370e6f2db074498b6103fdc37",
+  "protocol_sha256": "565707cf401b2ab472b9b78368a7192afeebe73056efd811b7acba610e3d9567",
+  "cuda_initialized": false,
+  "quality_measured": false,
+  "scope": "Actual frozen v9 upstream input/selection and full finite-miss chain; v10 codec gate is separate and not mocked"
+}

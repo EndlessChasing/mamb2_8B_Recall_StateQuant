@@ -1,0 +1,426 @@
+{
+  "format": "MAMBA2_STATE_PPL_V10_CODEC_CPU_PREPARATION_V1",
+  "complete": true,
+  "passed": true,
+  "mode": "cpu_preparation",
+  "protocol_sha256": "565707cf401b2ab472b9b78368a7192afeebe73056efd811b7acba610e3d9567",
+  "code_sha256": {
+    "scripts/state_ppl_codec_v10.py": "53cbba84e608cc20e4ca7fc39afca23e0b2c09fdd6002c4cb17affa629638da6",
+    "scripts/check_state_ppl_codec_v10.py": "df7a0cbbe108a5e696fe91f08f39447770e402e171b2011a1d66c21962d5f11b",
+    "scripts/state_ppl_codec_v6.py": "76d76577559c8bb8d86907934f2d65282da27e1d1e8e378392eba5809ae34c54",
+    "mamba2_recall/state_codec.py": "56bd56d2fcb96382a4c6139824245f7608e903bbf1e3d07c9ea6d61ac8ce371a",
+    "mamba2_recall/state_quant.py": "d57ccba302c81808456ef8ccd9bc36bcb22ee976b2e4cad5efe43f99e4e17efd"
+  },
+  "checks": [
+    {
+      "name": "frozen-protocol",
+      "pass": true
+    },
+    {
+      "name": "fixed-layout-grid",
+      "pass": true,
+      "layouts": {
+        "16_64_48": [
+          16,
+          64,
+          48
+        ],
+        "8_80_40": [
+          8,
+          80,
+          40
+        ],
+        "24_48_56": [
+          24,
+          48,
+          56
+        ],
+        "32_32_64": [
+          32,
+          32,
+          64
+        ]
+      }
+    },
+    {
+      "name": "CPU-signed-half-boundaries-127",
+      "pass": true,
+      "values": 147
+    },
+    {
+      "name": "CPU-signed-half-boundaries-7",
+      "pass": true,
+      "values": 147
+    },
+    {
+      "name": "CPU-actual-unpadded-storage-16_64_48",
+      "pass": true,
+      "shapes": {
+        "lo": [
+          2,
+          6,
+          19,
+          8
+        ],
+        "hi": [
+          2,
+          6,
+          19,
+          8
+        ],
+        "q4": [
+          2,
+          6,
+          19,
+          32
+        ],
+        "s8": [
+          2,
+          6,
+          19
+        ],
+        "s4": [
+          2,
+          6,
+          19
+        ]
+      },
+      "storage_bytes": {
+        "lo": 1824,
+        "hi": 1824,
+        "q4": 7296,
+        "s8": 456,
+        "s4": 456
+      }
+    },
+    {
+      "name": "CPU-reject-padded-payload-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-ties-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-negative-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-zero-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-rounded_scales-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-underflow-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-subnormal-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-mixed_scales-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-large_finite-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-65token-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-poisoned-neighbor-boundaries-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-dead-current-readout-zero-carry-16_64_48",
+      "pass": true
+    },
+    {
+      "name": "CPU-actual-unpadded-storage-8_80_40",
+      "pass": true,
+      "shapes": {
+        "lo": [
+          2,
+          6,
+          19,
+          4
+        ],
+        "hi": [
+          2,
+          6,
+          19,
+          4
+        ],
+        "q4": [
+          2,
+          6,
+          19,
+          40
+        ],
+        "s8": [
+          2,
+          6,
+          19
+        ],
+        "s4": [
+          2,
+          6,
+          19
+        ]
+      },
+      "storage_bytes": {
+        "lo": 912,
+        "hi": 912,
+        "q4": 9120,
+        "s8": 456,
+        "s4": 456
+      }
+    },
+    {
+      "name": "CPU-reject-padded-payload-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-ties-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-negative-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-zero-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-rounded_scales-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-underflow-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-subnormal-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-mixed_scales-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-large_finite-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-65token-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-poisoned-neighbor-boundaries-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-dead-current-readout-zero-carry-8_80_40",
+      "pass": true
+    },
+    {
+      "name": "CPU-actual-unpadded-storage-24_48_56",
+      "pass": true,
+      "shapes": {
+        "lo": [
+          2,
+          6,
+          19,
+          12
+        ],
+        "hi": [
+          2,
+          6,
+          19,
+          12
+        ],
+        "q4": [
+          2,
+          6,
+          19,
+          24
+        ],
+        "s8": [
+          2,
+          6,
+          19
+        ],
+        "s4": [
+          2,
+          6,
+          19
+        ]
+      },
+      "storage_bytes": {
+        "lo": 2736,
+        "hi": 2736,
+        "q4": 5472,
+        "s8": 456,
+        "s4": 456
+      }
+    },
+    {
+      "name": "CPU-reject-padded-payload-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-ties-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-negative-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-zero-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-rounded_scales-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-underflow-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-subnormal-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-mixed_scales-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-large_finite-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-65token-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-poisoned-neighbor-boundaries-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-dead-current-readout-zero-carry-24_48_56",
+      "pass": true
+    },
+    {
+      "name": "CPU-actual-unpadded-storage-32_32_64",
+      "pass": true,
+      "shapes": {
+        "lo": [
+          2,
+          6,
+          19,
+          16
+        ],
+        "hi": [
+          2,
+          6,
+          19,
+          16
+        ],
+        "q4": [
+          2,
+          6,
+          19,
+          16
+        ],
+        "s8": [
+          2,
+          6,
+          19
+        ],
+        "s4": [
+          2,
+          6,
+          19
+        ]
+      },
+      "storage_bytes": {
+        "lo": 3648,
+        "hi": 3648,
+        "q4": 3648,
+        "s8": 456,
+        "s4": 456
+      }
+    },
+    {
+      "name": "CPU-reject-padded-payload-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-ties-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-negative-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-zero-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-rounded_scales-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-underflow-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-subnormal-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-mixed_scales-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-one-large_finite-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-65token-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-poisoned-neighbor-boundaries-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CPU-finite-dead-current-readout-zero-carry-32_32_64",
+      "pass": true
+    },
+    {
+      "name": "CUDA-remained-uninitialized",
+      "pass": true
+    }
+  ],
+  "started_unix": 1790669598.1989105,
+  "criteria": {
+    "baseline": "Direct unchanged v6 stored_scale clip1 delegation; bitwise output/cache and unchanged cache_breakdown dictionary",
+    "controlled": "Exact FP16 readout plus raw packed bytes/FP16 scales/decoded carry every token in one-step,65-token,poisoned-neighbor and dead-impulse fixtures",
+    "random": "Exact full/segmented/tokenwise output and final cache; no CPU transcendental/reduction equality assertion",
+    "storage": "Exact unpadded lo/hi/q4 widths plus two FP16 scales,52B/row;56layer actual allocation28499968B; zero resident layout tensors",
+    "failure": "Nonfinite scales/readout rejected; malformed padded allocations rejected"
+  },
+  "cuda_initialized": false,
+  "finished_unix": 1790669600.469102
+}

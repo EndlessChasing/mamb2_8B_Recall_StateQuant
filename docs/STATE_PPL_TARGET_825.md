@@ -191,7 +191,7 @@ See [raw comparison](../reports/state_ppl_v9_full/full_comparison.json).
 ## Route v10: change precision versus coverage at the same 3.25-bit budget
 
 - [x] Freeze a distinct four-layout protocol and TRAIN-only selection.
-- [ ] Implement actual packed layouts and pass independent codec checks.
+- [x] Implement actual packed layouts and pass independent codec checks.
 - [ ] Independently audit source/input/packing evidence before quality runs.
 - [ ] Screen four layouts on 32 full TRAIN windows, rows184..215.
 - [ ] Fully validate the frozen TRAIN winner and independently audit evidence.
@@ -209,6 +209,16 @@ family; it does not preserve the old 16/64/48 tier counts. The v9 TRAIN-selected
 permutation remains fixed irrespective of its full regression. Global layout
 selection uses TRAIN PPL only. Existing v6 numerical policy and baseline codec
 are retained; nonbaseline layouts require new masked packed kernels.
+
+The codec passes 57 CPU preparation checks and all 174 GPU checks on its first
+GPU attempt, including 44 raw-evidence oracle cases, partition/reset equality,
+exact baseline delegation, padding/row boundaries and all56 actual allocations.
+[Canonical receipt](../reports/state_ppl_v10_codec_checks.json) SHA256:
+ca54b1c82032f0a2883ae83a3a21b79fa0b874d28514dac97fa912e1096e67f1.
+The first CPU invocation only found a missing remote protocol file; its failed
+receipt is preserved. The unchanged code passed after copying that file.
+Independent CPU evidence audit and quality measurements are still pending.
+See [reproduction](STATE_PPL_V10_REPRODUCTION.md).
 
 The family/grid/rows were proposed and approved before the v9 full outcome;
 the final protocol document was frozen after the target-failure notification.
