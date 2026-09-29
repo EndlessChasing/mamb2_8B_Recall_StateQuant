@@ -1,0 +1,2753 @@
+{
+  "format": "MAMBA2_STATE_REPAIR_TRAIN_SCREEN_ANALYSIS_V1",
+  "complete": true,
+  "scope": "Descriptive TRAIN screen only; no validation or CONFIRM reports read; no fitted or selected new candidate",
+  "heldout_used": false,
+  "cuda_initialized": false,
+  "protocol_sha256": "f18069d0340449316297077a2d912f7ef42fbf518436d9b311d8a731c96d722c",
+  "analysis_script_sha256": "a6cfe4baf027a2731f4a26e8403073bbae6cd636a5ce93d3367a3645481cc6cd",
+  "input_sha256": {
+    "screen_comparison.json": "e02cd7e67f46058b1aac1e45ea5b452b585a10270be5e6f1d7b62c13d73d5fa9",
+    "screen_source_s16.json": "98f4635f21d042d1ffa34458310b774518b7b370c09d2b7fda0eaa91fb41a771",
+    "screen_old_sq_no_adapter.json": "67a78a956d9d0dad4744d5f165fadff630e09712cdc54163419e59ee318b135b",
+    "screen_old_sq_v2.json": "aaf46c2bd561f8eecba381a949a20d953d2b396f291cf5e63e7b07d2f3b6e8ac",
+    "screen_readout_tiers_no_adapter.json": "ef21ff582882b28e060ec34ca05f65ca3b5b2854b2be4e8fc5f92f7dec2fce15",
+    "screen_readout_tiers_v2.json": "b51f26aa6b4dd60f57e99f6a0f4e0c6d63a117f832a089e8d699397f8072cb10",
+    "screen_dense3_no_adapter.json": "6dd93edee447b2b6295f0efcbbc45f9c0b7d89f7b01b8c35c8e02086836512e1",
+    "screen_dense3_v2.json": "710e2e4aaa2fe769a650e749031eb21bf4d8b227039b20840349c83a36a9bc2a",
+    "screen_dense3_equalized_no_adapter.json": "371c0d83dd3661a9eeadcd465c344c4d433d69a4f05b68ae690bf13707ed9f4c",
+    "screen_dense3_equalized_v2.json": "7b408e5ffbc2afec2dbdefd020a9def89b95b347152bd77cc5f43017f100cda3",
+    "screen_restored_old_sq_v2.json": "6731fa10f7c24b87aadd9ee659fb65a48aa25476cf06d6034472cd9b5256a64b",
+    "screen_restoration.json": "8add49c19c242e4a3421f17d3c5c6e90889bb27acfd2eeb9f9ea00852c8dcd7c"
+  },
+  "calibration_sha256": "8509bb266d40875608f3e0b3be22407fd6ea1b8aacbc79ce04e958726516b0a4",
+  "summary": {
+    "source_s16": {
+      "ppl": 10.625767862232653,
+      "nll": 9661.096740722656,
+      "target_tokens": 4088,
+      "mk_correct": 19,
+      "mk_count": 48
+    },
+    "old_sq_no_adapter": {
+      "ppl": 11.825467993527091,
+      "nll": 10098.404525756836,
+      "target_tokens": 4088,
+      "mk_correct": 5,
+      "mk_count": 48
+    },
+    "old_sq_v2": {
+      "ppl": 10.81421815185125,
+      "nll": 9732.962890625,
+      "target_tokens": 4088,
+      "mk_correct": 37,
+      "mk_count": 48
+    },
+    "readout_tiers_no_adapter": {
+      "ppl": 11.487384927298365,
+      "nll": 9979.827835083008,
+      "target_tokens": 4088,
+      "mk_correct": 3,
+      "mk_count": 48
+    },
+    "readout_tiers_v2": {
+      "ppl": 10.524671810713425,
+      "nll": 9622.016342163086,
+      "target_tokens": 4088,
+      "mk_correct": 30,
+      "mk_count": 48
+    },
+    "dense3_no_adapter": {
+      "ppl": 45.37704568547128,
+      "nll": 15595.746063232422,
+      "target_tokens": 4088,
+      "mk_correct": 0,
+      "mk_count": 48
+    },
+    "dense3_v2": {
+      "ppl": 39.67053636036457,
+      "nll": 15046.328590393066,
+      "target_tokens": 4088,
+      "mk_correct": 0,
+      "mk_count": 48
+    },
+    "dense3_equalized_no_adapter": {
+      "ppl": 44.06766219777853,
+      "nll": 15476.048828125,
+      "target_tokens": 4088,
+      "mk_correct": 0,
+      "mk_count": 48
+    },
+    "dense3_equalized_v2": {
+      "ppl": 43.61120003289576,
+      "nll": 15433.483627319336,
+      "target_tokens": 4088,
+      "mk_correct": 0,
+      "mk_count": 48
+    },
+    "restored_old_sq_v2": {
+      "ppl": 10.81421815185125,
+      "nll": 9732.962890625,
+      "target_tokens": 4088,
+      "mk_correct": 37,
+      "mk_count": 48
+    }
+  },
+  "selection": {
+    "selected": "readout_tiers",
+    "eligible": [],
+    "valid": [
+      "readout_tiers",
+      "dense3",
+      "dense3_equalized"
+    ],
+    "screening_pass": false,
+    "diagnostic_advancement": true,
+    "stopped": false,
+    "rule": "Fixed protocol: eligible <=1.01x PPL and at most2 fewer TRAIN answers; otherwise finite best <=1.25x; PPL/MK/order tiebreak"
+  },
+  "readout_vs_old_with_v2": {
+    "overall": {
+      "count": 48,
+      "old_correct": 37,
+      "new_correct": 30,
+      "gains": 4,
+      "regressions": 11,
+      "unchanged": 33
+    },
+    "by_N": [
+      {
+        "N": 16,
+        "count": 24,
+        "old_correct": 23,
+        "new_correct": 20,
+        "gains": 0,
+        "regressions": 3,
+        "unchanged": 21
+      },
+      {
+        "N": 64,
+        "count": 24,
+        "old_correct": 14,
+        "new_correct": 10,
+        "gains": 4,
+        "regressions": 8,
+        "unchanged": 12
+      }
+    ],
+    "by_template": [
+      {
+        "template": 0,
+        "count": 16,
+        "old_correct": 13,
+        "new_correct": 8,
+        "gains": 0,
+        "regressions": 5,
+        "unchanged": 11
+      },
+      {
+        "template": 1,
+        "count": 16,
+        "old_correct": 12,
+        "new_correct": 12,
+        "gains": 3,
+        "regressions": 3,
+        "unchanged": 10
+      },
+      {
+        "template": 2,
+        "count": 16,
+        "old_correct": 12,
+        "new_correct": 10,
+        "gains": 1,
+        "regressions": 3,
+        "unchanged": 12
+      }
+    ],
+    "by_N_template": [
+      {
+        "N": 16,
+        "template": 0,
+        "count": 8,
+        "old_correct": 8,
+        "new_correct": 7,
+        "gains": 0,
+        "regressions": 1,
+        "unchanged": 7
+      },
+      {
+        "N": 16,
+        "template": 1,
+        "count": 8,
+        "old_correct": 8,
+        "new_correct": 7,
+        "gains": 0,
+        "regressions": 1,
+        "unchanged": 7
+      },
+      {
+        "N": 16,
+        "template": 2,
+        "count": 8,
+        "old_correct": 7,
+        "new_correct": 6,
+        "gains": 0,
+        "regressions": 1,
+        "unchanged": 7
+      },
+      {
+        "N": 64,
+        "template": 0,
+        "count": 8,
+        "old_correct": 5,
+        "new_correct": 1,
+        "gains": 0,
+        "regressions": 4,
+        "unchanged": 4
+      },
+      {
+        "N": 64,
+        "template": 1,
+        "count": 8,
+        "old_correct": 4,
+        "new_correct": 5,
+        "gains": 3,
+        "regressions": 2,
+        "unchanged": 3
+      },
+      {
+        "N": 64,
+        "template": 2,
+        "count": 8,
+        "old_correct": 5,
+        "new_correct": 4,
+        "gains": 1,
+        "regressions": 2,
+        "unchanged": 5
+      }
+    ],
+    "by_query_position_quartile": [
+      {
+        "query_position_quartile": 1,
+        "count": 10,
+        "old_correct": 6,
+        "new_correct": 3,
+        "gains": 1,
+        "regressions": 4,
+        "unchanged": 5
+      },
+      {
+        "query_position_quartile": 2,
+        "count": 14,
+        "old_correct": 11,
+        "new_correct": 10,
+        "gains": 2,
+        "regressions": 3,
+        "unchanged": 9
+      },
+      {
+        "query_position_quartile": 3,
+        "count": 10,
+        "old_correct": 7,
+        "new_correct": 7,
+        "gains": 1,
+        "regressions": 1,
+        "unchanged": 8
+      },
+      {
+        "query_position_quartile": 4,
+        "count": 14,
+        "old_correct": 13,
+        "new_correct": 10,
+        "gains": 0,
+        "regressions": 3,
+        "unchanged": 11
+      }
+    ],
+    "by_N_query_position_quartile": [
+      {
+        "N": 16,
+        "query_position_quartile": 1,
+        "count": 3,
+        "old_correct": 3,
+        "new_correct": 2,
+        "gains": 0,
+        "regressions": 1,
+        "unchanged": 2
+      },
+      {
+        "N": 16,
+        "query_position_quartile": 2,
+        "count": 9,
+        "old_correct": 9,
+        "new_correct": 7,
+        "gains": 0,
+        "regressions": 2,
+        "unchanged": 7
+      },
+      {
+        "N": 16,
+        "query_position_quartile": 3,
+        "count": 5,
+        "old_correct": 5,
+        "new_correct": 5,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 5
+      },
+      {
+        "N": 16,
+        "query_position_quartile": 4,
+        "count": 7,
+        "old_correct": 6,
+        "new_correct": 6,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 7
+      },
+      {
+        "N": 64,
+        "query_position_quartile": 1,
+        "count": 7,
+        "old_correct": 3,
+        "new_correct": 1,
+        "gains": 1,
+        "regressions": 3,
+        "unchanged": 3
+      },
+      {
+        "N": 64,
+        "query_position_quartile": 2,
+        "count": 5,
+        "old_correct": 2,
+        "new_correct": 3,
+        "gains": 2,
+        "regressions": 1,
+        "unchanged": 2
+      },
+      {
+        "N": 64,
+        "query_position_quartile": 3,
+        "count": 5,
+        "old_correct": 2,
+        "new_correct": 2,
+        "gains": 1,
+        "regressions": 1,
+        "unchanged": 3
+      },
+      {
+        "N": 64,
+        "query_position_quartile": 4,
+        "count": 7,
+        "old_correct": 7,
+        "new_correct": 4,
+        "gains": 0,
+        "regressions": 3,
+        "unchanged": 4
+      }
+    ],
+    "changed_cases": [
+      {
+        "id": "resurface-train-n16-t0-s32",
+        "N": 16,
+        "template": 0,
+        "query_position": 7,
+        "query_position_quartile": 2,
+        "records_after_target": 8,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "685800",
+        "old_prediction": "685800",
+        "new_prediction": "780000",
+        "new_prediction_is_record_value": false
+      },
+      {
+        "id": "resurface-train-n16-t1-s96",
+        "N": 16,
+        "template": 1,
+        "query_position": 4,
+        "query_position_quartile": 2,
+        "records_after_target": 11,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "881645",
+        "old_prediction": "881645",
+        "new_prediction": "889978",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n16-t2-s96",
+        "N": 16,
+        "template": 2,
+        "query_position": 0,
+        "query_position_quartile": 1,
+        "records_after_target": 15,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "986999",
+        "old_prediction": "986999",
+        "new_prediction": "989429",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n64-t0-s0",
+        "N": 64,
+        "template": 0,
+        "query_position": 51,
+        "query_position_quartile": 4,
+        "records_after_target": 12,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "886380",
+        "old_prediction": "886380",
+        "new_prediction": "680826",
+        "new_prediction_is_record_value": false
+      },
+      {
+        "id": "resurface-train-n64-t0-s32",
+        "N": 64,
+        "template": 0,
+        "query_position": 2,
+        "query_position_quartile": 1,
+        "records_after_target": 61,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "681979",
+        "old_prediction": "681979",
+        "new_prediction": "981058",
+        "new_prediction_is_record_value": false
+      },
+      {
+        "id": "resurface-train-n64-t0-s160",
+        "N": 64,
+        "template": 0,
+        "query_position": 21,
+        "query_position_quartile": 2,
+        "records_after_target": 42,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "682899",
+        "old_prediction": "682899",
+        "new_prediction": "889966",
+        "new_prediction_is_record_value": false
+      },
+      {
+        "id": "resurface-train-n64-t0-s224",
+        "N": 64,
+        "template": 0,
+        "query_position": 43,
+        "query_position_quartile": 3,
+        "records_after_target": 20,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "684209",
+        "old_prediction": "684209",
+        "new_prediction": "684486",
+        "new_prediction_is_record_value": false
+      },
+      {
+        "id": "resurface-train-n64-t1-s0",
+        "N": 64,
+        "template": 1,
+        "query_position": 19,
+        "query_position_quartile": 2,
+        "records_after_target": 44,
+        "old_correct": false,
+        "new_correct": true,
+        "delta": 1,
+        "answer": "882429",
+        "old_prediction": "685500",
+        "new_prediction": "882429",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n64-t1-s64",
+        "N": 64,
+        "template": 1,
+        "query_position": 3,
+        "query_position_quartile": 1,
+        "records_after_target": 60,
+        "old_correct": false,
+        "new_correct": true,
+        "delta": 1,
+        "answer": "781899",
+        "old_prediction": "781099",
+        "new_prediction": "781899",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n64-t1-s128",
+        "N": 64,
+        "template": 1,
+        "query_position": 17,
+        "query_position_quartile": 2,
+        "records_after_target": 46,
+        "old_correct": false,
+        "new_correct": true,
+        "delta": 1,
+        "answer": "683250",
+        "old_prediction": "683220",
+        "new_prediction": "683250",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n64-t1-s192",
+        "N": 64,
+        "template": 1,
+        "query_position": 52,
+        "query_position_quartile": 4,
+        "records_after_target": 11,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "982838",
+        "old_prediction": "982838",
+        "new_prediction": "982582",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n64-t1-s224",
+        "N": 64,
+        "template": 1,
+        "query_position": 7,
+        "query_position_quartile": 1,
+        "records_after_target": 56,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "784838",
+        "old_prediction": "784838",
+        "new_prediction": "784738",
+        "new_prediction_is_record_value": false
+      },
+      {
+        "id": "resurface-train-n64-t2-s64",
+        "N": 64,
+        "template": 2,
+        "query_position": 46,
+        "query_position_quartile": 3,
+        "records_after_target": 17,
+        "old_correct": false,
+        "new_correct": true,
+        "delta": 1,
+        "answer": "885281",
+        "old_prediction": "885064",
+        "new_prediction": "885281",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n64-t2-s128",
+        "N": 64,
+        "template": 2,
+        "query_position": 48,
+        "query_position_quartile": 4,
+        "records_after_target": 15,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "781634",
+        "old_prediction": "781634",
+        "new_prediction": "781995",
+        "new_prediction_is_record_value": false
+      },
+      {
+        "id": "resurface-train-n64-t2-s192",
+        "N": 64,
+        "template": 2,
+        "query_position": 7,
+        "query_position_quartile": 1,
+        "records_after_target": 56,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "985987",
+        "old_prediction": "985987",
+        "new_prediction": "985983",
+        "new_prediction_is_record_value": false
+      }
+    ],
+    "ppl_windows": [
+      {
+        "start": 16384,
+        "old_ppl": 5.368702988336664,
+        "new_ppl": 5.164123781080336,
+        "relative_ppl_change": -0.03810589032411915,
+        "nll_delta": -19.852813720703125
+      },
+      {
+        "start": 18432,
+        "old_ppl": 10.619329098022686,
+        "new_ppl": 10.506475293317983,
+        "relative_ppl_change": -0.010627206640174247,
+        "nll_delta": -5.459564208984375
+      },
+      {
+        "start": 20480,
+        "old_ppl": 13.2957311022077,
+        "new_ppl": 12.980845663739052,
+        "relative_ppl_change": -0.02368319846784228,
+        "nll_delta": -12.247726440429688
+      },
+      {
+        "start": 22528,
+        "old_ppl": 12.044206108007383,
+        "new_ppl": 11.407218813323825,
+        "relative_ppl_change": -0.05288744554612601,
+        "nll_delta": -27.766380310058594
+      },
+      {
+        "start": 24576,
+        "old_ppl": 11.937616126591301,
+        "new_ppl": 11.989831614153351,
+        "relative_ppl_change": 0.004374029706462057,
+        "nll_delta": 2.230255126953125
+      },
+      {
+        "start": 26624,
+        "old_ppl": 11.476150107730128,
+        "new_ppl": 11.162464957467483,
+        "relative_ppl_change": -0.027333656959693475,
+        "nll_delta": -14.161941528320312
+      },
+      {
+        "start": 28672,
+        "old_ppl": 9.955242247477331,
+        "new_ppl": 9.535665038100102,
+        "relative_ppl_change": -0.04214635856636739,
+        "nll_delta": -22.003807067871094
+      },
+      {
+        "start": 30720,
+        "old_ppl": 15.022371143663696,
+        "new_ppl": 14.682765821746818,
+        "relative_ppl_change": -0.022606639036482634,
+        "nll_delta": -11.6845703125
+      }
+    ],
+    "ppl_windows_improved": 7,
+    "relative_ppl_change": -0.026774597763062347
+  },
+  "readout_vs_old_without_adapter": {
+    "overall": {
+      "count": 48,
+      "old_correct": 5,
+      "new_correct": 3,
+      "gains": 2,
+      "regressions": 4,
+      "unchanged": 42
+    },
+    "by_N": [
+      {
+        "N": 16,
+        "count": 24,
+        "old_correct": 5,
+        "new_correct": 3,
+        "gains": 2,
+        "regressions": 4,
+        "unchanged": 18
+      },
+      {
+        "N": 64,
+        "count": 24,
+        "old_correct": 0,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 24
+      }
+    ],
+    "by_template": [
+      {
+        "template": 0,
+        "count": 16,
+        "old_correct": 0,
+        "new_correct": 1,
+        "gains": 1,
+        "regressions": 0,
+        "unchanged": 15
+      },
+      {
+        "template": 1,
+        "count": 16,
+        "old_correct": 3,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 3,
+        "unchanged": 13
+      },
+      {
+        "template": 2,
+        "count": 16,
+        "old_correct": 2,
+        "new_correct": 2,
+        "gains": 1,
+        "regressions": 1,
+        "unchanged": 14
+      }
+    ],
+    "by_N_template": [
+      {
+        "N": 16,
+        "template": 0,
+        "count": 8,
+        "old_correct": 0,
+        "new_correct": 1,
+        "gains": 1,
+        "regressions": 0,
+        "unchanged": 7
+      },
+      {
+        "N": 16,
+        "template": 1,
+        "count": 8,
+        "old_correct": 3,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 3,
+        "unchanged": 5
+      },
+      {
+        "N": 16,
+        "template": 2,
+        "count": 8,
+        "old_correct": 2,
+        "new_correct": 2,
+        "gains": 1,
+        "regressions": 1,
+        "unchanged": 6
+      },
+      {
+        "N": 64,
+        "template": 0,
+        "count": 8,
+        "old_correct": 0,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 8
+      },
+      {
+        "N": 64,
+        "template": 1,
+        "count": 8,
+        "old_correct": 0,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 8
+      },
+      {
+        "N": 64,
+        "template": 2,
+        "count": 8,
+        "old_correct": 0,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 8
+      }
+    ],
+    "by_query_position_quartile": [
+      {
+        "query_position_quartile": 1,
+        "count": 10,
+        "old_correct": 2,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 2,
+        "unchanged": 8
+      },
+      {
+        "query_position_quartile": 2,
+        "count": 14,
+        "old_correct": 1,
+        "new_correct": 2,
+        "gains": 2,
+        "regressions": 1,
+        "unchanged": 11
+      },
+      {
+        "query_position_quartile": 3,
+        "count": 10,
+        "old_correct": 0,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 10
+      },
+      {
+        "query_position_quartile": 4,
+        "count": 14,
+        "old_correct": 2,
+        "new_correct": 1,
+        "gains": 0,
+        "regressions": 1,
+        "unchanged": 13
+      }
+    ],
+    "by_N_query_position_quartile": [
+      {
+        "N": 16,
+        "query_position_quartile": 1,
+        "count": 3,
+        "old_correct": 2,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 2,
+        "unchanged": 1
+      },
+      {
+        "N": 16,
+        "query_position_quartile": 2,
+        "count": 9,
+        "old_correct": 1,
+        "new_correct": 2,
+        "gains": 2,
+        "regressions": 1,
+        "unchanged": 6
+      },
+      {
+        "N": 16,
+        "query_position_quartile": 3,
+        "count": 5,
+        "old_correct": 0,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 5
+      },
+      {
+        "N": 16,
+        "query_position_quartile": 4,
+        "count": 7,
+        "old_correct": 2,
+        "new_correct": 1,
+        "gains": 0,
+        "regressions": 1,
+        "unchanged": 6
+      },
+      {
+        "N": 64,
+        "query_position_quartile": 1,
+        "count": 7,
+        "old_correct": 0,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 7
+      },
+      {
+        "N": 64,
+        "query_position_quartile": 2,
+        "count": 5,
+        "old_correct": 0,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 5
+      },
+      {
+        "N": 64,
+        "query_position_quartile": 3,
+        "count": 5,
+        "old_correct": 0,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 5
+      },
+      {
+        "N": 64,
+        "query_position_quartile": 4,
+        "count": 7,
+        "old_correct": 0,
+        "new_correct": 0,
+        "gains": 0,
+        "regressions": 0,
+        "unchanged": 7
+      }
+    ],
+    "changed_cases": [
+      {
+        "id": "resurface-train-n16-t0-s192",
+        "N": 16,
+        "template": 0,
+        "query_position": 7,
+        "query_position_quartile": 2,
+        "records_after_target": 8,
+        "old_correct": false,
+        "new_correct": true,
+        "delta": 1,
+        "answer": "986804",
+        "old_prediction": "986853",
+        "new_prediction": "986804",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n16-t1-s0",
+        "N": 16,
+        "template": 1,
+        "query_position": 3,
+        "query_position_quartile": 1,
+        "records_after_target": 12,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "889120",
+        "old_prediction": "889120",
+        "new_prediction": "989027",
+        "new_prediction_is_record_value": false
+      },
+      {
+        "id": "resurface-train-n16-t1-s128",
+        "N": 16,
+        "template": 1,
+        "query_position": 14,
+        "query_position_quartile": 4,
+        "records_after_target": 1,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "988493",
+        "old_prediction": "988493",
+        "new_prediction": "985068",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n16-t1-s224",
+        "N": 16,
+        "template": 1,
+        "query_position": 5,
+        "query_position_quartile": 2,
+        "records_after_target": 10,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "885213",
+        "old_prediction": "885213",
+        "new_prediction": "988581",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n16-t2-s96",
+        "N": 16,
+        "template": 2,
+        "query_position": 0,
+        "query_position_quartile": 1,
+        "records_after_target": 15,
+        "old_correct": true,
+        "new_correct": false,
+        "delta": -1,
+        "answer": "986999",
+        "old_prediction": "986999",
+        "new_prediction": "882885",
+        "new_prediction_is_record_value": true
+      },
+      {
+        "id": "resurface-train-n16-t2-s192",
+        "N": 16,
+        "template": 2,
+        "query_position": 7,
+        "query_position_quartile": 2,
+        "records_after_target": 8,
+        "old_correct": false,
+        "new_correct": true,
+        "delta": 1,
+        "answer": "982199",
+        "old_prediction": "983898",
+        "new_prediction": "982199",
+        "new_prediction_is_record_value": true
+      }
+    ],
+    "ppl_windows": [
+      {
+        "start": 16384,
+        "old_ppl": 6.105945884170247,
+        "new_ppl": 5.992839598744735,
+        "relative_ppl_change": -0.01852395805189533,
+        "nll_delta": -9.554512023925781
+      },
+      {
+        "start": 18432,
+        "old_ppl": 11.134818823914001,
+        "new_ppl": 10.972396516118064,
+        "relative_ppl_change": -0.014586883753070712,
+        "nll_delta": -7.508796691894531
+      },
+      {
+        "start": 20480,
+        "old_ppl": 14.699743793629224,
+        "new_ppl": 14.317888059207698,
+        "relative_ppl_change": -0.025977033326731847,
+        "nll_delta": -13.449722290039062
+      },
+      {
+        "start": 22528,
+        "old_ppl": 13.148667225877432,
+        "new_ppl": 12.361836290381666,
+        "relative_ppl_change": -0.05984111712457307,
+        "nll_delta": -31.531967163085938
+      },
+      {
+        "start": 24576,
+        "old_ppl": 12.628710702807373,
+        "new_ppl": 12.767454382117053,
+        "relative_ppl_change": 0.01098636927986929,
+        "nll_delta": 5.5834197998046875
+      },
+      {
+        "start": 26624,
+        "old_ppl": 12.338416013210514,
+        "new_ppl": 12.023802072008785,
+        "relative_ppl_change": -0.02549873021503557,
+        "nll_delta": -13.1988525390625
+      },
+      {
+        "start": 28672,
+        "old_ppl": 11.466272689512074,
+        "new_ppl": 10.795027945939252,
+        "relative_ppl_change": -0.05854079714908522,
+        "nll_delta": -30.825698852539062
+      },
+      {
+        "start": 30720,
+        "old_ppl": 16.288399055703103,
+        "new_ppl": 15.72184062426243,
+        "relative_ppl_change": -0.034782941497390585,
+        "nll_delta": -18.090560913085938
+      }
+    ],
+    "ppl_windows_improved": 7,
+    "relative_ppl_change": -0.02858940267004939
+  },
+  "tier_churn": {
+    "coordinate_scope": "56 layers x 8 groups x 128 original state coordinates; table entries, not parameters",
+    "tier_order": [
+      "int8",
+      "int4",
+      "zero_carry"
+    ],
+    "matrix_rows": "old tiers",
+    "matrix_columns": "new tiers",
+    "aggregate": {
+      "matrix": [
+        [
+          4368,
+          2448,
+          352
+        ],
+        [
+          2018,
+          17432,
+          9222
+        ],
+        [
+          782,
+          8792,
+          11930
+        ]
+      ],
+      "int8_kept": 4368,
+      "int8_demoted_to_int4": 2448,
+      "int8_demoted_to_zero": 352,
+      "new_int8_from_int4": 2018,
+      "new_int8_from_zero": 782,
+      "zero_to_retained": 9574,
+      "retained_to_zero": 9574,
+      "unchanged_tier": 33730,
+      "entries": 57344
+    },
+    "per_layer": [
+      {
+        "layer": 0,
+        "matrix": [
+          [
+            115,
+            13,
+            0
+          ],
+          [
+            13,
+            375,
+            124
+          ],
+          [
+            0,
+            124,
+            260
+          ]
+        ],
+        "int8_kept": 115,
+        "int8_demoted_to_int4": 13,
+        "int8_demoted_to_zero": 0,
+        "new_int8_from_int4": 13,
+        "new_int8_from_zero": 0,
+        "zero_to_retained": 124,
+        "retained_to_zero": 124,
+        "unchanged_tier": 750,
+        "entries": 1024
+      },
+      {
+        "layer": 1,
+        "matrix": [
+          [
+            103,
+            24,
+            1
+          ],
+          [
+            23,
+            379,
+            110
+          ],
+          [
+            2,
+            109,
+            273
+          ]
+        ],
+        "int8_kept": 103,
+        "int8_demoted_to_int4": 24,
+        "int8_demoted_to_zero": 1,
+        "new_int8_from_int4": 23,
+        "new_int8_from_zero": 2,
+        "zero_to_retained": 111,
+        "retained_to_zero": 111,
+        "unchanged_tier": 755,
+        "entries": 1024
+      },
+      {
+        "layer": 2,
+        "matrix": [
+          [
+            104,
+            24,
+            0
+          ],
+          [
+            24,
+            368,
+            120
+          ],
+          [
+            0,
+            120,
+            264
+          ]
+        ],
+        "int8_kept": 104,
+        "int8_demoted_to_int4": 24,
+        "int8_demoted_to_zero": 0,
+        "new_int8_from_int4": 24,
+        "new_int8_from_zero": 0,
+        "zero_to_retained": 120,
+        "retained_to_zero": 120,
+        "unchanged_tier": 736,
+        "entries": 1024
+      },
+      {
+        "layer": 3,
+        "matrix": [
+          [
+            90,
+            38,
+            0
+          ],
+          [
+            36,
+            341,
+            135
+          ],
+          [
+            2,
+            133,
+            249
+          ]
+        ],
+        "int8_kept": 90,
+        "int8_demoted_to_int4": 38,
+        "int8_demoted_to_zero": 0,
+        "new_int8_from_int4": 36,
+        "new_int8_from_zero": 2,
+        "zero_to_retained": 135,
+        "retained_to_zero": 135,
+        "unchanged_tier": 680,
+        "entries": 1024
+      },
+      {
+        "layer": 4,
+        "matrix": [
+          [
+            90,
+            38,
+            0
+          ],
+          [
+            33,
+            340,
+            139
+          ],
+          [
+            5,
+            134,
+            245
+          ]
+        ],
+        "int8_kept": 90,
+        "int8_demoted_to_int4": 38,
+        "int8_demoted_to_zero": 0,
+        "new_int8_from_int4": 33,
+        "new_int8_from_zero": 5,
+        "zero_to_retained": 139,
+        "retained_to_zero": 139,
+        "unchanged_tier": 675,
+        "entries": 1024
+      },
+      {
+        "layer": 5,
+        "matrix": [
+          [
+            98,
+            30,
+            0
+          ],
+          [
+            28,
+            342,
+            142
+          ],
+          [
+            2,
+            140,
+            242
+          ]
+        ],
+        "int8_kept": 98,
+        "int8_demoted_to_int4": 30,
+        "int8_demoted_to_zero": 0,
+        "new_int8_from_int4": 28,
+        "new_int8_from_zero": 2,
+        "zero_to_retained": 142,
+        "retained_to_zero": 142,
+        "unchanged_tier": 682,
+        "entries": 1024
+      },
+      {
+        "layer": 6,
+        "matrix": [
+          [
+            77,
+            50,
+            1
+          ],
+          [
+            47,
+            305,
+            160
+          ],
+          [
+            4,
+            157,
+            223
+          ]
+        ],
+        "int8_kept": 77,
+        "int8_demoted_to_int4": 50,
+        "int8_demoted_to_zero": 1,
+        "new_int8_from_int4": 47,
+        "new_int8_from_zero": 4,
+        "zero_to_retained": 161,
+        "retained_to_zero": 161,
+        "unchanged_tier": 605,
+        "entries": 1024
+      },
+      {
+        "layer": 7,
+        "matrix": [
+          [
+            77,
+            50,
+            1
+          ],
+          [
+            44,
+            313,
+            155
+          ],
+          [
+            7,
+            149,
+            228
+          ]
+        ],
+        "int8_kept": 77,
+        "int8_demoted_to_int4": 50,
+        "int8_demoted_to_zero": 1,
+        "new_int8_from_int4": 44,
+        "new_int8_from_zero": 7,
+        "zero_to_retained": 156,
+        "retained_to_zero": 156,
+        "unchanged_tier": 618,
+        "entries": 1024
+      },
+      {
+        "layer": 8,
+        "matrix": [
+          [
+            75,
+            51,
+            2
+          ],
+          [
+            40,
+            326,
+            146
+          ],
+          [
+            13,
+            135,
+            236
+          ]
+        ],
+        "int8_kept": 75,
+        "int8_demoted_to_int4": 51,
+        "int8_demoted_to_zero": 2,
+        "new_int8_from_int4": 40,
+        "new_int8_from_zero": 13,
+        "zero_to_retained": 148,
+        "retained_to_zero": 148,
+        "unchanged_tier": 637,
+        "entries": 1024
+      },
+      {
+        "layer": 9,
+        "matrix": [
+          [
+            79,
+            48,
+            1
+          ],
+          [
+            39,
+            296,
+            177
+          ],
+          [
+            10,
+            168,
+            206
+          ]
+        ],
+        "int8_kept": 79,
+        "int8_demoted_to_int4": 48,
+        "int8_demoted_to_zero": 1,
+        "new_int8_from_int4": 39,
+        "new_int8_from_zero": 10,
+        "zero_to_retained": 178,
+        "retained_to_zero": 178,
+        "unchanged_tier": 581,
+        "entries": 1024
+      },
+      {
+        "layer": 10,
+        "matrix": [
+          [
+            87,
+            38,
+            3
+          ],
+          [
+            34,
+            294,
+            184
+          ],
+          [
+            7,
+            180,
+            197
+          ]
+        ],
+        "int8_kept": 87,
+        "int8_demoted_to_int4": 38,
+        "int8_demoted_to_zero": 3,
+        "new_int8_from_int4": 34,
+        "new_int8_from_zero": 7,
+        "zero_to_retained": 187,
+        "retained_to_zero": 187,
+        "unchanged_tier": 578,
+        "entries": 1024
+      },
+      {
+        "layer": 11,
+        "matrix": [
+          [
+            87,
+            40,
+            1
+          ],
+          [
+            34,
+            320,
+            158
+          ],
+          [
+            7,
+            152,
+            225
+          ]
+        ],
+        "int8_kept": 87,
+        "int8_demoted_to_int4": 40,
+        "int8_demoted_to_zero": 1,
+        "new_int8_from_int4": 34,
+        "new_int8_from_zero": 7,
+        "zero_to_retained": 159,
+        "retained_to_zero": 159,
+        "unchanged_tier": 632,
+        "entries": 1024
+      },
+      {
+        "layer": 12,
+        "matrix": [
+          [
+            85,
+            40,
+            3
+          ],
+          [
+            33,
+            308,
+            171
+          ],
+          [
+            10,
+            164,
+            210
+          ]
+        ],
+        "int8_kept": 85,
+        "int8_demoted_to_int4": 40,
+        "int8_demoted_to_zero": 3,
+        "new_int8_from_int4": 33,
+        "new_int8_from_zero": 10,
+        "zero_to_retained": 174,
+        "retained_to_zero": 174,
+        "unchanged_tier": 603,
+        "entries": 1024
+      },
+      {
+        "layer": 13,
+        "matrix": [
+          [
+            74,
+            52,
+            2
+          ],
+          [
+            38,
+            306,
+            168
+          ],
+          [
+            16,
+            154,
+            214
+          ]
+        ],
+        "int8_kept": 74,
+        "int8_demoted_to_int4": 52,
+        "int8_demoted_to_zero": 2,
+        "new_int8_from_int4": 38,
+        "new_int8_from_zero": 16,
+        "zero_to_retained": 170,
+        "retained_to_zero": 170,
+        "unchanged_tier": 594,
+        "entries": 1024
+      },
+      {
+        "layer": 14,
+        "matrix": [
+          [
+            85,
+            41,
+            2
+          ],
+          [
+            35,
+            336,
+            141
+          ],
+          [
+            8,
+            135,
+            241
+          ]
+        ],
+        "int8_kept": 85,
+        "int8_demoted_to_int4": 41,
+        "int8_demoted_to_zero": 2,
+        "new_int8_from_int4": 35,
+        "new_int8_from_zero": 8,
+        "zero_to_retained": 143,
+        "retained_to_zero": 143,
+        "unchanged_tier": 662,
+        "entries": 1024
+      },
+      {
+        "layer": 15,
+        "matrix": [
+          [
+            85,
+            41,
+            2
+          ],
+          [
+            36,
+            309,
+            167
+          ],
+          [
+            7,
+            162,
+            215
+          ]
+        ],
+        "int8_kept": 85,
+        "int8_demoted_to_int4": 41,
+        "int8_demoted_to_zero": 2,
+        "new_int8_from_int4": 36,
+        "new_int8_from_zero": 7,
+        "zero_to_retained": 169,
+        "retained_to_zero": 169,
+        "unchanged_tier": 609,
+        "entries": 1024
+      },
+      {
+        "layer": 16,
+        "matrix": [
+          [
+            77,
+            50,
+            1
+          ],
+          [
+            34,
+            295,
+            183
+          ],
+          [
+            17,
+            167,
+            200
+          ]
+        ],
+        "int8_kept": 77,
+        "int8_demoted_to_int4": 50,
+        "int8_demoted_to_zero": 1,
+        "new_int8_from_int4": 34,
+        "new_int8_from_zero": 17,
+        "zero_to_retained": 184,
+        "retained_to_zero": 184,
+        "unchanged_tier": 572,
+        "entries": 1024
+      },
+      {
+        "layer": 17,
+        "matrix": [
+          [
+            83,
+            45,
+            0
+          ],
+          [
+            32,
+            292,
+            188
+          ],
+          [
+            13,
+            175,
+            196
+          ]
+        ],
+        "int8_kept": 83,
+        "int8_demoted_to_int4": 45,
+        "int8_demoted_to_zero": 0,
+        "new_int8_from_int4": 32,
+        "new_int8_from_zero": 13,
+        "zero_to_retained": 188,
+        "retained_to_zero": 188,
+        "unchanged_tier": 571,
+        "entries": 1024
+      },
+      {
+        "layer": 18,
+        "matrix": [
+          [
+            84,
+            43,
+            1
+          ],
+          [
+            32,
+            301,
+            179
+          ],
+          [
+            12,
+            168,
+            204
+          ]
+        ],
+        "int8_kept": 84,
+        "int8_demoted_to_int4": 43,
+        "int8_demoted_to_zero": 1,
+        "new_int8_from_int4": 32,
+        "new_int8_from_zero": 12,
+        "zero_to_retained": 180,
+        "retained_to_zero": 180,
+        "unchanged_tier": 589,
+        "entries": 1024
+      },
+      {
+        "layer": 19,
+        "matrix": [
+          [
+            69,
+            52,
+            7
+          ],
+          [
+            33,
+            288,
+            191
+          ],
+          [
+            26,
+            172,
+            186
+          ]
+        ],
+        "int8_kept": 69,
+        "int8_demoted_to_int4": 52,
+        "int8_demoted_to_zero": 7,
+        "new_int8_from_int4": 33,
+        "new_int8_from_zero": 26,
+        "zero_to_retained": 198,
+        "retained_to_zero": 198,
+        "unchanged_tier": 543,
+        "entries": 1024
+      },
+      {
+        "layer": 20,
+        "matrix": [
+          [
+            78,
+            43,
+            7
+          ],
+          [
+            20,
+            289,
+            203
+          ],
+          [
+            30,
+            180,
+            174
+          ]
+        ],
+        "int8_kept": 78,
+        "int8_demoted_to_int4": 43,
+        "int8_demoted_to_zero": 7,
+        "new_int8_from_int4": 20,
+        "new_int8_from_zero": 30,
+        "zero_to_retained": 210,
+        "retained_to_zero": 210,
+        "unchanged_tier": 541,
+        "entries": 1024
+      },
+      {
+        "layer": 21,
+        "matrix": [
+          [
+            65,
+            58,
+            5
+          ],
+          [
+            32,
+            280,
+            200
+          ],
+          [
+            31,
+            174,
+            179
+          ]
+        ],
+        "int8_kept": 65,
+        "int8_demoted_to_int4": 58,
+        "int8_demoted_to_zero": 5,
+        "new_int8_from_int4": 32,
+        "new_int8_from_zero": 31,
+        "zero_to_retained": 205,
+        "retained_to_zero": 205,
+        "unchanged_tier": 524,
+        "entries": 1024
+      },
+      {
+        "layer": 22,
+        "matrix": [
+          [
+            83,
+            42,
+            3
+          ],
+          [
+            28,
+            318,
+            166
+          ],
+          [
+            17,
+            152,
+            215
+          ]
+        ],
+        "int8_kept": 83,
+        "int8_demoted_to_int4": 42,
+        "int8_demoted_to_zero": 3,
+        "new_int8_from_int4": 28,
+        "new_int8_from_zero": 17,
+        "zero_to_retained": 169,
+        "retained_to_zero": 169,
+        "unchanged_tier": 616,
+        "entries": 1024
+      },
+      {
+        "layer": 23,
+        "matrix": [
+          [
+            71,
+            53,
+            4
+          ],
+          [
+            24,
+            268,
+            220
+          ],
+          [
+            33,
+            191,
+            160
+          ]
+        ],
+        "int8_kept": 71,
+        "int8_demoted_to_int4": 53,
+        "int8_demoted_to_zero": 4,
+        "new_int8_from_int4": 24,
+        "new_int8_from_zero": 33,
+        "zero_to_retained": 224,
+        "retained_to_zero": 224,
+        "unchanged_tier": 499,
+        "entries": 1024
+      },
+      {
+        "layer": 24,
+        "matrix": [
+          [
+            68,
+            50,
+            10
+          ],
+          [
+            32,
+            281,
+            199
+          ],
+          [
+            28,
+            181,
+            175
+          ]
+        ],
+        "int8_kept": 68,
+        "int8_demoted_to_int4": 50,
+        "int8_demoted_to_zero": 10,
+        "new_int8_from_int4": 32,
+        "new_int8_from_zero": 28,
+        "zero_to_retained": 209,
+        "retained_to_zero": 209,
+        "unchanged_tier": 524,
+        "entries": 1024
+      },
+      {
+        "layer": 25,
+        "matrix": [
+          [
+            74,
+            50,
+            4
+          ],
+          [
+            28,
+            304,
+            180
+          ],
+          [
+            26,
+            158,
+            200
+          ]
+        ],
+        "int8_kept": 74,
+        "int8_demoted_to_int4": 50,
+        "int8_demoted_to_zero": 4,
+        "new_int8_from_int4": 28,
+        "new_int8_from_zero": 26,
+        "zero_to_retained": 184,
+        "retained_to_zero": 184,
+        "unchanged_tier": 578,
+        "entries": 1024
+      },
+      {
+        "layer": 26,
+        "matrix": [
+          [
+            76,
+            43,
+            9
+          ],
+          [
+            35,
+            320,
+            157
+          ],
+          [
+            17,
+            149,
+            218
+          ]
+        ],
+        "int8_kept": 76,
+        "int8_demoted_to_int4": 43,
+        "int8_demoted_to_zero": 9,
+        "new_int8_from_int4": 35,
+        "new_int8_from_zero": 17,
+        "zero_to_retained": 166,
+        "retained_to_zero": 166,
+        "unchanged_tier": 614,
+        "entries": 1024
+      },
+      {
+        "layer": 27,
+        "matrix": [
+          [
+            76,
+            49,
+            3
+          ],
+          [
+            33,
+            312,
+            167
+          ],
+          [
+            19,
+            151,
+            214
+          ]
+        ],
+        "int8_kept": 76,
+        "int8_demoted_to_int4": 49,
+        "int8_demoted_to_zero": 3,
+        "new_int8_from_int4": 33,
+        "new_int8_from_zero": 19,
+        "zero_to_retained": 170,
+        "retained_to_zero": 170,
+        "unchanged_tier": 602,
+        "entries": 1024
+      },
+      {
+        "layer": 28,
+        "matrix": [
+          [
+            79,
+            45,
+            4
+          ],
+          [
+            22,
+            316,
+            174
+          ],
+          [
+            27,
+            151,
+            206
+          ]
+        ],
+        "int8_kept": 79,
+        "int8_demoted_to_int4": 45,
+        "int8_demoted_to_zero": 4,
+        "new_int8_from_int4": 22,
+        "new_int8_from_zero": 27,
+        "zero_to_retained": 178,
+        "retained_to_zero": 178,
+        "unchanged_tier": 601,
+        "entries": 1024
+      },
+      {
+        "layer": 29,
+        "matrix": [
+          [
+            66,
+            54,
+            8
+          ],
+          [
+            31,
+            270,
+            211
+          ],
+          [
+            31,
+            188,
+            165
+          ]
+        ],
+        "int8_kept": 66,
+        "int8_demoted_to_int4": 54,
+        "int8_demoted_to_zero": 8,
+        "new_int8_from_int4": 31,
+        "new_int8_from_zero": 31,
+        "zero_to_retained": 219,
+        "retained_to_zero": 219,
+        "unchanged_tier": 501,
+        "entries": 1024
+      },
+      {
+        "layer": 30,
+        "matrix": [
+          [
+            72,
+            46,
+            10
+          ],
+          [
+            35,
+            273,
+            204
+          ],
+          [
+            21,
+            193,
+            170
+          ]
+        ],
+        "int8_kept": 72,
+        "int8_demoted_to_int4": 46,
+        "int8_demoted_to_zero": 10,
+        "new_int8_from_int4": 35,
+        "new_int8_from_zero": 21,
+        "zero_to_retained": 214,
+        "retained_to_zero": 214,
+        "unchanged_tier": 515,
+        "entries": 1024
+      },
+      {
+        "layer": 31,
+        "matrix": [
+          [
+            77,
+            48,
+            3
+          ],
+          [
+            29,
+            273,
+            210
+          ],
+          [
+            22,
+            191,
+            171
+          ]
+        ],
+        "int8_kept": 77,
+        "int8_demoted_to_int4": 48,
+        "int8_demoted_to_zero": 3,
+        "new_int8_from_int4": 29,
+        "new_int8_from_zero": 22,
+        "zero_to_retained": 213,
+        "retained_to_zero": 213,
+        "unchanged_tier": 521,
+        "entries": 1024
+      },
+      {
+        "layer": 32,
+        "matrix": [
+          [
+            64,
+            60,
+            4
+          ],
+          [
+            47,
+            279,
+            186
+          ],
+          [
+            17,
+            173,
+            194
+          ]
+        ],
+        "int8_kept": 64,
+        "int8_demoted_to_int4": 60,
+        "int8_demoted_to_zero": 4,
+        "new_int8_from_int4": 47,
+        "new_int8_from_zero": 17,
+        "zero_to_retained": 190,
+        "retained_to_zero": 190,
+        "unchanged_tier": 537,
+        "entries": 1024
+      },
+      {
+        "layer": 33,
+        "matrix": [
+          [
+            73,
+            47,
+            8
+          ],
+          [
+            38,
+            330,
+            144
+          ],
+          [
+            17,
+            135,
+            232
+          ]
+        ],
+        "int8_kept": 73,
+        "int8_demoted_to_int4": 47,
+        "int8_demoted_to_zero": 8,
+        "new_int8_from_int4": 38,
+        "new_int8_from_zero": 17,
+        "zero_to_retained": 152,
+        "retained_to_zero": 152,
+        "unchanged_tier": 635,
+        "entries": 1024
+      },
+      {
+        "layer": 34,
+        "matrix": [
+          [
+            77,
+            39,
+            12
+          ],
+          [
+            43,
+            295,
+            174
+          ],
+          [
+            8,
+            178,
+            198
+          ]
+        ],
+        "int8_kept": 77,
+        "int8_demoted_to_int4": 39,
+        "int8_demoted_to_zero": 12,
+        "new_int8_from_int4": 43,
+        "new_int8_from_zero": 8,
+        "zero_to_retained": 186,
+        "retained_to_zero": 186,
+        "unchanged_tier": 570,
+        "entries": 1024
+      },
+      {
+        "layer": 35,
+        "matrix": [
+          [
+            75,
+            42,
+            11
+          ],
+          [
+            41,
+            309,
+            162
+          ],
+          [
+            12,
+            161,
+            211
+          ]
+        ],
+        "int8_kept": 75,
+        "int8_demoted_to_int4": 42,
+        "int8_demoted_to_zero": 11,
+        "new_int8_from_int4": 41,
+        "new_int8_from_zero": 12,
+        "zero_to_retained": 173,
+        "retained_to_zero": 173,
+        "unchanged_tier": 595,
+        "entries": 1024
+      },
+      {
+        "layer": 36,
+        "matrix": [
+          [
+            67,
+            37,
+            24
+          ],
+          [
+            34,
+            292,
+            186
+          ],
+          [
+            27,
+            183,
+            174
+          ]
+        ],
+        "int8_kept": 67,
+        "int8_demoted_to_int4": 37,
+        "int8_demoted_to_zero": 24,
+        "new_int8_from_int4": 34,
+        "new_int8_from_zero": 27,
+        "zero_to_retained": 210,
+        "retained_to_zero": 210,
+        "unchanged_tier": 533,
+        "entries": 1024
+      },
+      {
+        "layer": 37,
+        "matrix": [
+          [
+            82,
+            36,
+            10
+          ],
+          [
+            32,
+            291,
+            189
+          ],
+          [
+            14,
+            185,
+            185
+          ]
+        ],
+        "int8_kept": 82,
+        "int8_demoted_to_int4": 36,
+        "int8_demoted_to_zero": 10,
+        "new_int8_from_int4": 32,
+        "new_int8_from_zero": 14,
+        "zero_to_retained": 199,
+        "retained_to_zero": 199,
+        "unchanged_tier": 558,
+        "entries": 1024
+      },
+      {
+        "layer": 38,
+        "matrix": [
+          [
+            70,
+            48,
+            10
+          ],
+          [
+            49,
+            294,
+            169
+          ],
+          [
+            9,
+            170,
+            205
+          ]
+        ],
+        "int8_kept": 70,
+        "int8_demoted_to_int4": 48,
+        "int8_demoted_to_zero": 10,
+        "new_int8_from_int4": 49,
+        "new_int8_from_zero": 9,
+        "zero_to_retained": 179,
+        "retained_to_zero": 179,
+        "unchanged_tier": 569,
+        "entries": 1024
+      },
+      {
+        "layer": 39,
+        "matrix": [
+          [
+            59,
+            61,
+            8
+          ],
+          [
+            59,
+            307,
+            146
+          ],
+          [
+            10,
+            144,
+            230
+          ]
+        ],
+        "int8_kept": 59,
+        "int8_demoted_to_int4": 61,
+        "int8_demoted_to_zero": 8,
+        "new_int8_from_int4": 59,
+        "new_int8_from_zero": 10,
+        "zero_to_retained": 154,
+        "retained_to_zero": 154,
+        "unchanged_tier": 596,
+        "entries": 1024
+      },
+      {
+        "layer": 40,
+        "matrix": [
+          [
+            64,
+            44,
+            20
+          ],
+          [
+            46,
+            292,
+            174
+          ],
+          [
+            18,
+            176,
+            190
+          ]
+        ],
+        "int8_kept": 64,
+        "int8_demoted_to_int4": 44,
+        "int8_demoted_to_zero": 20,
+        "new_int8_from_int4": 46,
+        "new_int8_from_zero": 18,
+        "zero_to_retained": 194,
+        "retained_to_zero": 194,
+        "unchanged_tier": 546,
+        "entries": 1024
+      },
+      {
+        "layer": 41,
+        "matrix": [
+          [
+            60,
+            56,
+            12
+          ],
+          [
+            52,
+            297,
+            163
+          ],
+          [
+            16,
+            159,
+            209
+          ]
+        ],
+        "int8_kept": 60,
+        "int8_demoted_to_int4": 56,
+        "int8_demoted_to_zero": 12,
+        "new_int8_from_int4": 52,
+        "new_int8_from_zero": 16,
+        "zero_to_retained": 175,
+        "retained_to_zero": 175,
+        "unchanged_tier": 566,
+        "entries": 1024
+      },
+      {
+        "layer": 42,
+        "matrix": [
+          [
+            61,
+            49,
+            18
+          ],
+          [
+            49,
+            298,
+            165
+          ],
+          [
+            18,
+            165,
+            201
+          ]
+        ],
+        "int8_kept": 61,
+        "int8_demoted_to_int4": 49,
+        "int8_demoted_to_zero": 18,
+        "new_int8_from_int4": 49,
+        "new_int8_from_zero": 18,
+        "zero_to_retained": 183,
+        "retained_to_zero": 183,
+        "unchanged_tier": 560,
+        "entries": 1024
+      },
+      {
+        "layer": 43,
+        "matrix": [
+          [
+            67,
+            48,
+            13
+          ],
+          [
+            44,
+            294,
+            174
+          ],
+          [
+            17,
+            170,
+            197
+          ]
+        ],
+        "int8_kept": 67,
+        "int8_demoted_to_int4": 48,
+        "int8_demoted_to_zero": 13,
+        "new_int8_from_int4": 44,
+        "new_int8_from_zero": 17,
+        "zero_to_retained": 187,
+        "retained_to_zero": 187,
+        "unchanged_tier": 558,
+        "entries": 1024
+      },
+      {
+        "layer": 44,
+        "matrix": [
+          [
+            53,
+            60,
+            15
+          ],
+          [
+            52,
+            311,
+            149
+          ],
+          [
+            23,
+            141,
+            220
+          ]
+        ],
+        "int8_kept": 53,
+        "int8_demoted_to_int4": 60,
+        "int8_demoted_to_zero": 15,
+        "new_int8_from_int4": 52,
+        "new_int8_from_zero": 23,
+        "zero_to_retained": 164,
+        "retained_to_zero": 164,
+        "unchanged_tier": 584,
+        "entries": 1024
+      },
+      {
+        "layer": 45,
+        "matrix": [
+          [
+            69,
+            46,
+            13
+          ],
+          [
+            36,
+            313,
+            163
+          ],
+          [
+            23,
+            153,
+            208
+          ]
+        ],
+        "int8_kept": 69,
+        "int8_demoted_to_int4": 46,
+        "int8_demoted_to_zero": 13,
+        "new_int8_from_int4": 36,
+        "new_int8_from_zero": 23,
+        "zero_to_retained": 176,
+        "retained_to_zero": 176,
+        "unchanged_tier": 590,
+        "entries": 1024
+      },
+      {
+        "layer": 46,
+        "matrix": [
+          [
+            75,
+            41,
+            12
+          ],
+          [
+            41,
+            298,
+            173
+          ],
+          [
+            12,
+            173,
+            199
+          ]
+        ],
+        "int8_kept": 75,
+        "int8_demoted_to_int4": 41,
+        "int8_demoted_to_zero": 12,
+        "new_int8_from_int4": 41,
+        "new_int8_from_zero": 12,
+        "zero_to_retained": 185,
+        "retained_to_zero": 185,
+        "unchanged_tier": 572,
+        "entries": 1024
+      },
+      {
+        "layer": 47,
+        "matrix": [
+          [
+            78,
+            36,
+            14
+          ],
+          [
+            41,
+            309,
+            162
+          ],
+          [
+            9,
+            167,
+            208
+          ]
+        ],
+        "int8_kept": 78,
+        "int8_demoted_to_int4": 36,
+        "int8_demoted_to_zero": 14,
+        "new_int8_from_int4": 41,
+        "new_int8_from_zero": 9,
+        "zero_to_retained": 176,
+        "retained_to_zero": 176,
+        "unchanged_tier": 595,
+        "entries": 1024
+      },
+      {
+        "layer": 48,
+        "matrix": [
+          [
+            70,
+            44,
+            14
+          ],
+          [
+            48,
+            326,
+            138
+          ],
+          [
+            10,
+            142,
+            232
+          ]
+        ],
+        "int8_kept": 70,
+        "int8_demoted_to_int4": 44,
+        "int8_demoted_to_zero": 14,
+        "new_int8_from_int4": 48,
+        "new_int8_from_zero": 10,
+        "zero_to_retained": 152,
+        "retained_to_zero": 152,
+        "unchanged_tier": 628,
+        "entries": 1024
+      },
+      {
+        "layer": 49,
+        "matrix": [
+          [
+            71,
+            49,
+            8
+          ],
+          [
+            44,
+            284,
+            184
+          ],
+          [
+            13,
+            179,
+            192
+          ]
+        ],
+        "int8_kept": 71,
+        "int8_demoted_to_int4": 49,
+        "int8_demoted_to_zero": 8,
+        "new_int8_from_int4": 44,
+        "new_int8_from_zero": 13,
+        "zero_to_retained": 192,
+        "retained_to_zero": 192,
+        "unchanged_tier": 547,
+        "entries": 1024
+      },
+      {
+        "layer": 50,
+        "matrix": [
+          [
+            66,
+            55,
+            7
+          ],
+          [
+            45,
+            313,
+            154
+          ],
+          [
+            17,
+            144,
+            223
+          ]
+        ],
+        "int8_kept": 66,
+        "int8_demoted_to_int4": 55,
+        "int8_demoted_to_zero": 7,
+        "new_int8_from_int4": 45,
+        "new_int8_from_zero": 17,
+        "zero_to_retained": 161,
+        "retained_to_zero": 161,
+        "unchanged_tier": 602,
+        "entries": 1024
+      },
+      {
+        "layer": 51,
+        "matrix": [
+          [
+            91,
+            31,
+            6
+          ],
+          [
+            34,
+            319,
+            159
+          ],
+          [
+            3,
+            162,
+            219
+          ]
+        ],
+        "int8_kept": 91,
+        "int8_demoted_to_int4": 31,
+        "int8_demoted_to_zero": 6,
+        "new_int8_from_int4": 34,
+        "new_int8_from_zero": 3,
+        "zero_to_retained": 165,
+        "retained_to_zero": 165,
+        "unchanged_tier": 629,
+        "entries": 1024
+      },
+      {
+        "layer": 52,
+        "matrix": [
+          [
+            87,
+            37,
+            4
+          ],
+          [
+            33,
+            356,
+            123
+          ],
+          [
+            8,
+            119,
+            257
+          ]
+        ],
+        "int8_kept": 87,
+        "int8_demoted_to_int4": 37,
+        "int8_demoted_to_zero": 4,
+        "new_int8_from_int4": 33,
+        "new_int8_from_zero": 8,
+        "zero_to_retained": 127,
+        "retained_to_zero": 127,
+        "unchanged_tier": 700,
+        "entries": 1024
+      },
+      {
+        "layer": 53,
+        "matrix": [
+          [
+            90,
+            28,
+            10
+          ],
+          [
+            32,
+            371,
+            109
+          ],
+          [
+            6,
+            113,
+            265
+          ]
+        ],
+        "int8_kept": 90,
+        "int8_demoted_to_int4": 28,
+        "int8_demoted_to_zero": 10,
+        "new_int8_from_int4": 32,
+        "new_int8_from_zero": 6,
+        "zero_to_retained": 119,
+        "retained_to_zero": 119,
+        "unchanged_tier": 726,
+        "entries": 1024
+      },
+      {
+        "layer": 54,
+        "matrix": [
+          [
+            95,
+            33,
+            0
+          ],
+          [
+            30,
+            354,
+            128
+          ],
+          [
+            3,
+            125,
+            256
+          ]
+        ],
+        "int8_kept": 95,
+        "int8_demoted_to_int4": 33,
+        "int8_demoted_to_zero": 0,
+        "new_int8_from_int4": 30,
+        "new_int8_from_zero": 3,
+        "zero_to_retained": 128,
+        "retained_to_zero": 128,
+        "unchanged_tier": 705,
+        "entries": 1024
+      },
+      {
+        "layer": 55,
+        "matrix": [
+          [
+            95,
+            32,
+            1
+          ],
+          [
+            31,
+            362,
+            119
+          ],
+          [
+            2,
+            118,
+            264
+          ]
+        ],
+        "int8_kept": 95,
+        "int8_demoted_to_int4": 32,
+        "int8_demoted_to_zero": 1,
+        "new_int8_from_int4": 31,
+        "new_int8_from_zero": 2,
+        "zero_to_retained": 120,
+        "retained_to_zero": 120,
+        "unchanged_tier": 721,
+        "entries": 1024
+      }
+    ],
+    "calibration_statistic_mass": {
+      "mean_readout_score": {
+        "transition_fraction": [
+          [
+            0.8322991371350721,
+            0.01916160382368889,
+            2.6510483947884933e-06
+          ],
+          [
+            0.07769472739719906,
+            0.06224042424945041,
+            0.0012089929259029126
+          ],
+          [
+            0.0001429162599647377,
+            0.005621187510587528,
+            0.0016283596497398073
+          ]
+        ],
+        "old_zero_fraction": 0.007392463420292073,
+        "new_zero_fraction": 0.002840003624037508
+      },
+      "mean_abs": {
+        "transition_fraction": [
+          [
+            0.3298346141378857,
+            0.103400202275564,
+            0.008691955779192035
+          ],
+          [
+            0.04093260371231805,
+            0.27062186251161874,
+            0.10405408781751199
+          ],
+          [
+            0.003872885091850555,
+            0.05750519296239451,
+            0.08108659571166443
+          ]
+        ],
+        "old_zero_fraction": 0.1424646737659095,
+        "new_zero_fraction": 0.19383263930836847
+      }
+    },
+    "interpretation": "Tier churn and TRAIN output differences coexist; this analysis does not establish causality."
+  },
+  "limitations": [
+    "48 TRAIN cases, eight per N/template cell, were seen during prior adapter training; not a generalization estimate.",
+    "Query position is the zero-based record index, not the position of the final query token.",
+    "Readout score measures one-step diagonal carry damage under unadapted S16 prose traces, not future query sensitivity.",
+    "The score ignores cross-coordinate covariance, downstream sensitivity and actual INT8/INT4 shared-scale errors.",
+    "Runtime recurrent quantization and the frozen adapter can change trajectories relative to calibration.",
+    "Subgroup and tier-churn associations do not prove why individual predictions changed."
+  ],
+  "prospective_hypotheses": [
+    "In a new preregistered TRAIN experiment, preserve all original INT8 coordinates and use readout scores only to select INT4 versus zero among the remaining112; this isolates damage from demoting high-magnitude carries at unchanged storage.",
+    "Readapt Resurface to a separately frozen readout-tier recurrence with a fixed TRAIN numeric/prose teacher objective and budget; require PPL preservation and MK recovery.",
+    "The no-adapter MK decrease means adapter mismatch alone is insufficient as an explanation; recovery is not assured.",
+    "Do not choose per-template/per-position changes from this small screen or tune on current CONFIRM outcomes."
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "format": "MAMBA2_STATE_REPAIR_INDEPENDENT_AUDIT_V1",
+  "complete": true,
+  "passed": true,
+  "stage": "screen",
+  "protocol_sha256": "f18069d0340449316297077a2d912f7ef42fbf518436d9b311d8a731c96d722c",
+  "source_sha256": "acdf1a107685ca803f2928f3fc399cf6c770202ec2f0c557d4984eb3ef800320",
+  "auditor_dependency_sha256": {
+    "audit_quant_first.py": "5439e766a59b3eb14db1024002ba92ffa4337c72540f27f6dd5869d79f0cfceb",
+    "audit_resurface_more.py": "debfcdb3e61a4f6e31d814de6e7713d357a415a721dc519246906118dc9aba60"
+  },
+  "limitations": [
+    "Recorded NLL and generated IDs are audited; GPU logits/greedy execution are not independently rerun.",
+    "Calibration table derivations are reconstructed from recorded sums; original GPU calibration traces are not rerun.",
+    "Packing tests and actual allocation receipts are bound and checked; this CPU audit does not launch packing kernels.",
+    "Base identity/version/gradient reports do not replace post-inference model-weight byte hashes.",
+    "Zero-scale observations combine true zeros and underflow; they are not unique underflow event counts.",
+    "Historically exposed datasets and prompt families do not establish untouched generalization."
+  ],
+  "self_tests": {
+    "complete": true,
+    "passed": true,
+    "checks": [
+      "eligibility-inclusive",
+      "eligibility-one-ulp-above-diagnostic",
+      "mk-minus3-diagnostic",
+      "diagnostic-inclusive",
+      "diagnostic-above-stop",
+      "ppl-tie-use-mk",
+      "ppl-before-mk",
+      "full-tie-use-order",
+      "either-arm-failure-excludes-codec",
+      "one-extra-byte-excludes",
+      "nan-excludes",
+      "infinity-excludes",
+      "all-failed-stop",
+      "signed-three-bitplanes-48B-plus-two-FP16-52B"
+    ],
+    "count": 14,
+    "gpu_used": false
+  },
+  "inputs": {
+    "complete": true,
+    "table_derivation_independent": true,
+    "calibration_sha256": "8509bb266d40875608f3e0b3be22407fd6ea1b8aacbc79ce04e958726516b0a4",
+    "calibration_tokens": 4096,
+    "table_bytes_per_candidate": 57344,
+    "one_packed_row_bytes": 52,
+    "cache_bytes": 28499968,
+    "readout_score_tier_mass": {
+      "int8": 0.9101367807922354,
+      "int4": 0.08702321558372682,
+      "dead": 0.002840003624037507
+    },
+    "unit_receipts": {
+      "dense_checks": 36,
+      "collector_cases": 3,
+      "all_bound_passed": true,
+      "packing_scope": "CPU verifies recorded GPU test identities/results and allocation arithmetic, not a GPU kernel rerun"
+    }
+  },
+  "screen": {
+    "complete": true,
+    "arms": {
+      "source_s16": {
+        "complete": true,
+        "ppl": 10.625767862232653,
+        "ppl_windows": 8,
+        "ppl_targets": 4088,
+        "mk_cases": 48,
+        "mk": {
+          "normal": {
+            "correct": 19,
+            "count": 48,
+            "accuracy": 0.3958333333333333
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "old_sq_no_adapter": {
+        "complete": true,
+        "ppl": 11.825467993527091,
+        "ppl_windows": 8,
+        "ppl_targets": 4088,
+        "mk_cases": 48,
+        "mk": {
+          "normal": {
+            "correct": 5,
+            "count": 48,
+            "accuracy": 0.10416666666666667
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "old_sq_v2": {
+        "complete": true,
+        "ppl": 10.81421815185125,
+        "ppl_windows": 8,
+        "ppl_targets": 4088,
+        "mk_cases": 48,
+        "mk": {
+          "normal": {
+            "correct": 37,
+            "count": 48,
+            "accuracy": 0.7708333333333334
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "readout_tiers_no_adapter": {
+        "complete": true,
+        "ppl": 11.487384927298365,
+        "ppl_windows": 8,
+        "ppl_targets": 4088,
+        "mk_cases": 48,
+        "mk": {
+          "normal": {
+            "correct": 3,
+            "count": 48,
+            "accuracy": 0.0625
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "readout_tiers_v2": {
+        "complete": true,
+        "ppl": 10.524671810713425,
+        "ppl_windows": 8,
+        "ppl_targets": 4088,
+        "mk_cases": 48,
+        "mk": {
+          "normal": {
+            "correct": 30,
+            "count": 48,
+            "accuracy": 0.625
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "dense3_no_adapter": {
+        "complete": true,
+        "ppl": 45.37704568547128,
+        "ppl_windows": 8,
+        "ppl_targets": 4088,
+        "mk_cases": 48,
+        "mk": {
+          "normal": {
+            "correct": 0,
+            "count": 48,
+            "accuracy": 0.0
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "dense3_v2": {
+        "complete": true,
+        "ppl": 39.67053636036457,
+        "ppl_windows": 8,
+        "ppl_targets": 4088,
+        "mk_cases": 48,
+        "mk": {
+          "normal": {
+            "correct": 0,
+            "count": 48,
+            "accuracy": 0.0
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "dense3_equalized_no_adapter": {
+        "complete": true,
+        "ppl": 44.06766219777853,
+        "ppl_windows": 8,
+        "ppl_targets": 4088,
+        "mk_cases": 48,
+        "mk": {
+          "normal": {
+            "correct": 0,
+            "count": 48,
+            "accuracy": 0.0
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "dense3_equalized_v2": {
+        "complete": true,
+        "ppl": 43.61120003289576,
+        "ppl_windows": 8,
+        "ppl_targets": 4088,
+        "mk_cases": 48,
+        "mk": {
+          "normal": {
+            "correct": 0,
+            "count": 48,
+            "accuracy": 0.0
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      },
+      "restored_old_sq_v2": {
+        "complete": true,
+        "ppl": 10.81421815185125,
+        "ppl_windows": 8,
+        "ppl_targets": 4088,
+        "mk_cases": 48,
+        "mk": {
+          "normal": {
+            "correct": 37,
+            "count": 48,
+            "accuracy": 0.7708333333333334
+          },
+          "target_removed": {
+            "correct": 0,
+            "count": 0,
+            "accuracy": null
+          }
+        }
+      }
+    },
+    "report_sha256": {
+      "source_s16": "98f4635f21d042d1ffa34458310b774518b7b370c09d2b7fda0eaa91fb41a771",
+      "old_sq_no_adapter": "67a78a956d9d0dad4744d5f165fadff630e09712cdc54163419e59ee318b135b",
+      "old_sq_v2": "aaf46c2bd561f8eecba381a949a20d953d2b396f291cf5e63e7b07d2f3b6e8ac",
+      "readout_tiers_no_adapter": "ef21ff582882b28e060ec34ca05f65ca3b5b2854b2be4e8fc5f92f7dec2fce15",
+      "readout_tiers_v2": "b51f26aa6b4dd60f57e99f6a0f4e0c6d63a117f832a089e8d699397f8072cb10",
+      "dense3_no_adapter": "6dd93edee447b2b6295f0efcbbc45f9c0b7d89f7b01b8c35c8e02086836512e1",
+      "dense3_v2": "710e2e4aaa2fe769a650e749031eb21bf4d8b227039b20840349c83a36a9bc2a",
+      "dense3_equalized_no_adapter": "371c0d83dd3661a9eeadcd465c344c4d433d69a4f05b68ae690bf13707ed9f4c",
+      "dense3_equalized_v2": "7b408e5ffbc2afec2dbdefd020a9def89b95b347152bd77cc5f43017f100cda3",
+      "restored_old_sq_v2": "6731fa10f7c24b87aadd9ee659fb65a48aa25476cf06d6034472cd9b5256a64b"
+    },
+    "restoration": {
+      "complete": true,
+      "per_window_nll_exact": true,
+      "all_generated_ids_exact": true,
+      "all_decoded_predictions_exact": true,
+      "ppl_windows_repeated": 8,
+      "ppl_target_tokens_repeated": 4088,
+      "mk_cases_repeated": 48,
+      "scope": "Restore original codec/table with the same frozen v2 adapter; all windows and generated IDs exact"
+    },
+    "comparison_sha256": "e02cd7e67f46058b1aac1e45ea5b452b585a10270be5e6f1d7b62c13d73d5fa9",
+    "selection": {
+      "selected": "readout_tiers",
+      "eligible": [],
+      "valid": [
+        "readout_tiers",
+        "dense3",
+        "dense3_equalized"
+      ],
+      "screening_pass": false,
+      "diagnostic_advancement": true,
+      "stopped": false,
+      "rule": "Fixed protocol: eligible <=1.01x PPL and at most2 fewer TRAIN answers; otherwise finite best <=1.25x; PPL/MK/order tiebreak"
+    }
+  },
+  "cuda_initialized": false
+}

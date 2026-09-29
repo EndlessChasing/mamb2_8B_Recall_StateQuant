@@ -70,8 +70,8 @@ Keep v2 as the recall reference; see docs/RESURFACE_MORE_RESULTS.md.
 - [x] Collect 4096 TRAIN tokens; verify full-model128-token collector equality.
 - [x] Implement real dense3 packing and coordinate equalization at the same budget.
 - [x] Pass36 GPU codec/oracle/segmentation/numerical-boundary/storage checks.
-- [ ] Complete nine TRAIN screening arms and exact parent replay.
-- [ ] Independently audit screening and select one candidate by the frozen rule.
+- [x] Complete nine TRAIN screening arms and exact parent replay.
+- [x] Independently audit screening and select one candidate by the frozen rule.
 - [ ] Complete the selected candidate's full PPL/MK and exact baseline replays, if advanced.
 - [ ] Audit the full outcome, document limitations and push private artifacts.
 

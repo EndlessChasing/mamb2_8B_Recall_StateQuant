@@ -1,0 +1,21 @@
+{
+  "format": "MAMBA2_DENSE3_MULTISTEP_ORACLE_V1",
+  "complete": false,
+  "mode": "cpu_preparation",
+  "started_unix": 1790652363.7986324,
+  "seed": 2026092807,
+  "code_sha256": {
+    "scripts/check_state_codec_dense3_multistep.py": "1e0803f3479f2396a83c9bea241fe801772f362344be4716438b0df379425e76",
+    "mamba2_recall/state_codec_dense3.py": "b2643076540ec67f4b879ba9dc2c512fdbfdf3c3db7c957902002e1bc5df0a05",
+    "mamba2_recall/state_quant_dense3.py": "946bdb08d1557d364e8b1f4264412dffcd2481227daee4bfdba6a5238729f9fd"
+  },
+  "cases": [],
+  "scope": "Controlled65-token exact packed CPU recurrence gate; random65-token numerical comparison reports all differences and is descriptive, not an exactness or quality gate",
+  "criteria_frozen_before_gpu": {
+    "controlled": "Every output, packed byte and FP16 scale exact every token",
+    "partition": "Full and1/7/16/remainder segmented outputs and final caches exactly match tokenwise",
+    "random": "Report all errors; finite outputs/scales required; no post-result tolerance changes"
+  },
+  "error": "AssertionError('Controlled fixture failed its declared CPU construction')",
+  "finished_unix": 1790652365.308294
+}

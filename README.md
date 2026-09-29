@@ -6,9 +6,13 @@ Three new candidates test readout-aware tier calibration, dense3-bit carry,
 and dense3 with power-of-two coordinate equalization. Each retains exactly
 **3.25 bits per state element including scales**, and **27.1797 MiB** total
 batch-one persistent cache. Original source weights and the v2 adapter remain
-fixed. TRAIN calibration and36 GPU codec checks passed; nine matched TRAIN
-screening arms are running before selecting one full-validation candidate.
-See the [frozen repair protocol](docs/STATE_REPAIR_PROTOCOL.md).
+fixed. TRAIN calibration and 36 GPU codec checks passed. All nine TRAIN arms,
+exact parent replay and the independent screen audit are complete. Readout-aware
+tiers reduce TRAIN PPL from 10.8142 to 10.5247, but MK falls from 37/48 to 30/48.
+Neither dense Q3 variant improves quality. No candidate passes the screen gate;
+readout-aware tiers advance for full diagnostic confirmation under the frozen
+rule. See [current evidence](docs/STATE_REPAIR_RESULTS.md) and the
+[frozen repair protocol](docs/STATE_REPAIR_PROTOCOL.md).
 
 ## v3: more training gives lower PPL without a recall improvement
 

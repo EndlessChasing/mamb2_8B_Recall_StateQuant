@@ -1,0 +1,139 @@
+{
+  "format": "MAMBA2_DENSE3_MULTISTEP_ORACLE_V1",
+  "complete": true,
+  "mode": "cpu_preparation",
+  "started_unix": 1790652572.3838196,
+  "seed": 2026092807,
+  "code_sha256": {
+    "scripts/check_state_codec_dense3_multistep.py": "948cba6aac462bbbf0268d315e21fe52095e783c2db91009e8ab18e12e75ad97",
+    "mamba2_recall/state_codec_dense3.py": "b2643076540ec67f4b879ba9dc2c512fdbfdf3c3db7c957902002e1bc5df0a05",
+    "mamba2_recall/state_quant_dense3.py": "946bdb08d1557d364e8b1f4264412dffcd2481227daee4bfdba6a5238729f9fd"
+  },
+  "cases": [
+    {
+      "family": "controlled",
+      "kind": "permutation",
+      "geometry": [
+        2,
+        65,
+        6,
+        5
+      ],
+      "groups": 3,
+      "cpu_delta_min": 32.0,
+      "cpu_delta_max": 32.0,
+      "cpu_nonzero_output_elements": 3810,
+      "cpu_nonzero_final_packed_bytes": 2880,
+      "input_tensors_finite": true,
+      "cpu_delta_exact32": true,
+      "effective_drive_delta": 0.5,
+      "B_divisor": 64,
+      "decay_exact1": true,
+      "cpu_every_fourth_carry_zero": true
+    },
+    {
+      "family": "controlled",
+      "kind": "equalizer",
+      "geometry": [
+        2,
+        65,
+        6,
+        5
+      ],
+      "groups": 3,
+      "cpu_delta_min": 32.0,
+      "cpu_delta_max": 32.0,
+      "cpu_nonzero_output_elements": 3810,
+      "cpu_nonzero_final_packed_bytes": 2880,
+      "input_tensors_finite": true,
+      "cpu_delta_exact32": true,
+      "effective_drive_delta": 0.5,
+      "B_divisor": 64,
+      "decay_exact1": true,
+      "cpu_every_fourth_carry_zero": true
+    },
+    {
+      "family": "target_softplus_half",
+      "kind": "permutation",
+      "geometry": [
+        2,
+        65,
+        6,
+        5
+      ],
+      "groups": 3,
+      "cpu_delta_min": 0.4999999701976776,
+      "cpu_delta_max": 0.4999999701976776,
+      "cpu_nonzero_output_elements": 3810,
+      "cpu_nonzero_final_packed_bytes": 2880,
+      "input_tensors_finite": true,
+      "raw_bias": -0.4327521324157715,
+      "target_delta": 0.5,
+      "delta_approximation_declared": true
+    },
+    {
+      "family": "target_softplus_half",
+      "kind": "equalizer",
+      "geometry": [
+        2,
+        65,
+        6,
+        5
+      ],
+      "groups": 3,
+      "cpu_delta_min": 0.4999999701976776,
+      "cpu_delta_max": 0.4999999701976776,
+      "cpu_nonzero_output_elements": 3810,
+      "cpu_nonzero_final_packed_bytes": 2880,
+      "input_tensors_finite": true,
+      "raw_bias": -0.4327521324157715,
+      "target_delta": 0.5,
+      "delta_approximation_declared": true
+    },
+    {
+      "family": "random",
+      "kind": "permutation",
+      "geometry": [
+        2,
+        65,
+        8,
+        7
+      ],
+      "groups": 2,
+      "cpu_delta_min": 0.03628703951835632,
+      "cpu_delta_max": 0.4596879780292511,
+      "cpu_nonzero_output_elements": 7280,
+      "cpu_nonzero_final_packed_bytes": 5241,
+      "input_tensors_finite": true
+    },
+    {
+      "family": "random",
+      "kind": "equalizer",
+      "geometry": [
+        2,
+        65,
+        8,
+        7
+      ],
+      "groups": 2,
+      "cpu_delta_min": 0.03628703951835632,
+      "cpu_delta_max": 0.4596879780292511,
+      "cpu_nonzero_output_elements": 7280,
+      "cpu_nonzero_final_packed_bytes": 3798,
+      "input_tensors_finite": true
+    }
+  ],
+  "scope": "Strict65-token dyadic effective0.5-drive packed CPU recurrence gate; target-softplus0.5 companion uses fixed numerical tolerances; random65-token comparison reports all differences and is descriptive, not an exactness or quality gate",
+  "criteria_frozen_before_gpu": {
+    "controlled": "Every output, packed byte and FP16 scale exact every token",
+    "partition": "Full and1/7/16/remainder segmented outputs and final caches exactly match tokenwise",
+    "target_softplus_half": {
+      "output_relative_l2_bound": 0.002,
+      "every_token_decoded_carry_relative_l2_bound": 0.002,
+      "packed_code_and_scale_disagreements_reported_without_exact_requirement": true
+    },
+    "random": "Report all errors; finite outputs/scales required; no post-result tolerance changes"
+  },
+  "cuda_initialized": false,
+  "finished_unix": 1790652580.7392437
+}
