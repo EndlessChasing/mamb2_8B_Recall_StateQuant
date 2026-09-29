@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "per_window_nll_exact": true,
+  "ppl_windows_repeated": 130,
+  "target_tokens": 264764,
+  "reset_hidden_exact": true,
+  "reset_persistent_tensor_hashes_exact": true,
+  "cache_allocation_exact": true
+}

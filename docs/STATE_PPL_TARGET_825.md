@@ -140,8 +140,8 @@ This confirms the finite target miss required to start v9.
 - [x] Freeze the protocol before viewing the v8 full result.
 - [x] Implement and independently audit group interventions and provenance.
 - [x] Calibrate up to 192 individual group replacements on TRAIN rows144..151.
-- [ ] Reconstruct proposals and screen on disjoint TRAIN rows152..183.
-- [ ] Fully validate the frozen TRAIN winner and independently audit evidence.
+- [x] Reconstruct proposals and screen on disjoint TRAIN rows152..183.
+- [x] Fully validate the frozen TRAIN winner and independently audit evidence.
 
 The 19 implementation fixtures and 20 independent audit fixtures pass. The
 actual input audit confirms 192 retained alternatives, 64 parent-equal labels
@@ -155,13 +155,64 @@ The original and restored baseline repeat exactly. The
 [independent calibration audit](../reports/state_ppl_v9_calibration_audit.json)
 passes, SHA256 997b60902fcf17fbbcefd2574a6a260974d3fef2a53253dbd9039d101930313b.
 All 194 arm tables, raw scores and combined exports are independently rebuilt.
-Disjoint TRAIN screening is running; no v9 full quality result exists yet.
+Disjoint TRAIN screening completes all nine arms (eight candidates and restored
+baseline), and its independent audit passes. The frozen winner is top2,
+PPL 8.176195217465986 versus parent 8.178838569254431: a 0.0323194% improvement,
+with 12/32 windows improved and 20 regressed. Other combined candidates do not
+beat the parent. This is a small TRAIN gain; full validation is complete.
+See [screen comparison](../reports/state_ppl_v9_screen/screen_comparison.json)
+and [independent audit](../reports/state_ppl_v9_screen_audit.json), SHA256
+4b218de5223ed35cf12be6c341e3dd3d5b75a82656019c8ac12526ce67f60402.
+The selected artifact SHA256 is
+3467897358f33de22b1b629819cb2035f4cb8912914f0183959aa581fafeab50;
+actual table SHA256
+b1865e81ff3fbed028027a883872aef9bb91e614e7cf08c72211496a78aeb597.
 
 The v8 TRAIN winner remains the parent. Refine its eight selected layers,
 all eight groups per layer, using only existing v5 group tables; the codec
 and persistent cache are unchanged. The family grid was fixed while v8 full
 was running, before any full outcome was seen. Start only after the v8 full
 CPU audit confirms a finite target miss. See [frozen protocol](STATE_PPL_V9_PROTOCOL.md).
+
+### V9 full result
+
+Full PPL is **8.290607333938492**, versus the v8 parent's **8.28386254265227**:
+a 0.08142085% regression (53/130 windows improved, 77 regressed). The target
+remains unmet. Archived-parent and restored-parent replays, source/backend,
+actual cache and no-adapter checks pass; all three arms cover 264,764 targets.
+The evaluation loop took 144.86 seconds. This family does not improve the
+best full unadapted result, which remains v8 PPL 8.283863.
+
+The [independent full audit](../reports/state_ppl_v9_full_audit.json) passes
+for evidence integrity and confirms target failure; SHA256
+ dde9b57633c6994380208c606d9c1231e1c74dd39531763de6cef2ca025a3018.
+See [raw comparison](../reports/state_ppl_v9_full/full_comparison.json).
+
+## Route v10: change precision versus coverage at the same 3.25-bit budget
+
+- [x] Freeze a distinct four-layout protocol and TRAIN-only selection.
+- [ ] Implement actual packed layouts and pass independent codec checks.
+- [ ] Independently audit source/input/packing evidence before quality runs.
+- [ ] Screen four layouts on 32 full TRAIN windows, rows184..215.
+- [ ] Fully validate the frozen TRAIN winner and independently audit evidence.
+
+| Layout | INT8 coordinates | INT4 coordinates | Zero carry | Payload + scales |
+| --- | ---: | ---: | ---: | ---: |
+| Baseline | 16 | 64 | 48 | 48 + 4 = 52 B |
+| More coverage | 8 | 80 | 40 | 48 + 4 = 52 B |
+| More INT8 | 24 | 48 | 56 | 48 + 4 = 52 B |
+| Most INT8 tested | 32 | 32 | 64 | 48 + 4 = 52 B |
+
+Every row remains exactly 3.25 bits per coordinate including two FP16 scales,
+and total persistent cache remains 28,499,968 bytes. This is a new allocation
+family; it does not preserve the old 16/64/48 tier counts. The v9 TRAIN-selected
+permutation remains fixed irrespective of its full regression. Global layout
+selection uses TRAIN PPL only. Existing v6 numerical policy and baseline codec
+are retained; nonbaseline layouts require new masked packed kernels.
+
+The family/grid/rows were proposed and approved before the v9 full outcome;
+the final protocol document was frozen after the target-failure notification.
+No choices were changed using that outcome. See [v10 protocol](STATE_PPL_V10_PROTOCOL.md).
 
 ## Completion and scope
 
