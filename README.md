@@ -10,15 +10,30 @@ The fixed 1536-update recipe and three configurations, plus a complete SQ
 baseline replay, are specified in [the protocol](docs/QUANT_FIRST_PROTOCOL.md).
 Training completed with 1536 successful updates in 1542 attempts; the
 2,374,591-byte FP16 adapter passed the 128-token packed training/inference
-equality check. Full PPL/MK evaluation is in progress. The new artifact is
+equality check. Full PPL/MK evaluation and exact SQ baseline restoration are
+complete. The new artifact is
 [`reports/quant_first_v2/training/adapter_fp16.pt`](reports/quant_first_v2/training/adapter_fp16.pt);
 see [current results and evidence](docs/QUANT_FIRST_RESULTS.md) and
 [exact reproduction commands](docs/QUANT_FIRST_REPRODUCTION.md).
 
-The audited descriptive pilot improves SQ3.25 PPL from **7.2166 to 7.0147**
-and MK from **8/48 to 21/48**. Original S16 scores **6.2673 / 28/48**;
-the new adapter has not restored that PPL level. These are pilot measurements,
-not the pending full-corpus result. Q8 and weight quantization are excluded.
+| Current configuration | Full PPL | Normal MK | Cache/sequence |
+| --- | ---: | ---: | ---: |
+| Original S16, no adapter | 7.33432 | 146/384 (38.02%) | 116.3750 MiB |
+| SQ3.25, no adapter | 8.69155 | 50/384 (13.02%) | 27.1797 MiB |
+| **SQ3.25 → new Resurface** | **8.38891** | **239/384 (62.24%)** | **27.1797 MiB** |
+
+**Repair versus the quantized baseline passes:** PPL improves **3.48%** and
+MK improves **49.22 percentage points** (paired 95% interval: +43.75 to +54.69).
+PPL remains **14.38% above original S16**; original perplexity is not restored.
+This is not a comparison against a separately trained S16 + Resurface model.
+
+Full validation covers 264,764 WikiText-2 targets, 384 normal CONFIRM MK prompts
+and 384 target-removed controls (all modes score 0/384 on the latter).
+Every window NLL and all 768 generated token sequences reproduce exactly after
+removing the adapter. Q8 and weight quantization are excluded.
+The independent CPU evidence audit passed; see the
+[full comparison](reports/quant_first_v2/evaluation/full_comparison.json) and
+[audit receipt](reports/quant_first_v2_full_audit.json).
 
 ## Historical experiment: old Recall adapter, then quantize state
 

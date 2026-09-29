@@ -1,5 +1,7 @@
 # Checklist
 
+## Historical experiment v1: old Recall adapter, then SQ3.25
+
 - [x] Select original FP16 Mamb2_8B_Recall and unchanged adapter.
 - [x] Skip Q8; freeze S16 versus original-coordinate SQ3.25 protocol.
 - [x] Preserve base/adapter/archive identities and license scopes.
@@ -25,7 +27,13 @@ No adaptation training or Hugging Face release is included in this experiment.
 - [x] Pass full 8B identity and one-step training smoke.
 - [x] Train a fresh adapter for 1536 successful updates under SQ3.25 (1542 attempts).
 - [x] Export FP16 and verify actual packed inference parity on 128 tokens.
-- [ ] Evaluate original S16, unadapted SQ3.25, trained SQ3.25 and restored SQ baseline.
-- [ ] Independently audit and document PPL/MK/cache results.
+- [x] Evaluate original S16, unadapted SQ3.25, trained SQ3.25 and restored SQ baseline.
+- [x] Independently audit and document PPL/MK/cache results.
+
+Full v2 result: SQ3.25 PPL **8.69155 → 8.38891**, normal MK **50/384 → 239/384**.
+The repair gate against unadapted SQ passes. Original S16 is **7.33432 / 146/384**;
+its PPL is not restored (candidate is 14.38% higher). State cache remains
+**27.1797 MiB/sequence**, 76.64% below S16. Entire SQ baseline replay and
+independent evidence audit passed. See docs/QUANT_FIRST_RESULTS.md.
 
 See docs/QUANT_FIRST_PROTOCOL.md. No Q8 or old-adapter initialization; no public release.

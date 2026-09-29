@@ -30,10 +30,65 @@ backward mean another training run need not produce a bit-identical adapter.
 
 ## Full validation
 
-In progress. The final comparison will contain all 130 WikiText-2 validation
-windows (264,764 predicted tokens), 384 normal CONFIRM MK prompts, and 384
-target-removed controls per arm. It will also repeat the entire unadapted SQ
-baseline after removing the adapter. No full-result claim is made here yet.
+The three primary arms and complete SQ baseline replay have finished all
+130 WikiText-2 validation windows (264,764 predicted tokens), 384 normal CONFIRM
+MK prompts and 384 target-removed controls per arm. The fixed repair gate versus
+the quantized baseline passes; original-model PPL is not restored.
+
+| Arm | PPL | Normal MK | Target removed | Cache/sequence |
+| --- | ---: | ---: | ---: | ---: |
+| Original FP16 weights, S16 state, no adapter | 7.334322 | 146/384 (38.02%) | 0/384 | 116.3750 MiB |
+| Original FP16 weights, SQ3.25 state, no adapter | 8.691553 | 50/384 (13.02%) | 0/384 | 27.1797 MiB |
+| SQ3.25 → newly trained Resurface | **8.388906** | **239/384 (62.24%)** | 0/384 | 27.1797 MiB |
+
+Relative to unadapted SQ3.25, the new adapter lowers PPL by **3.4821%** and
+improves MK by **49.2188 percentage points** (189 additional correct answers).
+The paired cases contain 197 improvements and eight regressions. The paired
+bootstrap 95% interval is **+43.75 to +54.69 percentage points** (10,000 draws,
+seed 20260928). PPL improves on each of the 130 windows.
+
+Relative to the original unadapted S16 model, MK improves by **24.2188 percentage
+points** (93 additional correct answers; 135 improvements and 42 regressions;
+paired 95% interval **+17.71 to +30.47 percentage points**).
+PPL remains **14.3787% higher**, and is worse on every validation window.
+This does not restore the original language-model perplexity, nor is it a
+comparison against a separately trained S16 + Resurface model.
+
+After removing the adapter, the entire SQ baseline reproduces exactly:
+all 130 per-window NLL values and all 768 generated token sequences, including
+decoded predictions. All four full runs took 28.32 minutes combined, excluding
+model loading; this evaluation timing is not a controlled throughput benchmark.
+The independent CPU audit passed all data, score arithmetic, bootstrap, cache,
+calibration, training/export binding and restoration checks. CUDA remained
+uninitialized during that audit. It validates recorded evidence and does not
+independently rerun GPU logits.
+
+| Predeclared criterion | Result |
+| --- | --- |
+| PPL no more than 1% worse than SQ baseline | Pass: 3.48% better |
+| Normal MK improves versus SQ baseline | Pass: +189/384 |
+| Paired MK 95% interval strictly above zero | Pass |
+| Entire SQ baseline restored exactly | Pass |
+| Original S16 PPL restored within 1% | **Fail: 14.38% higher** |
+
+### Recall by record count and template
+
+Here N is the number of key-value records in the prompt, not the number of SSM
+state coordinates. Each template/record-count cell has 64 normal CONFIRM cases.
+
+| Record count / template | S16 | SQ3.25 | SQ3.25 + new Resurface |
+| --- | ---: | ---: | ---: |
+| 16 / T0 | 25/64 | 6/64 | 50/64 |
+| 16 / T1 | 29/64 | 12/64 | 61/64 |
+| 16 / T2 | 59/64 | 28/64 | 58/64 |
+| **16 records subtotal** | **113/192** | **46/192** | **169/192** |
+| 64 / T0 | 4/64 | 0/64 | 12/64 |
+| 64 / T1 | 3/64 | 0/64 | 32/64 |
+| 64 / T2 | 26/64 | 4/64 | 26/64 |
+| **64 records subtotal** | **33/192** | **4/192** | **70/192** |
+
+Improvement is not uniform across templates: T2 is 84/128 after training versus
+85/128 for original S16, while T0 and T1 improve over the original source.
 
 ## Descriptive pilot
 
@@ -94,6 +149,9 @@ workspace, logits, training teacher and optimizer are outside the cache table.
   [8B smoke receipt](../reports/quant_first_v2/smoke.json).
 - [Pilot comparison](../reports/quant_first_v2/evaluation/pilot_comparison.json)
   and [independent pilot audit](../reports/quant_first_v2_pilot_audit.json).
+- [Full comparison](../reports/quant_first_v2/evaluation/full_comparison.json),
+  [entire baseline restoration](../reports/quant_first_v2/evaluation/full_restoration.json),
+  and [independent full audit](../reports/quant_first_v2_full_audit.json).
 
 The source is `nvidia/mamba2-8b-3t-4k`, revision
 `b915550c63ba9359f88f44d1f6a600d85af27302`. Its BF16 checkpoint is cast to FP16
