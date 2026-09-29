@@ -1,5 +1,13 @@
 # Mamb2_8B_Recall + StateQuant
 
+## Active target: unadapted Q3.25 PPL below 8.25
+
+Continue without Resurface, keeping the existing27.1797MiB persistent cache.
+The next fixed experiments test max-preserving nonuniformINT4 codebooks and,
+if needed, per-layer static table mixing. Selection uses TRAIN PPL only;
+full validation must confirm strictPPL<8.25 and exact baseline restoration.
+See [current progress and checklist](docs/STATE_PPL_TARGET_825.md).
+
 ## Completed v6: PPL-first scale search finds only a small improvement
 
 The latest user priority is **optimize PPL first; use Resurface for MK after

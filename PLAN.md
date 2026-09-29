@@ -1,5 +1,11 @@
 # Checklist
 
+## Active: no-Resurface Q3.25 full PPL below 8.25
+
+Continue with the same cache budget and PPL-only TRAIN selection. The previous
+v6 1% continuation gate is superseded by this explicit target. See the
+[v7/v8 checklist](docs/STATE_PPL_TARGET_825.md) and frozen protocols.
+
 ## Historical experiment v1: old Recall adapter, then SQ3.25
 
 - [x] Select original FP16 Mamb2_8B_Recall and unchanged adapter.

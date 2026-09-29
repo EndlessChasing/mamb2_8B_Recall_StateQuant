@@ -1,0 +1,119 @@
+{"name": "frozen-protocol", "pass": true}
+{"name": "fixed-codebook-FP32-bits", "pass": true, "codebook_bits": {"uniform": [0, 1065353216, 1073741824, 1077936128, 1082130432, 1084227584, 1086324736, 1088421888], "mild": [0, 1056964608, 1069547520, 1075838976, 1080033280, 1083179008, 1085276160, 1088421888], "quadratic": [0, 1041385765, 1058162981, 1067749961, 1074940197, 1080332873, 1084527177, 1088421888], "fp4like": [0, 1058362709, 1066751317, 1071644672, 1075139925, 1080033280, 1083528533, 1088421888]}}
+{"name": "CPU-signed-midpoint-scope-mild", "pass": true, "values": 255, "exact_positive_midpoints": 35}
+{"name": "GPU-signed-midpoints-zero-subnormal-mild", "pass": true, "values": 255, "codes_exact": true, "decoded_exact": true}
+{"name": "CPU-signed-midpoint-scope-quadratic", "pass": true, "values": 255, "exact_positive_midpoints": 12}
+{"name": "GPU-signed-midpoints-zero-subnormal-quadratic", "pass": true, "values": 255, "codes_exact": true, "decoded_exact": true}
+{"name": "CPU-signed-midpoint-scope-fp4like", "pass": true, "values": 255, "exact_positive_midpoints": 11}
+{"name": "GPU-signed-midpoints-zero-subnormal-fp4like", "pass": true, "values": 255, "codes_exact": true, "decoded_exact": true}
+{"name": "CPU-one-step-finite-ties-uniform", "pass": true}
+{"name": "GPU-one-step-exact-ties-uniform", "pass": true}
+{"name": "CPU-one-step-finite-ties-mild", "pass": true}
+{"name": "GPU-one-step-exact-ties-mild", "pass": true}
+{"name": "CPU-one-step-finite-ties-quadratic", "pass": true}
+{"name": "GPU-one-step-exact-ties-quadratic", "pass": true}
+{"name": "CPU-one-step-finite-ties-fp4like", "pass": true}
+{"name": "GPU-one-step-exact-ties-fp4like", "pass": true}
+{"name": "CPU-one-step-finite-negative-uniform", "pass": true}
+{"name": "GPU-one-step-exact-negative-uniform", "pass": true}
+{"name": "CPU-one-step-finite-negative-mild", "pass": true}
+{"name": "GPU-one-step-exact-negative-mild", "pass": true}
+{"name": "CPU-one-step-finite-negative-quadratic", "pass": true}
+{"name": "GPU-one-step-exact-negative-quadratic", "pass": true}
+{"name": "CPU-one-step-finite-negative-fp4like", "pass": true}
+{"name": "GPU-one-step-exact-negative-fp4like", "pass": true}
+{"name": "CPU-one-step-finite-zero-uniform", "pass": true}
+{"name": "GPU-one-step-exact-zero-uniform", "pass": true}
+{"name": "CPU-one-step-finite-zero-mild", "pass": true}
+{"name": "GPU-one-step-exact-zero-mild", "pass": true}
+{"name": "CPU-one-step-finite-zero-quadratic", "pass": true}
+{"name": "GPU-one-step-exact-zero-quadratic", "pass": true}
+{"name": "CPU-one-step-finite-zero-fp4like", "pass": true}
+{"name": "GPU-one-step-exact-zero-fp4like", "pass": true}
+{"name": "CPU-one-step-finite-rounded_scales-uniform", "pass": true}
+{"name": "GPU-one-step-exact-rounded_scales-uniform", "pass": true}
+{"name": "CPU-one-step-finite-rounded_scales-mild", "pass": true}
+{"name": "GPU-one-step-exact-rounded_scales-mild", "pass": true}
+{"name": "CPU-one-step-finite-rounded_scales-quadratic", "pass": true}
+{"name": "GPU-one-step-exact-rounded_scales-quadratic", "pass": true}
+{"name": "CPU-one-step-finite-rounded_scales-fp4like", "pass": true}
+{"name": "GPU-one-step-exact-rounded_scales-fp4like", "pass": true}
+{"name": "CPU-one-step-finite-underflow-uniform", "pass": true}
+{"name": "GPU-one-step-exact-underflow-uniform", "pass": true}
+{"name": "CPU-one-step-finite-underflow-mild", "pass": true}
+{"name": "GPU-one-step-exact-underflow-mild", "pass": true}
+{"name": "CPU-one-step-finite-underflow-quadratic", "pass": true}
+{"name": "GPU-one-step-exact-underflow-quadratic", "pass": true}
+{"name": "CPU-one-step-finite-underflow-fp4like", "pass": true}
+{"name": "GPU-one-step-exact-underflow-fp4like", "pass": true}
+{"name": "CPU-one-step-finite-subnormal-uniform", "pass": true}
+{"name": "GPU-one-step-exact-subnormal-uniform", "pass": true}
+{"name": "CPU-one-step-finite-subnormal-mild", "pass": true}
+{"name": "GPU-one-step-exact-subnormal-mild", "pass": true}
+{"name": "CPU-one-step-finite-subnormal-quadratic", "pass": true}
+{"name": "GPU-one-step-exact-subnormal-quadratic", "pass": true}
+{"name": "CPU-one-step-finite-subnormal-fp4like", "pass": true}
+{"name": "GPU-one-step-exact-subnormal-fp4like", "pass": true}
+{"name": "CPU-one-step-finite-large_finite-uniform", "pass": true}
+{"name": "GPU-one-step-exact-large_finite-uniform", "pass": true}
+{"name": "CPU-one-step-finite-large_finite-mild", "pass": true}
+{"name": "GPU-one-step-exact-large_finite-mild", "pass": true}
+{"name": "CPU-one-step-finite-large_finite-quadratic", "pass": true}
+{"name": "GPU-one-step-exact-large_finite-quadratic", "pass": true}
+{"name": "CPU-one-step-finite-large_finite-fp4like", "pass": true}
+{"name": "GPU-one-step-exact-large_finite-fp4like", "pass": true}
+{"name": "CPU-65token-finite-uniform", "pass": true}
+{"name": "GPU-65token-packed-oracle-exact-uniform", "pass": true}
+{"name": "CPU-65token-finite-mild", "pass": true}
+{"name": "GPU-65token-packed-oracle-exact-mild", "pass": true}
+{"name": "CPU-65token-finite-quadratic", "pass": true}
+{"name": "GPU-65token-packed-oracle-exact-quadratic", "pass": true}
+{"name": "CPU-65token-finite-fp4like", "pass": true}
+{"name": "GPU-65token-packed-oracle-exact-fp4like", "pass": true}
+{"name": "partition-(2, 17, 8, 19, 2)-uniform", "pass": true}
+{"name": "actual-packed-bytes-(2, 17, 8, 19, 2)-uniform", "pass": true, "actual_bytes": 15808, "row_bytes": 52}
+{"name": "signed-index-range-(2, 17, 8, 19, 2)-uniform", "pass": true}
+{"name": "partition-(2, 17, 8, 19, 2)-mild", "pass": true}
+{"name": "actual-packed-bytes-(2, 17, 8, 19, 2)-mild", "pass": true, "actual_bytes": 15808, "row_bytes": 52}
+{"name": "signed-index-range-(2, 17, 8, 19, 2)-mild", "pass": true}
+{"name": "partition-(2, 17, 8, 19, 2)-quadratic", "pass": true}
+{"name": "actual-packed-bytes-(2, 17, 8, 19, 2)-quadratic", "pass": true, "actual_bytes": 15808, "row_bytes": 52}
+{"name": "signed-index-range-(2, 17, 8, 19, 2)-quadratic", "pass": true}
+{"name": "partition-(2, 17, 8, 19, 2)-fp4like", "pass": true}
+{"name": "actual-packed-bytes-(2, 17, 8, 19, 2)-fp4like", "pass": true, "actual_bytes": 15808, "row_bytes": 52}
+{"name": "signed-index-range-(2, 17, 8, 19, 2)-fp4like", "pass": true}
+{"name": "INT8-unchanged-(2, 17, 8, 19, 2)", "pass": true}
+{"name": "uniform-delegates-v6-(2, 17, 8, 19, 2)", "pass": true}
+{"name": "partition-(1, 9, 6, 3, 3)-uniform", "pass": true}
+{"name": "actual-packed-bytes-(1, 9, 6, 3, 3)-uniform", "pass": true, "actual_bytes": 936, "row_bytes": 52}
+{"name": "signed-index-range-(1, 9, 6, 3, 3)-uniform", "pass": true}
+{"name": "partition-(1, 9, 6, 3, 3)-mild", "pass": true}
+{"name": "actual-packed-bytes-(1, 9, 6, 3, 3)-mild", "pass": true, "actual_bytes": 936, "row_bytes": 52}
+{"name": "signed-index-range-(1, 9, 6, 3, 3)-mild", "pass": true}
+{"name": "partition-(1, 9, 6, 3, 3)-quadratic", "pass": true}
+{"name": "actual-packed-bytes-(1, 9, 6, 3, 3)-quadratic", "pass": true, "actual_bytes": 936, "row_bytes": 52}
+{"name": "signed-index-range-(1, 9, 6, 3, 3)-quadratic", "pass": true}
+{"name": "partition-(1, 9, 6, 3, 3)-fp4like", "pass": true}
+{"name": "actual-packed-bytes-(1, 9, 6, 3, 3)-fp4like", "pass": true, "actual_bytes": 936, "row_bytes": 52}
+{"name": "signed-index-range-(1, 9, 6, 3, 3)-fp4like", "pass": true}
+{"name": "INT8-unchanged-(1, 9, 6, 3, 3)", "pass": true}
+{"name": "uniform-delegates-v6-(1, 9, 6, 3, 3)", "pass": true}
+{"name": "partition-(2, 5, 4, 1, 1)-uniform", "pass": true}
+{"name": "actual-packed-bytes-(2, 5, 4, 1, 1)-uniform", "pass": true, "actual_bytes": 416, "row_bytes": 52}
+{"name": "signed-index-range-(2, 5, 4, 1, 1)-uniform", "pass": true}
+{"name": "partition-(2, 5, 4, 1, 1)-mild", "pass": true}
+{"name": "actual-packed-bytes-(2, 5, 4, 1, 1)-mild", "pass": true, "actual_bytes": 416, "row_bytes": 52}
+{"name": "signed-index-range-(2, 5, 4, 1, 1)-mild", "pass": true}
+{"name": "partition-(2, 5, 4, 1, 1)-quadratic", "pass": true}
+{"name": "actual-packed-bytes-(2, 5, 4, 1, 1)-quadratic", "pass": true, "actual_bytes": 416, "row_bytes": 52}
+{"name": "signed-index-range-(2, 5, 4, 1, 1)-quadratic", "pass": true}
+{"name": "partition-(2, 5, 4, 1, 1)-fp4like", "pass": true}
+{"name": "actual-packed-bytes-(2, 5, 4, 1, 1)-fp4like", "pass": true, "actual_bytes": 416, "row_bytes": 52}
+{"name": "signed-index-range-(2, 5, 4, 1, 1)-fp4like", "pass": true}
+{"name": "INT8-unchanged-(2, 5, 4, 1, 1)", "pass": true}
+{"name": "uniform-delegates-v6-(2, 5, 4, 1, 1)", "pass": true}
+{"name": "actual-production-cache", "pass": true, "row_bytes": 52, "ssm_bytes": 23855104, "convolution_bytes": 4587520, "permutation_bytes": 57344, "resident_codebook_bytes": 0, "total_bytes": 28499968}
+{"name": "reject-nonfinite-scale-uniform", "pass": true}
+{"name": "reject-nonfinite-scale-mild", "pass": true}
+{"name": "reject-nonfinite-scale-quadratic", "pass": true}
+{"name": "reject-nonfinite-scale-fp4like", "pass": true}
