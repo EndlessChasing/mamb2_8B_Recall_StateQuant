@@ -1,16 +1,32 @@
 # Mamb2_8B_Recall + StateQuant
 
-## In progress v6: PPL-first unadapted optimization
+## Completed v6: PPL-first scale search finds only a small improvement
 
 The latest user priority is **optimize PPL first; use Resurface for MK after
-freezing the quantizer**. The new experiment removes the v5 MK selection guard
-and compares 20 fixed, same-budget table/scale candidates on 32 full-length
-TRAIN windows. Separate pruning/rounding ablations are diagnostic only and
-are not deployable 3.25-bit candidates. No v6 model measurements are complete.
-The v5 result below remains the measured reference.
+freezing the quantizer**. This experiment removed the v5 MK selection guard
+and compared 20 fixed, same-budget table/scale candidates on 32 full-length
+TRAIN windows. The frozen winner keeps the v5 INT8 table and chooses integer
+codes against the actually stored FP16 scale.
+
+| Unadapted configuration | Full PPL | Cache/sequence |
+| --- | ---: | ---: |
+| Original S16, archived reference | 7.334322 | 116.3750 MiB |
+| v5 Q3.25 baseline | 8.367465 | 27.1797 MiB |
+| v6 Q3.25 stored-scale winner | 8.355269 | 27.1797 MiB |
+
+Full PPL improves **0.1458%**, below the predefined **1%** gate; the experiment
+ends without new Resurface training. Every tested clipping factor worsens
+TRAIN PPL. Both complete baseline replays pass, including the archived v5
+window NLLs and hidden/cache probe. v6 measures no MK and does not establish
+recall quality. Separate larger-memory ablations are diagnostic only.
+The v5 **8.093011 PPL / 244 of 384 MK** endpoint below remains the validated
+combined reference; it is not a v6 result. Weights remain frozen FP16.
 
 See the [frozen v6 protocol](docs/STATE_PPL_V6_PROTOCOL.md),
-[status and evidence](docs/STATE_PPL_V6_RESULTS.md), and [checklist](PLAN.md).
+[results and evidence](docs/STATE_PPL_V6_RESULTS.md),
+[raw full comparison](reports/state_ppl_v6_full/full_comparison.json),
+[independent full audit](reports/state_ppl_v6_full_audit.json),
+[reproduction](docs/STATE_PPL_V6_REPRODUCTION.md), and [checklist](PLAN.md).
 
 ## v5: optimize unadapted SQ3.25, then train fresh Resurface
 

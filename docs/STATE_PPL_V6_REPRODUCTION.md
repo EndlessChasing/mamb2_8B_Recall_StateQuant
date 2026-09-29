@@ -7,7 +7,10 @@ output root; do not overwrite prior results. The source model, tokenizer,
 TRAIN corpus and older artifact provenance are documented in the
 [v5 reproduction guide](STATE_FIRST_V5_REPRODUCTION.md).
 
-**Status: command sequence prepared; v6 end-to-end execution is not yet verified.**
+**Status: codec checks, TRAIN screen and three-arm full PPL confirmation have
+completed. The full 1% improvement gate failed, so conditional training was
+not executed.** See [the measured results](STATE_PPL_V6_RESULTS.md) and
+[numerical validation scope](STATE_PPL_V6_NUMERICS.md).
 
 ## Paths and codec checks
 
@@ -116,6 +119,7 @@ with the same 28,499,968-byte persistent cache.
 ## Conditional recall training
 
 If full PPL improvement is not confirmed, stop and preserve the negative result.
+The recorded v6 run takes this branch: 8.367465 → 8.355269 (−0.1458%), below 1%.
 If it is confirmed, freeze the quantizer and implement its exact packed forward
 and checkpoint/history recomputation for the separately audited fresh Resurface
 training path specified in the protocol. Training commands and results are

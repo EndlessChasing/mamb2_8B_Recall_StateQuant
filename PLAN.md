@@ -115,14 +115,17 @@ All four recovery checkpoints, exported adapter and raw reports are retained.
 - [x] Freeze a PPL-only 20-candidate search, diagnostics and confirmation rule.
 - [x] Implement same-format stored-scale rounding / clipping and diagnostic ablations.
 - [x] Independently check kernel arithmetic, segmentation, byte accounting and legacy replay.
-- [ ] Run 32 full-length TRAIN windows per candidate; select solely by PPL.
-- [ ] Independently audit all raw NLLs, candidate eligibility and baseline restoration.
-- [ ] Confirm the one frozen candidate on all 130 validation windows, including exact baseline replays.
-- [ ] If PPL improves at least 1%, freeze the codec and run fresh Resurface training/export validation.
-- [ ] Measure subsequent PPL/MK and preserve complete audits, failures and tradeoffs.
-- [ ] Document and push evidence to the private repository.
+- [x] Run 32 full-length TRAIN windows per candidate; select solely by PPL.
+- [x] Independently audit all raw NLLs, candidate eligibility and baseline restoration.
+- [x] Confirm the one frozen candidate on all 130 validation windows, including exact baseline replays.
+- [x] Apply the conditional training gate: improvement is 0.1458%, below 1%; no new Resurface training.
+- [x] Preserve the negative full-gate outcome; subsequent adapter PPL/MK is not applicable.
+- [x] Document and push evidence to the private repository.
 
 Fixed deployment cache: 28,499,968 bytes. Diagnostics explicitly exceed this
 budget and cannot win selection. If no confirmed meaningful PPL improvement is
 found, stop this experiment and retain v5 without repeating its training.
-See docs/STATE_PPL_V6_PROTOCOL.md. No current v6 quality result is established.
+Full PPL is 8.367465 → 8.355269 (−0.1458%), with unchanged cache and exact
+archived/restored baseline checks. Original S16 PPL is 7.334322, so v6 remains
+13.92% higher. No v6 MK result is measured; retain v5 as the combined reference.
+See docs/STATE_PPL_V6_PROTOCOL.md and docs/STATE_PPL_V6_RESULTS.md.

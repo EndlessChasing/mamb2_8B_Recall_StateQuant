@@ -1,8 +1,7 @@
 # v6: prioritize unadapted PPL before recall training
 
-**Status: protocol frozen; all 249 GPU kernel checks and the independent CPU
-input audit pass; model screen pending.
-No v6 quality result is measured yet.** The user explicitly prioritizes PPL
+**Status: the fixed TRAIN screen and all three full PPL arms are complete.
+PPL improves 0.1458%, below the predefined 1% gate; no new Resurface training.** The user explicitly prioritizes PPL
 optimization and assigns MK recovery to a later Resurface stage.
 
 Protocol SHA256:
@@ -116,3 +115,105 @@ the fixed tables/provenance, decodes every recorded packed carry, checks all
 PTX. It audits recorded GPU evidence rather than independently running the
 model. Audit SHA256:
 `56496a1b4cef996ea8318b030bb36433f8f42e96a03a3028500d5852b6814e13`.
+
+## Fixed TRAIN screen
+
+All 24 arms completed: 20 deployable candidates, three diagnostics, and the
+restored baseline. Each uses the same 32 windows / 65,504 targets without an
+adapter. All 20 candidates are eligible. The restored baseline repeats every
+window NLL, reset hidden/cache hash and byte allocation exactly. The measured
+evaluation loop takes 268.14 seconds, excluding input validation/model loading.
+
+| Static table | Legacy | Stored scale | Clip 0.95 | Clip 0.90 | Clip 0.80 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Magnitude | 8.699421 | 8.694646 | 12.450415 | 13.680066 | 15.966522 |
+| Full readout | 8.566656 | 8.557345 | 11.175291 | 12.200902 | 13.621451 |
+| Preserve INT8 | 8.395356 | **8.369217** | 12.153352 | 13.172917 | 15.143694 |
+| Preserve retained 80 | 8.750737 | 8.718169 | 11.228348 | 12.285803 | 13.628988 |
+
+The frozen winner is **preserve_int8__stored_scale**: PPL
+8.395355795233426 → 8.36921709114913, a **0.31135% decrease**; 18 windows
+improve and 14 regress. It changes the scale used to choose codes, with the
+same static table and 28,499,968-byte persistent cache. No MK was measured or
+used to choose it. No runner-up may replace this winner after full validation.
+
+| Diagnostic on the same TRAIN data | PPL | Actual persistent bytes |
+| --- | ---: | ---: |
+| Original S16 | 7.325586 | 122,028,032 |
+| Prune only: retained 80 in FP16 | 7.609793 | 239,525,888 |
+| Quantize only: other 48 retained in FP16 | 7.833298 | 239,525,888 |
+| Deployable v5 Q3.25 baseline | 8.395356 | 28,499,968 |
+
+The two ablations deliberately use a larger FP32 backing buffer and are not
+Q3.25 deployment candidates. Their effects interact through the recurrent
+trajectory; differences must not be added as independent loss contributions.
+Every tested clipping factor worsens TRAIN PPL. Repeatedly attenuating the
+carried block maxima is a plausible mechanism, but these aggregate scores do
+not establish an event-level causal explanation.
+
+See [raw screening comparison](../reports/state_ppl_v6_screen/screen_comparison.json).
+The [independent screen audit](../reports/state_ppl_v6_screen_audit.json) passes,
+SHA256 `ed47370ca7e8cf666908efe8f821960be4dab7dc4d916b2e3e33bb787c567bb5`.
+Selected payload SHA256:
+`098930d1af5e5821b277640d236f7607c6428b48d36f7117e2ea4aa87e656303`.
+
+## Full PPL confirmation and stop decision
+
+Each arm evaluates all 130 WikiText-2 validation windows / 264,764 prediction
+targets. The frozen TRAIN-selected candidate is the only new full candidate.
+No Resurface adapter is installed and no MK examples are generated or scored.
+
+| Configuration | Full PPL | Persistent bytes |
+| --- | ---: | ---: |
+| Original S16, archived context | 7.334322057221965 | 122,028,032 |
+| v5 baseline, newly evaluated | 8.367464892540164 | 28,499,968 |
+| v6 stored-scale selected | 8.355268708845868 | 28,499,968 |
+| Restored v5 baseline | 8.367464892540164 | 28,499,968 |
+
+The selected candidate improves PPL by **0.145757%** (absolute decrease
+0.012196183694296). Aggregate NLL decreases by 386.1941509246826; 69 windows
+improve and 61 regress. This is below the frozen requirement of at least 1%
+(PPL at most 8.283790243614762). **The meaningful improvement gate fails.**
+No claim of a statistically established gain is made from this small aggregate
+change. PPL remains **13.9201% above original S16**, and all 130 windows have
+higher NLL than that original-state reference.
+
+The new baseline exactly matches the archived v5 report on all 130 window NLLs,
+128-token probe hidden values and persistent-cache hashes. Restoring the
+baseline repeats those values exactly again. All source/table/backend/finiteness
+checks and the byte budget pass. The full evaluation loop takes 128.75 seconds,
+excluding input checks and loading. See [raw full comparison](../reports/state_ppl_v6_full/full_comparison.json).
+The [independent CPU full audit](../reports/state_ppl_v6_full_audit.json) passes,
+SHA256 `d6b3cb2428a4dd815ccf4ccf33b054639233b58ce29f53a96879f487a68cb146`.
+Its integrity audit passes while the experiment's 1% quality gate fails; these
+are separate outcomes. As in the earlier audits, it reconstructs recorded GPU
+evidence and does not rerun model logits.
+
+Per the prospective gate, this experiment stops without training a fresh
+Resurface adapter or evaluating v6 MK. The frozen selected artifact and its
+small PPL change are preserved for research, while v5 remains the combined
+validated reference: **PPL 8.093011486666136, MK 244/384** with its own fresh
+adapter. That old endpoint is not evidence for a v6 adapter or v6 recall quality.
+
+## What this result supports
+
+- Choose quantizer candidates using unadapted PPL; treat later recall repair as
+  a separate fresh-Resurface experiment after freezing a sufficiently improved
+  quantizer. v6 applied that order without an MK guard.
+- Choosing codes against the stored scale makes a small measured improvement
+  here. It does not solve the remaining PPL gap.
+- Shrinking the INT4 range by the tested fixed factors is a poor direction in
+  this configuration. This result does not rule out every scale policy.
+- A distinct next hypothesis is multi-step, quantization-aware coordinate-tier
+  calibration under the actual packed recurrence. It could reuse the same
+  static table and cache size, but has not been implemented or measured.
+  A second hypothesis is fixed nonuniform INT4 levels that preserve the block
+  range, with arithmetic decoding and no extra resident lookup table. Neither
+  hypothesis is a validated improvement or part of the completed 20-candidate grid.
+
+The validation corpus and benchmark family have historical exposure; this is
+not a new untouched generalization set. Source freezing uses identity/version
+and gradient guards plus pinned input hashes, not a post-run full content hash.
+The numerical-test refinement and preserved failures are disclosed above.
+No weights were quantized or trained, Q8 was skipped, and no public release
+was performed.
