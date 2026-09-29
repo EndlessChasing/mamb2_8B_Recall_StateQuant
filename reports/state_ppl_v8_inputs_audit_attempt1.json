@@ -1,0 +1,160 @@
+{
+  "format": "MAMBA2_STATE_PPL_V8_INDEPENDENT_AUDIT_V1",
+  "complete": true,
+  "passed": true,
+  "stage": "inputs",
+  "protocol_sha256": "880839c0b0919d0a9a119647d2d9c1657e5b8eb5389c8c2ee22ee1785917aa01",
+  "source_sha256": "7970c74c31713129b95f285ed68cd28dfeff50b4c5a339b462a3f993bd7cc63b",
+  "auditor_dependency_sha256": {
+    "audit_state_ppl_v6.py": "26002780b1d31b9055fc2e099884dc682211ca7199f73d9075f6ef6a8793dfa2",
+    "audit_state_ppl_v7.py": "97df2f0bf62d6fa2588207d22c8a95926345095c385436929560c1a62c02d023",
+    "audit_quant_first.py": "5439e766a59b3eb14db1024002ba92ffa4337c72540f27f6dd5869d79f0cfceb",
+    "audit_state_repair.py": "acdf1a107685ca803f2928f3fc399cf6c770202ec2f0c557d4984eb3ef800320",
+    "audit_state_first_v5.py": "9a44d39e1b6ec98d70fb44ee563eed7321e03f9a7a91253c07bc87a418e1863e",
+    "audit_resurface_more.py": "debfcdb3e61a4f6e31d814de6e7713d357a415a721dc519246906118dc9aba60"
+  },
+  "limitations": [
+    "CPU reconstructs raw measurements and arithmetic, not GPU model logits.",
+    "Frozen identity/version/gradient guards do not replace post-run source-weight byte hashes.",
+    "Historical benchmark exposure remains; MK and Resurface are absent.",
+    "The v7 outcome start condition is checked; execution chronology remains orchestration evidence."
+  ],
+  "self_tests": {
+    "complete": true,
+    "passed": true,
+    "count": 12,
+    "checks": [
+      "strict-negative-only",
+      "one-ulp-improvement-alternative-and-layer-ties",
+      "raw-NLL-order-survives-subtraction-cancellation",
+      "excluded-alternative-keeps-valid-layer-option",
+      "all-excluded-layer",
+      "baseline-failure-fatal",
+      "actual-content-dedup-capped-k-noop-swap-first-label",
+      "zero-improvement-baseline-only-export",
+      "screen-baseline-and-export-order-ties",
+      "screen-budget-gate",
+      "strict-full-target-boundary",
+      "170arms-and-token-populations"
+    ],
+    "gpu_used": false
+  },
+  "inputs": {
+    "complete": true,
+    "upstream": {
+      "complete": true,
+      "candidate_tables_independently_reconstructed": true,
+      "v5_candidates_sha256": "cd86a755db5004c716922696cf5532b307c57f5fb7dad4bcca298eb58b55f9a7",
+      "v5_baseline_calibration_sha256": "c525fbf62ef4a72db2d4bb13c13920d9f5d4946485538da0f00a369aab3092e3",
+      "historical_MK_scope": "Only frozen historical file hashes are checked; no historical MK scores affect v6 selection.",
+      "upstream": {
+        "complete": true,
+        "independent_table_derivation": true,
+        "candidates_sha256": "cd86a755db5004c716922696cf5532b307c57f5fb7dad4bcca298eb58b55f9a7",
+        "table_sha256": {
+          "magnitude": "6d2b53f63d0a56b527840b344be8396da483f3a6affd3d89fbbe0747d9bdd327",
+          "full_readout": "a3f33fba0433bce8de413dd22baa8c0d3b40c3934be6eee5bea75b4e306f81b3",
+          "preserve_int8": "6dc1c15ca18d07fb87de8f0517baecbf47adec0846575172fa344f86ac10cde5",
+          "preserve_retained80": "9789f1a45b0487ec15a104bfc60d33af14a5fce4d4290344eb5264ad0ddef536"
+        },
+        "table_bytes": 57344,
+        "packed_row_bytes_including_scales": 52,
+        "total_cache_bytes": 28499968,
+        "upstream_calibration_audit": {
+          "complete": true,
+          "table_derivation_independent": true,
+          "calibration_sha256": "8509bb266d40875608f3e0b3be22407fd6ea1b8aacbc79ce04e958726516b0a4",
+          "calibration_tokens": 4096,
+          "table_bytes_per_candidate": 57344,
+          "one_packed_row_bytes": 52,
+          "cache_bytes": 28499968,
+          "readout_score_tier_mass": {
+            "int8": 0.9101367807922354,
+            "int4": 0.08702321558372682,
+            "dead": 0.002840003624037507
+          },
+          "unit_receipts": {
+            "dense_checks": 36,
+            "collector_cases": 3,
+            "all_bound_passed": true,
+            "packing_scope": "CPU verifies recorded GPU test identities/results and allocation arithmetic, not a GPU kernel rerun"
+          }
+        }
+      }
+    },
+    "kernel": {
+      "complete": true,
+      "sha256": "81a65cd0f56e6ad4a7a87fc464abde6509a4315143c38c52c88a67be61e4a54f",
+      "checks": 249,
+      "actual_GPU_checks": true,
+      "criteria": {
+        "controlled": "exact every-token output/packed bytes/FP16 scales/decoded carry",
+        "random_partition": "exact full/segmented/tokenwise outputs and final cache",
+        "random_one_token_cpu_output_relative_l2_bound": 0.002,
+        "stored_scale_division": "Correctly rounded FP32 quotient before half-away rounding; zero-scale integer0",
+        "stored_scale_denominator": "FP32 clipping multiplication then correctly rounded FP32 division before FP16 round-to-even storage",
+        "diagnostic_legacy_emulation": "controlled output exact; random every-token carry exact and readout within recurrence-inclusive gamma21/69/69/3 plus FP16-cell and FP32-underflow bound"
+      },
+      "diagnostic_bound_checks": [
+        {
+          "geometry": [
+            2,
+            17,
+            8,
+            19,
+            2
+          ],
+          "elements": 5168,
+          "all_token_carries_bitwise_exact": true,
+          "elementwise_bound_independently_recomputed": true,
+          "bound_failures": 0,
+          "max_error_to_bound_ratio": 0.8881203148736804,
+          "evidence_sha256": "38c023672a6610accf99ae9cb367d8e86c8068eb137f1770b8e597331526ffcd",
+          "common_scalar_ptx_independently_verified": true
+        },
+        {
+          "geometry": [
+            1,
+            9,
+            6,
+            3,
+            3
+          ],
+          "elements": 162,
+          "all_token_carries_bitwise_exact": true,
+          "elementwise_bound_independently_recomputed": true,
+          "bound_failures": 0,
+          "max_error_to_bound_ratio": 0.0,
+          "evidence_sha256": "5846a55074a11d441ed81d76e4cf1b821fcfeb783dd035014802c71c9cbb35a9",
+          "common_scalar_ptx_independently_verified": true
+        },
+        {
+          "geometry": [
+            2,
+            5,
+            4,
+            1,
+            1
+          ],
+          "elements": 40,
+          "all_token_carries_bitwise_exact": true,
+          "elementwise_bound_independently_recomputed": true,
+          "bound_failures": 0,
+          "max_error_to_bound_ratio": 0.0,
+          "evidence_sha256": "2db7b8e31a10bf55b33e83db4d025be3b2c2f9acb93375aa8815b8fa0cea0a1d",
+          "common_scalar_ptx_independently_verified": true
+        }
+      ],
+      "scope": "Independent CPU audit of recorded GPU oracle/partition/bytes receipts and raw per-token diagnostic forward-error bound; no GPU rerun by auditor."
+    },
+    "v6_selection": {
+      "complete": true,
+      "sha256": "098930d1af5e5821b277640d236f7607c6428b48d36f7117e2ea4aa87e656303",
+      "receipt_sha256": "ab2fd4d02a4720957bbb146395dcf26f2c82acd77ebdfa302d6bffa41e88faa2",
+      "selected_id": "preserve_int8__stored_scale",
+      "table_sha256": "6dc1c15ca18d07fb87de8f0517baecbf47adec0846575172fa344f86ac10cde5",
+      "stopped": false
+    }
+  },
+  "cuda_initialized": false
+}
