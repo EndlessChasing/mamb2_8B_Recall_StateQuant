@@ -1,0 +1,418 @@
+{
+  "format": "MAMBA2_STATE_PPL_V7_INDEPENDENT_AUDIT_V1",
+  "complete": true,
+  "passed": true,
+  "stage": "screen",
+  "protocol_sha256": "84ffdce1d9e5d5dbac2b6996072f0db09bd1bf79fd3c55dad8b8f35973cd5d14",
+  "source_sha256": "97df2f0bf62d6fa2588207d22c8a95926345095c385436929560c1a62c02d023",
+  "auditor_dependency_sha256": {
+    "audit_state_ppl_v6.py": "26002780b1d31b9055fc2e099884dc682211ca7199f73d9075f6ef6a8793dfa2",
+    "audit_quant_first.py": "5439e766a59b3eb14db1024002ba92ffa4337c72540f27f6dd5869d79f0cfceb",
+    "audit_state_repair.py": "acdf1a107685ca803f2928f3fc399cf6c770202ec2f0c557d4984eb3ef800320",
+    "audit_state_first_v5.py": "9a44d39e1b6ec98d70fb44ee563eed7321e03f9a7a91253c07bc87a418e1863e",
+    "audit_resurface_more.py": "debfcdb3e61a4f6e31d814de6e7713d357a415a721dc519246906118dc9aba60"
+  },
+  "limitations": [
+    "CPU audit recomputes recorded score arithmetic and provenance, not GPU logits.",
+    "Codec receipts contain recorded GPU evidence; this audit launches no kernels.",
+    "Identity/version/gradient checks do not replace a post-run weight-byte hash.",
+    "Repeated benchmark exposure is not untouched generalization evidence; recall is not measured."
+  ],
+  "self_tests": {
+    "complete": true,
+    "passed": true,
+    "count": 10,
+    "checks": [
+      "baseline-exact-tie-priority",
+      "one-ulp-lower-and-fixed-nonbaseline-tie-order",
+      "nan-excluded",
+      "infinity-excluded",
+      "one-byte-over-budget-excluded",
+      "failed-baseline-fatal",
+      "strict-target-boundary-and-cache-gate",
+      "fixed-level-bits-signed-code-roundtrip-zero-scale",
+      "reserved-negative-eight-rejected",
+      "targets-and-physical-cache-budget"
+    ],
+    "gpu_used": false
+  },
+  "inputs": {
+    "complete": true,
+    "upstream": {
+      "complete": true,
+      "candidate_tables_independently_reconstructed": true,
+      "v5_candidates_sha256": "cd86a755db5004c716922696cf5532b307c57f5fb7dad4bcca298eb58b55f9a7",
+      "v5_baseline_calibration_sha256": "c525fbf62ef4a72db2d4bb13c13920d9f5d4946485538da0f00a369aab3092e3",
+      "historical_MK_scope": "Only frozen historical file hashes are checked; no historical MK scores affect v6 selection.",
+      "upstream": {
+        "complete": true,
+        "independent_table_derivation": true,
+        "candidates_sha256": "cd86a755db5004c716922696cf5532b307c57f5fb7dad4bcca298eb58b55f9a7",
+        "table_sha256": {
+          "magnitude": "6d2b53f63d0a56b527840b344be8396da483f3a6affd3d89fbbe0747d9bdd327",
+          "full_readout": "a3f33fba0433bce8de413dd22baa8c0d3b40c3934be6eee5bea75b4e306f81b3",
+          "preserve_int8": "6dc1c15ca18d07fb87de8f0517baecbf47adec0846575172fa344f86ac10cde5",
+          "preserve_retained80": "9789f1a45b0487ec15a104bfc60d33af14a5fce4d4290344eb5264ad0ddef536"
+        },
+        "table_bytes": 57344,
+        "packed_row_bytes_including_scales": 52,
+        "total_cache_bytes": 28499968,
+        "upstream_calibration_audit": {
+          "complete": true,
+          "table_derivation_independent": true,
+          "calibration_sha256": "8509bb266d40875608f3e0b3be22407fd6ea1b8aacbc79ce04e958726516b0a4",
+          "calibration_tokens": 4096,
+          "table_bytes_per_candidate": 57344,
+          "one_packed_row_bytes": 52,
+          "cache_bytes": 28499968,
+          "readout_score_tier_mass": {
+            "int8": 0.9101367807922354,
+            "int4": 0.08702321558372682,
+            "dead": 0.002840003624037507
+          },
+          "unit_receipts": {
+            "dense_checks": 36,
+            "collector_cases": 3,
+            "all_bound_passed": true,
+            "packing_scope": "CPU verifies recorded GPU test identities/results and allocation arithmetic, not a GPU kernel rerun"
+          }
+        }
+      }
+    },
+    "v6_kernel_checks": {
+      "complete": true,
+      "sha256": "81a65cd0f56e6ad4a7a87fc464abde6509a4315143c38c52c88a67be61e4a54f",
+      "checks": 249,
+      "actual_GPU_checks": true,
+      "criteria": {
+        "controlled": "exact every-token output/packed bytes/FP16 scales/decoded carry",
+        "random_partition": "exact full/segmented/tokenwise outputs and final cache",
+        "random_one_token_cpu_output_relative_l2_bound": 0.002,
+        "stored_scale_division": "Correctly rounded FP32 quotient before half-away rounding; zero-scale integer0",
+        "stored_scale_denominator": "FP32 clipping multiplication then correctly rounded FP32 division before FP16 round-to-even storage",
+        "diagnostic_legacy_emulation": "controlled output exact; random every-token carry exact and readout within recurrence-inclusive gamma21/69/69/3 plus FP16-cell and FP32-underflow bound"
+      },
+      "diagnostic_bound_checks": [
+        {
+          "geometry": [
+            2,
+            17,
+            8,
+            19,
+            2
+          ],
+          "elements": 5168,
+          "all_token_carries_bitwise_exact": true,
+          "elementwise_bound_independently_recomputed": true,
+          "bound_failures": 0,
+          "max_error_to_bound_ratio": 0.8881203148736804,
+          "evidence_sha256": "38c023672a6610accf99ae9cb367d8e86c8068eb137f1770b8e597331526ffcd",
+          "common_scalar_ptx_independently_verified": true
+        },
+        {
+          "geometry": [
+            1,
+            9,
+            6,
+            3,
+            3
+          ],
+          "elements": 162,
+          "all_token_carries_bitwise_exact": true,
+          "elementwise_bound_independently_recomputed": true,
+          "bound_failures": 0,
+          "max_error_to_bound_ratio": 0.0,
+          "evidence_sha256": "5846a55074a11d441ed81d76e4cf1b821fcfeb783dd035014802c71c9cbb35a9",
+          "common_scalar_ptx_independently_verified": true
+        },
+        {
+          "geometry": [
+            2,
+            5,
+            4,
+            1,
+            1
+          ],
+          "elements": 40,
+          "all_token_carries_bitwise_exact": true,
+          "elementwise_bound_independently_recomputed": true,
+          "bound_failures": 0,
+          "max_error_to_bound_ratio": 0.0,
+          "evidence_sha256": "2db7b8e31a10bf55b33e83db4d025be3b2c2f9acb93375aa8815b8fa0cea0a1d",
+          "common_scalar_ptx_independently_verified": true
+        }
+      ],
+      "scope": "Independent CPU audit of recorded GPU oracle/partition/bytes receipts and raw per-token diagnostic forward-error bound; no GPU rerun by auditor."
+    },
+    "v6_selected_policy": {
+      "complete": true,
+      "sha256": "098930d1af5e5821b277640d236f7607c6428b48d36f7117e2ea4aa87e656303",
+      "receipt_sha256": "ab2fd4d02a4720957bbb146395dcf26f2c82acd77ebdfa302d6bffa41e88faa2",
+      "selected_id": "preserve_int8__stored_scale",
+      "table_sha256": "6dc1c15ca18d07fb87de8f0517baecbf47adec0846575172fa344f86ac10cde5",
+      "stopped": false
+    },
+    "v6_screen_comparison_sha256": "5ac624862846b61aacc6a5f3b7648db32d5d74bf8419d8d536bbc751cdd117d6"
+  },
+  "kernel_checks": {
+    "complete": true,
+    "sha256": "39e144981be100ce5e5f0003342370623ed2e1c9d349f01a29a8b0b3a32b507a",
+    "checks": 119,
+    "codebook_bits": {
+      "uniform": [
+        0,
+        1065353216,
+        1073741824,
+        1077936128,
+        1082130432,
+        1084227584,
+        1086324736,
+        1088421888
+      ],
+      "mild": [
+        0,
+        1056964608,
+        1069547520,
+        1075838976,
+        1080033280,
+        1083179008,
+        1085276160,
+        1088421888
+      ],
+      "quadratic": [
+        0,
+        1041385765,
+        1058162981,
+        1067749961,
+        1074940197,
+        1080332873,
+        1084527177,
+        1088421888
+      ],
+      "fp4like": [
+        0,
+        1058362709,
+        1066751317,
+        1071644672,
+        1075139925,
+        1080033280,
+        1083528533,
+        1088421888
+      ]
+    },
+    "raw_midpoint_codes_and_decoded_bits_independently_recomputed": 765,
+    "criteria": {
+      "nonuniform": "Nearest actual FP32 decoded level via exact FP64 comparison; ties larger magnitude; zero scale code0",
+      "uniform": "Unchanged v6 stored_scale delegation, FP32 quotient then half-away",
+      "controlled": "Exact one-step and65-token packed codes/scales/carry/readout; sparse readout in65-token fixture",
+      "random": "Exact full/segmented/tokenwise output and final cache; INT8 remains bitwise unchanged across codebooks",
+      "storage": "52B/row and28,499,968B production persistent cache; no resident codebook"
+    },
+    "scope": "Recorded GPU kernel evidence checked on CPU; no GPU execution or model logits regenerated."
+  },
+  "screen": {
+    "complete": true,
+    "arms": {
+      "preserve_int8__uniform": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 137663.0354423523,
+        "ppl": 8.179224895870405
+      },
+      "magnitude__uniform": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 140197.62601661682,
+        "ppl": 8.501911890077414
+      },
+      "magnitude__mild": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 142583.87137413025,
+        "ppl": 8.817338513202346
+      },
+      "magnitude__quadratic": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 146054.77778339386,
+        "ppl": 9.297148779134615
+      },
+      "magnitude__fp4like": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 146980.77744102478,
+        "ppl": 9.429511629855226
+      },
+      "full_readout__uniform": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 138561.5389175415,
+        "ppl": 8.292190454403356
+      },
+      "full_readout__mild": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 140929.1319732666,
+        "ppl": 8.597387812134112
+      },
+      "full_readout__quadratic": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 143383.77225494385,
+        "ppl": 8.925671385094988
+      },
+      "full_readout__fp4like": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 145572.1541442871,
+        "ppl": 9.228900512767318
+      },
+      "preserve_int8__mild": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 139439.2108154297,
+        "ppl": 8.404043133595449
+      },
+      "preserve_int8__quadratic": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 142261.28875350952,
+        "ppl": 8.774023173035397
+      },
+      "preserve_int8__fp4like": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 143165.45706558228,
+        "ppl": 8.89597295402864
+      },
+      "preserve_retained80__uniform": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 140071.3921394348,
+        "ppl": 8.485543487444666
+      },
+      "preserve_retained80__mild": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 142867.44541931152,
+        "ppl": 8.855592487824211
+      },
+      "preserve_retained80__quadratic": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 145915.77721977234,
+        "ppl": 9.277440994276413
+      },
+      "preserve_retained80__fp4like": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 147748.4236984253,
+        "ppl": 9.54066682520987
+      },
+      "restored_baseline": {
+        "complete": true,
+        "windows": 32,
+        "targets": 65504,
+        "nll": 137663.0354423523,
+        "ppl": 8.179224895870405
+      }
+    },
+    "report_sha256": {
+      "preserve_int8__uniform": "a8f80ed339a0d4b3ea4fea55a5fbb4416ddbb1322059498bb86f41dcc32ce0ce",
+      "magnitude__uniform": "dd4ada9140c7f3e1f9a2c4ae2832bb0a7e61db1f4a15cfd356742e1dafde6b0a",
+      "magnitude__mild": "0c64bd7e6c1710b1255695f6db4b9ecad0800315089050116454966ec8dc9798",
+      "magnitude__quadratic": "c9aa5103266eff15bc70ae4116b0429236f5fa94352c8d96e4eea16456909185",
+      "magnitude__fp4like": "ce13a05be6b03e3a08a62b64215414b95d3306f783aeed3213f820fb15341636",
+      "full_readout__uniform": "dfddfa5bc44ca43241a4723454480ed56f9cdfd37a86703e1fbe4951ad993821",
+      "full_readout__mild": "2de8eca7d9cd4a79685cc4d81e03c05e12c62a8702db50692edf3768615dac60",
+      "full_readout__quadratic": "1fafcc7a961a940c6e7ab5abd152287bacf58cec5b58a16fba619e62c770daf1",
+      "full_readout__fp4like": "885996a8e27bb0bbd20b7ad79ae8fa36404781d6a2f0d26872fde1003e708985",
+      "preserve_int8__mild": "cd14dfa295a26a762cfb14d8812faa661444bb671688f30faacfe6da1b49602e",
+      "preserve_int8__quadratic": "84cc52c5d7715f17287d10feff6c0fb3ea423d329ddc8d63769dbcf6924c4a25",
+      "preserve_int8__fp4like": "ae87547cc3c299473533fd51a526a7e29c66bc3ffa58db19c19eaae4bbd07268",
+      "preserve_retained80__uniform": "5e20b41fb66825da02ef5aaa23e39e195ac7bff7ee535247a8cb0b32574578ec",
+      "preserve_retained80__mild": "2b438a9c3c202fd71368f66437199e9a9c1f77d6608343ce5a11fbeba6828157",
+      "preserve_retained80__quadratic": "8e84f94380019fc74e5f76016eef4462ebdb95fee17fde0e1ba644730ff6b3a5",
+      "preserve_retained80__fp4like": "537a044b38c1a60398d6ae7687cae1de174858d6e2be5f35f9b2a4c3c98f9070",
+      "restored_baseline": "dcd5b583895ad5c3fb26ac7fc24291a34852c8cea79b33867bc9d5ae920b19e1"
+    },
+    "restoration": {
+      "complete": true,
+      "per_window_nll_exact": true,
+      "ppl_windows_repeated": 32,
+      "target_tokens": 65504,
+      "reset_hidden_exact": true,
+      "reset_persistent_tensor_hashes_exact": true,
+      "cache_allocation_exact": true
+    },
+    "comparison_sha256": "7234f8f31904d1201a8366422936746ac0c148e90c368a8b36a4aa7472a4e960",
+    "no_MK_measurements": true,
+    "no_adapter": true,
+    "selection": {
+      "selected_id": "preserve_int8__uniform",
+      "selected_kind": "preserve_int8",
+      "selected_codebook": "uniform",
+      "valid": [
+        "magnitude__uniform",
+        "magnitude__mild",
+        "magnitude__quadratic",
+        "magnitude__fp4like",
+        "full_readout__uniform",
+        "full_readout__mild",
+        "full_readout__quadratic",
+        "full_readout__fp4like",
+        "preserve_int8__uniform",
+        "preserve_int8__mild",
+        "preserve_int8__quadratic",
+        "preserve_int8__fp4like",
+        "preserve_retained80__uniform",
+        "preserve_retained80__mild",
+        "preserve_retained80__quadratic",
+        "preserve_retained80__fp4like"
+      ],
+      "excluded": [],
+      "baseline_wins": true,
+      "adapter_used": false,
+      "heldout_used": false,
+      "mk_used": false,
+      "baseline_id": "preserve_int8__uniform",
+      "rule": "Minimum complete finite exact-budget TRAIN PPL; exact ties baseline then fixed candidate order"
+    },
+    "selected_vs_baseline": {
+      "control_arm": "preserve_int8__uniform",
+      "candidate_arm": "preserve_int8__uniform",
+      "control_ppl": 8.179224895870405,
+      "candidate_ppl": 8.179224895870405,
+      "ppl_relative_change": 0.0,
+      "nll_delta": 0.0,
+      "improved_windows": 0,
+      "regressed_windows": 0,
+      "unchanged_windows": 32
+    }
+  },
+  "selected_calibration": {
+    "complete": true,
+    "sha256": "9eb2cbf318d8900c27ef73a7b69e36db6ba5bbcf9050191f514198d8080e3855",
+    "receipt_sha256": "5cac38f352e32b937536998d854a71d8515af6aa6d921ba18e1e735866cb19c9",
+    "selected_id": "preserve_int8__uniform",
+    "table_sha256": "6dc1c15ca18d07fb87de8f0517baecbf47adec0846575172fa344f86ac10cde5",
+    "baseline_wins": true
+  },
+  "cuda_initialized": false
+}
