@@ -14,13 +14,58 @@ and follow the [installation, verification and inference guide](docs/STATE_RESUR
 and are downloaded separately from NVIDIA. The release includes the exact
 audited adapter, calibration table, raw evaluation reports and checksums.
 
-## Completed v11: fresh Resurface improves PPL and recall on V10 Q3.25
+## Full official WikiText-2 test PPL — fixed published checkpoint
 
-**All nine predefined quality and integrity gates pass.** Fresh Resurface
+| Configuration | WikiText-2 test PPL |
+|---|---:|
+| Published SQ3.25 state, without Resurface | 8.11328914 |
+| Same frozen FP16 base and state + released V11 Resurface | **7.77130287** |
+
+Both complete arms score **300,963 next-token targets in 147 reset windows**,
+including the last window of 1,955 targets. The adapter lowers pooled-token PPL
+by **4.2151%**. The weights, 32/32/64 state table, final adapter and measured
+runtime are unchanged from `v0.1.0-q325-resurface`. No training, recalibration,
+checkpoint/candidate selection, or test-dependent stopping was performed.
+
+**Protocol:** pinned `Salesforce/wikitext`, `wikitext-2-raw-v1`, official `test`
+split at revision `b08601e04326c79dfdd32d625aee71d232d685c3`; documents joined
+by two newlines and NVIDIA SentencePiece without automatic BOS/EOS. Each window
+scores at most 2,048 next-token targets with one boundary-token overlap; state
+is requantized every token. PPL is `exp(total NLL / 300963)` from FP16 compute
+and FP32 logits.
+
+**Data scope:** adapter training used separate official TRAIN data. The test
+was scored after publication with the fixed released checkpoint and without
+test-driven selection. Earlier project experiments, including 2.7B and E8/W5,
+used the official WT2 test text, so this is not an untouched test for the whole
+project. Source-model pretraining contamination and cross-split duplication
+have not been audited. No S16 test control or new MK evaluation was run here.
+
+The exact [comparison](evaluation/wt2_test_v1/comparison.json),
+[adapter-free arm](evaluation/wt2_test_v1/without_resurface.json),
+[adapted arm](evaluation/wt2_test_v1/resurface.json), and
+[CPU audit](evaluation/wt2_test_v1/cpu_audit_v1.json) contain all per-window
+scores/token hashes and the recorded tensor/storage bindings, without raw token
+IDs. The CPU audit verifies token coverage, pooled NLL/PPL arithmetic, the
+published runtime and 507-weight/224-adapter bindings, and adapter-removal
+reset/cache restoration. It does not recompute GPU logits. See the
+[reproduction guide](evaluation/wt2_test_v1/README.md),
+[frozen test protocol](docs/SQ325_V11_WT2_TEST_V1_PROTOCOL.md), and
+[evidence inventory](evaluation/wt2_test_v1/inventory.json).
+
+This is a documentation/evaluation overlay. The original release tag, adapter,
+state table, runtime source and sealed `release/` files remain unchanged.
+Historical validation and MK CONFIRM results remain separate below; they are
+not WT2-test MK or newly collected test recall measurements.
+
+## Historical v11 validation and published MK CONFIRM
+
+The results below are historical validation/CONFIRM measurements; the new test
+result is reported above. **All nine predefined quality and integrity gates passed.** Fresh Resurface
 training completed 1,536 successful updates on the fixed 32 INT8 / 32 INT4 /
 64 zero-carry layout. Original source weights remain frozen FP16.
 
-| Configuration | Full WikiText-2 PPL | Normal MK /384 |
+| Configuration | WikiText-2 validation PPL | Published normal MK /384 |
 | --- | ---: | ---: |
 | Original S16, archived reference | 7.334322057221965 | 146 (38.02%) |
 | V10 Q3.25, no adapter | 8.186186562837207 | 32 (8.33%) |

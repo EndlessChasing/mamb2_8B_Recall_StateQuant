@@ -1,0 +1,26 @@
+{
+  "complete": true,
+  "passed": true,
+  "format": "SQ325_V11_WT2_TEST_CPU_AUDIT_V1",
+  "uses_stdlib_only": true,
+  "cuda_initialized": false,
+  "input_report_sha256": "a88b515cfbda9b032564a6ac068ea70650f4fcc7b734b9e119ebf75577c23335",
+  "auditor_sha256": "e0761aa7b85298d32b0dcebd775d8e61f3312a80761d9c0dd0e997a4e27ff4f9",
+  "runner_sha256": "f9d76f1a71d033b05c0032e86516bee7b471f2200cb33c6a04fc02bb4c8c48e9",
+  "protocol_sha256": "0e1764ba92d0ae84a510cf7bed44b8c4acc5f8c8722fac1910dc321c114209c2",
+  "bundle_manifest_sha256": "6c3ebce9eaa7ec14ce63a04b46ef4fe44730433dbc941ca95e4e2c2d7121c721",
+  "ppl": {
+    "without_resurface": 8.113289138152094,
+    "resurface": 7.771302869888767
+  },
+  "target_tokens": 300963,
+  "window_count": 147,
+  "last_window_targets": 1955,
+  "all_target_tokens_scored_once": true,
+  "all_window_token_hashes_verified": true,
+  "pooled_nll_ppl_arithmetic_verified": true,
+  "recorded_507_weight_and_224_adapter_bindings_verified": true,
+  "actual_state_storage_receipts_verified": true,
+  "adapter_removal_reset_and_cache_exact": true,
+  "scope": "CPU arithmetic/token coverage and published bindings of recorded GPU identities. GPU logits, source pretraining contamination and cross-split duplicates not independently recomputed."
+}

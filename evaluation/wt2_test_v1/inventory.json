@@ -1,0 +1,56 @@
+{
+  "format": "SQ325_V11_WT2_TEST_PUBLIC_EVIDENCE_INVENTORY_V1",
+  "complete": true,
+  "model_release_tag": "v0.1.0-q325-resurface",
+  "measured_github_commit": "be037e1a2635ad7b540e0a1d2e551febf647c346",
+  "measured_hf_commit": "ebd2ca7cc644ba0e11e4b1595ba03afb8d27e6e4",
+  "sealed_bundle_manifest_sha256": "6c3ebce9eaa7ec14ce63a04b46ef4fe44730433dbc941ca95e4e2c2d7121c721",
+  "test_used_for_training_or_selection": false,
+  "ppl": {
+    "without_resurface": 8.113289138152094,
+    "resurface": 7.771302869888767
+  },
+  "windows": 147,
+  "target_tokens": 300963,
+  "raw_token_ids_included": false,
+  "report_transformations": null,
+  "files": {
+    "docs/SQ325_V11_WT2_TEST_V1_PROTOCOL.md": {
+      "bytes": 2065,
+      "sha256": "0e1764ba92d0ae84a510cf7bed44b8c4acc5f8c8722fac1910dc321c114209c2"
+    },
+    "evaluation/wt2_test_v1/README.md": {
+      "bytes": 6040,
+      "sha256": "f5b92baeb1c48ea7312f839d41a37507a50099594a9f02f72100ac69ef83173b"
+    },
+    "evaluation/wt2_test_v1/comparison.json": {
+      "bytes": 144001,
+      "sha256": "a88b515cfbda9b032564a6ac068ea70650f4fcc7b734b9e119ebf75577c23335"
+    },
+    "evaluation/wt2_test_v1/cpu_audit_v1.json": {
+      "bytes": 1266,
+      "sha256": "57965bd2bc57edfad60e80e3e9afb28afd3da17cd9616b6971306640066a2bc5"
+    },
+    "evaluation/wt2_test_v1/resurface.json": {
+      "bytes": 293206,
+      "sha256": "60a8b4f312752865806520b80f0f67c4b64daef6a2fc8c9780c77689ab220ab8"
+    },
+    "evaluation/wt2_test_v1/without_resurface.json": {
+      "bytes": 272030,
+      "sha256": "3e747010416bb9e6b57090e00babdbae5c1305ceaa99dd0ac8d420715ef0dd9b"
+    },
+    "scripts/audit_sq325_v11_wt2_test_v1.py": {
+      "bytes": 9157,
+      "sha256": "e0761aa7b85298d32b0dcebd775d8e61f3312a80761d9c0dd0e997a4e27ff4f9"
+    },
+    "scripts/reconstruct_wt2_test_tokens_v1.py": {
+      "bytes": 3041,
+      "sha256": "fbfad1f4683e8ad9de428b0a327af058407171a64f9ba1b5285aa310e442c8f6"
+    },
+    "scripts/run_sq325_v11_wt2_test_v1.py": {
+      "bytes": 9034,
+      "sha256": "f9d76f1a71d033b05c0032e86516bee7b471f2200cb33c6a04fc02bb4c8c48e9"
+    }
+  },
+  "scope": "Added evaluation evidence and reproduction sources only; root README and this inventory excluded to avoid self-reference. Original published runtime and sealed bundle remain unchanged."
+}
