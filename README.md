@@ -1,5 +1,17 @@
 # Mamb2_8B_Recall + StateQuant
 
+**Official WikiText-2 test PPL — Resurface on: 7.77130287.**
+
+| Published configuration | Resurface adapter | Official WT2 test PPL |
+|---|---|---:|
+| Same frozen weights and SQ3.25 state | Off | 8.11328914 |
+| Same frozen weights and SQ3.25 state | On | **7.77130287** |
+
+**147 reset windows · 300,963 next-token targets**, including the final partial
+window. Measured with the published `StatePPLQuantV10` 32/32/64 codec: carry is
+requantized **after every token**, with FP16 computation and FP32 logits.
+The checkpoint was fixed before test evaluation; no test-driven training or selection.
+
 ## Public release: Q3.25 state + Resurface
 
 Hugging Face family name:
@@ -78,8 +90,9 @@ N16 recall improves **30 → 181/192** and N64 **2 → 90/192**. Target-removed
 accidental matches remain **0/384** in both arms; this is a diagnostic, not
 an abstention score.
 
-All three arms complete 130 PPL windows / 264,764 targets and 384 normal +
-384 target-removed MK prompts. Removing the adapter reproduces every baseline
+The adapter-free, adapted, and adapter-removed arms each complete 130
+validation PPL windows / 264,764 targets and 384 normal + 384 target-removed
+MK prompts. The S16 row is an archived validation reference, not a rerun. Removing the adapter reproduces every baseline
 window NLL and all 768 generated sequences exactly, including reset/cache
 receipts. The archived V10 replay and independent CPU full audit pass.
 
@@ -99,13 +112,13 @@ See [V11 results and checklist](docs/STATE_RESURFACE_V11_RESULTS.md),
 [reproduction](docs/STATE_RESURFACE_V11_REPRODUCTION.md), and
 [frozen protocol](docs/STATE_RESURFACE_V11_PROTOCOL.md).
 
-## Completed: unadapted Q3.25 full PPL 8.186187
+## Historical V10: unadapted Q3.25 validation PPL 8.186187
 
 **The requested no-Resurface PPL < 8.25 target is achieved.** The selected
 layout uses 32 INT8 + 32 INT4 + 64 zero-carry coordinates per 128-element state row.
 Payload plus two FP16 scales remains 52 bytes: 3.25 bits per coordinate.
 
-| Configuration | Full WikiText-2 PPL | Persistent cache / sequence |
+| Configuration | WikiText-2 validation PPL | Persistent cache / sequence |
 | --- | ---: | ---: |
 | Original S16, archived reference | 7.334322 | 116.3750 MiB |
 | Previous best unadapted Q3.25 (v8) | 8.283863 | 27.1797 MiB |
@@ -125,7 +138,7 @@ See [all search results/checklist](docs/STATE_PPL_TARGET_825.md),
 [independent full audit](reports/state_ppl_v10_full_audit.json).
 The target search is complete; V11 above adds fresh Resurface to this fixed base.
 
-## Completed v6: PPL-first scale search finds only a small improvement
+## Historical V6: validation PPL after TRAIN scale selection
 
 The latest user priority is **optimize PPL first; use Resurface for MK after
 freezing the quantizer**. This experiment removed the v5 MK selection guard
@@ -133,7 +146,7 @@ and compared 20 fixed, same-budget table/scale candidates on 32 full-length
 TRAIN windows. The frozen winner keeps the v5 INT8 table and chooses integer
 codes against the actually stored FP16 scale.
 
-| Unadapted configuration | Full PPL | Cache/sequence |
+| Unadapted configuration | WikiText-2 validation PPL | Cache/sequence |
 | --- | ---: | ---: |
 | Original S16, archived reference | 7.334322 | 116.3750 MiB |
 | v5 Q3.25 baseline | 8.367465 | 27.1797 MiB |
@@ -154,14 +167,14 @@ See the [frozen v6 protocol](docs/STATE_PPL_V6_PROTOCOL.md),
 [independent full audit](reports/state_ppl_v6_full_audit.json),
 [reproduction](docs/STATE_PPL_V6_REPRODUCTION.md), and [checklist](PLAN.md).
 
-## v5: optimize unadapted SQ3.25, then train fresh Resurface
+## Historical V5: optimize unadapted SQ3.25, then train fresh Resurface
 
 The requested order is complete: **original source with no adapter → optimize
 SQ3.25 → freeze the table → train fresh Resurface for recall**. TRAIN-only
 selection preserves the original 16 INT8 coordinates and optimizes INT4/zero
 assignments. Fresh training completed 1536 updates, with no old adapter reused.
 
-| Configuration | Full PPL | Normal MK /384 |
+| Configuration | WikiText-2 validation PPL | Normal MK /384 |
 | --- | ---: | ---: |
 | Old SQ3.25, no adapter | 8.691553 | 50 (13.02%) |
 | Optimized SQ3.25, no adapter | 8.367465 | 46 (11.98%) |
@@ -186,7 +199,7 @@ See [results and limits](docs/STATE_FIRST_V5_RESULTS.md),
 [reproduction commands](docs/STATE_FIRST_V5_REPRODUCTION.md),
 [protocol](docs/STATE_FIRST_V5_PROTOCOL.md), and [checklist](PLAN.md).
 
-## Completed v4: changing the codec with frozen Resurface trades recall for PPL
+## Historical V4: frozen Resurface validation PPL and recall tradeoff
 
 This distinct experiment kept the v2 adapter fixed while testing readout-aware
 tiers, dense3-bit carry and equalized dense3. Each retained **3.25 bits per
@@ -194,7 +207,7 @@ state element including scales** and **27.1797 MiB** total batch-one cache.
 Only readout-aware tiers advanced to full diagnostic confirmation; both dense
 variants substantially worsened TRAIN quality.
 
-| State table with the same frozen v2 adapter | Full PPL | Normal MK |
+| State table with the same frozen v2 adapter | WikiText-2 validation PPL | Normal MK |
 | --- | ---: | ---: |
 | Original magnitude tiers | 8.388906 | 239/384 (62.24%) |
 | Readout-aware tiers | 8.258201 | 204/384 (53.125%) |
@@ -209,14 +222,14 @@ See [all results and limits](docs/STATE_REPAIR_RESULTS.md),
 [independent audit](reports/state_repair_full_audit.json), and
 [reproduction commands](docs/STATE_REPAIR_REPRODUCTION.md).
 
-## v3: more training gives lower PPL without a recall improvement
+## Historical V3: continuation validation PPL and CONFIRM recall
 
 Exact continuation of the v2 FP32 masters, AdamW and GradScaler added
 **3072 successful updates (4608 total)**. Source weights, SQ3.25 calibration,
 adapter capacity and loss stayed fixed. All three full evaluation arms,
 both exact replay checks and the independent full evidence audit are complete.
 
-| SQ3.25 configuration | Full PPL | Normal MK | Cache/sequence |
+| SQ3.25 + Resurface configuration | WikiText-2 validation PPL | Normal MK | Cache/sequence |
 | --- | ---: | ---: | ---: |
 | v2 parent, 1536 updates | 8.388906 | 239/384 (62.24%) | 27.1797 MiB |
 | v3 continuation, 4608 total updates | 8.351329 | 237/384 (61.72%) | 27.1797 MiB |
@@ -239,7 +252,7 @@ The [full comparison](reports/resurface_more_v3/evaluation/full_comparison.json)
 and [audit receipt](reports/resurface_more_v3_full_audit.json) preserve the
 negative improvement-gate outcome.
 
-## Completed v2: quantize first, then train a new adapter
+## Historical V2: quantize first, then train a new adapter
 
 The new requested order is **original Mamba2-8B -> SQ3.25 state -> fresh
 Resurface training**. Calibration is repeated on the unadapted source model;
@@ -255,7 +268,7 @@ complete. The new artifact is
 see [current results and evidence](docs/QUANT_FIRST_RESULTS.md) and
 [exact reproduction commands](docs/QUANT_FIRST_REPRODUCTION.md).
 
-| v2 configuration | Full PPL | Normal MK | Cache/sequence |
+| v2 configuration | WikiText-2 validation PPL | Normal MK | Cache/sequence |
 | --- | ---: | ---: | ---: |
 | Original S16, no adapter | 7.33432 | 146/384 (38.02%) | 116.3750 MiB |
 | SQ3.25, no adapter | 8.69155 | 50/384 (13.02%) | 27.1797 MiB |
@@ -274,7 +287,7 @@ The independent CPU evidence audit passed; see the
 [full comparison](reports/quant_first_v2/evaluation/full_comparison.json) and
 [audit receipt](reports/quant_first_v2_full_audit.json).
 
-## Historical experiment: old Recall adapter, then quantize state
+## Historical validation pilot: old Recall adapter, then quantize state
 
 Experimental **pure Mamba2-8B + frozen Resurface + packed recurrent state**.
 The base is the original FP16 Recall model, not the W4 weight release.
@@ -287,7 +300,7 @@ including two FP16 scales). Q8 is skipped at the user's request.
 The code and packed cache work, but the original Recall adapter does not preserve
 recall under this state compression. Full-corpus evaluation was not advanced.
 
-| Mode | Actual cache / sequence | Pilot PPL | Normal MK |
+| Mode | Actual cache / sequence | Pilot validation PPL | Normal MK |
 | --- | ---: | ---: | ---: |
 | FP16 state + Recall | 116.375 MiB | 6.0405 | 47/48 |
 | SQ3.25 state + Recall | 27.1797 MiB | 6.8834 | 19/48 |
